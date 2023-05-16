@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1410</width>
-    <height>863</height>
+    <width>1920</width>
+    <height>1200</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,8 +19,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1386</width>
-    <height>863</height>
+    <width>1920</width>
+    <height>1200</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -31,14 +31,14 @@
   </property>
   <property name="sizeIncrement">
    <size>
-    <width>1280</width>
-    <height>800</height>
+    <width>640</width>
+    <height>400</height>
    </size>
   </property>
   <property name="baseSize">
    <size>
-    <width>1280</width>
-    <height>800</height>
+    <width>1920</width>
+    <height>1200</height>
    </size>
   </property>
   <property name="font">
@@ -1526,7 +1526,7 @@ Button */
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QGridLayout" name="gridLayout_4">
@@ -2085,13 +2085,13 @@ Button */
                         <widget class="QTableView" name="tableView_2">
                          <property name="minimumSize">
                           <size>
-                           <width>450</width>
+                           <width>350</width>
                            <height>610</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>900</width>
+                           <width>600</width>
                            <height>1220</height>
                           </size>
                          </property>
@@ -2119,7 +2119,7 @@ Button */
                            <property name="maximumSize">
                             <size>
                              <width>500</width>
-                             <height>200</height>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="font">
@@ -2156,7 +2156,7 @@ Button */
                            <property name="maximumSize">
                             <size>
                              <width>500</width>
-                             <height>200</height>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="font">
@@ -2200,7 +2200,7 @@ Button */
                            <property name="maximumSize">
                             <size>
                              <width>1500</width>
-                             <height>200</height>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="font">

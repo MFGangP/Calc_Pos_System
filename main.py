@@ -34,9 +34,9 @@ class MainWindow(QMainWindow):
 
         # SET AS GLOBAL WIDGETS
         # ///////////////////////////////////////////////////////////////
-        self.ui = Ui_MainWindow() # Ui_MainWindow Ŭ������ ��ü ���� ���� ���� ui_main.py
+        self.ui = Ui_MainWindow() # Ui_MainWindow ui_main.py
         self.ui.setupUi(self)
-        global widgets # widgets ��� ���� ���� ����
+        global widgets # widgets 
         widgets = self.ui
 
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
@@ -53,7 +53,7 @@ class MainWindow(QMainWindow):
         widgets.titleRightInfo.setText(description)
 
         # TOGGLE MENU
-        # UIFunctions�� �޼��� ���� �س��� Ŭ����
+        # UIFunctions
         # ///////////////////////////////////////////////////////////////
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
 
@@ -105,13 +105,13 @@ class MainWindow(QMainWindow):
         btn = self.sender()
         btnName = btn.objectName()
 
-        # SHOW HOME PAGE ��� ���α׷� ���� ������
+        # SHOW HOME PAGE 
         if btnName == "btn_home":
             widgets.stackedWidget.setCurrentWidget(widgets.home)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        # SHOW CALENDER PAGE �Ǹ� ��� �� �� �Ϻ� Ȯ�� ������
+        # SHOW CALENDER PAGE 
         if btnName == "btn_calender":
             widgets.stackedWidget.setCurrentWidget(widgets.widgets)
             UIFunctions.resetStyle(self, btnName)
