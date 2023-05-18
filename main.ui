@@ -31,8 +31,8 @@
   </property>
   <property name="sizeIncrement">
    <size>
-    <width>640</width>
-    <height>400</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="baseSize">
@@ -61,7 +61,6 @@
     <font>
      <family>Segoe UI</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
     </font>
@@ -714,7 +713,6 @@ Button */
               <font>
                <family>Segoe UI Semibold</family>
                <pointsize>12</pointsize>
-               <weight>7</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -745,7 +743,6 @@ Button */
               <font>
                <family>Segoe UI</family>
                <pointsize>8</pointsize>
-               <weight>50</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -831,7 +828,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -895,7 +891,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -932,7 +927,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -969,7 +963,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1006,7 +999,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1043,7 +1035,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1107,7 +1098,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1243,7 +1233,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1377,7 +1366,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                     <stylestrategy>PreferDefault</stylestrategy>
@@ -1542,20 +1530,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1576,20 +1570,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1610,20 +1610,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1644,20 +1650,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1678,20 +1690,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1712,20 +1730,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1746,20 +1770,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1780,20 +1810,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1814,20 +1850,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="autoFillBackground">
@@ -1851,20 +1893,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1885,20 +1933,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1919,20 +1973,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1953,20 +2013,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -1987,20 +2053,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -2021,20 +2093,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -2055,20 +2133,26 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>100</height>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>300</width>
-                             <height>300</height>
+                             <width>290</width>
+                             <height>290</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
                             <size>
                              <width>0</width>
                              <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -2085,22 +2169,28 @@ Button */
                         <widget class="QTableWidget" name="tableWidget">
                          <property name="minimumSize">
                           <size>
-                           <width>350</width>
-                           <height>520</height>
+                           <width>220</width>
+                           <height>580</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>600</width>
+                           <width>900</width>
                            <height>1220</height>
                           </size>
                          </property>
                          <property name="baseSize">
                           <size>
-                           <width>350</width>
-                           <height>520</height>
+                           <width>220</width>
+                           <height>580</height>
                           </size>
                          </property>
+                         <property name="sizeAdjustPolicy">
+                          <enum>QAbstractScrollArea::AdjustToContents</enum>
+                         </property>
+                         <attribute name="horizontalHeaderCascadingSectionResizes">
+                          <bool>false</bool>
+                         </attribute>
                         </widget>
                        </item>
                        <item row="4" column="0">
@@ -2119,7 +2209,7 @@ Button */
                            <property name="minimumSize">
                             <size>
                              <width>750</width>
-                             <height>80</height>
+                             <height>40</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -2128,11 +2218,16 @@ Button */
                              <height>150</height>
                             </size>
                            </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>750</width>
+                             <height>40</height>
+                            </size>
+                           </property>
                            <property name="font">
                             <font>
                              <family>Segoe UI</family>
                              <pointsize>10</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2159,8 +2254,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>250</width>
-                             <height>80</height>
+                             <width>110</width>
+                             <height>40</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -2169,11 +2264,16 @@ Button */
                              <height>150</height>
                             </size>
                            </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>110</width>
+                             <height>40</height>
+                            </size>
+                           </property>
                            <property name="font">
                             <font>
                              <family>Segoe UI</family>
                              <pointsize>10</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2196,8 +2296,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>250</width>
-                             <height>80</height>
+                             <width>110</width>
+                             <height>40</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -2206,11 +2306,16 @@ Button */
                              <height>150</height>
                             </size>
                            </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>110</width>
+                             <height>40</height>
+                            </size>
+                           </property>
                            <property name="font">
                             <font>
                              <family>Segoe UI</family>
                              <pointsize>10</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2312,7 +2417,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>-1</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
