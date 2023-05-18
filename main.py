@@ -31,7 +31,7 @@ curIdx = 0 # 현재 데이터 PK
 widgets = None
 
 all_Row = 15
-all_Column = 6
+all_Column = 5
 
 
 class MainWindow(QMainWindow):
@@ -170,25 +170,51 @@ class MainWindow(QMainWindow):
         
     # 테이플 위젯 안에 db내용 추출해서 삽입
     def makeTable(self, rows):
-        self.ui.tableWidget.setRowCount(all_Row)
-        self.ui.tableWidget.setColumnCount(all_Column)
-        #'번호','제품명','개수','가격','추가/빼기','제거'
-        self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Fixed)
+        columnName = ['제품명','개수','가격','추가/빼기','제거']
 
-        self.ui.tableWidget.setColumnWidth(0, 150)
-        self.ui.tableWidget.setColumnWidth(1, 50)
-        self.ui.tableWidget.setColumnWidth(2, 50)
-        self.ui.tableWidget.setColumnWidth(3, 100)
-        self.ui.tableWidget.setColumnWidth(4, 50)
-        self.ui.tableWidget.setColumnWidth(5, 50) # 600
+        table = self.ui.tableWidget
+        # header = table.horizontalHeader()
+        # twidth = header.width()
+
+        # width = []
+        # for column in range(header.count()):
+        #     header.setSectionResizeMode(column, QHeaderView.ResizeToContents)
+        #     width.append(header.sectionSize(column))
+
+        # wfactor = twidth / sum(width)
+        # for column in range(header.count()):
+        #     header.setSectionResizeMode(column, QHeaderView.Interactive)
+        #     header.resizeSection(column, width[column]*wfactor)
+
+        table.setRowCount(all_Row)
+        table.setColumnCount(all_Column)
+        
+        table.setColumnWidth(0, self.width()*30/100)
+        table.setColumnWidth(1, self.width()*1/100)
+        table.setColumnWidth(2, self.width()*5/100)
+        table.setColumnWidth(3, self.width()*5/100)
+        table.setColumnWidth(4, self.width()*1/100) # 600
+        
+        for i in range(len(columnName)):
+            table.setHorizontalHeaderItem(i, QTableWidgetItem(columnName[i]))
+
+        header = table.horizontalHeader()       
+        header.setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(1, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(2, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(3, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(4, QHeaderView.ResizeMode.Fixed)
+
+        #'번호' = AI(불필요),'제품명','개수','가격','추가/빼기','제거'
+        table.horizontalHeader().cascadingSectionResizes()
 
         for i, row in enumerate(rows):
-            # row[0] ~ row[4]
+            # row[0] = AI  row[1] ~ row[4]
             prdName = row[1]
             prdPrice = row[2]
             
-            self.ui.tableWidget.setItem(i, 0, QTableWidgetItem(prdName))
-            self.ui.tableWidget.setItem(i, 1, QTableWidgetItem(str(prdPrice)))
+            table.setItem(i, 0, QTableWidgetItem(prdName))
+            table.setItem(i, 1, QTableWidgetItem(str(prdPrice)))
 
 
 if __name__ == "__main__":
