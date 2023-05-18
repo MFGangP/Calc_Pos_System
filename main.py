@@ -17,7 +17,7 @@
 import sys
 import os
 import platform
-
+import pymysql
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
 from modules import *
@@ -26,12 +26,17 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
+conn = None
+curIdx = 0 # 현재 데이터 PK
 widgets = None
+
+all_Row = 15
+all_Column = 6
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-
         # SET AS GLOBAL WIDGETS
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow() # Ui_MainWindow ui_main.py
@@ -39,6 +44,7 @@ class MainWindow(QMainWindow):
         global widgets # widgets 
         widgets = self.ui
 
+        self.initDB()
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ��������̷� ����Ŵϱ� false�� ����
         # ///////////////////////////////////////////////////////////////
@@ -61,7 +67,7 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         UIFunctions.uiDefinitions(self)
 
-        # QTableWidget PARAMETERS
+        # QtableView_2 PARAMETERS
         # ///////////////////////////////////////////////////////////////
         widgets.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
@@ -96,7 +102,6 @@ class MainWindow(QMainWindow):
         widgets.stackedWidget.setCurrentWidget(widgets.home)
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
-
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
     # ///////////////////////////////////////////////////////////////
@@ -129,7 +134,6 @@ class MainWindow(QMainWindow):
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
 
-
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):
@@ -147,6 +151,44 @@ class MainWindow(QMainWindow):
             print('Mouse click: LEFT CLICK')
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
+
+    def initDB(self):
+        self.conn = pymysql.connect(host='localhost', user='root', password='12345',
+                                        db='calckiosk', charset='utf8')
+        cur = self.conn.cursor()
+        # calckiosk.products db 접속 해서 가격 가져오기
+        query = '''SELECT Idx
+                        , prdName
+                        , prdPrice
+                    FROM products;'''
+        cur.execute(query)
+        rows = cur.fetchall()
+
+        # print(rows)
+        self.makeTable(rows)
+        self.conn.close() # 프로그램 종료할 때
+    # 테이플 위젯 안에 db내용 추출해서 삽입
+    def makeTable(self, rows):
+        self.ui.tableWidget.setRowCount(all_Row)
+        self.ui.tableWidget.setColumnCount(all_Column)
+        #'번호','제품명','개수','가격','추가/빼기','제거'
+        self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Fixed)
+
+        self.ui.tableWidget.setColumnWidth(0, 150)
+        self.ui.tableWidget.setColumnWidth(1, 50)
+        self.ui.tableWidget.setColumnWidth(2, 50)
+        self.ui.tableWidget.setColumnWidth(3, 100)
+        self.ui.tableWidget.setColumnWidth(4, 50)
+        self.ui.tableWidget.setColumnWidth(5, 50) # 600
+
+        for i, row in enumerate(rows):
+            # row[0] ~ row[4]
+            prdName = row[1]
+            prdPrice = row[2]
+            
+            self.ui.tableWidget.setItem(i, 0, QTableWidgetItem(prdName))
+            self.ui.tableWidget.setItem(i, 1, QTableWidgetItem(str(prdPrice)))
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

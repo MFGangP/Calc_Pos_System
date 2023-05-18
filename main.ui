@@ -19,8 +19,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1920</width>
-    <height>1200</height>
+    <width>1280</width>
+    <height>800</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -37,8 +37,8 @@
   </property>
   <property name="baseSize">
    <size>
-    <width>1920</width>
-    <height>1200</height>
+    <width>1280</width>
+    <height>800</height>
    </size>
   </property>
   <property name="font">
@@ -1542,8 +1542,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1562,7 +1562,7 @@ Button */
                             <string notr="true">background-color: #bd93f9;</string>
                            </property>
                            <property name="text">
-                            <string>아메리카노</string>
+                            <string>아이스 아메리카노</string>
                            </property>
                           </widget>
                          </item>
@@ -1576,8 +1576,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1610,8 +1610,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1630,7 +1630,7 @@ Button */
                             <string notr="true">background-color: #bd93f9;</string>
                            </property>
                            <property name="text">
-                            <string>환타</string>
+                            <string>콜라</string>
                            </property>
                           </widget>
                          </item>
@@ -1644,8 +1644,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1678,8 +1678,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1712,8 +1712,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1732,7 +1732,7 @@ Button */
                             <string notr="true">background-color: #bd93f9;</string>
                            </property>
                            <property name="text">
-                            <string>복숭아</string>
+                            <string>따뜻한 아메리카노</string>
                            </property>
                           </widget>
                          </item>
@@ -1746,8 +1746,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1780,8 +1780,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1814,8 +1814,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1837,7 +1837,7 @@ Button */
                             <string notr="true">background-color: #bd93f9;</string>
                            </property>
                            <property name="text">
-                            <string>콜라</string>
+                            <string>복숭아</string>
                            </property>
                           </widget>
                          </item>
@@ -1851,8 +1851,42 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>300</width>
+                             <height>300</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>환타</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="4">
+                          <widget class="QPushButton" name="btn_cider_2">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1875,40 +1909,6 @@ Button */
                            </property>
                           </widget>
                          </item>
-                         <item row="3" column="4">
-                          <widget class="QPushButton" name="btn_cider_2">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>150</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>300</width>
-                             <height>300</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string/>
-                           </property>
-                          </widget>
-                         </item>
                          <item row="0" column="3">
                           <widget class="QPushButton" name="btn_donuts">
                            <property name="sizePolicy">
@@ -1919,8 +1919,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1953,8 +1953,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -1987,8 +1987,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -2021,8 +2021,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -2055,8 +2055,8 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
-                             <height>150</height>
+                             <width>100</width>
+                             <height>100</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -2082,11 +2082,11 @@ Button */
                         </layout>
                        </item>
                        <item row="2" column="2">
-                        <widget class="QTableView" name="tableView_2">
+                        <widget class="QTableWidget" name="tableWidget">
                          <property name="minimumSize">
                           <size>
                            <width>350</width>
-                           <height>610</height>
+                           <height>520</height>
                           </size>
                          </property>
                          <property name="maximumSize">
@@ -2095,7 +2095,54 @@ Button */
                            <height>1220</height>
                           </size>
                          </property>
+                         <property name="baseSize">
+                          <size>
+                           <width>350</width>
+                           <height>520</height>
+                          </size>
+                         </property>
                         </widget>
+                       </item>
+                       <item row="4" column="0">
+                        <layout class="QHBoxLayout" name="horizontalLayout_7">
+                         <property name="sizeConstraint">
+                          <enum>QLayout::SetDefaultConstraint</enum>
+                         </property>
+                         <item>
+                          <widget class="QLabel" name="label">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>750</width>
+                             <height>80</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>1500</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Segoe UI</family>
+                             <pointsize>10</pointsize>
+                             <weight>50</weight>
+                             <italic>false</italic>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="text">
+                            <string>합계 : </string>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
                        </item>
                        <item row="4" column="1" colspan="3">
                         <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -2113,7 +2160,7 @@ Button */
                            <property name="minimumSize">
                             <size>
                              <width>250</width>
-                             <height>100</height>
+                             <height>80</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -2150,7 +2197,7 @@ Button */
                            <property name="minimumSize">
                             <size>
                              <width>250</width>
-                             <height>100</height>
+                             <height>80</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -2178,47 +2225,6 @@ Button */
                          </item>
                         </layout>
                        </item>
-                       <item row="4" column="0">
-                        <layout class="QHBoxLayout" name="horizontalLayout_7">
-                         <property name="sizeConstraint">
-                          <enum>QLayout::SetDefaultConstraint</enum>
-                         </property>
-                         <item>
-                          <widget class="QLabel" name="label">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>750</width>
-                             <height>100</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>1500</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Segoe UI</family>
-                             <pointsize>10</pointsize>
-                             <weight>50</weight>
-                             <italic>false</italic>
-                             <bold>false</bold>
-                            </font>
-                           </property>
-                           <property name="text">
-                            <string>합계 : </string>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </item>
                       </layout>
                      </widget>
                      <widget class="QWidget" name="widgets">
@@ -2241,122 +2247,6 @@ Button */
                        <property name="bottomMargin">
                         <number>10</number>
                        </property>
-                       <item>
-                        <widget class="QFrame" name="row_1">
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_16">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
-                          <item>
-                           <widget class="QFrame" name="frame_div_content_1">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>110</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>110</height>
-                             </size>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::NoFrame</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="verticalLayout_17">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QFrame" name="row_2">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>150</height>
-                          </size>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_19"/>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QFrame" name="row_3">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>150</height>
-                          </size>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_12">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
-                         </layout>
-                        </widget>
-                       </item>
                       </layout>
                      </widget>
                      <widget class="QWidget" name="new_page">
