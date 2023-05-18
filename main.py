@@ -167,6 +167,7 @@ class MainWindow(QMainWindow):
         # print(rows)
         self.makeTable(rows)
         self.conn.close() # 프로그램 종료할 때
+        
     # 테이플 위젯 안에 db내용 추출해서 삽입
     def makeTable(self, rows):
         self.ui.tableWidget.setRowCount(all_Row)
