@@ -33,6 +33,7 @@ widgets = None
 all_Row = 15
 all_Column = 5
 
+brezel=brezel_set=cheeseball=cider=Fanta=americano=blueberries=cheeseball=cider=coke=dinoagg=donuts=hotdog=peach=plum=pomegranate = 0
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -170,6 +171,8 @@ class MainWindow(QMainWindow):
         
     # 테이플 위젯 안에 db내용 추출해서 삽입
     def makeTable(self, rows):
+
+
         columnName = ['제품명','개수','가격','추가/빼기','제거']
 
         table = self.ui.tableWidget
@@ -219,6 +222,6 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("icon.ico"))
+    app.setWindowIcon(QIcon("bread.png"))
     window = MainWindow()
     sys.exit(app.exec())
