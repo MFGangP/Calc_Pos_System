@@ -61,7 +61,6 @@
     <font>
      <family>Segoe UI</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
     </font>
@@ -714,7 +713,6 @@ Button */
               <font>
                <family>Segoe UI Semibold</family>
                <pointsize>12</pointsize>
-               <weight>7</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -745,7 +743,6 @@ Button */
               <font>
                <family>Segoe UI</family>
                <pointsize>8</pointsize>
-               <weight>50</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -831,7 +828,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -895,7 +891,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -932,7 +927,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -969,7 +963,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1006,7 +999,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1043,7 +1035,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1107,7 +1098,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1243,7 +1233,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1377,7 +1366,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                     <stylestrategy>PreferDefault</stylestrategy>
@@ -1530,681 +1518,6 @@ Button */
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QGridLayout" name="gridLayout_4">
-                       <item row="2" column="0">
-                        <layout class="QGridLayout" name="gridLayout_3">
-                         <item row="2" column="1">
-                          <widget class="QPushButton" name="btn_americano">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>아이스 아메리카노</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="2">
-                          <widget class="QPushButton" name="btn_dinoagg">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>공룡알</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="2">
-                          <widget class="QPushButton" name="btn_Cola">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>콜라</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="2" column="3">
-                          <widget class="QPushButton" name="btn_pomegranate">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>석류</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="4">
-                          <widget class="QPushButton" name="btn_hotdog">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>핫도그</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="2" column="2">
-                          <widget class="QPushButton" name="btn_peach">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>따뜻한 아메리카노</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="0">
-                          <widget class="QPushButton" name="btn_blueberries">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>블루베리</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="0">
-                          <widget class="QPushButton" name="btn_brezel">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>꽈배기</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="1">
-                          <widget class="QPushButton" name="btn_coke">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="autoFillBackground">
-                            <bool>false</bool>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>복숭아</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="3">
-                          <widget class="QPushButton" name="btn_cider">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>사이다</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="4">
-                          <widget class="QPushButton" name="btn_Fanta">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>환타</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="3">
-                          <widget class="QPushButton" name="btn_donuts">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>도너츠</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="4" column="0">
-                          <widget class="QPushButton" name="btn_none">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string/>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="2" column="4">
-                          <widget class="QPushButton" name="btn_plum">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>매실</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="2" column="0">
-                          <widget class="QPushButton" name="btn_cheeseball">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>치즈볼</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="1">
-                          <widget class="QPushButton" name="btn_brezel_set">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>0</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="baseSize">
-                            <size>
-                             <width>120</width>
-                             <height>120</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>꽈배기 3개</string>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </item>
-                       <item row="2" column="2">
-                        <widget class="QTableWidget" name="tableWidget">
-                         <property name="minimumSize">
-                          <size>
-                           <width>220</width>
-                           <height>580</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>900</width>
-                           <height>1220</height>
-                          </size>
-                         </property>
-                         <property name="baseSize">
-                          <size>
-                           <width>220</width>
-                           <height>580</height>
-                          </size>
-                         </property>
-                         <property name="sizeAdjustPolicy">
-                          <enum>QAbstractScrollArea::AdjustToContents</enum>
-                         </property>
-                         <attribute name="horizontalHeaderCascadingSectionResizes">
-                          <bool>false</bool>
-                         </attribute>
-                        </widget>
-                       </item>
                        <item row="4" column="0">
                         <layout class="QHBoxLayout" name="horizontalLayout_7">
                          <property name="sizeConstraint">
@@ -2240,13 +1553,563 @@ Button */
                             <font>
                              <family>Segoe UI</family>
                              <pointsize>10</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
                            </property>
                            <property name="text">
                             <string>합계 : </string>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </item>
+                       <item row="2" column="0">
+                        <layout class="QGridLayout" name="gridLayout_3">
+                         <item row="0" column="2">
+                          <widget class="QPushButton" name="btn_dinoagg">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>공룡알</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="4">
+                          <widget class="QPushButton" name="btn_Fanta">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>환타</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="1">
+                          <widget class="QPushButton" name="btn_americano">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>아이스 아메리카노</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="2">
+                          <widget class="QPushButton" name="btn_hotamericano">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>따뜻한 아메리카노</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="4">
+                          <widget class="QPushButton" name="btn_plum">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>매실</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="1">
+                          <widget class="QPushButton" name="btn_peach">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>복숭아</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="2">
+                          <widget class="QPushButton" name="btn_coke">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>콜라</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="0">
+                          <widget class="QPushButton" name="btn_cheeseball">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>치즈볼</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="0">
+                          <widget class="QPushButton" name="btn_brezel">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>꽈배기</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="3">
+                          <widget class="QPushButton" name="btn_cider">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>사이다</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="3">
+                          <widget class="QPushButton" name="btn_donuts">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>도너츠</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="3">
+                          <widget class="QPushButton" name="btn_pomegranate">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>석류</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="4">
+                          <widget class="QPushButton" name="btn_hotdog">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>핫도그</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="1">
+                          <widget class="QPushButton" name="btn_brezel_set">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>꽈배기 3개</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="0">
+                          <widget class="QPushButton" name="btn_blueberries">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string>블루베리</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="4" column="0">
+                          <widget class="QPushButton" name="btn_none">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>70</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>250</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #bd93f9;</string>
+                           </property>
+                           <property name="text">
+                            <string/>
                            </property>
                           </widget>
                          </item>
@@ -2287,7 +2150,6 @@ Button */
                             <font>
                              <family>Segoe UI</family>
                              <pointsize>10</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2330,7 +2192,6 @@ Button */
                             <font>
                              <family>Segoe UI</family>
                              <pointsize>10</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2344,6 +2205,75 @@ Button */
                           </widget>
                          </item>
                         </layout>
+                       </item>
+                       <item row="2" column="2">
+                        <widget class="QTableWidget" name="tableWidget">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>220</width>
+                           <height>580</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>900</width>
+                           <height>1220</height>
+                          </size>
+                         </property>
+                         <property name="baseSize">
+                          <size>
+                           <width>220</width>
+                           <height>580</height>
+                          </size>
+                         </property>
+                         <property name="sizeAdjustPolicy">
+                          <enum>QAbstractScrollArea::AdjustToContents</enum>
+                         </property>
+                         <attribute name="horizontalHeaderCascadingSectionResizes">
+                          <bool>false</bool>
+                         </attribute>
+                         <column>
+                          <property name="text">
+                           <string>제품명</string>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <stylestrategy>PreferDefault</stylestrategy>
+                           </font>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>가격</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>개수</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>총 가격</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>추가/제거</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>삭제</string>
+                          </property>
+                         </column>
+                        </widget>
                        </item>
                       </layout>
                      </widget>
@@ -2432,7 +2362,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>-1</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>

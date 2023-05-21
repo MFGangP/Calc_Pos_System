@@ -27,13 +27,11 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
 conn = None
-curIdx = 0 # 현재 데이터 PK
 widgets = None
-
+global rows
 all_Row = 15
-all_Column = 5
+all_Column = 6
 
-brezel=brezel_set=cheeseball=cider=Fanta=americano=blueberries=cheeseball=cider=coke=dinoagg=donuts=hotdog=peach=plum=pomegranate = 0
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -43,9 +41,9 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow() # Ui_MainWindow ui_main.py
         self.ui.setupUi(self)
         global widgets # widgets 
+        global rows
         widgets = self.ui
 
-        self.initDB()
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ��������̷� ����Ŵϱ� false�� ����
         # ///////////////////////////////////////////////////////////////
@@ -81,6 +79,21 @@ class MainWindow(QMainWindow):
         widgets.btn_chart.clicked.connect(self.buttonClick)
         widgets.btn_save.clicked.connect(self.buttonClick)
 
+        widgets.btn_brezel.clicked.connect(self.menu_Clicked)
+        widgets.btn_brezel_set.clicked.connect(self.menu_Clicked)
+        widgets.btn_dinoagg.clicked.connect(self.menu_Clicked)
+        widgets.btn_donuts.clicked.connect(self.menu_Clicked)
+        widgets.btn_hotdog.clicked.connect(self.menu_Clicked)
+        widgets.btn_cheeseball.clicked.connect(self.menu_Clicked)
+        widgets.btn_americano.clicked.connect(self.menu_Clicked)
+        widgets.btn_hotamericano.clicked.connect(self.menu_Clicked)
+        widgets.btn_blueberries.clicked.connect(self.menu_Clicked)
+        widgets.btn_peach.clicked.connect(self.menu_Clicked)
+        widgets.btn_plum.clicked.connect(self.menu_Clicked)
+        widgets.btn_pomegranate.clicked.connect(self.menu_Clicked)
+        widgets.btn_coke.clicked.connect(self.menu_Clicked)
+        widgets.btn_cider.clicked.connect(self.menu_Clicked)
+        widgets.btn_Fanta.clicked.connect(self.menu_Clicked)
         # SHOW APP
         # ///////////////////////////////////////////////////////////////
         self.show()
@@ -102,6 +115,8 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         widgets.stackedWidget.setCurrentWidget(widgets.home)
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
+
+        rows = self.initDB()
 
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
@@ -135,6 +150,85 @@ class MainWindow(QMainWindow):
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
 
+    def menu_Clicked(self):
+        btnName = self.sender().objectName()
+        button_row = 0
+        rowPlaceNum = 0
+        colPlaceNum = 0
+        prdCount = 0
+        sum_Result = 0
+
+        for i in range(len(rows)):
+            if self.sender().text() != ((rows[i])[1]):
+                i+=1
+            elif self.sender().text() == ((rows[i])[1]):
+                button_row = ((rows[i])[0] - 1)
+                break
+            else:
+                 pass
+
+        if self.ui.tableWidget.item(rowPlaceNum, colPlaceNum) != None:
+            for _ in range(len(rows)):
+                if self.ui.tableWidget.item(rowPlaceNum, colPlaceNum) == None:
+                        prdCount += 1 # 제품 개수 1 증가
+                        prdTotalPrice = prdCount * int((rows[rowPlaceNum])[2]) # 총 가격
+                        # 1열 제품명
+                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem((rows[button_row])[1]))
+                        colPlaceNum += 1
+                        # 2열 제품 가격
+                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str((rows[button_row])[2])))
+                        colPlaceNum += 1
+                        # 3열 제품 개수
+                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdCount)))
+                        colPlaceNum += 1
+                        # 4열 제품 총 가격
+                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
+                        break
+                elif self.ui.tableWidget.item(rowPlaceNum, colPlaceNum).text() == str((rows[button_row])[1]):
+                        # 초기화된 개수 갱신
+                        prdCount = int(self.ui.tableWidget.item(rowPlaceNum, colPlaceNum + 2).text()) + 1
+                        # 초기화된 총 가격 갱신
+                        prdTotalPrice = str(int(prdCount) * int((rows[rowPlaceNum])[2]))
+                        # 3열 제품 개수 갱신
+                        colPlaceNum = 2
+                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdCount)))
+                        colPlaceNum = 3
+                        # 4열 제품 총 가격 갱신
+                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
+
+                        rowPlaceNum = 0 # 행
+                        colPlaceNum = 0 # 열
+                        prdCount = 0 # 제품 개수
+                        break
+                elif self.ui.tableWidget.item(rowPlaceNum, colPlaceNum) != None:
+                        rowPlaceNum += 1
+                else:
+                        break
+        else:
+            if self.ui.tableWidget.item(rowPlaceNum, colPlaceNum) == None:
+                prdCount += 1 # 제품 개수 1 증가
+                prdTotalPrice = prdCount * int((rows[rowPlaceNum])[2]) # 총 가격
+                # 1열 제품명
+                self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem((rows[button_row])[1]))
+                colPlaceNum += 1
+                # 2열 제품 가격
+                self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str((rows[button_row])[2])))
+                colPlaceNum += 1
+                # 3열 제품 개수
+                self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdCount)))
+                colPlaceNum += 1
+                # 4열 제품 총 가격
+                self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
+
+        print (f"Save {btnName} clicked!")
+        for i in range(len(rows)):
+            if self.ui.tableWidget.item(i, 3)!= None:
+                sum_Result += int(self.ui.tableWidget.item(i, 3).text())
+            else:
+                break
+        self.ui.label.setText('합계 : ' + str(sum_Result))     
+        
+        
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):
@@ -165,63 +259,37 @@ class MainWindow(QMainWindow):
         cur.execute(query)
         rows = cur.fetchall()
 
-        # print(rows)
-        self.makeTable(rows)
-        self.conn.close() # 프로그램 종료할 때
-        
-    # 테이플 위젯 안에 db내용 추출해서 삽입
-    def makeTable(self, rows):
-
-
-        columnName = ['제품명','개수','가격','추가/빼기','제거']
-
+        # columnName = ['제품명','개수','가격','추가/빼기','제거']
         table = self.ui.tableWidget
-        # header = table.horizontalHeader()
-        # twidth = header.width()
-
-        # width = []
-        # for column in range(header.count()):
-        #     header.setSectionResizeMode(column, QHeaderView.ResizeToContents)
-        #     width.append(header.sectionSize(column))
-
-        # wfactor = twidth / sum(width)
-        # for column in range(header.count()):
-        #     header.setSectionResizeMode(column, QHeaderView.Interactive)
-        #     header.resizeSection(column, width[column]*wfactor)
 
         table.setRowCount(all_Row)
         table.setColumnCount(all_Column)
         
-        table.setColumnWidth(0, self.width()*30/100)
-        table.setColumnWidth(1, self.width()*1/100)
+        table.setColumnWidth(0, self.width()*25/100)
+        table.setColumnWidth(1, self.width()*3/100)
         table.setColumnWidth(2, self.width()*5/100)
         table.setColumnWidth(3, self.width()*5/100)
-        table.setColumnWidth(4, self.width()*1/100) # 600
-        
-        for i in range(len(columnName)):
-            table.setHorizontalHeaderItem(i, QTableWidgetItem(columnName[i]))
+        table.setColumnWidth(5, self.width()*3/100)
+        table.setColumnWidth(4, self.width()*3/100) # 600
 
+        #'번호' = AI(불필요),'제품명','개수','가격','추가/빼기','제거'
         header = table.horizontalHeader()       
         header.setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
         header.setSectionResizeMode(1, QHeaderView.ResizeMode.Fixed)
         header.setSectionResizeMode(2, QHeaderView.ResizeMode.Fixed)
         header.setSectionResizeMode(3, QHeaderView.ResizeMode.Fixed)
         header.setSectionResizeMode(4, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(5, QHeaderView.ResizeMode.Fixed)
 
-        #'번호' = AI(불필요),'제품명','개수','가격','추가/빼기','제거'
-        table.horizontalHeader().cascadingSectionResizes()
+        header.cascadingSectionResizes()
+        
+        self.conn.close() # 프로그램 종료할 때
 
-        for i, row in enumerate(rows):
-            # row[0] = AI  row[1] ~ row[4]
-            prdName = row[1]
-            prdPrice = row[2]
-            
-            table.setItem(i, 0, QTableWidgetItem(prdName))
-            table.setItem(i, 1, QTableWidgetItem(str(prdPrice)))
-
+        return rows
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("bread.png"))
     window = MainWindow()
     sys.exit(app.exec())
+ 
