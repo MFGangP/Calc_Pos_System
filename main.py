@@ -100,7 +100,7 @@ class MainWindow(QMainWindow):
 
         # SET CUSTOM THEME
         # ///////////////////////////////////////////////////////////////
-        useCustomTheme = True
+        useCustomTheme = False
         themeFile = "themes\py_dracula_light.qss"
 
         # SET THEME AND HACKS
@@ -267,7 +267,7 @@ class MainWindow(QMainWindow):
         
         table.setColumnWidth(0, self.width()*25/100)
         table.setColumnWidth(1, self.width()*3/100)
-        table.setColumnWidth(2, self.width()*5/100)
+        table.setColumnWidth(2, self.width()*2/100)
         table.setColumnWidth(3, self.width()*5/100)
         table.setColumnWidth(5, self.width()*3/100)
         table.setColumnWidth(4, self.width()*3/100) # 600
