@@ -3,18 +3,6 @@
 SET APP STYLESHEET - FULL STYLES HERE
 DARK THEME - DRACULA COLOR BASED
 
-# BY: WANDERSON M.PIMENTA
-# PROJECT MADE WITH: Qt Designer and PySide6
-# V: 1.0.0
-#
-# This project can be used freely for all uses, as long as they maintain the
-# respective credits only in the Python scripts, any information in the visual
-# interface (GUI) can be modified without any implication.
-#
-# There are limitations on Qt licenses if you want to use your products
-# commercially, I recommend reading them on the official website:
-# https://doc.qt.io/qtforpython/licenses.html
-
 ///////////////////////////////////////////////////////////////////////////////////////////////// */
 
 QWidget{
@@ -52,7 +40,7 @@ Left Menu */
 }
 #topLogo {
 	background-color: rgb(33, 37, 43);
-	background-image: url(:/images/images/images/PyDracula.png);
+	background-image: url(:/images/images/images/bread40.png);
 	background-position: centered;
 	background-repeat: no-repeat;
 }
@@ -488,6 +476,7 @@ QCommandLinkButton {
 	color: rgb(255, 121, 198);
 	border-radius: 5px;
 	padding: 5px;
+	color: rgb(255, 170, 255);
 }
 QCommandLinkButton:hover {	
 	color: rgb(255, 170, 255);
@@ -513,6 +502,4 @@ Button */
 	background-color: rgb(35, 40, 49);
 	border: 2px solid rgb(43, 50, 61);
 }
-
-
 

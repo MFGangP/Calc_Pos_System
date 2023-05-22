@@ -22,6 +22,7 @@ import pymysql
 # ///////////////////////////////////////////////////////////////
 from modules import *
 from widgets import *
+
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
@@ -40,6 +41,7 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow() # Ui_MainWindow ui_main.py
         self.ui.setupUi(self)
+        
         global widgets # widgets 
         global rows
         widgets = self.ui

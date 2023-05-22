@@ -56,12 +56,15 @@
   <property name="windowTitle">
    <string>저구명품꽈배기 계산 키오스크</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/images/images/images/bread40.png</normaloff>:/images/images/images/bread40.png</iconset>
+  </property>
   <widget class="QWidget" name="styleSheet">
    <property name="font">
     <font>
      <family>Segoe UI</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
     </font>
@@ -694,9 +697,6 @@ Button */
                <height>42</height>
               </size>
              </property>
-             <property name="styleSheet">
-              <string notr="true">image: url(:/images/images/images/bread40.png);</string>
-             </property>
              <property name="frameShape">
               <enum>QFrame::NoFrame</enum>
              </property>
@@ -717,7 +717,6 @@ Button */
               <font>
                <family>Segoe UI Semibold</family>
                <pointsize>12</pointsize>
-               <weight>7</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -748,7 +747,6 @@ Button */
               <font>
                <family>Segoe UI</family>
                <pointsize>8</pointsize>
-               <weight>50</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -834,7 +832,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -898,7 +895,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -935,7 +931,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -972,7 +967,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1009,7 +1003,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1046,7 +1039,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1110,7 +1102,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1246,7 +1237,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1316,7 +1306,7 @@ Button */
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset>
                     <normaloff>:/icons/images/icons/icon_settings.png</normaloff>:/icons/images/icons/icon_settings.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1351,7 +1341,7 @@ Button */
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset>
                     <normaloff>:/icons/images/icons/icon_minimize.png</normaloff>:/icons/images/icons/icon_minimize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1380,7 +1370,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                     <stylestrategy>PreferDefault</stylestrategy>
@@ -1396,7 +1385,7 @@ Button */
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset>
                     <normaloff>:/icons/images/icons/icon_maximize.png</normaloff>:/icons/images/icons/icon_maximize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1431,7 +1420,7 @@ Button */
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset>
                     <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1568,7 +1557,6 @@ Button */
                             <font>
                              <family>Segoe UI</family>
                              <pointsize>10</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2132,7 +2120,6 @@ Button */
                             <font>
                              <family>Segoe UI</family>
                              <pointsize>10</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2175,7 +2162,6 @@ Button */
                             <font>
                              <family>Segoe UI</family>
                              <pointsize>10</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2346,7 +2332,6 @@ Button */
                    <font>
                     <family>Segoe UI</family>
                     <pointsize>-1</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
