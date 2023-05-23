@@ -275,6 +275,7 @@ class MainWindow(QMainWindow):
     def del_Row_Button_Click(self,rowPlaceNum):
         btnName = self.sender().objectName()
 
+        print (f"Save {btnName} clicked!")
         self.ui.tableWidget.removeRow(rowPlaceNum)
 
     # RESIZE EVENTS
