@@ -1549,13 +1549,13 @@ Button */
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>750</width>
+                             <width>350</width>
                              <height>40</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>1500</width>
+                             <width>650</width>
                              <height>150</height>
                             </size>
                            </property>
@@ -1599,8 +1599,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1633,8 +1633,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1667,8 +1667,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1704,8 +1704,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1738,8 +1738,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1772,8 +1772,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1806,8 +1806,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1840,8 +1840,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1874,8 +1874,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1908,8 +1908,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1942,8 +1942,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -1976,8 +1976,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -2010,8 +2010,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -2044,8 +2044,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -2078,8 +2078,8 @@ Button */
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>200</width>
-                             <height>200</height>
+                             <width>150</width>
+                             <height>150</height>
                             </size>
                            </property>
                            <property name="sizeIncrement">
@@ -2223,11 +2223,6 @@ Button */
                          <attribute name="horizontalHeaderCascadingSectionResizes">
                           <bool>false</bool>
                          </attribute>
-                         <row>
-                          <property name="text">
-                           <string>새 열</string>
-                          </property>
-                         </row>
                          <column>
                           <property name="text">
                            <string>제품명</string>
@@ -2263,11 +2258,6 @@ Button */
                            <string>삭제</string>
                           </property>
                          </column>
-                         <item row="0" column="4">
-                          <property name="text">
-                           <string/>
-                          </property>
-                         </item>
                         </widget>
                        </item>
                       </layout>
