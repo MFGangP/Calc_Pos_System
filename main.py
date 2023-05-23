@@ -41,11 +41,10 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow() # Ui_MainWindow ui_main.py
         self.ui.setupUi(self)
-        
         global widgets # widgets 
         global rows
         widgets = self.ui
-
+        
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ��������̷� ����Ŵϱ� false�� ����
         # ///////////////////////////////////////////////////////////////
@@ -63,7 +62,7 @@ class MainWindow(QMainWindow):
         # UIFunctions
         # ///////////////////////////////////////////////////////////////
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
-
+        
         # SET UI DEFINITIONS
         # ///////////////////////////////////////////////////////////////
         UIFunctions.uiDefinitions(self)
@@ -96,13 +95,14 @@ class MainWindow(QMainWindow):
         widgets.btn_coke.clicked.connect(self.menu_Clicked)
         widgets.btn_cider.clicked.connect(self.menu_Clicked)
         widgets.btn_Fanta.clicked.connect(self.menu_Clicked)
+
         # SHOW APP
         # ///////////////////////////////////////////////////////////////
         self.show()
 
         # SET CUSTOM THEME
         # ///////////////////////////////////////////////////////////////
-        useCustomTheme = False
+        useCustomTheme = True
         themeFile = "themes\py_dracula_light.qss"
 
         # SET THEME AND HACKS
@@ -117,7 +117,8 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         widgets.stackedWidget.setCurrentWidget(widgets.home)
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
-
+  
+        # DB 접속
         rows = self.initDB()
 
     # BUTTONS CLICK
@@ -152,14 +153,41 @@ class MainWindow(QMainWindow):
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
 
+    # def make_Add_Sub_Button(self):
+    #     # 추가/삭제 레이아웃 
+    #     # horizental box를 담을 위젯 생성
+    #     cellWidget = QWidget()
+    #     # 버튼을 담을 horizental box 생성
+    #     layout = QHBoxLayout(cellWidget)
+    #     # 버튼 생성
+    #     btn_Add = QPushButton()
+    #     btn_Add.setMinimumSize(QSize(60, 20))
+    #     btn_Add.setMaximumSize(QSize(60, 20))
+    #     btn_Add.setText('추가')
+    #     # 버튼 생성
+    #     btn_Sub = QPushButton()
+    #     btn_Sub.setMinimumSize(QSize(60, 20))
+    #     btn_Sub.setMaximumSize(QSize(60, 20))
+    #     btn_Sub.setText('제거')
+    #     # 레이아웃에 버튼 삽입
+    #     layout.addWidget(btn_Add)
+    #     layout.addWidget(btn_Sub)
+    #     # 버튼 가운데로 세팅 하기 위해 마진 설정
+    #     layout.setContentsMargins(0, 0, 0, 0)
+    #     # 위젯에 레이아웃 담기
+    #     cellWidget.setLayout(layout)
+    #     # 만들어진 위젯을 리턴
+    #     return cellWidget
+
     def menu_Clicked(self):
         btnName = self.sender().objectName()
+
         button_row = 0
         rowPlaceNum = 0
         colPlaceNum = 0
         prdCount = 0
         sum_Result = 0
-
+        
         for i in range(len(rows)):
             if self.sender().text() != ((rows[i])[1]):
                 i+=1
@@ -185,7 +213,14 @@ class MainWindow(QMainWindow):
                         colPlaceNum += 1
                         # 4열 제품 총 가격
                         self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
+                        # 5열 갯수 추가/제거 버튼 추가
+                        colPlaceNum += 1
+                        self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, UIFunctions.make_Add_Sub_Button(self))
+                        # 6열 행 제거 버튼 추가
+                        colPlaceNum += 1
+                        self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, UIFunctions.make_Del_Button(self))
                         break
+                
                 elif self.ui.tableWidget.item(rowPlaceNum, colPlaceNum).text() == str((rows[button_row])[1]):
                         # 초기화된 개수 갱신
                         prdCount = int(self.ui.tableWidget.item(rowPlaceNum, colPlaceNum + 2).text()) + 1
@@ -221,6 +256,12 @@ class MainWindow(QMainWindow):
                 colPlaceNum += 1
                 # 4열 제품 총 가격
                 self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
+                # 5열 갯수 추가/제거 버튼 추가
+                colPlaceNum += 1
+                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, UIFunctions.make_Add_Sub_Button(self))
+                # 6열 행 제거 버튼 추가
+                colPlaceNum += 1
+                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, UIFunctions.make_Del_Button(self))
 
         print (f"Save {btnName} clicked!")
         for i in range(len(rows)):
@@ -231,6 +272,11 @@ class MainWindow(QMainWindow):
         self.ui.label.setText('합계 : ' + str(sum_Result))     
         
         
+    def del_Row_Button_Click(self,rowPlaceNum):
+        btnName = self.sender().objectName()
+
+        self.ui.tableWidget.removeRow(rowPlaceNum)
+
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):
@@ -267,12 +313,12 @@ class MainWindow(QMainWindow):
         table.setRowCount(all_Row)
         table.setColumnCount(all_Column)
         
-        table.setColumnWidth(0, self.width()*25/100)
-        table.setColumnWidth(1, self.width()*3/100)
-        table.setColumnWidth(2, self.width()*2/100)
+        table.setColumnWidth(0, self.width()*13/100)
+        table.setColumnWidth(1, self.width()*4/100)
+        table.setColumnWidth(2, self.width()*3/100)
         table.setColumnWidth(3, self.width()*5/100)
-        table.setColumnWidth(5, self.width()*3/100)
-        table.setColumnWidth(4, self.width()*3/100) # 600
+        table.setColumnWidth(4, self.width()*15/100) # 600
+        table.setColumnWidth(5, self.width()*2/100)
 
         #'번호' = AI(불필요),'제품명','개수','가격','추가/빼기','제거'
         header = table.horizontalHeader()       

@@ -264,5 +264,52 @@ class UIFunctions(MainWindow):
             self.top_grip.setGeometry(0, 0, self.width(), 10)
             self.bottom_grip.setGeometry(0, self.height() - 10, self.width(), 10)
 
+    def make_Add_Sub_Button(self):
+        # 추가/삭제 레이아웃 
+        # horizental box를 담을 위젯 생성
+        cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        layout = QHBoxLayout(cellWidget)
+        # 버튼 생성
+        btn_Add = QPushButton()
+        btn_Add.setMinimumSize(QSize(70, 26))
+        btn_Add.setMaximumSize(QSize(70, 26))
+        btn_Add.setText('추가')
+        # 버튼 생성
+        btn_Sub = QPushButton()
+        btn_Sub.setMinimumSize(QSize(70, 26))
+        btn_Sub.setMaximumSize(QSize(70, 26))
+        btn_Sub.setText('제거')
+        # 레이아웃에 버튼 삽입
+        layout.addWidget(btn_Add)
+        layout.addWidget(btn_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        cellWidget.setLayout(layout)
+        # 만들어진 위젯을 리턴
+        return cellWidget
+    
+    def make_Del_Button(self):
+        # 추가/삭제 레이아웃 
+        # horizental box를 담을 위젯 생성
+        cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        layout = QHBoxLayout(cellWidget)
+        # 버튼 생성
+        btn_Add = QPushButton()
+        btn_Add.setMinimumSize(QSize(30, 26))
+        btn_Add.setMaximumSize(QSize(30, 26))
+        btn_Add.setText('X')
+        # 레이아웃에 버튼 삽입
+        layout.addWidget(btn_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        cellWidget.setLayout(layout)
+        # 만들어진 위젯을 리턴
+        print(f'Button "{cellWidget}" pressed!')
+        return cellWidget
+
     # ///////////////////////////////////////////////////////////////
     # END - GUI DEFINITIONS
