@@ -742,7 +742,6 @@ class Ui_MainWindow(object):
 
         self.stackedWidget.setCurrentIndex(0)
 
-
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 

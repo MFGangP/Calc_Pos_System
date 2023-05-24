@@ -3,13 +3,16 @@
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
 from main import *
-
 # GLOBALS
 # ///////////////////////////////////////////////////////////////
 GLOBAL_STATE = False
 GLOBAL_TITLE_BAR = True
 
 class UIFunctions(MainWindow):
+
+    def __init__(self):
+        super().__init__()
+
     # MAXIMIZE/RESTORE
     # ///////////////////////////////////////////////////////////////
     def maximize_restore(self):
@@ -264,7 +267,7 @@ class UIFunctions(MainWindow):
             self.top_grip.setGeometry(0, 0, self.width(), 10)
             self.bottom_grip.setGeometry(0, self.height() - 10, self.width(), 10)
 
-    def make_Add_Sub_Button(self):
+    def make_Add_Sub_Button(self, rowPlaceNum, colPlaceNum):
         # 추가/삭제 레이아웃 
         # horizental box를 담을 위젯 생성
         cellWidget = QWidget()
@@ -275,11 +278,15 @@ class UIFunctions(MainWindow):
         btn_Add.setMinimumSize(QSize(70, 26))
         btn_Add.setMaximumSize(QSize(70, 26))
         btn_Add.setText('추가')
+        # 새로 만든 버튼 오브젝트 네임 설정
+        btn_Add.setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Add")
         # 버튼 생성
         btn_Sub = QPushButton()
         btn_Sub.setMinimumSize(QSize(70, 26))
         btn_Sub.setMaximumSize(QSize(70, 26))
         btn_Sub.setText('제거')
+        # 새로 만든 버튼 오브젝트 네임 설정
+        btn_Sub.setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}Sub")
         # 레이아웃에 버튼 삽입
         layout.addWidget(btn_Add)
         layout.addWidget(btn_Sub)
@@ -290,25 +297,28 @@ class UIFunctions(MainWindow):
         # 만들어진 위젯을 리턴
         return cellWidget
     
-    def make_Del_Button(self):
+    def make_Del_Button(self, rowPlaceNum, colPlaceNum):
         # 추가/삭제 레이아웃 
         # horizental box를 담을 위젯 생성
         cellWidget = QWidget()
         # 버튼을 담을 horizental box 생성
         layout = QHBoxLayout(cellWidget)
         # 버튼 생성
-        btn_Add = QPushButton()
-        btn_Add.setMinimumSize(QSize(30, 26))
-        btn_Add.setMaximumSize(QSize(30, 26))
-        btn_Add.setText('X')
+        btn_Del = QPushButton()
+        btn_Del.setMinimumSize(QSize(30, 26))
+        btn_Del.setMaximumSize(QSize(30, 26))
+        btn_Del.setText('X')
+        # # 새로 만든 버튼 오브젝트 네임 설정
+        # btn_Del.setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Del")
+        # btn_Del.clicked.connect(MainWindow.row_Button_Click)
         # 레이아웃에 버튼 삽입
-        layout.addWidget(btn_Add)
+        layout.addWidget(btn_Del)
         # 버튼 가운데로 세팅 하기 위해 마진 설정
         layout.setContentsMargins(0, 0, 0, 0)
         # 위젯에 레이아웃 담기
         cellWidget.setLayout(layout)
         # 만들어진 위젯을 리턴
-        print(f'Button "{cellWidget}" pressed!')
+        print(f'Make Button "{btn_Del.objectName()}"!')
         return cellWidget
 
     # ///////////////////////////////////////////////////////////////
