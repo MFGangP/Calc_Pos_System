@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
         global widgets # widgets 
         global rows
         widgets = self.ui
-        
+
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ��������̷� ����Ŵϱ� false�� ����
         # ///////////////////////////////////////////////////////////////
@@ -96,50 +96,53 @@ class MainWindow(QMainWindow):
         widgets.btn_cider.clicked.connect(self.menu_Clicked)
         widgets.btn_Fanta.clicked.connect(self.menu_Clicked)
 
-        # widgets.Btn_0_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_1_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_2_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_3_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_4_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_5_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_6_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_7_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_8_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_9_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_10_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_11_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_12_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_13_4_Add.clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_0_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_1_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_2_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_3_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_4_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_5_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_6_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_7_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_8_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_9_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_10_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_11_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_12_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_13_4_Add").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_14_4_Add").clicked.connect(self.row_Button_Click)
 
-        # widgets.Btn_0_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_1_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_2_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_3_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_4_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_5_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_6_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_7_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_8_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_9_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_10_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_11_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_12_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_13_4_Sub.clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_0_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_1_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_2_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_3_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_4_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_5_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_6_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_7_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_8_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_9_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_10_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_11_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_12_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_13_4_Sub").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_14_4_Sub").clicked.connect(self.row_Button_Click)
 
-        # widgets.Btn_0_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_1_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_2_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_3_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_4_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_5_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_6_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_7_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_8_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_9_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_10_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_11_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_12_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.Btn_13_5_Del.clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_0_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_1_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_2_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_3_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_4_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_5_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_6_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_7_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_8_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_9_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_10_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_11_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_12_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_13_5_Del").clicked.connect(self.row_Button_Click)
+        # widgets.QPushButton("Btn_14_5_Del").clicked.connect(self.row_Button_Click)
 
         # SHOW APP
         # ///////////////////////////////////////////////////////////////
@@ -303,19 +306,26 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
                 # 5열 갯수 추가/제거 버튼 추가
                 colPlaceNum += 1
-                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, UIFunctions.make_Add_Sub_Button(self, rowPlaceNum, colPlaceNum))
+                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Add_Sub_Button(rowPlaceNum, colPlaceNum)[0])
+                self.ui.tableWidget.cellWidget(rowPlaceNum, colPlaceNum).layout().addWidget = self.make_Add_Sub_Button(rowPlaceNum, colPlaceNum)[1].setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Add")
+                self.ui.tableWidget.cellWidget(rowPlaceNum, colPlaceNum).layout().addWidget = self.make_Add_Sub_Button(rowPlaceNum, colPlaceNum)[2].setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Sub")
                 # 6열 행 제거 버튼 추가
                 colPlaceNum += 1
-                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, UIFunctions.make_Del_Button(self, rowPlaceNum, colPlaceNum))
-                self.ui.tableWidget.cellWidget().layout().item()
-                # (f"Btn_{rowPlaceNum}_{colPlaceNum}_Del")
+                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Del_Button(rowPlaceNum, colPlaceNum)[0])
+                self.ui.tableWidget.cellWidget(rowPlaceNum, colPlaceNum).layout().addChildWidget = self.make_Del_Button(rowPlaceNum, colPlaceNum)[1].setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Del")
+
 
         print (f"Save {btnName} clicked!")
+
+        QPushButton(f"Btn_{rowPlaceNum}_{colPlaceNum}_Add").clicked.connect(self.row_Button_Click())
+        QPushButton(f"Btn_{rowPlaceNum}_{colPlaceNum}_Sub").clicked.connect(self.row_Button_Click())
+
         for i in range(len(rows)):
             if self.ui.tableWidget.item(i, 3)!= None:
                 sum_Result += int(self.ui.tableWidget.item(i, 3).text())
             else:
                 break
+
         self.ui.label.setText('합계 : ' + str(sum_Result))     
         
     def row_Button_Click(self):
@@ -327,7 +337,7 @@ class MainWindow(QMainWindow):
         colPlaceNum = 0
         prdCount = 0
 
-        if self.tableWidget.item(rowPlaceNum, colPlaceNum) != None:
+        if self.ui.tableWidget.item(rowPlaceNum, colPlaceNum) != None:
             if (btnName == f"Btn_{rowPlaceNum}_{colPlaceNum}_Del"):
                 self.ui.tableWidget.removeRow(rowPlaceNum)
             elif (btnName == f"Btn_{rowPlaceNum}_{colPlaceNum}_Add"):
@@ -348,8 +358,63 @@ class MainWindow(QMainWindow):
         
             elif (btnName == f"Btn_{rowPlaceNum}_{colPlaceNum}_Sub"):
                 return  
+            
         print(f"Button {btnName} clicked!")
 
+    def make_Add_Sub_Button(self, rowPlaceNum, colPlaceNum):
+        # 추가/삭제 레이아웃 
+        # horizental box를 담을 위젯 생성
+        cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        layout = QHBoxLayout(cellWidget)
+        # 버튼 생성
+        btn_Add = QPushButton()
+        btn_Add.setMinimumSize(QSize(70, 26))
+        btn_Add.setMaximumSize(QSize(70, 26))
+        btn_Add.setText('추가')
+        # # 새로 만든 버튼 오브젝트 네임 설정
+        # btn_Add.setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Add")
+        # 버튼 생성
+        btn_Sub = QPushButton()
+        btn_Sub.setMinimumSize(QSize(70, 26))
+        btn_Sub.setMaximumSize(QSize(70, 26))
+        btn_Sub.setText('제거')
+        # # 새로 만든 버튼 오브젝트 네임 설정
+        # btn_Sub.setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}Sub")
+        # 레이아웃에 버튼 삽입
+        # layout.addWidget(btn_Add)
+        # layout.addWidget(btn_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        cellWidget.setLayout(layout)
+        # 만들어진 위젯을 리턴
+        return cellWidget, btn_Add, btn_Sub
+    
+    def make_Del_Button(self, rowPlaceNum, colPlaceNum):
+        # 추가/삭제 레이아웃 
+        # horizental box를 담을 위젯 생성
+        cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        layout = QHBoxLayout(cellWidget)
+        # 버튼 생성
+        btn_Del = QPushButton()
+        btn_Del.setMinimumSize(QSize(30, 26))
+        btn_Del.setMaximumSize(QSize(30, 26))
+        btn_Del.setText('X')
+        # # 새로 만든 버튼 오브젝트 네임 설정
+        # btn_Del.setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Del")
+        # btn_Del.clicked.connect(MainWindow.row_Button_Click)
+        # 레이아웃에 버튼 삽입
+        layout.addWidget(btn_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        cellWidget.setLayout(layout)
+        # 만들어진 위젯을 리턴
+        print(f'Make Button "{btn_Del}"!')
+        return cellWidget, btn_Del
+    
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):

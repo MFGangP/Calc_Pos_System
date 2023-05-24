@@ -675,6 +675,9 @@ class Ui_MainWindow(object):
         self.tableView = QTableView(self.new_page)
         self.tableView.setObjectName(u"tableView")
 
+        # self.tableWidget.cellWidget(0, 4).layout().addChildWidget = QPushButton("Btn_0_4_Add")
+        # self.tableWidget.cellWidget(0, 4).layout().QPushButton("Btn_0_4_Del")
+
         self.verticalLayout_20.addWidget(self.tableView)
 
         self.stackedWidget.addWidget(self.new_page)
