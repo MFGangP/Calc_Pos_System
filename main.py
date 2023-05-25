@@ -96,6 +96,22 @@ class MainWindow(QMainWindow):
         widgets.btn_cider.clicked.connect(self.menu_Clicked)
         widgets.btn_Fanta.clicked.connect(self.menu_Clicked)
 
+# 2023.05.27에 찾아봐야 할 조사식
+        # Del_Test = []
+        # Del_Test[0] = self.ui.tableWidget.cellWidget(0, 5).children()[1]
+        # Del_Test[0].clicked.connect(self.row_Button_Click)
+
+        # self.ui.tableWidget.cellWidget(0, 4).children()
+        # self.ui.tableWidget.cellWidget(0, 4).children()[1] Add 버튼
+        # self.ui.tableWidget.cellWidget(0, 4).children()[2] Sub 버튼
+
+        # self.ui.tableWidget.cellWidget(0, 5).children()[1] Del 버튼
+        # QPushButton("Btn_0_4_Add")
+        # QPushButton("Btn_0_4_Sub")
+        # QPushButton("Btn_0_5_Del")
+
+
+
         # widgets.btn_0_4_Add.clicked.connect(self.row_Button_Click)
         # widgets.btn_1_4_Add.clicked.connect(self.row_Button_Click)
         # widgets.btn_2_4_Add.clicked.connect(self.row_Button_Click)
@@ -319,6 +335,7 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Del_Button())
 
 
+
         print (f"Save {btnName} clicked!")
 
         # QPushButton(f"Btn_{rowPlaceNum}_{colPlaceNum}_Add").clicked.connect(self.row_Button_Click())
@@ -372,22 +389,22 @@ class MainWindow(QMainWindow):
         # 버튼을 담을 horizental box 생성
         layout = QHBoxLayout(cellWidget)
         # 버튼 생성
-        btn_Add = QPushButton()
-        btn_Add.setMinimumSize(QSize(70, 26))
-        btn_Add.setMaximumSize(QSize(70, 26))
-        btn_Add.setText('추가')
+        self.btn_Add = QPushButton()
+        self.btn_Add.setMinimumSize(QSize(70, 26))
+        self.btn_Add.setMaximumSize(QSize(70, 26))
+        self.btn_Add.setText('추가')
         # # 새로 만든 버튼 오브젝트 네임 설정
         # btn_Add.setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Add")
         # 버튼 생성
-        btn_Sub = QPushButton()
-        btn_Sub.setMinimumSize(QSize(70, 26))
-        btn_Sub.setMaximumSize(QSize(70, 26))
-        btn_Sub.setText('제거')
+        self.btn_Sub = QPushButton()
+        self.btn_Sub.setMinimumSize(QSize(70, 26))
+        self.btn_Sub.setMaximumSize(QSize(70, 26))
+        self.btn_Sub.setText('제거')
         # # 새로 만든 버튼 오브젝트 네임 설정
         # btn_Sub.setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}Sub")
         # 레이아웃에 버튼 삽입
-        layout.addWidget(btn_Add)
-        layout.addWidget(btn_Sub)
+        layout.addWidget(self.btn_Add)
+        layout.addWidget(self.btn_Sub)
         # 버튼 가운데로 세팅 하기 위해 마진 설정
         layout.setContentsMargins(0, 0, 0, 0)
         # 위젯에 레이아웃 담기
