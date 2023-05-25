@@ -675,6 +675,486 @@ class Ui_MainWindow(object):
         self.tableView = QTableView(self.new_page)
         self.tableView.setObjectName(u"tableView")
 
+
+        # 추가/삭제 레이아웃 
+        # horizental box를 담을 위젯 생성
+        self.btn_0_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        self.btn_0_4_layout = QGridLayout(self.btn_0_4_cellWidget)
+        self.btn_0_4_cellWidget.setLayout(self.btn_0_4_layout)
+        self.btn_0_4_Add = QPushButton(self.home).setObjectName("추가")
+        self.btn_0_4_Sub = QPushButton(self.home).setObjectName("제거")
+        self.btn_0_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        # 레이아웃에 버튼 삽입
+        self.btn_0_4_layout.addWidget(self.btn_0_4_Add, 0, 4)
+        self.btn_0_4_layout.addWidget(self.btn_0_4_Sub, 0, 4)
+        # 위젯에 레이아웃 담기
+        self.btn_0_4_cellWidget.setLayout(self.btn_0_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_0_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_0_5_layout = QGridLayout(btn_0_5_cellWidget)
+        self.btn_0_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_0_5_layout.addWidget(self.btn_0_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_0_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_0_5_cellWidget.setLayout(btn_0_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_1_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_1_4_layout = QGridLayout(btn_1_4_cellWidget)
+        self.btn_1_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_1_4_layout.addWidget(self.btn_1_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_1_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_1_4_cellWidget.setLayout(btn_1_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_2_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_2_4_layout = QGridLayout(btn_2_4_cellWidget)
+        self.btn_2_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_2_4_layout.addWidget(self.btn_2_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_2_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_2_4_cellWidget.setLayout(btn_2_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_3_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_3_4_layout = QGridLayout(btn_3_4_cellWidget)
+        self.btn_3_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_3_4_layout.addWidget(self.btn_3_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_3_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_3_4_cellWidget.setLayout(btn_3_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_4_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_4_4_layout = QGridLayout(btn_4_4_cellWidget)
+        self.btn_4_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_4_4_layout.addWidget(self.btn_4_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_4_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_4_4_cellWidget.setLayout(btn_4_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_5_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_5_4_layout = QGridLayout(btn_5_4_cellWidget)
+        self.btn_5_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_5_4_layout.addWidget(self.btn_5_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_5_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_5_4_cellWidget.setLayout(btn_5_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_6_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_6_4_layout = QGridLayout(btn_6_4_cellWidget)
+        self.btn_6_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_6_4_layout.addWidget(self.btn_6_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_6_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_6_4_cellWidget.setLayout(btn_6_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_7_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_7_4_layout = QGridLayout(btn_7_4_cellWidget)
+        self.btn_7_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_7_4_layout.addWidget(self.btn_7_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_7_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_7_4_cellWidget.setLayout(btn_7_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_8_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_8_4_layout = QGridLayout(btn_8_4_cellWidget)
+        self.btn_8_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_8_4_layout.addWidget(self.btn_8_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_8_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_8_4_cellWidget.setLayout(btn_8_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_9_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_9_4_layout = QGridLayout(btn_9_4_cellWidget)
+        self.btn_9_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_9_4_layout.addWidget(self.btn_9_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_9_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_9_4_cellWidget.setLayout(btn_9_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_10_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_10_4_layout = QGridLayout(btn_10_4_cellWidget)
+        self.btn_10_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_10_4_layout.addWidget(self.btn_10_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_10_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_10_4_cellWidget.setLayout(btn_10_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_11_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_11_4_layout = QGridLayout(btn_11_4_cellWidget)
+        self.btn_11_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_11_4_layout.addWidget(self.btn_11_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_11_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_11_4_cellWidget.setLayout(btn_11_4_layout)
+        
+        # horizental box를 담을 위젯 생성
+        btn_12_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_12_4_layout = QGridLayout(btn_12_4_cellWidget)
+        self.btn_12_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_12_4_layout.addWidget(self.btn_12_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_12_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_12_4_cellWidget.setLayout(btn_12_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_13_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_13_4_layout = QGridLayout(btn_13_4_cellWidget)
+        self.btn_13_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_13_4_layout.addWidget(self.btn_13_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_13_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_13_4_cellWidget.setLayout(btn_13_4_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_14_4_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_14_4_layout = QGridLayout(btn_14_4_cellWidget)
+        self.btn_14_4_Add = QPushButton().setObjectName("추가")
+        # 레이아웃에 버튼 삽입
+        btn_14_4_layout.addWidget(self.btn_14_4_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_14_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_14_4_cellWidget.setLayout(btn_14_4_layout)
+
+
+        self.btn_1_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_1_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_1_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_1_4_cellWidget.setLayout(btn_1_4_layout)
+
+        self.btn_2_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_2_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_2_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_2_4_cellWidget.setLayout(btn_2_4_layout)
+
+        self.btn_3_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_3_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_3_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_3_4_cellWidget.setLayout(btn_3_4_layout)
+
+        self.btn_4_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_4_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_4_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_4_4_cellWidget.setLayout(btn_4_4_layout)
+
+        self.btn_5_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_5_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_5_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_5_4_cellWidget.setLayout(btn_5_4_layout)
+
+        self.btn_6_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_6_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_6_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_6_4_cellWidget.setLayout(btn_6_4_layout)
+
+        self.btn_7_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_7_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_7_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_7_4_cellWidget.setLayout(btn_7_4_layout)
+
+        self.btn_8_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_8_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_8_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_8_4_cellWidget.setLayout(btn_8_4_layout)
+
+        self.btn_9_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_9_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_9_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_9_4_cellWidget.setLayout(btn_9_4_layout)
+
+        self.btn_10_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_10_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_10_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_10_4_cellWidget.setLayout(btn_10_4_layout)
+
+        self.btn_11_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_11_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_11_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_11_4_cellWidget.setLayout(btn_11_4_layout)
+
+        self.btn_12_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_12_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_12_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_12_4_cellWidget.setLayout(btn_12_4_layout)
+
+        self.btn_13_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_13_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_13_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_13_4_cellWidget.setLayout(btn_13_4_layout)
+
+        self.btn_14_4_Sub = QPushButton().setObjectName("제거")
+        # 레이아웃에 버튼 삽입
+        btn_14_4_layout.addWidget(self.btn_1_4_Sub)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_14_4_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_14_4_cellWidget.setLayout(btn_14_4_layout)
+
+
+        # horizental box를 담을 위젯 생성
+        btn_1_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_1_5_layout = QGridLayout(btn_1_5_cellWidget)
+        self.btn_1_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_1_5_layout.addWidget(self.btn_1_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_1_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_1_5_cellWidget.setLayout(btn_1_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_2_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_2_5_layout = QGridLayout(btn_2_5_cellWidget)
+        self.btn_2_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_2_5_layout.addWidget(self.btn_2_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_2_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_2_5_cellWidget.setLayout(btn_2_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_3_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_3_5_layout = QGridLayout(btn_3_5_cellWidget)
+        self.btn_3_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_3_5_layout.addWidget(self.btn_3_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_3_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_3_5_cellWidget.setLayout(btn_3_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_4_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_4_5_layout = QGridLayout(btn_4_5_cellWidget)
+        self.btn_4_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_4_5_layout.addWidget(self.btn_4_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_4_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_4_5_cellWidget.setLayout(btn_4_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_5_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_5_5_layout = QGridLayout(btn_5_5_cellWidget)
+        self.btn_5_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_5_5_layout.addWidget(self.btn_5_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_5_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_5_5_cellWidget.setLayout(btn_5_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_6_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_6_5_layout = QGridLayout(btn_6_5_cellWidget)
+        self.btn_6_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_6_5_layout.addWidget(self.btn_6_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_6_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_6_5_cellWidget.setLayout(btn_6_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_7_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_7_5_layout = QGridLayout(btn_7_5_cellWidget)
+        self.btn_7_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_7_5_layout.addWidget(self.btn_7_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_7_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_7_5_cellWidget.setLayout(btn_7_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_8_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_8_5_layout = QGridLayout(btn_8_5_cellWidget)
+        self.btn_8_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_8_5_layout.addWidget(self.btn_8_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_8_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_8_5_cellWidget.setLayout(btn_8_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_9_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_9_5_layout = QGridLayout(btn_9_5_cellWidget)
+        self.btn_9_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_9_5_layout.addWidget(self.btn_9_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_9_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_9_5_cellWidget.setLayout(btn_9_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_10_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_10_5_layout = QGridLayout(btn_10_5_cellWidget)
+        self.btn_10_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_10_5_layout.addWidget(self.btn_10_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_10_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_10_5_cellWidget.setLayout(btn_10_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_11_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_11_5_layout = QGridLayout(btn_11_5_cellWidget)
+        self.btn_11_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_11_5_layout.addWidget(self.btn_11_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_11_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_11_5_cellWidget.setLayout(btn_11_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_12_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_12_5_layout = QGridLayout(btn_12_5_cellWidget)
+        self.btn_12_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_12_5_layout.addWidget(self.btn_12_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_12_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_12_5_cellWidget.setLayout(btn_12_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_13_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_13_5_layout = QGridLayout(btn_13_5_cellWidget)
+        self.btn_13_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_13_5_layout.addWidget(self.btn_13_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_13_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_13_5_cellWidget.setLayout(btn_13_5_layout)
+
+        # horizental box를 담을 위젯 생성
+        btn_14_5_cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        btn_14_5_layout = QGridLayout(btn_14_5_cellWidget)
+        self.btn_14_5_Del = QPushButton().setObjectName("X")
+        # 레이아웃에 버튼 삽입
+        btn_14_5_layout.addWidget(self.btn_14_5_Del)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        btn_14_5_layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        btn_14_5_cellWidget.setLayout(btn_14_5_layout)
+
+
         # self.tableWidget.cellWidget(0, 4).layout().addChildWidget = QPushButton("Btn_0_4_Add")
         # self.tableWidget.cellWidget(0, 4).layout().QPushButton("Btn_0_4_Del")
 
