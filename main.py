@@ -263,10 +263,10 @@ class MainWindow(QMainWindow):
                         self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
                         # 5열 갯수 추가/제거 버튼 추가
                         colPlaceNum += 1
-                        self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, UIFunctions.make_Add_Sub_Button(self, rowPlaceNum, colPlaceNum))
+                        self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Add_Sub_Button())
                         # 6열 행 제거 버튼 추가
                         colPlaceNum += 1
-                        self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, UIFunctions.make_Del_Button(self, rowPlaceNum, colPlaceNum))
+                        self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Del_Button())
                         break
                 
                 elif self.ui.tableWidget.item(rowPlaceNum, colPlaceNum).text() == str((rows[button_row])[1]):
@@ -306,19 +306,16 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
                 # 5열 갯수 추가/제거 버튼 추가
                 colPlaceNum += 1
-                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Add_Sub_Button(rowPlaceNum, colPlaceNum)[0])
-                self.ui.tableWidget.cellWidget(rowPlaceNum, colPlaceNum).layout().addWidget = self.make_Add_Sub_Button(rowPlaceNum, colPlaceNum)[1].setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Add")
-                self.ui.tableWidget.cellWidget(rowPlaceNum, colPlaceNum).layout().addWidget = self.make_Add_Sub_Button(rowPlaceNum, colPlaceNum)[2].setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Sub")
+                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Add_Sub_Button())
                 # 6열 행 제거 버튼 추가
                 colPlaceNum += 1
-                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Del_Button(rowPlaceNum, colPlaceNum)[0])
-                self.ui.tableWidget.cellWidget(rowPlaceNum, colPlaceNum).layout().addChildWidget = self.make_Del_Button(rowPlaceNum, colPlaceNum)[1].setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}_Del")
+                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Del_Button())
 
 
         print (f"Save {btnName} clicked!")
 
-        QPushButton(f"Btn_{rowPlaceNum}_{colPlaceNum}_Add").clicked.connect(self.row_Button_Click())
-        QPushButton(f"Btn_{rowPlaceNum}_{colPlaceNum}_Sub").clicked.connect(self.row_Button_Click())
+        # QPushButton(f"Btn_{rowPlaceNum}_{colPlaceNum}_Add").clicked.connect(self.row_Button_Click())
+        # QPushButton(f"Btn_{rowPlaceNum}_{colPlaceNum}_Sub").clicked.connect(self.row_Button_Click())
 
         for i in range(len(rows)):
             if self.ui.tableWidget.item(i, 3)!= None:
@@ -361,7 +358,7 @@ class MainWindow(QMainWindow):
             
         print(f"Button {btnName} clicked!")
 
-    def make_Add_Sub_Button(self, rowPlaceNum, colPlaceNum):
+    def make_Add_Sub_Button(self):
         # 추가/삭제 레이아웃 
         # horizental box를 담을 위젯 생성
         cellWidget = QWidget()
@@ -382,16 +379,16 @@ class MainWindow(QMainWindow):
         # # 새로 만든 버튼 오브젝트 네임 설정
         # btn_Sub.setObjectName(f"Btn_{rowPlaceNum}_{colPlaceNum}Sub")
         # 레이아웃에 버튼 삽입
-        # layout.addWidget(btn_Add)
-        # layout.addWidget(btn_Sub)
+        layout.addWidget(btn_Add)
+        layout.addWidget(btn_Sub)
         # 버튼 가운데로 세팅 하기 위해 마진 설정
         layout.setContentsMargins(0, 0, 0, 0)
         # 위젯에 레이아웃 담기
         cellWidget.setLayout(layout)
         # 만들어진 위젯을 리턴
-        return cellWidget, btn_Add, btn_Sub
+        return cellWidget
     
-    def make_Del_Button(self, rowPlaceNum, colPlaceNum):
+    def make_Del_Button(self):
         # 추가/삭제 레이아웃 
         # horizental box를 담을 위젯 생성
         cellWidget = QWidget()
@@ -413,7 +410,7 @@ class MainWindow(QMainWindow):
         cellWidget.setLayout(layout)
         # 만들어진 위젯을 리턴
         print(f'Make Button "{btn_Del}"!')
-        return cellWidget, btn_Del
+        return cellWidget
     
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
