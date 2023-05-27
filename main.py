@@ -31,7 +31,7 @@ conn = None
 widgets = None
 global rows
 all_Row = 15
-all_Column = 6
+all_Column = 7
 
 
 class MainWindow(QMainWindow):
@@ -80,6 +80,7 @@ class MainWindow(QMainWindow):
         widgets.btn_chart.clicked.connect(self.buttonClick)
         widgets.btn_save.clicked.connect(self.buttonClick)
 
+
         widgets.btn_brezel.clicked.connect(self.menu_Clicked)
         widgets.btn_brezel_set.clicked.connect(self.menu_Clicked)
         widgets.btn_dinoagg.clicked.connect(self.menu_Clicked)
@@ -95,78 +96,6 @@ class MainWindow(QMainWindow):
         widgets.btn_coke.clicked.connect(self.menu_Clicked)
         widgets.btn_cider.clicked.connect(self.menu_Clicked)
         widgets.btn_Fanta.clicked.connect(self.menu_Clicked)
-
-        # self.ui.tableWidget.cellWidget(0, 4).childEvent()
-# 2023.05.27에 찾아봐야 할 조사식
-        # Del_Test = []
-        # Del_Test[0] = self.ui.tableWidget.cellWidget(0, 5).children()[1]
-        # Del_Test[0].clicked.connect(self.row_Button_Click)
-
-        # self.ui.tableWidget.cellWidget(0, 4).children()
-        # self.ui.tableWidget.cellWidget(0, 4).children()[1] Add 버튼
-        # self.ui.tableWidget.cellWidget(0, 4).children()[2] Sub 버튼
-
-        # self.ui.tableWidget.cellWidget(0, 5).children()[1] Del 버튼
-        # QPushButton("Btn_0_4_Add")
-        # QPushButton("Btn_0_4_Sub")
-        # QPushButton("Btn_0_5_Del")
-
-
-
-        # self.ui.tableWidget.cellWidget(0,4).children()[1].connect(self.row_Button_Click)
-        # widgets.btn_1_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_2_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_3_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_4_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_5_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_6_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_7_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_8_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_9_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_10_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_11_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_12_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_13_4_Add.clicked.connect(self.row_Button_Click)
-        # widgets.btn_14_4_Add.clicked.connect(self.row_Button_Click)
-
-        # widgets.btn_0_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_1_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_2_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_3_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_4_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_5_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_6_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_7_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_8_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_9_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_10_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_11_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_12_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_13_4_Sub.clicked.connect(self.row_Button_Click)
-        # widgets.btn_14_4_Sub.clicked.connect(self.row_Button_Click)
-
-        # widgets.btn_0_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_1_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_2_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_3_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_4_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_5_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_6_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_7_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_8_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_9_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_10_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_11_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_12_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_13_5_Del.clicked.connect(self.row_Button_Click)
-        # widgets.btn_14_5_Del.clicked.connect(self.row_Button_Click)
-        # for i in range(all_Row):
-        #     if(self.ui.tableWidget.cellWidget(i, 4) in QPushButton(f"Btn_{i}_4_Add") == None):
-        #         break
-        #     elif(widgets in QPushButton(f"Btn_{i}_4_Add") == True):
-        #         widgets.tableWidget.QPushButton(f"Btn_{i}_4_Add").clicked.connect(self.row_Button_Click())
-        #         widgets.QPushButton(f"Btn_{i}_4_Sub").clicked.connect(self.row_Button_Click())
-        #         widgets.QPushButton(f"Btn_{i}_5_Del").clicked.connect(self.row_Button_Click())
 
         # SHOW APP
         # ///////////////////////////////////////////////////////////////
@@ -259,7 +188,7 @@ class MainWindow(QMainWindow):
         colPlaceNum = 0
         prdCount = 0
         sum_Result = 0
-        
+        # DB rows에서 버튼 이름 내 행과 같은 값 찾기
         for i in range(len(rows)):
             if self.sender().text() != ((rows[i])[1]):
                 i+=1
@@ -268,58 +197,64 @@ class MainWindow(QMainWindow):
                 break
             else:
                  pass
-
+        # (rowPlaceNum, colPlaceNum)에 해당하는 셀이 비어있지않다면      
         if self.ui.tableWidget.item(rowPlaceNum, colPlaceNum) != None:
+            # 제품 개수 만큼 반복
             for _ in range(len(rows)):
+                # 만약 (rowPlaceNum, colPlaceNum) 셀이 비어있다면
                 if self.ui.tableWidget.item(rowPlaceNum, colPlaceNum) == None:
-                        self.ui.tableWidget.setRowCount(rowPlaceNum + 1)
-                        prdCount += 1 # 제품 개수 1 증가
-                        prdTotalPrice = prdCount * int((rows[rowPlaceNum])[2]) # 총 가격
-                        # 1열 제품명
-                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem((rows[button_row])[1]))
-                        colPlaceNum += 1
-                        # 2열 제품 가격
-                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str((rows[button_row])[2])))
-                        colPlaceNum += 1
-                        # 3열 제품 개수
-                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdCount)))
-                        colPlaceNum += 1
-                        # 4열 제품 총 가격
-                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
-                        # 5열 갯수 추가/제거 버튼 추가
-                        colPlaceNum += 1
-                        self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Add_Sub_Button(rowPlaceNum, colPlaceNum))
-                        # 6열 행 제거 버튼 추가
-                        colPlaceNum += 1
-                        self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Del_Button(rowPlaceNum, colPlaceNum))
-
-                        break
-                
+                    self.ui.tableWidget.setRowCount(rowPlaceNum + 1)
+                    prdCount += 1 # 제품 개수 1 증가
+                    prdTotalPrice = prdCount * int((rows[i])[2]) # 총 가격
+                    # 1열 제품명
+                    self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem((rows[button_row])[1]))
+                    colPlaceNum += 1
+                    # 2열 제품 가격
+                    self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str((rows[button_row])[2])))
+                    colPlaceNum += 1
+                    # 3열 제품 개수
+                    self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdCount)))
+                    colPlaceNum += 1
+                    # 4열 제품 총 가격
+                    self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
+                    # 5열 갯수 추가/제거 버튼 추가
+                    colPlaceNum += 1
+                    self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Add_Button(rowPlaceNum, colPlaceNum))
+                    # 6열 개수 제거 버튼 추가
+                    colPlaceNum += 1
+                    self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Sub_Button(rowPlaceNum, colPlaceNum))
+                    # 7열 행 제거 버튼 추가
+                    colPlaceNum += 1
+                    self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Del_Button(rowPlaceNum, colPlaceNum))
+                    break
+                # 만약 제품명 셀의 텍스트가 row 값의 제품 명과 같을 때 - Add_Button과 동일
                 elif self.ui.tableWidget.item(rowPlaceNum, colPlaceNum).text() == str((rows[button_row])[1]):
-                        # 초기화된 개수 갱신
-                        prdCount = int(self.ui.tableWidget.item(rowPlaceNum, colPlaceNum + 2).text()) + 1
-                        # 초기화된 총 가격 갱신
-                        prdTotalPrice = str(int(prdCount) * int((rows[rowPlaceNum])[2]))
-                        # 3열 제품 개수 갱신
-                        colPlaceNum = 2
-                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdCount)))
-                        colPlaceNum = 3
-                        # 4열 제품 총 가격 갱신
-                        self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
+                    # 초기화된 개수 갱신
+                    prdCount = int(self.ui.tableWidget.item(rowPlaceNum, colPlaceNum + 2).text()) + 1
+                    # 초기화된 총 가격 갱신
+                    prdTotalPrice = str(int(prdCount) * int((rows[i])[2]))
+                    # 3열 제품 개수 갱신
+                    colPlaceNum = 2
+                    self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdCount)))
+                    colPlaceNum = 3
+                    # 4열 제품 총 가격 갱신
+                    self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
 
-                        rowPlaceNum = 0 # 행
-                        colPlaceNum = 0 # 열
-                        prdCount = 0 # 제품 개수
-                        break
+                    rowPlaceNum = 0 # 행
+                    colPlaceNum = 0 # 열
+                    prdCount = 0 # 제품 개수
+                    break
+                # 셀이 비어있지 않은 경우 다음 셀 탐색        
                 elif self.ui.tableWidget.item(rowPlaceNum, colPlaceNum) != None:
-                        rowPlaceNum += 1
+                    rowPlaceNum += 1
                 else:
-                        break
+                    break
+        # (rowPlaceNum, colPlaceNum)에 해당하는 셀이 비어있지않다면 - 백지 상태
         else:
             if self.ui.tableWidget.item(rowPlaceNum, colPlaceNum) == None:
                 self.ui.tableWidget.setRowCount(rowPlaceNum + 1)
                 prdCount += 1 # 제품 개수 1 증가
-                prdTotalPrice = prdCount * int((rows[rowPlaceNum])[2]) # 총 가격
+                prdTotalPrice = prdCount * int(((rows[i]))[2]) # 총 가격
                 # 1열 제품명
                 self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem((rows[button_row])[1]))
                 colPlaceNum += 1
@@ -331,20 +266,18 @@ class MainWindow(QMainWindow):
                 colPlaceNum += 1
                 # 4열 제품 총 가격
                 self.ui.tableWidget.setItem(rowPlaceNum, colPlaceNum, QTableWidgetItem(str(prdTotalPrice)))
-                # 5열 갯수 추가/제거 버튼 추가
+                # 5열 개수 추가 버튼 추가
                 colPlaceNum += 1
-                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Add_Sub_Button(rowPlaceNum, colPlaceNum))
-                # 6열 행 제거 버튼 추가
+                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Add_Button(rowPlaceNum, colPlaceNum))                # 5열 갯수 추가/제거 버튼 추가
+                # 6열 개수 제거 버튼 추가
+                colPlaceNum += 1
+                self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Sub_Button(rowPlaceNum, colPlaceNum))
+                # 7열 행 제거 버튼 추가
                 colPlaceNum += 1
                 self.ui.tableWidget.setCellWidget(rowPlaceNum, colPlaceNum, self.make_Del_Button(rowPlaceNum, colPlaceNum))
 
-
-
         print (f"Save {btnName} clicked!")
-
-        # QPushButton(f"Btn_{rowPlaceNum}_{colPlaceNum}_Add").clicked.connect(self.row_Button_Click())
-        # QPushButton(f"Btn_{rowPlaceNum}_{colPlaceNum}_Sub").clicked.connect(self.row_Button_Click())
-
+        # 제품 개수만큼 돌면서 합계 구하기
         for i in range(len(rows)):
             if self.ui.tableWidget.item(i, 3)!= None:
                 sum_Result += int(self.ui.tableWidget.item(i, 3).text())
@@ -354,14 +287,38 @@ class MainWindow(QMainWindow):
         self.ui.label.setText('합계 : ' + str(sum_Result))     
         
     def row_Button_Click(self):
+        # 현재 버튼 값 
         button = self.sender()
-
+        # 로우 값을 split을 통해 추출
         rowPlaceNum = int(button.objectName().split('_')[1])
-        comPlaceNum = int(button.objectName().split('_')[2])
+        # 합계 값 변경을 위해 split을 통해 추출
+        sum_Result = int(self.ui.label.text().split(" : ")[1])
+        # 현재 누른 버튼이
         if button:
-            if (button.objectName() == f"btn_{rowPlaceNum}_5_Del"):
-                self.ui.tableWidget.removeRow(rowPlaceNum, comPlaceNum)
-
+            # 삭제 버튼이라면 
+            if (button.objectName() == f"btn_{rowPlaceNum}_6_Del"):
+                # 전체 합계 재설정 = 현재 합계 - 단품 전체 가격
+                self.ui.label.setText('합계 : ' + str(sum_Result - int(self.ui.tableWidget.item(rowPlaceNum, 3).text())))
+                # 해당 Row행 자체 삭제
+                self.ui.tableWidget.removeRow(rowPlaceNum)
+                # 테이블 위젯 내의 버튼 이름을 찾아오는 방법을 찾기 힘든 관계로 동적 할당을 새로 한다.
+                for i in range(rowPlaceNum, self.ui.tableWidget.rowCount() + 1):
+                    # 수량 추가 버튼 재할당
+                    # print(f"buttonName : ", self.ui.tableWidget.cellWidget(i, 4))
+                    self.ui.tableWidget.setCellWidget(i, 4, self.make_Add_Button(rowPlaceNum, 4))
+                    # print(f"Reset_buttonName : " , self.ui.tableWidget.cellWidget(i, 4))
+                    # print(f"buttonName : " , self.ui.tableWidget.cellWidget(i, 5))
+                    # 수량 삭제 버튼 추가
+                    self.ui.tableWidget.setCellWidget(i, 5, self.make_Sub_Button(rowPlaceNum, 5))
+                    # print(f"Reset_buttonName : " , self.ui.tableWidget.cellWidget(i, 5))
+                    # print(f"buttonName : " , self.ui.tableWidget.cellWidget(i, 6))
+                    # 해당 행 삭제 버튼 추가
+                    self.ui.tableWidget.setCellWidget(i, 6, self.make_Del_Button(rowPlaceNum, 6))
+                    # print(f"Reset_buttonName : " , self.ui.tableWidget.cellWidget(i, 6))
+                    self.ui.tableWidget.setFocus()
+                    # 다음 행으로 넘어가면서 삭제된 행부터 끝까지 재할당.
+                    rowPlaceNum += 1
+            # 수량 추가 버튼이라면   
             elif (button.objectName() == f"btn_{rowPlaceNum}_4_Add"):
                 # 초기화된 개수 갱신
                 prdCount = int(self.ui.tableWidget.item(rowPlaceNum, 2).text()) + 1
@@ -371,28 +328,32 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget.setItem(rowPlaceNum, 2, QTableWidgetItem(str(prdCount)))
                 # 4열 제품 총 가격 갱신
                 self.ui.tableWidget.setItem(rowPlaceNum, 3, QTableWidgetItem(str(prdTotalPrice)))
-
-                rowPlaceNum = 0 # 행
-                prdCount = 0 # 제품 개수
-
-            elif (button.objectName() == f"btn_{rowPlaceNum}_4_Sub"):
-                if int(self.ui.tableWidget.item(rowPlaceNum, 2).text()) <= 1:
+                # 전체 합계 재설정 현재 합계 + 단품 가격
+                self.ui.label.setText('합계 : ' + str(sum_Result + int(self.ui.tableWidget.item(rowPlaceNum, 1).text())))
+                # 행
+            # 수량 제거 버튼이라면
+            elif (button.objectName() == f"btn_{rowPlaceNum}_5_Sub"):
+                # 제품 개수가 1개일 때는 감소가 일어나지않아야 함.
+                if int(self.ui.tableWidget.item(rowPlaceNum, 2).text()) == 1:
                     return
-                 # 초기화된 개수 갱신
+                # 초기화된 개수 갱신
                 prdCount = int(self.ui.tableWidget.item(rowPlaceNum, 2).text()) - 1
                 # 초기화된 총 가격 갱신
                 prdTotalPrice = str(int(self.ui.tableWidget.item(rowPlaceNum, 3).text()) - int(self.ui.tableWidget.item(rowPlaceNum, 1).text()))
                 # 3열 제품 개수 갱신
                 self.ui.tableWidget.setItem(rowPlaceNum, 2, QTableWidgetItem(str(prdCount)))
-                # 4열 제품 총 가격 갱신
+                # 4열 제품 총 가격 갱신6
                 self.ui.tableWidget.setItem(rowPlaceNum, 3, QTableWidgetItem(str(prdTotalPrice)))
+                # 전체 합계 재설정 현재 합계 - 단품 가격
+                self.ui.label.setText('합계 : ' + str(sum_Result - int(self.ui.tableWidget.item(rowPlaceNum, 1).text())))
+            # 행 초기화
+            rowPlaceNum = 0
+            # 제품 개수 초기화
+            prdCount = 0
+        print(f"{button} clicked!")
 
-                rowPlaceNum = 0 # 행
-                prdCount = 0 # 제품 개수
-            
-        print(f"Button clicked!")
-
-    def make_Add_Sub_Button(self, rowPlaceNum, colPlaceNum):
+    # 수량 추가 버튼 생성 이벤트
+    def make_Add_Button(self, rowPlaceNum, colPlaceNum):
         # 추가/삭제 레이아웃 
         # horizental box를 담을 위젯 생성
         cellWidget = QWidget()
@@ -400,30 +361,50 @@ class MainWindow(QMainWindow):
         layout = QHBoxLayout(cellWidget)
         # 버튼 생성
         btn_Add = QPushButton()
+        # # 새로 만든 버튼 오브젝트 네임 설정
         btn_Add .setObjectName(f"btn_{rowPlaceNum}_{colPlaceNum}_Add")
+        # 버튼 사이즈 조절 부분
         btn_Add.setMinimumSize(QSize(70, 26))
         btn_Add.setMaximumSize(QSize(70, 26))
+        # 버튼 내 텍스트 변경 부분
         btn_Add.setText('추가')
         btn_Add.clicked.connect(self.row_Button_Click)
-        # # 새로 만든 버튼 오브젝트 네임 설정
-        # 버튼 생성
-        btn_Sub = QPushButton()
-        btn_Sub.setObjectName(f"btn_{rowPlaceNum}_{colPlaceNum}_Sub")
-        btn_Sub.setMinimumSize(QSize(70, 26))
-        btn_Sub.setMaximumSize(QSize(70, 26))
-        btn_Sub.setText('제거')
-        btn_Sub.clicked.connect(self.row_Button_Click)
-        # # 새로 만든 버튼 오브젝트 네임 설정
         # 레이아웃에 버튼 삽입
         layout.addWidget(btn_Add)
+        # 버튼 가운데로 세팅 하기 위해 마진 설정
+        layout.setContentsMargins(0, 0, 0, 0)
+        # 위젯에 레이아웃 담기
+        cellWidget.setLayout(layout)
+        # 만들어진 위젯을 리턴
+        # print(f'Make Button "{btn_Add}"!')
+        return cellWidget
+    # 수량 제거 버튼 생성 이벤트    
+    def make_Sub_Button(self, rowPlaceNum, colPlaceNum):
+        # 추가/삭제 레이아웃 
+        # horizental box를 담을 위젯 생성
+        cellWidget = QWidget()
+        # 버튼을 담을 horizental box 생성
+        layout = QHBoxLayout(cellWidget)
+        # 버튼 생성
+        btn_Sub = QPushButton()
+        # 새로 만든 버튼 오브젝트 네임 설정
+        btn_Sub.setObjectName(f"btn_{rowPlaceNum}_{colPlaceNum}_Sub")
+        # 버튼 사이즈 조절 부분
+        btn_Sub.setMinimumSize(QSize(70, 26))
+        btn_Sub.setMaximumSize(QSize(70, 26))
+        # 버튼 내 텍스트 변경 부분
+        btn_Sub.setText('제거')
+        btn_Sub.clicked.connect(self.row_Button_Click)
+        # 레이아웃에 버튼 삽입
         layout.addWidget(btn_Sub)
         # 버튼 가운데로 세팅 하기 위해 마진 설정
         layout.setContentsMargins(0, 0, 0, 0)
         # 위젯에 레이아웃 담기
         cellWidget.setLayout(layout)
         # 만들어진 위젯을 리턴
+        # print(f'Make Button "{btn_Sub}"!')
         return cellWidget
-    
+    # 해당 행 삭제 버튼 생성 이벤트    
     def make_Del_Button(self, rowPlaceNum, colPlaceNum):
         # 추가/삭제 레이아웃 
         # horizental box를 담을 위젯 생성
@@ -432,13 +413,14 @@ class MainWindow(QMainWindow):
         layout = QHBoxLayout(cellWidget)
         # 버튼 생성
         btn_Del = QPushButton()
+        # 새로 만든 버튼 오브젝트 네임 설정
         btn_Del.setObjectName(f"btn_{rowPlaceNum}_{colPlaceNum}_Del")
+        # 버튼 사이즈 조절 부분
         btn_Del.setMinimumSize(QSize(30, 26))
         btn_Del.setMaximumSize(QSize(30, 26))
+        # 버튼 내 텍스트 변경 부분
         btn_Del.setText('X')
         btn_Del.clicked.connect(self.row_Button_Click)
-        # # 새로 만든 버튼 오브젝트 네임 설정
-        # btn_Del.clicked.connect(MainWindow.row_Button_Click)
         # 레이아웃에 버튼 삽입
         layout.addWidget(btn_Del)
         # 버튼 가운데로 세팅 하기 위해 마진 설정
@@ -446,7 +428,7 @@ class MainWindow(QMainWindow):
         # 위젯에 레이아웃 담기
         cellWidget.setLayout(layout)
         # 만들어진 위젯을 리턴
-        print(f'Make Button "{btn_Del}"!')
+        # print(f'Make Button "{btn_Del}"!')
         return cellWidget
     
     # RESIZE EVENTS
@@ -479,19 +461,20 @@ class MainWindow(QMainWindow):
         cur.execute(query)
         rows = cur.fetchall()
 
-        # columnName = ['제품명','개수','가격','추가/빼기','제거']
+        # columnName = ['제품명','개수','가격','수량 추가',' 수량 제거','삭제']
         table = self.ui.tableWidget
-
+        # 컬럼 갯수 조절
         table.setColumnCount(all_Column)
-        
+        # 테이블 위젯 컬럼 크기 조절
         table.setColumnWidth(0, self.width()*13/100)
         table.setColumnWidth(1, self.width()*4/100)
         table.setColumnWidth(2, self.width()*3/100)
         table.setColumnWidth(3, self.width()*5/100)
-        table.setColumnWidth(4, self.width()*15/100) # 600
-        table.setColumnWidth(5, self.width()*2/100)
+        table.setColumnWidth(4, self.width()*7/100) # 600
+        table.setColumnWidth(5, self.width()*7/100)
+        table.setColumnWidth(6, self.width()*2/100)
 
-        #'번호' = AI(불필요),'제품명','개수','가격','추가/빼기','제거'
+        #'번호' = AI(불필요),'제품명','개수','가격','수량 추가',' 수량 제거','삭제'
         header = table.horizontalHeader()       
         header.setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
         header.setSectionResizeMode(1, QHeaderView.ResizeMode.Fixed)
@@ -499,6 +482,7 @@ class MainWindow(QMainWindow):
         header.setSectionResizeMode(3, QHeaderView.ResizeMode.Fixed)
         header.setSectionResizeMode(4, QHeaderView.ResizeMode.Fixed)
         header.setSectionResizeMode(5, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(6, QHeaderView.ResizeMode.Fixed)
 
         header.cascadingSectionResizes()
         

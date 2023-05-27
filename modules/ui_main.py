@@ -630,8 +630,9 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addLayout(self.horizontalLayout_6, 4, 1, 1, 3)
 
         self.tableWidget = QTableWidget(self.home)
-        if (self.tableWidget.columnCount() < 6):
-            self.tableWidget.setColumnCount(6)
+        self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        if (self.tableWidget.columnCount() < 7):
+            self.tableWidget.setColumnCount(7)
         font5 = QFont()
         font5.setStyleStrategy(QFont.PreferDefault)
         __qtablewidgetitem = QTableWidgetItem()
@@ -647,15 +648,17 @@ class Ui_MainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         self.tableWidget.setObjectName(u"tableWidget")
         sizePolicy.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
         self.tableWidget.setSizePolicy(sizePolicy)
         self.tableWidget.setMinimumSize(QSize(220, 580))
         self.tableWidget.setMaximumSize(QSize(900, 1220))
         self.tableWidget.setBaseSize(QSize(220, 580))
-        self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
+
 
         self.gridLayout_4.addWidget(self.tableWidget, 2, 2, 1, 1)
 
@@ -803,9 +806,11 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"\ucd1d \uac00\uaca9", None));
         ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"\ucd94\uac00/\uc81c\uac70", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"\uc218\ub7c9 \ucd94\uac00", None));
         ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"\uc218\ub7c9 \uc81c\uac70", None));
+        ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None));
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: ParkSeongHyeon", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v0.0.1", None))
     # retranslateUi
