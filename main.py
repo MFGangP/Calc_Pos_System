@@ -154,40 +154,16 @@ class MainWindow(QMainWindow):
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
 
-    # def make_Add_Sub_Button(self):
-    #     # 추가/삭제 레이아웃 
-    #     # horizental box를 담을 위젯 생성
-    #     cellWidget = QWidget()
-    #     # 버튼을 담을 horizental box 생성
-    #     layout = QHBoxLayout(cellWidget)
-    #     # 버튼 생성
-    #     btn_Add = QPushButton()
-    #     btn_Add.setMinimumSize(QSize(60, 20))
-    #     btn_Add.setMaximumSize(QSize(60, 20))
-    #     btn_Add.setText('추가')
-    #     # 버튼 생성
-    #     btn_Sub = QPushButton()
-    #     btn_Sub.setMinimumSize(QSize(60, 20))
-    #     btn_Sub.setMaximumSize(QSize(60, 20))
-    #     btn_Sub.setText('제거')
-    #     # 레이아웃에 버튼 삽입
-    #     layout.addWidget(btn_Add)
-    #     layout.addWidget(btn_Sub)
-    #     # 버튼 가운데로 세팅 하기 위해 마진 설정
-    #     layout.setContentsMargins(0, 0, 0, 0)
-    #     # 위젯에 레이아웃 담기
-    #     cellWidget.setLayout(layout)
-    #     # 만들어진 위젯을 리턴
-    #     return cellWidget
-
+    # 메뉴 버튼 클릭 이벤트
     def menu_Clicked(self):
         btnName = self.sender().objectName()
 
-        button_row = 0
-        rowPlaceNum = 0
-        colPlaceNum = 0
-        prdCount = 0
-        sum_Result = 0
+        button_row = 0 # 메뉴 버튼 row
+        rowPlaceNum = 0 # 테이블 위젯이 받을 row 값
+        colPlaceNum = 0 # 테이블 위젯이 받을 col 값
+        prdCount = 0 # 제품 개수
+        sum_Result = 0 # 합계
+
         # DB rows에서 버튼 이름 내 행과 같은 값 찾기
         for i in range(len(rows)):
             if self.sender().text() != ((rows[i])[1]):
@@ -350,6 +326,7 @@ class MainWindow(QMainWindow):
             rowPlaceNum = 0
             # 제품 개수 초기화
             prdCount = 0
+            
         print(f"{button} clicked!")
 
     # 수량 추가 버튼 생성 이벤트

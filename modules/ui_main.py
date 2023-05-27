@@ -39,7 +39,7 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QSize(1280, 800))
         MainWindow.setMaximumSize(QSize(2560, 1600))
         MainWindow.setSizeIncrement(QSize(0, 0))
-        MainWindow.setBaseSize(QSize(1280, 800))
+        MainWindow.setBaseSize(QSize(1920, 1080))
         font = QFont()
         font.setFamily(u"\ub098\ub214\uace0\ub515")
         font.setPointSize(10)
