@@ -2091,7 +2091,7 @@ Button */
                           <enum>QLayout::SetDefaultConstraint</enum>
                          </property>
                          <item>
-                          <widget class="QPushButton" name="pushButton_3">
+                          <widget class="QPushButton" name="btn_All_Del">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                              <horstretch>0</horstretch>
@@ -2128,12 +2128,12 @@ Button */
                             <string notr="true">background-color: rgb(52, 59, 72);</string>
                            </property>
                            <property name="text">
-                            <string>PushButton</string>
+                            <string>전체 삭제</string>
                            </property>
                           </widget>
                          </item>
                          <item>
-                          <widget class="QPushButton" name="pushButton_2">
+                          <widget class="QPushButton" name="btu_Commit">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                              <horstretch>0</horstretch>
@@ -2170,7 +2170,7 @@ Button */
                             <string notr="true">background-color: rgb(52, 59, 72);</string>
                            </property>
                            <property name="text">
-                            <string>PushButton</string>
+                            <string>결제</string>
                            </property>
                           </widget>
                          </item>
@@ -2201,6 +2201,32 @@ Button */
                            <width>220</width>
                            <height>580</height>
                           </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QTableWidget {
+    background-color: transparent;
+    color: #333333;
+}
+
+QHeaderView::section {
+    background-color: rgba(189, 147, 249, 0.7);
+    color: #333333;
+    border: none;
+}
+
+QTableWidget::item:selected {
+    background-color: #A6A6A6;
+}
+
+QTableWidget::item {
+    background-color: rgba(189, 147, 249, 0.3);
+    border-bottom: 1px solid rgba(189, 147, 249, 0.7);
+}
+
+QTableWidget::item:hover {
+    background-color: rgba(189, 147, 249, 0.5);
+    border-bottom: 1px solid rgba(189, 147, 249, 0.9);
+}</string>
                          </property>
                          <property name="sizeAdjustPolicy">
                           <enum>QAbstractScrollArea::AdjustToContents</enum>
@@ -2277,7 +2303,177 @@ Button */
                      <widget class="QWidget" name="new_page">
                       <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
-                        <widget class="QTableView" name="tableView"/>
+                        <layout class="QGridLayout" name="gridLayout">
+                         <item row="0" column="0">
+                          <widget class="QCalendarWidget" name="calendarWidget">
+                           <property name="styleSheet">
+                            <string notr="true">/* style for top navigation area ###############################################*/ 
+
+#qt_calendar_navigationbar {
+    background-color: #fff;
+	border: 2px solid  #B8E2FF;
+	border-bottom: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+/* style for month change buttons ############################################ */
+
+#qt_calendar_prevmonth, 
+#qt_calendar_nextmonth {
+	/* border delete */
+    border: none;  
+    /* delete default icons */
+	qproperty-icon: none; 
+	
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+
+    border-radius: 5px; 
+	/* set background transparent */
+    background-color: transparent; 
+	padding: 5px;
+}
+
+/* style for pre month button ############################################ */
+
+#qt_calendar_prevmonth {
+	/* set text for button */
+	/*qproperty-text: &amp;quot;&amp;gt;&amp;quot;;*/
+	margin-left:5px;
+	image: url(:/icon/arrow-119-48.ico);
+}
+
+/* style for next month button ########################################### */
+#qt_calendar_nextmonth {
+	margin-right:5px;
+	image: url(:/icon/arrow-19-48.ico);
+    /* qproperty-text: &amp;quot;&amp;gt;&amp;quot;; */
+}
+#qt_calendar_prevmonth:hover, 
+#qt_calendar_nextmonth:hover {
+    background-color: #55aaff;
+}
+
+#qt_calendar_prevmonth:pressed, 
+#qt_calendar_nextmonth:pressed {
+    background-color: rgba(235, 235, 235, 100);
+}
+
+
+/* Style for month and yeat buttons #################################### */
+
+#qt_calendar_yearbutton {
+    color: #000;
+	margin:5px;
+    border-radius: 5px;
+	font-size: 13px;
+	padding:0px 10px;
+}
+
+ #qt_calendar_monthbutton {
+	width: 110px;
+    color: #000;
+	font-size: 13px;
+	margin:5px 0px;
+    border-radius: 5px;
+	padding:0px 2px;
+}
+
+#qt_calendar_yearbutton:hover, 
+#qt_calendar_monthbutton:hover {
+    background-color: #55aaff;
+}
+
+#qt_calendar_yearbutton:pressed, 
+#qt_calendar_monthbutton:pressed {
+    background-color: rgba(235, 235, 235, 100);
+}
+
+/* Style for year input lineEdit ######################################*/
+
+#qt_calendar_yearedit {
+    min-width: 53px;
+    color: #000;
+    background: transparent;
+	font-size: 13px;
+}
+
+/* Style for year change buttons ######################################*/
+
+#qt_calendar_yearedit::up-button { 
+	image: url(:/icon/arrow-151-48.ico);
+    subcontrol-position: right;
+}
+
+#qt_calendar_yearedit::down-button { 
+	image: url(:/icon/arrow-213-48.ico);
+    subcontrol-position: left; 
+}
+
+#qt_calendar_yearedit::down-button, 
+#qt_calendar_yearedit::up-button {
+	width:10px;
+	padding: 0px 5px;
+	border-radius:3px;
+}
+
+#qt_calendar_yearedit::down-button:hover, 
+#qt_calendar_yearedit::up-button:hover {
+	background-color: #55aaff;
+}
+
+/* Style for month select menu ##################################### */
+
+#calendarWidget QToolButton QMenu {
+     background-color: white;
+
+}
+#calendarWidget QToolButton QMenu::item {
+	/*padding: 10px;*/
+}
+ #calendarWidget QToolButton QMenu::item:selected:enabled {
+    background-color: #55aaff;
+}
+
+#calendarWidget QToolButton::menu-indicator {
+	/* Remove toolButton arrow */
+      /*image: none; */
+	nosubcontrol-origin: margin;
+	subcontrol-position: right center;
+	margin-top: 10px;
+	width:20px;
+}
+
+/* Style for calendar table ########################################## */
+#qt_calendar_calendarview {
+	/* Remove the selected dashed box */
+    outline: 0px;
+
+	border: 2px solid  #B8E2FF;
+	border-top: 0px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+#qt_calendar_calendarview::item:hover {
+   border-radius:5px;
+	background-color:#aaffff;
+}
+
+#qt_calendar_calendarview::item:selected {
+    background-color: #55aa7f; 
+	border-radius:5px;
+}</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="1">
+                          <widget class="QListView" name="listView"/>
+                         </item>
+                        </layout>
                        </item>
                       </layout>
                      </widget>

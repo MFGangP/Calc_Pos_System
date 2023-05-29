@@ -31,4 +31,4 @@ class AppFunctions(MainWindow):
         """
 
         # SET MANUAL STYLES
-        self.ui.pushButton_2.setStyleSheet("background-color: #6272a4;")
+        self.ui.btu_Commit.setStyleSheet("background-color: #6272a4;")

@@ -17,3 +17,14 @@
 	- 제품 기본 가격 변경 기능
 	- 매출 조회 기능 등..
 	- 디자인 작업
+
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/Make_CalcSys_CP.gif?raw=true" width="640">
+
+## 세번째 업로드
+	- 매출 DB 업로드 기능 구현
+	- 테이블 위젯 목록 전체 삭제 기능 구현
+
+	TODO:
+	- 제품 기본 가격 변경 기능
+	- 매출 조회 기능 등..
+	- 디자인 작업

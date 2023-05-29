@@ -18,6 +18,7 @@ import sys
 import os
 import platform
 import pymysql
+from datetime import datetime
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
 from modules import *
@@ -29,7 +30,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 # ///////////////////////////////////////////////////////////////
 conn = None
 widgets = None
-global rows
+
 all_Row = 15
 all_Column = 7
 
@@ -71,6 +72,31 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         widgets.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
+        # columnName = ['제품명', '개수', '가격', '총가격', '수량 추가', ' 수량 제거', '삭제']
+        table = self.ui.tableWidget
+        # 컬럼 갯수 조절
+        table.setColumnCount(all_Column)
+        # 테이블 위젯 컬럼 크기 조절
+        table.setColumnWidth(0, self.width()*13/100)
+        table.setColumnWidth(1, self.width()*4/100)
+        table.setColumnWidth(2, self.width()*3/100)
+        table.setColumnWidth(3, self.width()*5/100)
+        table.setColumnWidth(4, self.width()*7/100) # 600
+        table.setColumnWidth(5, self.width()*7/100)
+        table.setColumnWidth(6, self.width()*2/100)
+
+        #'번호' = AI(불필요),'제품명','개수','가격','수량 추가',' 수량 제거','삭제'
+        header = table.horizontalHeader()       
+        header.setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(1, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(2, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(3, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(4, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(5, QHeaderView.ResizeMode.Fixed)
+        header.setSectionResizeMode(6, QHeaderView.ResizeMode.Fixed)
+
+        header.cascadingSectionResizes()
+
         # BUTTONS CLICK
         # ///////////////////////////////////////////////////////////////
 
@@ -79,8 +105,7 @@ class MainWindow(QMainWindow):
         widgets.btn_calender.clicked.connect(self.buttonClick)
         widgets.btn_chart.clicked.connect(self.buttonClick)
         widgets.btn_save.clicked.connect(self.buttonClick)
-
-
+        # 메뉴 생성 버튼
         widgets.btn_brezel.clicked.connect(self.menu_Clicked)
         widgets.btn_brezel_set.clicked.connect(self.menu_Clicked)
         widgets.btn_dinoagg.clicked.connect(self.menu_Clicked)
@@ -96,7 +121,9 @@ class MainWindow(QMainWindow):
         widgets.btn_coke.clicked.connect(self.menu_Clicked)
         widgets.btn_cider.clicked.connect(self.menu_Clicked)
         widgets.btn_Fanta.clicked.connect(self.menu_Clicked)
-
+        # 전체 삭제 버튼
+        widgets.btn_All_Del.clicked.connect(self.all_Del_Button)
+        widgets.btu_Commit.clicked.connect(self.commit_Button)
         # SHOW APP
         # ///////////////////////////////////////////////////////////////
         self.show()
@@ -120,7 +147,7 @@ class MainWindow(QMainWindow):
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
   
         # DB 접속
-        rows = self.initDB()
+        rows = self.initDB(1)
 
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
@@ -294,6 +321,7 @@ class MainWindow(QMainWindow):
                     self.ui.tableWidget.setFocus()
                     # 다음 행으로 넘어가면서 삭제된 행부터 끝까지 재할당.
                     rowPlaceNum += 1
+
             # 수량 추가 버튼이라면   
             elif (button.objectName() == f"btn_{rowPlaceNum}_4_Add"):
                 # 초기화된 개수 갱신
@@ -307,6 +335,7 @@ class MainWindow(QMainWindow):
                 # 전체 합계 재설정 현재 합계 + 단품 가격
                 self.ui.label.setText('합계 : ' + str(sum_Result + int(self.ui.tableWidget.item(rowPlaceNum, 1).text())))
                 # 행
+
             # 수량 제거 버튼이라면
             elif (button.objectName() == f"btn_{rowPlaceNum}_5_Sub"):
                 # 제품 개수가 1개일 때는 감소가 일어나지않아야 함.
@@ -322,12 +351,32 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget.setItem(rowPlaceNum, 3, QTableWidgetItem(str(prdTotalPrice)))
                 # 전체 합계 재설정 현재 합계 - 단품 가격
                 self.ui.label.setText('합계 : ' + str(sum_Result - int(self.ui.tableWidget.item(rowPlaceNum, 1).text())))
+
             # 행 초기화
             rowPlaceNum = 0
             # 제품 개수 초기화
             prdCount = 0
-            
-        print(f"{button} clicked!")
+
+    # 전체 삭제 버튼 클릭 이벤트        
+    def all_Del_Button(self):
+        button = self.sender()
+        print(f'Button "{button.objectName()}" pressed!')
+        sum_Result = 0
+        for i in range (self.ui.tableWidget.rowCount()):
+            self.ui.tableWidget.removeRow(0)
+            # print(f"Delete_'{i}'_Row")
+        self.ui.label.setText('합계 : ' + str(sum_Result))
+
+    # 판매 기록 저장 
+    def commit_Button(self):
+        button = self.sender()
+        print(f'Button "{button.objectName()}" pressed!')
+        self.insert_Select_DB(1)
+        sum_Result = 0
+        for i in range (self.ui.tableWidget.rowCount()):
+            self.ui.tableWidget.removeRow(0)
+            # print(f"Delete_'{i}'_Row")
+        self.ui.label.setText('합계 : ' + str(sum_Result))
 
     # 수량 추가 버튼 생성 이벤트
     def make_Add_Button(self, rowPlaceNum, colPlaceNum):
@@ -353,8 +402,9 @@ class MainWindow(QMainWindow):
         # 위젯에 레이아웃 담기
         cellWidget.setLayout(layout)
         # 만들어진 위젯을 리턴
-        # print(f'Make Button "{btn_Add}"!')
+        # print(f'Make Button "{btn_Add.objectName()}"!')
         return cellWidget
+    
     # 수량 제거 버튼 생성 이벤트    
     def make_Sub_Button(self, rowPlaceNum, colPlaceNum):
         # 추가/삭제 레이아웃 
@@ -379,8 +429,9 @@ class MainWindow(QMainWindow):
         # 위젯에 레이아웃 담기
         cellWidget.setLayout(layout)
         # 만들어진 위젯을 리턴
-        # print(f'Make Button "{btn_Sub}"!')
+        # print(f'Make Button "{btn_Sub.objectName()}"!')
         return cellWidget
+    
     # 해당 행 삭제 버튼 생성 이벤트    
     def make_Del_Button(self, rowPlaceNum, colPlaceNum):
         # 추가/삭제 레이아웃 
@@ -426,46 +477,98 @@ class MainWindow(QMainWindow):
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
 
-    def initDB(self):
+    # DB 접속 및 rows 초기화
+    def initDB(self, mode):
         self.conn = pymysql.connect(host='localhost', user='root', password='12345',
                                         db='calckiosk', charset='utf8')
         cur = self.conn.cursor()
-        # calckiosk.products db 접속 해서 가격 가져오기
-        query = '''SELECT Idx
-                        , prdName
-                        , prdPrice
-                    FROM products;'''
-        cur.execute(query)
-        rows = cur.fetchall()
+        # 제품 가격 불러와서 설정하기
+        if mode == 1:
+            # calckiosk.products db 접속 해서 가격 가져오기
+            query = '''SELECT Idx
+                            , prdName
+                            , prdPrice
+                        FROM products;'''
+            cur.execute(query)
+            rows = cur.fetchall()
+        # 제품 가격 수정하기 
+        elif mode == 2:
+            update_query = '''UPDATE calckiosk.products
+                                SET idx = %s
+                                    , prdName = %s
+                                    , prdPrice = %s
+                                WHERE idx = %s;'''
+            
+            menu_index = None;
+            update_query_value = (int(rows[menu_index])[0], (rows[menu_index])[1], int(rows[menu_index])[2], int(rows[menu_index])[0])
+            cur.execute(update_query, update_query_value)
+            rows = cur.fetchall()            
 
-        # columnName = ['제품명','개수','가격','수량 추가',' 수량 제거','삭제']
-        table = self.ui.tableWidget
-        # 컬럼 갯수 조절
-        table.setColumnCount(all_Column)
-        # 테이블 위젯 컬럼 크기 조절
-        table.setColumnWidth(0, self.width()*13/100)
-        table.setColumnWidth(1, self.width()*4/100)
-        table.setColumnWidth(2, self.width()*3/100)
-        table.setColumnWidth(3, self.width()*5/100)
-        table.setColumnWidth(4, self.width()*7/100) # 600
-        table.setColumnWidth(5, self.width()*7/100)
-        table.setColumnWidth(6, self.width()*2/100)
-
-        #'번호' = AI(불필요),'제품명','개수','가격','수량 추가',' 수량 제거','삭제'
-        header = table.horizontalHeader()       
-        header.setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
-        header.setSectionResizeMode(1, QHeaderView.ResizeMode.Fixed)
-        header.setSectionResizeMode(2, QHeaderView.ResizeMode.Fixed)
-        header.setSectionResizeMode(3, QHeaderView.ResizeMode.Fixed)
-        header.setSectionResizeMode(4, QHeaderView.ResizeMode.Fixed)
-        header.setSectionResizeMode(5, QHeaderView.ResizeMode.Fixed)
-        header.setSectionResizeMode(6, QHeaderView.ResizeMode.Fixed)
-
-        header.cascadingSectionResizes()
-        
+        self.conn.commit()
         self.conn.close() # 프로그램 종료할 때
-
         return rows
+
+    def insert_Select_DB(self, mode):
+        insert_Db_Result = []
+        today = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+        self.conn = pymysql.connect(host='localhost', user='root', password='12345',
+                                        db='calckiosk', charset='utf8')
+        query = f'''INSERT INTO calckiosk.sales (dateitem
+                         , prdName
+                         , prdPrice
+                         , count
+                         , sellPrice) 
+                    VALUES (%s
+                         , %s
+                         , %s
+                         , %s
+                         , %s);'''    
+        cur = self.conn.cursor()
+        # insert 일 때
+        if mode == 1:
+            # 테이블 위젯안에 있는 row 개수만큼 반복
+            for i in range(self.ui.tableWidget.rowCount()):
+                # 제품 판매 가격이 비어있다면
+                if self.ui.tableWidget.item(i, 3)!= None:
+                    # 리스트 insert_Db_Result에 값 넣기
+                    insert_Db_Result.append((today, self.ui.tableWidget.item(i, 0).text(), self.ui.tableWidget.item(i, 1).text(), self.ui.tableWidget.item(i, 2).text(), self.ui.tableWidget.item(i, 3).text()))
+                    print(f"Insert {i+1}_row  : Complete!")
+                    # 쿼리문 실행
+                    cur.execute(query, insert_Db_Result[i])
+                else:
+                    break
+                # INSERT INTO calckiosk.sales
+                #      ( idx,
+                #        dateitem,
+                #        prdName,
+                #        count,
+                #        prdPrice,
+                #        sellPrice)
+                # VALUES (idx,
+                #        dateitem,
+                #        prdName,
+                #        count,
+                #        prdPrice,
+                #        sellPrice);
+        # select일 때
+        elif mode == 2:
+            # calckiosk.sales db 접속 해서 가격 가져오기
+            select_query = '''SELECT idx
+                                   , dateitem
+                                   , prdName
+                                   , prdPrice
+                                   , count
+                                   , sellPrice
+                                FROM calckiosk.sales;'''
+            cur.execute(select_query)
+            rows = cur.fetchall()
+            self.conn.close() # 프로그램 종료할 때
+            return rows
+        
+        # 데이터 값 변경이 있을 때 commit 해줘야한다.
+        self.conn.commit()    
+        self.conn.close() # 프로그램 종료할 때
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
