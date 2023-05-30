@@ -24,6 +24,9 @@ from datetime import datetime
 from modules import *
 from widgets import *
 
+# from matplotlib.backends.backend_qt6agg import FigureCanvasQTAgg as FigureCanvas
+# from matplotlib.figure import Figure
+
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
@@ -491,7 +494,8 @@ class MainWindow(QMainWindow):
                         FROM products;'''
             cur.execute(query)
             rows = cur.fetchall()
-        # 제품 가격 수정하기 
+
+        # 제품 가격 수정하기 - 추후 추가 예정
         elif mode == 2:
             update_query = '''UPDATE calckiosk.products
                                 SET idx = %s
@@ -552,7 +556,7 @@ class MainWindow(QMainWindow):
                 #        prdPrice,
                 #        sellPrice);
         # select일 때
-        elif mode == 2:
+        elif mode == 2: # 추후 추가 예정
             # calckiosk.sales db 접속 해서 가격 가져오기
             select_query = '''SELECT idx
                                    , dateitem

@@ -9,14 +9,15 @@
 ################################################################################
 # 개인적으로 추가해서 넣은 함수 정리하는 구역
 # MainWindow.setWindowFlag(QtCore.Qt.WindowType.FramelessWindowHint)
-# qss_file = './themes/py_dracula_dark.qss'  # QSS 파일 경로
 #
+# qss_file = './themes/py_dracula_dark.qss'  # QSS 파일 경로
+# 디자인 파일 읽어서 자동으로 적용
 # with open(qss_file, 'r') as f:
 #         style_sheet = f.read()
 # self.styleSheet.setStyleSheet(style_sheet)
 # self.appMargins = QVBoxLayout(self.styleSheet)
 #
-#
+# 테이블 위젯 내용 수정 금지
 # self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
 ################################################################################
 from PySide6.QtCore import *
