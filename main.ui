@@ -65,7 +65,6 @@
     <font>
      <family>NanumGothic</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
     </font>
@@ -905,7 +904,6 @@ btn_pomegranate{
               <font>
                <family>NanumGothic</family>
                <pointsize>12</pointsize>
-               <weight>7</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -936,7 +934,6 @@ btn_pomegranate{
               <font>
                <family>NanumGothic</family>
                <pointsize>8</pointsize>
-               <weight>50</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -1022,7 +1019,6 @@ btn_pomegranate{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1086,7 +1082,6 @@ btn_pomegranate{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1123,7 +1118,6 @@ btn_pomegranate{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1160,7 +1154,6 @@ btn_pomegranate{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1197,7 +1190,6 @@ btn_pomegranate{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1234,7 +1226,6 @@ btn_pomegranate{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1298,7 +1289,6 @@ btn_pomegranate{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1434,7 +1424,6 @@ btn_pomegranate{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1568,7 +1557,6 @@ btn_pomegranate{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                     <stylestrategy>PreferDefault</stylestrategy>
@@ -1756,7 +1744,6 @@ btn_pomegranate{
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>10</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2279,7 +2266,6 @@ btn_pomegranate{
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2329,7 +2315,6 @@ btn_pomegranate{
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2372,7 +2357,6 @@ btn_pomegranate{
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2764,7 +2748,6 @@ btn_pomegranate{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>-1</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
