@@ -63,7 +63,7 @@
   <widget class="QWidget" name="styleSheet">
    <property name="font">
     <font>
-     <family>Segoe UI</family>
+     <family>NanumGothic</family>
      <pointsize>10</pointsize>
      <weight>50</weight>
      <italic>false</italic>
@@ -76,19 +76,31 @@
 SET APP STYLESHEET - FULL STYLES HERE
 DARK THEME - DRACULA COLOR BASED
 
+# BY: WANDERSON M.PIMENTA
+# PROJECT MADE WITH: Qt Designer and PySide6
+# V: 1.0.0
+#
+# This project can be used freely for all uses, as long as they maintain the
+# respective credits only in the Python scripts, any information in the visual
+# interface (GUI) can be modified without any implication.
+#
+# There are limitations on Qt licenses if you want to use your products
+# commercially, I recommend reading them on the official website:
+# https://doc.qt.io/qtforpython/licenses.html
+
 ///////////////////////////////////////////////////////////////////////////////////////////////// */
 
 QWidget{
-	color: rgb(221, 221, 221);
-	font: 10pt &quot;Segoe UI&quot;;
+	color: #333;
+	font: 10pt &quot;NanumGothic&quot;;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Tooltip */
 QToolTip {
-	color: #ffffff;
-	background-color: rgba(33, 37, 43, 180);
-	border: 1px solid rgb(44, 49, 58);
+	color: #333;
+	background-color: #f8f8f2;
+	border: 1px solid #CCC;
 	background-image: none;
 	background-position: left center;
     background-repeat: no-repeat;
@@ -102,23 +114,24 @@ QToolTip {
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Bg App */
 #bgApp {	
-	background-color: rgb(40, 44, 52);
-	border: 1px solid rgb(44, 49, 58);
+	background-color: #f8f8f2;
+	border: 1px solid #CCC;
+    color: #44475a;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Left Menu */
 #leftMenuBg {	
-	background-color: rgb(33, 37, 43);
+	background-color: #FFC777;
 }
 #topLogo {
-	background-color: rgb(33, 37, 43);
-	background-image: url(:/images/images/images/bread40.png);
+	background-color: #FFC777;
+	background-image: url(:/images/images/images/bread40.png);	
 	background-position: centered;
 	background-repeat: no-repeat;
 }
-#titleLeftApp { font: 63 12pt &quot;Segoe UI Semibold&quot;; }
-#titleLeftDescription { font: 8pt &quot;Segoe UI&quot;; color: rgb(189, 147, 249); }
+#titleLeftApp { font: 63 12pt &quot;NanumGothic&quot;; color: #f8f8f2; }
+#titleLeftDescription { font: 8pt &quot;NanumGothic&quot;; color: #E39500; }
 
 /* MENUS */
 #topMenu .QPushButton {	
@@ -129,12 +142,13 @@ Left Menu */
 	background-color: transparent;
 	text-align: left;
 	padding-left: 44px;
+    color: #f8f8f2;
 }
 #topMenu .QPushButton:hover {
-	background-color: rgb(40, 44, 52);
+	background-color: #FFC777;
 }
 #topMenu .QPushButton:pressed {	
-	background-color: rgb(189, 147, 249);
+	background-color: #ff79c6;
 	color: rgb(255, 255, 255);
 }
 #bottomMenu .QPushButton {	
@@ -145,16 +159,17 @@ Left Menu */
 	background-color:transparent;
 	text-align: left;
 	padding-left: 44px;
+    color: #f8f8f2;
 }
 #bottomMenu .QPushButton:hover {
-	background-color: rgb(40, 44, 52);
+	background-color: #E39500;
 }
 #bottomMenu .QPushButton:pressed {	
-	background-color: rgb(189, 147, 249);
+	background-color: #ff79c6;
 	color: rgb(255, 255, 255);
 }
 #leftMenuFrame{
-	border-top: 3px solid rgb(44, 49, 58);
+	border-top: 3px solid #E39500;
 }
 
 /* Toggle Button */
@@ -163,16 +178,17 @@ Left Menu */
     background-repeat: no-repeat;
 	border: none;
 	border-left: 20px solid transparent;
-	background-color: rgb(37, 41, 48);
+	background-color: #FFC777;
 	text-align: left;
 	padding-left: 44px;
-	color: rgb(113, 126, 149);
+	color: #f8f8f2;
 }
 #toggleButton:hover {
-	background-color: rgb(40, 44, 52);
+	background-color: #FFC777;
 }
-#toggleButton:pressed {
-	background-color: rgb(189, 147, 249);
+#toggleButton:pressed {	
+	background-color: #ff79c6;
+	color: rgb(255, 255, 255);
 }
 
 /* Title Menu */
@@ -182,7 +198,8 @@ Left Menu */
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Extra Tab */
 #extraLeftBox {	
-	background-color: rgb(44, 49, 58);
+	background-color: #495474;
+    color: #f8f8f2;
 }
 #extraTopBg{	
 	background-color: rgb(189, 147, 249)
@@ -205,21 +222,22 @@ Extra Tab */
 
 /* Extra Content */
 #extraContent{
-	border-top: 3px solid rgb(40, 44, 52);
+	border-top: 3px solid #FFC777;
 }
 
 /* Extra Top Menus */
 #extraTopMenu .QPushButton {
-background-position: left center;
+    background-position: left center;
     background-repeat: no-repeat;
 	border: none;
 	border-left: 22px solid transparent;
 	background-color:transparent;
 	text-align: left;
 	padding-left: 44px;
+    color: #f8f8f2;
 }
 #extraTopMenu .QPushButton:hover {
-	background-color: rgb(40, 44, 52);
+	background-color: #D69803;
 }
 #extraTopMenu .QPushButton:pressed {	
 	background-color: rgb(189, 147, 249);
@@ -229,111 +247,121 @@ background-position: left center;
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Content App */
 #contentTopBg{	
-	background-color: rgb(33, 37, 43);
+	background-color: #FFC777;
 }
 #contentBottom{
-	border-top: 3px solid rgb(44, 49, 58);
+	border-top: 3px solid #E39500;
+}
+#titleRightInfo{
+    color: #f8f8f2;
 }
 
 /* Top Buttons */
 #rightButtons .QPushButton { background-color: rgba(255, 255, 255, 0); border: none;  border-radius: 5px; }
-#rightButtons .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; border-radius: 4px; }
-#rightButtons .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; border-radius: 4px; }
+#rightButtons .QPushButton:hover { background-color: #E39500; border-style: solid; border-radius: 4px; }
+#rightButtons .QPushButton:pressed { background-color: #ff79c6; border-style: solid; border-radius: 4px; }
 
 /* Theme Settings */
-#extraRightBox { background-color: rgb(44, 49, 58); }
-#themeSettingsTopDetail { background-color: rgb(189, 147, 249); }
+#extraRightBox { background-color: #495474; }
+#themeSettingsTopDetail { background-color: #FFC777; }
 
 /* Bottom Bar */
-#bottomBar { background-color: rgb(44, 49, 58); }
-#bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }
+#bottomBar { background-color: #495474 }
+#bottomBar QLabel { font-size: 11px; color: #f8f8f2; padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }
 
 /* CONTENT SETTINGS */
 /* MENUS */
-#contentSettings .QPushButton {	
-	background-position: left center;
+#contentSettings .QPushButton {
+    background-position: left center;
     background-repeat: no-repeat;
 	border: none;
 	border-left: 22px solid transparent;
 	background-color:transparent;
 	text-align: left;
 	padding-left: 44px;
+    color: #f8f8f2;
 }
 #contentSettings .QPushButton:hover {
-	background-color: rgb(40, 44, 52);
+	background-color: #D69803;
 }
 #contentSettings .QPushButton:pressed {	
 	background-color: rgb(189, 147, 249);
 	color: rgb(255, 255, 255);
 }
-
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 QTableWidget */
 QTableWidget {	
 	background-color: transparent;
 	padding: 10px;
 	border-radius: 5px;
-	gridline-color: rgb(44, 49, 58);
-	border-bottom: 1px solid rgb(44, 49, 60);
+	gridline-color: #9faeda;
+    outline: none;
 }
 QTableWidget::item{
-	border-color: rgb(44, 49, 60);
+	border-color: #FFE2B1;
 	padding-left: 5px;
 	padding-right: 5px;
-	gridline-color: rgb(44, 49, 60);
+	gridline-color: #9faeda;
 }
 QTableWidget::item:selected{
-	background-color: rgb(189, 147, 249);
+	background-color: rgb(255, 219, 172);
+    color: #f8f8f2;
+}
+
+QTableWidget::item:hover {
+    background-color: rgba(255, 219, 172, 0.5);
+    border-bottom: 1px solid rgba(255, 219, 172, 0.9);
 }
 QHeaderView::section{
-	background-color: rgb(33, 37, 43);
+	background-color: #FFC777;
 	max-width: 30px;
-	border: 1px solid rgb(44, 49, 58);
+	border: none;
 	border-style: none;
-    border-bottom: 1px solid rgb(44, 49, 60);
-    border-right: 1px solid rgb(44, 49, 60);
 }
 QTableWidget::horizontalHeader {	
-	background-color: rgb(33, 37, 43);
+	background-color: #FFC777;
 }
 QHeaderView::section:horizontal
 {
-    border: 1px solid rgb(33, 37, 43);
-	background-color: rgb(33, 37, 43);
+    border: 1px solid #FFC777;
+	background-color: #FFC777;
 	padding: 3px;
 	border-top-left-radius: 7px;
     border-top-right-radius: 7px;
+    color: #f8f8f2;
 }
 QHeaderView::section:vertical
 {
-    border: 1px solid rgb(44, 49, 60);
+    border: 1px solid #FFC777;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 LineEdit */
 QLineEdit {
-	background-color: rgb(33, 37, 43);
+	background-color: #FFC777;
 	border-radius: 5px;
-	border: 2px solid rgb(33, 37, 43);
+	border: 2px solid #FFC777;
 	padding-left: 10px;
 	selection-color: rgb(255, 255, 255);
 	selection-background-color: rgb(255, 121, 198);
+    color: #f8f8f2;
 }
 QLineEdit:hover {
 	border: 2px solid rgb(64, 71, 88);
 }
 QLineEdit:focus {
-	border: 2px solid rgb(91, 101, 124);
+	border: 2px solid #ff79c6;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 PlainTextEdit */
 QPlainTextEdit {
-	background-color: rgb(27, 29, 35);
+	background-color: #FFC777;
 	border-radius: 5px;
 	padding: 10px;
 	selection-color: rgb(255, 255, 255);
 	selection-background-color: rgb(255, 121, 198);
+    color: #f8f8f2;
 }
 QPlainTextEdit  QScrollBar:vertical {
     width: 8px;
@@ -345,14 +373,14 @@ QPlainTextEdit:hover {
 	border: 2px solid rgb(64, 71, 88);
 }
 QPlainTextEdit:focus {
-	border: 2px solid rgb(91, 101, 124);
+	border: 2px solid #ff79c6;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 ScrollBars */
 QScrollBar:horizontal {
     border: none;
-    background: rgb(52, 59, 72);
+    background: #FFC777;
     height: 8px;
     margin: 0px 21px 0 21px;
 	border-radius: 0px;
@@ -364,7 +392,7 @@ QScrollBar::handle:horizontal {
 }
 QScrollBar::add-line:horizontal {
     border: none;
-    background: rgb(55, 63, 77);
+    background: #FFC777;
     width: 20px;
 	border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -373,7 +401,7 @@ QScrollBar::add-line:horizontal {
 }
 QScrollBar::sub-line:horizontal {
     border: none;
-    background: rgb(55, 63, 77);
+    background: #FFC777;
     width: 20px;
 	border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -390,7 +418,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
 }
  QScrollBar:vertical {
 	border: none;
-    background: rgb(52, 59, 72);
+    background-color: #FFC777;
     width: 8px;
     margin: 21px 0 21px 0;
 	border-radius: 0px;
@@ -402,7 +430,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
  }
  QScrollBar::add-line:vertical {
      border: none;
-    background: rgb(55, 63, 77);
+    background: #FFC777;
      height: 20px;
 	border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -411,7 +439,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
  }
  QScrollBar::sub-line:vertical {
 	border: none;
-    background: rgb(55, 63, 77);
+    background: #FFC777;
      height: 20px;
 	border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -429,56 +457,57 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 CheckBox */
 QCheckBox::indicator {
-    border: 3px solid rgb(52, 59, 72);
+    border: 3px solid #FFC777;
 	width: 15px;
 	height: 15px;
 	border-radius: 10px;
-    background: rgb(44, 49, 60);
+    background: #FFC777;
 }
 QCheckBox::indicator:hover {
-    border: 3px solid rgb(58, 66, 81);
+    border: 3px solid rgb(119, 136, 187);
 }
 QCheckBox::indicator:checked {
-    background: 3px solid rgb(52, 59, 72);
-	border: 3px solid rgb(52, 59, 72);	
+    background: 3px solid #E39500;
+	border: 3px solid #E39500;	
 	background-image: url(:/icons/images/icons/cil-check-alt.png);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 RadioButton */
 QRadioButton::indicator {
-    border: 3px solid rgb(52, 59, 72);
+    border: 3px solid #FFC777;
 	width: 15px;
 	height: 15px;
 	border-radius: 10px;
-    background: rgb(44, 49, 60);
+    background: #FFC777;
 }
 QRadioButton::indicator:hover {
-    border: 3px solid rgb(58, 66, 81);
+    border: 3px solid rgb(119, 136, 187);
 }
 QRadioButton::indicator:checked {
-    background: 3px solid rgb(94, 106, 130);
-	border: 3px solid rgb(52, 59, 72);	
+    background: 3px solid #E39500;
+	border: 3px solid #E39500;	
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 ComboBox */
 QComboBox{
-	background-color: rgb(27, 29, 35);
+	background-color: #FFC777;
 	border-radius: 5px;
-	border: 2px solid rgb(33, 37, 43);
+	border: 2px solid #FFC777;
 	padding: 5px;
 	padding-left: 10px;
+    color: #f8f8f2;
 }
 QComboBox:hover{
-	border: 2px solid rgb(64, 71, 88);
+	border: 2px solid #7284b9;
 }
 QComboBox::drop-down {
 	subcontrol-origin: padding;
 	subcontrol-position: top right;
 	width: 25px; 
 	border-left-width: 3px;
-	border-left-color: rgba(39, 44, 54, 150);
+	border-left-color: #FFC777;
 	border-left-style: solid;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;	
@@ -488,9 +517,9 @@ QComboBox::drop-down {
  }
 QComboBox QAbstractItemView {
 	color: rgb(255, 121, 198);	
-	background-color: rgb(33, 37, 43);
+	background-color: #FFC777;
 	padding: 10px;
-	selection-background-color: rgb(39, 44, 54);
+	selection-background-color: #FFC777;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -499,10 +528,10 @@ QSlider::groove:horizontal {
     border-radius: 5px;
     height: 10px;
 	margin: 0px;
-	background-color: rgb(52, 59, 72);
+	background-color: #FFC777;
 }
 QSlider::groove:horizontal:hover {
-	background-color: rgb(55, 62, 76);
+	background-color: #FFC777;
 }
 QSlider::handle:horizontal {
     background-color: rgb(189, 147, 249);
@@ -523,10 +552,10 @@ QSlider::groove:vertical {
     border-radius: 5px;
     width: 10px;
     margin: 0px;
-	background-color: rgb(52, 59, 72);
+	background-color: #FFC777;
 }
 QSlider::groove:vertical:hover {
-	background-color: rgb(55, 62, 76);
+	background-color: #FFC777;
 }
 QSlider::handle:vertical {
     background-color: rgb(189, 147, 249);
@@ -545,36 +574,194 @@ QSlider::handle:vertical:pressed {
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 CommandLinkButton */
-QCommandLinkButton {	
+#pagesContainer QCommandLinkButton {	
 	color: rgb(255, 121, 198);
 	border-radius: 5px;
 	padding: 5px;
-	color: rgb(255, 170, 255);
+    border: 2px solid #ff79c6;
+    color: #ff79c6;
 }
-QCommandLinkButton:hover {	
+#pagesContainer QCommandLinkButton:hover {	
 	color: rgb(255, 170, 255);
-	background-color: rgb(44, 49, 60);
+	background-color: #FFC777;
 }
-QCommandLinkButton:pressed {	
+#pagesContainer QCommandLinkButton:pressed {	
 	color: rgb(189, 147, 249);
-	background-color: rgb(52, 58, 71);
+	background-color: #586796;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Button */
 #pagesContainer QPushButton {
-	border: 2px solid rgb(52, 59, 72);
+	border: 2px solid #FFC777;
 	border-radius: 5px;	
-	background-color: rgb(52, 59, 72);
+	background-color: #FFC777;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
 }
 #pagesContainer QPushButton:hover {
-	background-color: rgb(57, 65, 80);
-	border: 2px solid rgb(61, 70, 86);
+	background-color: #D69803;
+	border: 2px solid #D69803;
 }
 #pagesContainer QPushButton:pressed {	
-	background-color: rgb(35, 40, 49);
-	border: 2px solid rgb(43, 50, 61);
+	background-color: #546391;
+	border: 2px solid #ff79c6;
 }
+/* 버튼 모음 */
+btn_americano{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_blueberries{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_brezel{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_brezel_set{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_cheeseball{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_cider{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_coke{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_dinoagg{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_donuts{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_Fanta{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_hotamericano{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_hotdog{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_peach{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_plum{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+btn_pomegranate{
+	border: 2px solid #FFC777;
+	border-radius: 5px;	
+	background-color: #E39500;
+    color: #f8f8f2;	
+	text-align: bottom;
+	padding-bottom: 10px;
+	font: NanumGothic;
+	font-size: 17px;
+}
+/* //////////////////////////////////////////////////////////////////////////////////////// */
 
 </string>
    </property>
@@ -716,7 +903,7 @@ Button */
              </property>
              <property name="font">
               <font>
-               <family>Segoe UI Semibold</family>
+               <family>NanumGothic</family>
                <pointsize>12</pointsize>
                <weight>7</weight>
                <italic>false</italic>
@@ -747,7 +934,7 @@ Button */
              </property>
              <property name="font">
               <font>
-               <family>Segoe UI</family>
+               <family>NanumGothic</family>
                <pointsize>8</pointsize>
                <weight>50</weight>
                <italic>false</italic>
@@ -833,7 +1020,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+                    <family>NanumGothic</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -897,7 +1084,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+                    <family>NanumGothic</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -934,7 +1121,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+                    <family>NanumGothic</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -971,7 +1158,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+                    <family>NanumGothic</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -1008,7 +1195,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+                    <family>NanumGothic</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -1045,7 +1232,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+                    <family>NanumGothic</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -1109,7 +1296,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+                    <family>NanumGothic</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -1245,7 +1432,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+                    <family>NanumGothic</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -1379,7 +1566,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+                    <family>NanumGothic</family>
                     <pointsize>10</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
@@ -1530,7 +1717,7 @@ Button */
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QGridLayout" name="gridLayout_4">
@@ -1567,7 +1754,7 @@ Button */
                            </property>
                            <property name="font">
                             <font>
-                             <family>Segoe UI</family>
+                             <family>NanumGothic</family>
                              <pointsize>10</pointsize>
                              <weight>50</weight>
                              <italic>false</italic>
@@ -2088,6 +2275,15 @@ Button */
                              <height>50</height>
                             </size>
                            </property>
+                           <property name="font">
+                            <font>
+                             <family>NanumGothic</family>
+                             <pointsize>-1</pointsize>
+                             <weight>50</weight>
+                             <italic>false</italic>
+                             <bold>false</bold>
+                            </font>
+                           </property>
                            <property name="styleSheet">
                             <string notr="true">background-color: #bd93f9;</string>
                            </property>
@@ -2131,8 +2327,8 @@ Button */
                            </property>
                            <property name="font">
                             <font>
-                             <family>Segoe UI</family>
-                             <pointsize>10</pointsize>
+                             <family>NanumGothic</family>
+                             <pointsize>-1</pointsize>
                              <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
@@ -2174,8 +2370,8 @@ Button */
                            </property>
                            <property name="font">
                             <font>
-                             <family>Segoe UI</family>
-                             <pointsize>10</pointsize>
+                             <family>NanumGothic</family>
+                             <pointsize>-1</pointsize>
                              <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
@@ -2218,30 +2414,7 @@ Button */
                           </size>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">QTableWidget {
-    background-color: transparent;
-    color: #333333;
-}
-
-QHeaderView::section {
-    background-color: rgba(189, 147, 249, 0.7);
-    color: #333333;
-    border: none;
-}
-
-QTableWidget::item:selected {
-    background-color: #A6A6A6;
-}
-
-QTableWidget::item {
-    background-color: rgba(189, 147, 249, 0.3);
-    border-bottom: 1px solid rgba(189, 147, 249, 0.7);
-}
-
-QTableWidget::item:hover {
-    background-color: rgba(189, 147, 249, 0.5);
-    border-bottom: 1px solid rgba(189, 147, 249, 0.9);
-}</string>
+                          <string notr="true"/>
                          </property>
                          <property name="sizeAdjustPolicy">
                           <enum>QAbstractScrollArea::AdjustToContents</enum>
@@ -2589,7 +2762,7 @@ QTableWidget::item:hover {
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
+                    <family>NanumGothic</family>
                     <pointsize>-1</pointsize>
                     <weight>50</weight>
                     <italic>false</italic>
