@@ -619,7 +619,7 @@ class Ui_MainWindow(object):
         self.btn_All_Del.setMaximumSize(QSize(500, 150))
         self.btn_All_Del.setBaseSize(QSize(110, 40))
         self.btn_All_Del.setFont(font1)
-        self.btn_All_Del.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_All_Del.setStyleSheet(u"background-color: rgb(227, 149, 0);")
 
         self.horizontalLayout_6.addWidget(self.btn_All_Del)
 
@@ -631,7 +631,7 @@ class Ui_MainWindow(object):
         self.btu_Commit.setMaximumSize(QSize(500, 150))
         self.btu_Commit.setBaseSize(QSize(110, 40))
         self.btu_Commit.setFont(font1)
-        self.btu_Commit.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btu_Commit.setStyleSheet(u"background-color: rgb(250, 164, 0);")
 
         self.horizontalLayout_6.addWidget(self.btu_Commit)
 
