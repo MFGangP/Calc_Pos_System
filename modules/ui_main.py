@@ -24,8 +24,7 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 from PySide6.QtWidgets import QTableWidget
-from . resources_rc import *
-from rc_resources import *
+from resources_rc import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -153,7 +152,7 @@ class Ui_MainWindow(object):
         self.toggleButton.setFont(font1)
         self.toggleButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.toggleButton.setLayoutDirection(Qt.LeftToRight)
-        self.toggleButton.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_menu.png);")
+        self.toggleButton.setStyleSheet(u"background-image: url(:/icon/images/icons/icon_menu.png);")
 
         self.verticalLayout_4.addWidget(self.toggleButton)
 
@@ -176,7 +175,7 @@ class Ui_MainWindow(object):
         self.btn_home.setFont(font1)
         self.btn_home.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_home.setLayoutDirection(Qt.LeftToRight)
-        self.btn_home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
+        self.btn_home.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-home.png);")
 
         self.verticalLayout_8.addWidget(self.btn_home)
 
@@ -188,7 +187,7 @@ class Ui_MainWindow(object):
         self.btn_calender.setFont(font1)
         self.btn_calender.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_calender.setLayoutDirection(Qt.LeftToRight)
-        self.btn_calender.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-calendar-check.png);")
+        self.btn_calender.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-calendar-check.png);")
 
         self.verticalLayout_8.addWidget(self.btn_calender)
 
@@ -200,7 +199,7 @@ class Ui_MainWindow(object):
         self.btn_chart.setFont(font1)
         self.btn_chart.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_chart.setLayoutDirection(Qt.LeftToRight)
-        self.btn_chart.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-chart-line.png);")
+        self.btn_chart.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-chart-line.png);")
 
         self.verticalLayout_8.addWidget(self.btn_chart)
 
@@ -212,7 +211,7 @@ class Ui_MainWindow(object):
         self.btn_save.setFont(font1)
         self.btn_save.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_save.setLayoutDirection(Qt.LeftToRight)
-        self.btn_save.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-save.png)")
+        self.btn_save.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-save.png)")
 
         self.verticalLayout_8.addWidget(self.btn_save)
 
@@ -224,7 +223,7 @@ class Ui_MainWindow(object):
         self.btn_exit.setFont(font1)
         self.btn_exit.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_exit.setLayoutDirection(Qt.LeftToRight)
-        self.btn_exit.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-x.png);")
+        self.btn_exit.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-x.png);")
 
         self.verticalLayout_8.addWidget(self.btn_exit)
 
@@ -247,7 +246,7 @@ class Ui_MainWindow(object):
         self.toggleLeftBox.setFont(font1)
         self.toggleLeftBox.setCursor(QCursor(Qt.PointingHandCursor))
         self.toggleLeftBox.setLayoutDirection(Qt.LeftToRight)
-        self.toggleLeftBox.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_settings.png);")
+        self.toggleLeftBox.setStyleSheet(u"background-image: url(:/icon/images/icons/icon_settings.png);")
 
         self.verticalLayout_9.addWidget(self.toggleLeftBox)
 
@@ -412,6 +411,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7 = QHBoxLayout()
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.horizontalLayout_7.setSizeConstraint(QLayout.SetDefaultConstraint)
+
         self.label = QLabel(self.home)
         self.label.setObjectName(u"label")
         sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)

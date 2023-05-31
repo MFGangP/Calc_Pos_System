@@ -395,6 +395,24 @@ class MainWindow(QMainWindow):
         # 버튼 사이즈 조절 부분
         btn_Add.setMinimumSize(QSize(70, 26))
         btn_Add.setMaximumSize(QSize(70, 26))
+        btn_Add.setStyleSheet(u'''QPushButton{
+                                    color: #f8f8f2;
+                                    background-color: #FFC777;
+                                    border: 2px solid rgb(255, 190, 11);
+                                    border-radius: 5px;
+                                }
+                                QPushButton:Hover{
+                                    color: rgb(255, 255, 255);
+                                    background-color: #D69803;
+                                    border: 2px solid #D69803;
+                                    border-radius: 5px;
+                                }
+                                QPushButton:Pressed{
+                                    color: rgb(255, 255, 255);
+                                    background-color: #FFC777;
+                                    border: 2px solid rgb(255, 190, 11);
+                                    border-radius: 5px;
+                                }''')
         # 버튼 내 텍스트 변경 부분
         btn_Add.setText('추가')
         btn_Add.clicked.connect(self.row_Button_Click)
@@ -424,6 +442,24 @@ class MainWindow(QMainWindow):
         btn_Sub.setMaximumSize(QSize(70, 26))
         # 버튼 내 텍스트 변경 부분
         btn_Sub.setText('제거')
+        btn_Sub.setStyleSheet(u'''QPushButton{
+                                    color: #f8f8f2;
+                                    background-color: #FFC777;
+                                    border: 2px solid rgb(255, 190, 11);
+                                    border-radius: 5px;
+                                }
+                                QPushButton:Hover{
+                                    color: rgb(255, 255, 255);
+                                    background-color: #D69803;
+                                    border: 2px solid #D69803;
+                                    border-radius: 5px;
+                                }
+                                QPushButton:Pressed{
+                                    color: rgb(255, 255, 255);
+                                    background-color: #FFC777;
+                                    border: 2px solid rgb(255, 190, 11);
+                                    border-radius: 5px;
+                                }''')
         btn_Sub.clicked.connect(self.row_Button_Click)
         # 레이아웃에 버튼 삽입
         layout.addWidget(btn_Sub)
@@ -451,6 +487,24 @@ class MainWindow(QMainWindow):
         btn_Del.setMaximumSize(QSize(30, 26))
         # 버튼 내 텍스트 변경 부분
         btn_Del.setText('X')
+        btn_Del.setStyleSheet(u'''QPushButton{
+                                    color: #f8f8f2;
+                                    background-color: #FFC777;
+                                    border: 2px solid rgb(255, 190, 11);
+                                    border-radius: 5px;
+                                }
+                                QPushButton:Hover{
+                                    color: rgb(255, 255, 255);
+                                    background-color: #D69803;
+                                    border: 2px solid #D69803;
+                                    border-radius: 5px;
+                                }
+                                QPushButton:Pressed{
+                                    color: rgb(255, 255, 255);
+                                    background-color: #FFC777;
+                                    border: 2px solid rgb(255, 190, 11);
+                                    border-radius: 5px;
+                                }''')
         btn_Del.clicked.connect(self.row_Button_Click)
         # 레이아웃에 버튼 삽입
         layout.addWidget(btn_Del)

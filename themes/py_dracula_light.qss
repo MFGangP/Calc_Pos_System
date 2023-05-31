@@ -525,7 +525,6 @@ Button */
 	background-color: #FFC777;
     color: #f8f8f2;	
 	text-align: bottom;
-	padding-bottom: 10px;
 	font: NanumGothic;
 	font-size: 17px;
 }
@@ -534,9 +533,20 @@ Button */
 	border: 2px solid #D69803;
 }
 #pagesContainer QPushButton:pressed {	
-	background-color: #546391;
-	border: 2px solid #ff79c6;
+	color: #f8f8f2;
+	background-color: #FFC777;
+	border: 2px solid #FFC777;
+	border-radius: 5px;
 }
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+Label */
+#pagesContainer QLabel{
+	font: NanumGothic;
+	font-size: 35px;
+}
+
 /* 버튼 모음 */
 btn_americano{
 	border: 2px solid #FFC777;

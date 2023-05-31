@@ -1,5 +1,20 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/images/공룡알.jpg</file>
+    <file>images/images/꽈배기.jpg</file>
+    <file>images/images/꽈배기3개.jpg</file>
+    <file>images/images/도너츠.jpg</file>
+    <file>images/images/따뜻한 아메리카노.jpg</file>
+    <file>images/images/매실.jpg</file>
+    <file>images/images/복숭아.jpg</file>
+    <file>images/images/블루베리.jpg</file>
+    <file>images/images/사이다.jpg</file>
+    <file>images/images/석류.jpg</file>
+    <file>images/images/아이스아메리카노.jpg</file>
+    <file>images/images/치즈볼.jpg</file>
+    <file>images/images/콜라.jpg</file>
+    <file>images/images/핫도그.jpg</file>
+    <file>images/images/환타.jpg</file>
     <file>images/images/bread32.png</file>
     <file>images/images/bread40.png</file>
     <file>images/images/bread512.png</file>
