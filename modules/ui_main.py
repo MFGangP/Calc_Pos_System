@@ -116,7 +116,7 @@ class Ui_MainWindow(object):
         self.titleLeftDescription.setGeometry(QRect(70, 27, 160, 16))
         self.titleLeftDescription.setMaximumSize(QSize(16777215, 16))
         font3 = QFont()
-        font3.setFamily(u"Segoe UI")
+        font3.setFamily(u"NanumGothic")
         font3.setPointSize(8)
         font3.setBold(False)
         font3.setItalic(False)
@@ -429,27 +429,35 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addLayout(self.horizontalLayout_7, 4, 0, 1, 1)
 
+        font4 = QFont()
+        font4.setFamily(u"NanumGothic")
+        font4.setPointSize(20)
+        font4.setBold(False)
+        font4.setItalic(False)
+
         self.gridLayout_3 = QGridLayout()
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.btn_hotamericano = QPushButton(self.home)
+        self.btn_hotamericano.setFont(font4)
         self.btn_hotamericano.setObjectName(u"btn_hotamericano")
         sizePolicy4.setHeightForWidth(self.btn_hotamericano.sizePolicy().hasHeightForWidth())
         self.btn_hotamericano.setSizePolicy(sizePolicy4)
         self.btn_hotamericano.setMinimumSize(QSize(50, 50))
         self.btn_hotamericano.setMaximumSize(QSize(150, 150))
         self.btn_hotamericano.setSizeIncrement(QSize(50, 50))
-        self.btn_hotamericano.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_hotamericano.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_hotamericano, 2, 3, 1, 1)
 
         self.btn_cheeseball = QPushButton(self.home)
         self.btn_cheeseball.setObjectName(u"btn_cheeseball")
+        self.btn_cheeseball.setFont(font4)
         sizePolicy4.setHeightForWidth(self.btn_cheeseball.sizePolicy().hasHeightForWidth())
         self.btn_cheeseball.setSizePolicy(sizePolicy4)
         self.btn_cheeseball.setMinimumSize(QSize(50, 50))
         self.btn_cheeseball.setMaximumSize(QSize(150, 150))
         self.btn_cheeseball.setSizeIncrement(QSize(50, 50))
-        self.btn_cheeseball.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_cheeseball.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_cheeseball, 2, 1, 1, 1)
 
@@ -461,7 +469,7 @@ class Ui_MainWindow(object):
         self.btn_peach.setMaximumSize(QSize(150, 150))
         self.btn_peach.setSizeIncrement(QSize(50, 50))
         self.btn_peach.setAutoFillBackground(False)
-        self.btn_peach.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_peach.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_peach, 3, 3, 1, 1)
 
@@ -472,7 +480,7 @@ class Ui_MainWindow(object):
         self.btn_brezel.setMinimumSize(QSize(50, 50))
         self.btn_brezel.setMaximumSize(QSize(150, 150))
         self.btn_brezel.setSizeIncrement(QSize(50, 50))
-        self.btn_brezel.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_brezel.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_brezel, 0, 0, 1, 1)
 
@@ -483,7 +491,7 @@ class Ui_MainWindow(object):
         self.btn_donuts.setMinimumSize(QSize(50, 50))
         self.btn_donuts.setMaximumSize(QSize(150, 150))
         self.btn_donuts.setSizeIncrement(QSize(50, 50))
-        self.btn_donuts.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_donuts.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_donuts, 0, 3, 1, 1)
 
@@ -494,7 +502,7 @@ class Ui_MainWindow(object):
         self.btn_dinoagg.setMinimumSize(QSize(50, 50))
         self.btn_dinoagg.setMaximumSize(QSize(150, 150))
         self.btn_dinoagg.setSizeIncrement(QSize(50, 50))
-        self.btn_dinoagg.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_dinoagg.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_dinoagg, 0, 2, 1, 1)
 
@@ -505,7 +513,7 @@ class Ui_MainWindow(object):
         self.btn_hotdog.setMinimumSize(QSize(50, 50))
         self.btn_hotdog.setMaximumSize(QSize(150, 150))
         self.btn_hotdog.setSizeIncrement(QSize(50, 50))
-        self.btn_hotdog.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_hotdog.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_hotdog, 2, 0, 1, 1)
 
@@ -516,7 +524,7 @@ class Ui_MainWindow(object):
         self.btn_plum.setMinimumSize(QSize(50, 50))
         self.btn_plum.setMaximumSize(QSize(150, 150))
         self.btn_plum.setSizeIncrement(QSize(50, 50))
-        self.btn_plum.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_plum.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_plum, 3, 1, 1, 1)
 
@@ -527,7 +535,7 @@ class Ui_MainWindow(object):
         self.btn_americano.setMinimumSize(QSize(50, 50))
         self.btn_americano.setMaximumSize(QSize(150, 150))
         self.btn_americano.setSizeIncrement(QSize(50, 50))
-        self.btn_americano.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_americano.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_americano, 2, 2, 1, 1)
 
@@ -538,7 +546,7 @@ class Ui_MainWindow(object):
         self.btn_pomegranate.setMinimumSize(QSize(50, 50))
         self.btn_pomegranate.setMaximumSize(QSize(150, 150))
         self.btn_pomegranate.setSizeIncrement(QSize(50, 50))
-        self.btn_pomegranate.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_pomegranate.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_pomegranate, 3, 0, 1, 1)
 
@@ -549,7 +557,7 @@ class Ui_MainWindow(object):
         self.btn_brezel_set.setMinimumSize(QSize(50, 50))
         self.btn_brezel_set.setMaximumSize(QSize(150, 150))
         self.btn_brezel_set.setSizeIncrement(QSize(50, 50))
-        self.btn_brezel_set.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_brezel_set.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_brezel_set, 0, 1, 1, 1)
 
@@ -560,7 +568,7 @@ class Ui_MainWindow(object):
         self.btn_blueberries.setMinimumSize(QSize(50, 50))
         self.btn_blueberries.setMaximumSize(QSize(150, 150))
         self.btn_blueberries.setSizeIncrement(QSize(50, 50))
-        self.btn_blueberries.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_blueberries.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_blueberries, 3, 2, 1, 1)
 
@@ -571,7 +579,7 @@ class Ui_MainWindow(object):
         self.btn_coke.setMinimumSize(QSize(50, 50))
         self.btn_coke.setMaximumSize(QSize(150, 150))
         self.btn_coke.setSizeIncrement(QSize(50, 50))
-        self.btn_coke.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_coke.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_coke, 4, 0, 1, 1)
 
@@ -582,7 +590,7 @@ class Ui_MainWindow(object):
         self.btn_cider.setMinimumSize(QSize(50, 50))
         self.btn_cider.setMaximumSize(QSize(150, 150))
         self.btn_cider.setSizeIncrement(QSize(50, 50))
-        self.btn_cider.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_cider.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_cider, 4, 1, 1, 1)
 
@@ -593,7 +601,7 @@ class Ui_MainWindow(object):
         self.btn_Fanta.setMinimumSize(QSize(50, 50))
         self.btn_Fanta.setMaximumSize(QSize(150, 150))
         self.btn_Fanta.setSizeIncrement(QSize(50, 50))
-        self.btn_Fanta.setStyleSheet(u"background-color: #bd93f9;")
+        self.btn_Fanta.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_Fanta, 4, 2, 1, 1)
 
@@ -764,7 +772,7 @@ class Ui_MainWindow(object):
         self.btn_chart.setText(QCoreApplication.translate("MainWindow", u"New", None))
         self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
-        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
+        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"\ud658\uacbd\uc124\uc815", None))
         self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"\uc800\uad6c\uba85\ud488\uaf48\ubc30\uae30 \uacc4\uc0b0 \ud0a4\uc624\uc2a4\ud06c", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
