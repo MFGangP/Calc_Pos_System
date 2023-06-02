@@ -150,7 +150,7 @@ class MainWindow(QMainWindow):
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
   
         # DB 접속
-        rows = self.initDB(1)
+        rows = self.initDB()
 
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
@@ -535,33 +535,58 @@ class MainWindow(QMainWindow):
             print('Mouse click: RIGHT CLICK')
 
     # DB 접속 및 rows 초기화
-    def initDB(self, mode):
+    def initDB(self):
+        # db 위치 확인 바람
         self.conn = pymysql.connect(host='localhost', user='root', password='12345',
-                                        db='calckiosk', charset='utf8')
+                                        db='calckiosk_new', charset='utf8')
         cur = self.conn.cursor()
         # 제품 가격 불러와서 설정하기
-        if mode == 1:
-            # calckiosk.products db 접속 해서 가격 가져오기
-            query = '''SELECT Idx
-                            , prdName
-                            , prdPrice
-                        FROM products;'''
-            cur.execute(query)
-            rows = cur.fetchall()
 
-        # 제품 가격 수정하기 - 추후 추가 예정
-        elif mode == 2:
-            update_query = '''UPDATE calckiosk.products
-                                SET idx = %s
-                                    , prdName = %s
-                                    , prdPrice = %s
-                                WHERE idx = %s;'''
+        # calckiosk_new.products db 접속 해서 가격 가져오기 
+        # 2023.06.01 데이터 베이스 수정으로 테이블 변경
+        # 제품 번호, 제품 이름, 단품 가격
+        products_SELECT_Query = '''SELECT prd_idx
+                                        , prdName
+                                        , prdPrice
+                                        FROM products;'''
+        cur.execute(products_SELECT_Query)
+        rows = cur.fetchall()
+
+        # orderitems (단품 전체 가격)
+        # idx, 제품 번호, 주문 번호, 개수, 총가격
+        # oim_idx, prd_idx, ord_idx, quantity, total_price
+        orderitems_SELECT_Query =''' SELECT oim_idx
+                                          , prd_idx
+                                          , ord_idx
+                                          , quantity
+                                          , total_price
+                                       FROM orderitems;'''
+        # orders (주문번호처리)
+        # idx, 주문 날짜, 주문 가격
+        # ord_idx, order_dt, order_price
+        orders_SELECT_Query = ''' SELECT ord_idx
+                                       , order_dt
+                                       , order_price
+                                    FROM orders;'''
+    
+        self.conn.close() # 프로그램 종료할 때
+        return rows
+    
+    def update_DB(self):
+        # db 위치 확인 바람
+        self.conn = pymysql.connect(host='localhost', user='root', password='12345',
+                                        db='calckiosk_new', charset='utf8')
+        cur = self.conn.cursor()
+        update_query = '''UPDATE calckiosk.products
+                             SET prd_idx = %s
+                               , prdName = %s
+                               , prdPrice = %s
+                           WHERE idx = %s;'''
             
-            menu_index = None;
-            update_query_value = (int(rows[menu_index])[0], (rows[menu_index])[1], int(rows[menu_index])[2], int(rows[menu_index])[0])
-            cur.execute(update_query, update_query_value)
-            rows = cur.fetchall()            
-
+        menu_index = None;
+        update_query_value = (int(rows[menu_index])[0], (rows[menu_index])[1], int(rows[menu_index])[2], int(rows[menu_index])[0])
+        cur.execute(update_query, update_query_value)
+        rows = cur.fetchall()            
         self.conn.commit()
         self.conn.close() # 프로그램 종료할 때
         return rows
@@ -571,7 +596,8 @@ class MainWindow(QMainWindow):
         today = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         self.conn = pymysql.connect(host='localhost', user='root', password='12345',
-                                        db='calckiosk', charset='utf8')
+                                        db='calckiosk_new', charset='utf8')
+        
         query = f'''INSERT INTO calckiosk.sales (dateitem
                          , prdName
                          , prdPrice
