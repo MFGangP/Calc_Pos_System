@@ -265,7 +265,7 @@ Content App */
 #themeSettingsTopDetail { background-color: #FFC777; }
 
 /* Bottom Bar */
-#bottomBar { background-color: #495474 }
+#bottomBar { background-color: #FFC777 }
 #bottomBar QLabel { font-size: 11px; color: #f8f8f2; padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }
 
 /* CONTENT SETTINGS */
@@ -355,12 +355,13 @@ QLineEdit:focus {
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 PlainTextEdit */
 QPlainTextEdit {
-	background-color: #FFC777;
+	background-color: white;
+	border: 2px solid rgb(64, 71, 88);
 	border-radius: 5px;
 	padding: 10px;
-	selection-color: rgb(255, 255, 255);
+	selection-color: rgb(0, 0, 0);
 	selection-background-color: rgb(255, 121, 198);
-    color: #f8f8f2;
+    color: black;
 }
 QPlainTextEdit  QScrollBar:vertical {
     width: 8px;
@@ -597,7 +598,6 @@ Button */
 	background-color: #FFC777;
     color: #f8f8f2;	
 	text-align: bottom;
-	padding-bottom: 10px;
 	font: NanumGothic;
 	font-size: 17px;
 }
@@ -606,9 +606,39 @@ Button */
 	border: 2px solid #D69803;
 }
 #pagesContainer QPushButton:pressed {	
-	background-color: #546391;
-	border: 2px solid #ff79c6;
+	color: #f8f8f2;
+	background-color: #FFC777;
+	border: 2px solid #FFC777;
+	border-radius: 5px;
 }
+
+/*//////////////////////////////////////////////////////////////////////////////
+QListWidget */
+#pagesContainer QListWidget {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(240, 235, 0, 255), stop:1 rgba(224, 143, 0, 255));
+	border-radius: 7px;
+	border: 1px solid gray; 
+	color: black;
+	selection-color: rgb(0, 0, 0);
+	font: NanumGothic;
+}
+#pagesContainer QListView::item:selected { 
+	background-color: #E39500; 
+	border-radius: 7px;
+	border: 2px solid black;
+}
+#pagesContainer QListView::item:hover { 
+	background-color: #FFC777; 
+	border-radius: 7px;
+	border: 2px solid black;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+Label */
+#pagesContainer QLabel{
+	font: NanumGothic;
+	font-size: 35px;
+}
+
 /* 버튼 모음 */
 btn_americano{
 	border: 2px solid #FFC777;
@@ -761,7 +791,6 @@ btn_pomegranate{
 	font-size: 17px;
 }
 /* //////////////////////////////////////////////////////////////////////////////////////// */
-
 </string>
    </property>
    <layout class="QVBoxLayout" name="appMargins">
@@ -1030,7 +1059,7 @@ btn_pomegranate{
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/icon_menu.png);</string>
+                   <string notr="true">background-image: url(:/icon/images/icons/icon_menu.png);</string>
                   </property>
                   <property name="text">
                    <string>Hide</string>
@@ -1093,7 +1122,7 @@ btn_pomegranate{
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-home.png);</string>
+                   <string notr="true">background-image: url(:/icon/images/icons/cil-home.png);</string>
                   </property>
                   <property name="text">
                    <string>Home</string>
@@ -1101,7 +1130,7 @@ btn_pomegranate{
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_calender">
+                 <widget class="QPushButton" name="btn_nowSales">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -1129,7 +1158,7 @@ btn_pomegranate{
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-calendar-check.png);</string>
+                   <string notr="true">background-image: url(:/icon/images/icons/cil-calendar-check.png);</string>
                   </property>
                   <property name="text">
                    <string>Widgets</string>
@@ -1137,7 +1166,7 @@ btn_pomegranate{
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_chart">
+                 <widget class="QPushButton" name="btn_postSales">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -1165,7 +1194,7 @@ btn_pomegranate{
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-chart-line.png);</string>
+                   <string notr="true">background-image: url(:/icon/images/icons/cil-chart-line.png);</string>
                   </property>
                   <property name="text">
                    <string>New</string>
@@ -1201,7 +1230,7 @@ btn_pomegranate{
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-save.png)</string>
+                   <string notr="true">background-image: url(:/icon/images/icons/cil-save.png)</string>
                   </property>
                   <property name="text">
                    <string>Save</string>
@@ -1237,7 +1266,7 @@ btn_pomegranate{
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-x.png);</string>
+                   <string notr="true">background-image: url(:/icon/images/icons/cil-x.png);</string>
                   </property>
                   <property name="text">
                    <string>Exit</string>
@@ -1300,7 +1329,7 @@ btn_pomegranate{
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/icon_settings.png);</string>
+                   <string notr="true">background-image: url(:/icon/images/icons/icon_settings.png);</string>
                   </property>
                   <property name="text">
                    <string>Left Box</string>
@@ -1489,6 +1518,9 @@ btn_pomegranate{
                   <property name="toolTip">
                    <string>Settings</string>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">image:url(:/icon/images/icons/cil-settings.png)</string>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
@@ -1523,6 +1555,9 @@ btn_pomegranate{
                   </property>
                   <property name="toolTip">
                    <string>Minimize</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">image:url(:/icon/images/icons/cil-window-minimize.png)</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -1568,6 +1603,9 @@ btn_pomegranate{
                   <property name="toolTip">
                    <string>Maximize</string>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">image:url(:/icon/images/icons/cil-window-maximize.png)</string>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
@@ -1602,6 +1640,9 @@ btn_pomegranate{
                   </property>
                   <property name="toolTip">
                    <string>Close</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">image:url(:/icon/images/icons/cil-x.png)</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -1743,7 +1784,7 @@ btn_pomegranate{
                            <property name="font">
                             <font>
                              <family>NanumGothic</family>
-                             <pointsize>10</pointsize>
+                             <pointsize>-1</pointsize>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -1757,115 +1798,10 @@ btn_pomegranate{
                        </item>
                        <item row="2" column="0">
                         <layout class="QGridLayout" name="gridLayout_3">
-                         <item row="2" column="3">
-                          <widget class="QPushButton" name="btn_hotamericano">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>150</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>따뜻한 아메리카노</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="2" column="1">
-                          <widget class="QPushButton" name="btn_cheeseball">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>150</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>치즈볼</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="3">
-                          <widget class="QPushButton" name="btn_peach">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>150</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="autoFillBackground">
-                            <bool>false</bool>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>복숭아 아이스티</string>
-                           </property>
-                          </widget>
-                         </item>
                          <item row="0" column="0">
                           <widget class="QPushButton" name="btn_brezel">
                            <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
@@ -1884,158 +1820,22 @@ btn_pomegranate{
                            </property>
                            <property name="sizeIncrement">
                             <size>
-                             <width>50</width>
-                             <height>50</height>
+                             <width>10</width>
+                             <height>10</height>
                             </size>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
+                            <string notr="true">background-color: #D69803;</string>
                            </property>
                            <property name="text">
                             <string>꽈배기</string>
                            </property>
                           </widget>
                          </item>
-                         <item row="0" column="3">
-                          <widget class="QPushButton" name="btn_donuts">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>150</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>도너츠</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="2">
-                          <widget class="QPushButton" name="btn_dinoagg">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>150</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>공룡알(4개)</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="2" column="0">
-                          <widget class="QPushButton" name="btn_hotdog">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>150</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>핫도그</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="1">
-                          <widget class="QPushButton" name="btn_plum">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>150</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>매실 아이스티</string>
-                           </property>
-                          </widget>
-                         </item>
                          <item row="2" column="2">
                           <widget class="QPushButton" name="btn_americano">
                            <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
@@ -2054,22 +1854,22 @@ btn_pomegranate{
                            </property>
                            <property name="sizeIncrement">
                             <size>
-                             <width>50</width>
-                             <height>50</height>
+                             <width>10</width>
+                             <height>10</height>
                             </size>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
+                            <string notr="true">background-color: #D69803;</string>
                            </property>
                            <property name="text">
                             <string>아이스 아메리카노</string>
                            </property>
                           </widget>
                          </item>
-                         <item row="3" column="0">
-                          <widget class="QPushButton" name="btn_pomegranate">
+                         <item row="0" column="3">
+                          <widget class="QPushButton" name="btn_donuts">
                            <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
@@ -2088,22 +1888,22 @@ btn_pomegranate{
                            </property>
                            <property name="sizeIncrement">
                             <size>
-                             <width>50</width>
-                             <height>50</height>
+                             <width>10</width>
+                             <height>10</height>
                             </size>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
+                            <string notr="true">background-color: #D69803;</string>
                            </property>
                            <property name="text">
-                            <string>석류 아이스티</string>
+                            <string>도너츠</string>
                            </property>
                           </widget>
                          </item>
                          <item row="0" column="1">
                           <widget class="QPushButton" name="btn_brezel_set">
                            <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
@@ -2122,56 +1922,22 @@ btn_pomegranate{
                            </property>
                            <property name="sizeIncrement">
                             <size>
-                             <width>50</width>
-                             <height>50</height>
+                             <width>10</width>
+                             <height>10</height>
                             </size>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
+                            <string notr="true">background-color: #D69803;</string>
                            </property>
                            <property name="text">
                             <string>꽈배기(3개)</string>
                            </property>
                           </widget>
                          </item>
-                         <item row="3" column="2">
-                          <widget class="QPushButton" name="btn_blueberries">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>150</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="sizeIncrement">
-                            <size>
-                             <width>50</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
-                           </property>
-                           <property name="text">
-                            <string>블루베리 아이스티</string>
-                           </property>
-                          </widget>
-                         </item>
                          <item row="4" column="0">
                           <widget class="QPushButton" name="btn_coke">
                            <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
@@ -2190,22 +1956,22 @@ btn_pomegranate{
                            </property>
                            <property name="sizeIncrement">
                             <size>
-                             <width>50</width>
-                             <height>50</height>
+                             <width>10</width>
+                             <height>10</height>
                             </size>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
+                            <string notr="true">background-color: #D69803;</string>
                            </property>
                            <property name="text">
                             <string>콜라</string>
                            </property>
                           </widget>
                          </item>
-                         <item row="4" column="1">
-                          <widget class="QPushButton" name="btn_cider">
+                         <item row="2" column="3">
+                          <widget class="QPushButton" name="btn_hotamericano">
                            <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
@@ -2224,22 +1990,127 @@ btn_pomegranate{
                            </property>
                            <property name="sizeIncrement">
                             <size>
+                             <width>10</width>
+                             <height>10</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #D69803;</string>
+                           </property>
+                           <property name="text">
+                            <string>따뜻한 아메리카노</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="3">
+                          <widget class="QPushButton" name="btn_peach">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
                              <width>50</width>
                              <height>50</height>
                             </size>
                            </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>150</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>10</width>
+                             <height>10</height>
+                            </size>
+                           </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
                            <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
+                            <string notr="true">background-color: #D69803;</string>
+                           </property>
+                           <property name="text">
+                            <string>복숭아 아이스티</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="0">
+                          <widget class="QPushButton" name="btn_pomegranate">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>50</width>
+                             <height>50</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>150</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>10</width>
+                             <height>10</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #D69803;</string>
+                           </property>
+                           <property name="text">
+                            <string>석류 아이스티</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="4" column="1">
+                          <widget class="QPushButton" name="btn_cider">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>50</width>
+                             <height>50</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>150</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>10</width>
+                             <height>10</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #D69803;</string>
                            </property>
                            <property name="text">
                             <string>사이다</string>
                            </property>
                           </widget>
                          </item>
-                         <item row="4" column="2">
-                          <widget class="QPushButton" name="btn_Fanta">
+                         <item row="2" column="1">
+                          <widget class="QPushButton" name="btn_cheeseball">
                            <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
@@ -2258,8 +2129,76 @@ btn_pomegranate{
                            </property>
                            <property name="sizeIncrement">
                             <size>
+                             <width>10</width>
+                             <height>10</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #D69803;</string>
+                           </property>
+                           <property name="text">
+                            <string>치즈볼</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="2">
+                          <widget class="QPushButton" name="btn_dinoagg">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
                              <width>50</width>
                              <height>50</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>150</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>10</width>
+                             <height>10</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #D69803;</string>
+                           </property>
+                           <property name="text">
+                            <string>공룡알(4개)</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="4" column="2">
+                          <widget class="QPushButton" name="btn_Fanta">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>50</width>
+                             <height>50</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>150</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>10</width>
+                             <height>10</height>
                             </size>
                            </property>
                            <property name="font">
@@ -2271,10 +2210,112 @@ btn_pomegranate{
                             </font>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">background-color: #bd93f9;</string>
+                            <string notr="true">background-color: #D69803;</string>
                            </property>
                            <property name="text">
                             <string>환타</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="0">
+                          <widget class="QPushButton" name="btn_hotdog">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>50</width>
+                             <height>50</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>150</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>10</width>
+                             <height>10</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #D69803;</string>
+                           </property>
+                           <property name="text">
+                            <string>핫도그</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="2">
+                          <widget class="QPushButton" name="btn_blueberries">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>50</width>
+                             <height>50</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>150</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>10</width>
+                             <height>10</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #D69803;</string>
+                           </property>
+                           <property name="text">
+                            <string>블루베리 아이스티</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="1">
+                          <widget class="QPushButton" name="btn_plum">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>50</width>
+                             <height>50</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>150</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>10</width>
+                             <height>10</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: #D69803;</string>
+                           </property>
+                           <property name="text">
+                            <string>매실 아이스티</string>
                            </property>
                           </widget>
                          </item>
@@ -2362,7 +2403,7 @@ btn_pomegranate{
                             </font>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            <string notr="true">background-color: #D69803;</string>
                            </property>
                            <property name="text">
                             <string>결제</string>
@@ -2371,7 +2412,7 @@ btn_pomegranate{
                          </item>
                         </layout>
                        </item>
-                       <item row="2" column="2">
+                       <item row="2" column="1">
                         <widget class="QTableWidget" name="tableWidget">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -2450,7 +2491,7 @@ btn_pomegranate{
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="widgets">
+                     <widget class="QWidget" name="nowSales">
                       <property name="styleSheet">
                        <string notr="true">b</string>
                       </property>
@@ -2470,20 +2511,119 @@ btn_pomegranate{
                        <property name="bottomMargin">
                         <number>10</number>
                        </property>
+                       <item>
+                        <layout class="QHBoxLayout" name="horizontalLayout_9">
+                         <item>
+                          <widget class="QWidget" name="widget_5" native="true">
+                           <widget class="QListWidget" name="salesListWidget">
+                            <property name="geometry">
+                             <rect>
+                              <x>0</x>
+                              <y>0</y>
+                              <width>571</width>
+                              <height>661</height>
+                             </rect>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true"/>
+                            </property>
+                            <property name="editTriggers">
+                             <set>QAbstractItemView::NoEditTriggers</set>
+                            </property>
+                           </widget>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QWidget" name="widget_4" native="true">
+                           <widget class="QPlainTextEdit" name="salesText">
+                            <property name="geometry">
+                             <rect>
+                              <x>0</x>
+                              <y>0</y>
+                              <width>571</width>
+                              <height>591</height>
+                             </rect>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>NanumGothic</family>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="readOnly">
+                             <bool>true</bool>
+                            </property>
+                            <property name="backgroundVisible">
+                             <bool>false</bool>
+                            </property>
+                            <property name="centerOnScroll">
+                             <bool>false</bool>
+                            </property>
+                           </widget>
+                           <widget class="QPushButton" name="del_List_View">
+                            <property name="geometry">
+                             <rect>
+                              <x>0</x>
+                              <y>600</y>
+                              <width>571</width>
+                              <height>61</height>
+                             </rect>
+                            </property>
+                            <property name="text">
+                             <string>PushButton</string>
+                            </property>
+                           </widget>
+                          </widget>
+                         </item>
+                        </layout>
+                       </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="new_page">
+                     <widget class="QWidget" name="postSales">
                       <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
                         <layout class="QGridLayout" name="gridLayout">
+                         <item row="2" column="0">
+                          <layout class="QHBoxLayout" name="horizontalLayout_8">
+                           <item>
+                            <widget class="QDateEdit" name="dateEdit_2"/>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="label_2">
+                             <property name="text">
+                              <string>부터</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QDateEdit" name="dateEdit"/>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="label_3">
+                             <property name="text">
+                              <string>까지</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="pushButton">
+                             <property name="text">
+                              <string>검색</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
                          <item row="4" column="3">
                           <widget class="QWidget" name="widget" native="true"/>
                          </item>
-                         <item row="6" column="0">
-                          <widget class="QWidget" name="widget_2" native="true"/>
-                         </item>
                          <item row="6" column="3">
                           <widget class="QWidget" name="widget_3" native="true"/>
+                         </item>
+                         <item row="6" column="0">
+                          <widget class="QWidget" name="widget_2" native="true"/>
                          </item>
                          <item row="4" column="0">
                           <widget class="QCalendarWidget" name="calendarWidget">
@@ -2656,37 +2796,6 @@ btn_pomegranate{
 }</string>
                            </property>
                           </widget>
-                         </item>
-                         <item row="2" column="0">
-                          <layout class="QHBoxLayout" name="horizontalLayout_8">
-                           <item>
-                            <widget class="QDateEdit" name="dateEdit_2"/>
-                           </item>
-                           <item>
-                            <widget class="QLabel" name="label_2">
-                             <property name="text">
-                              <string>부터</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QDateEdit" name="dateEdit"/>
-                           </item>
-                           <item>
-                            <widget class="QLabel" name="label_3">
-                             <property name="text">
-                              <string>까지</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QPushButton" name="pushButton">
-                             <property name="text">
-                              <string>검색</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
                          </item>
                         </layout>
                        </item>

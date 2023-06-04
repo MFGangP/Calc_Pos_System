@@ -52,7 +52,7 @@ class Ui_MainWindow(object):
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
         font1 = QFont()
-        font1.setFamily(u"Segoe UI")
+        font1.setFamily(u"NanumGothic")
         font1.setPointSize(10)
         font1.setBold(False)
         font1.setItalic(False)
@@ -104,7 +104,7 @@ class Ui_MainWindow(object):
         self.titleLeftApp.setObjectName(u"titleLeftApp")
         self.titleLeftApp.setGeometry(QRect(70, 8, 160, 20))
         font2 = QFont()
-        font2.setFamily(u"Segoe UI Semibold")
+        font2.setFamilies([u"NanumGothic"])
         font2.setPointSize(12)
         font2.setBold(False)
         font2.setItalic(False)
@@ -115,7 +115,7 @@ class Ui_MainWindow(object):
         self.titleLeftDescription.setGeometry(QRect(70, 27, 160, 16))
         self.titleLeftDescription.setMaximumSize(QSize(16777215, 16))
         font3 = QFont()
-        font3.setFamily(u"NanumGothic")
+        font3.setFamilies([u"NanumGothic"])
         font3.setPointSize(8)
         font3.setBold(False)
         font3.setItalic(False)
@@ -179,29 +179,29 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.btn_home)
 
-        self.btn_calender = QPushButton(self.topMenu)
-        self.btn_calender.setObjectName(u"btn_calender")
-        sizePolicy1.setHeightForWidth(self.btn_calender.sizePolicy().hasHeightForWidth())
-        self.btn_calender.setSizePolicy(sizePolicy1)
-        self.btn_calender.setMinimumSize(QSize(0, 45))
-        self.btn_calender.setFont(font1)
-        self.btn_calender.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_calender.setLayoutDirection(Qt.LeftToRight)
-        self.btn_calender.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-calendar-check.png);")
+        self.btn_nowSales = QPushButton(self.topMenu)
+        self.btn_nowSales.setObjectName(u"btn_nowSales")
+        sizePolicy1.setHeightForWidth(self.btn_nowSales.sizePolicy().hasHeightForWidth())
+        self.btn_nowSales.setSizePolicy(sizePolicy1)
+        self.btn_nowSales.setMinimumSize(QSize(0, 45))
+        self.btn_nowSales.setFont(font1)
+        self.btn_nowSales.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_nowSales.setLayoutDirection(Qt.LeftToRight)
+        self.btn_nowSales.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-calendar-check.png);")
 
-        self.verticalLayout_8.addWidget(self.btn_calender)
+        self.verticalLayout_8.addWidget(self.btn_nowSales)
 
-        self.btn_chart = QPushButton(self.topMenu)
-        self.btn_chart.setObjectName(u"btn_chart")
-        sizePolicy1.setHeightForWidth(self.btn_chart.sizePolicy().hasHeightForWidth())
-        self.btn_chart.setSizePolicy(sizePolicy1)
-        self.btn_chart.setMinimumSize(QSize(0, 45))
-        self.btn_chart.setFont(font1)
-        self.btn_chart.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_chart.setLayoutDirection(Qt.LeftToRight)
-        self.btn_chart.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-chart-line.png);")
+        self.btn_postSales = QPushButton(self.topMenu)
+        self.btn_postSales.setObjectName(u"btn_postSales")
+        sizePolicy1.setHeightForWidth(self.btn_postSales.sizePolicy().hasHeightForWidth())
+        self.btn_postSales.setSizePolicy(sizePolicy1)
+        self.btn_postSales.setMinimumSize(QSize(0, 45))
+        self.btn_postSales.setFont(font1)
+        self.btn_postSales.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_postSales.setLayoutDirection(Qt.LeftToRight)
+        self.btn_postSales.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-chart-line.png);")
 
-        self.verticalLayout_8.addWidget(self.btn_chart)
+        self.verticalLayout_8.addWidget(self.btn_postSales)
 
         self.btn_save = QPushButton(self.topMenu)
         self.btn_save.setObjectName(u"btn_save")
@@ -320,6 +320,7 @@ class Ui_MainWindow(object):
         self.settingsTopBtn.setMinimumSize(QSize(28, 28))
         self.settingsTopBtn.setMaximumSize(QSize(28, 28))
         self.settingsTopBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.settingsTopBtn.setStyleSheet(u"image:url(:/icon/images/icons/cil-settings.png)")
         icon1 = QIcon()
         icon1.addFile(u":/icons/images/icons/icon_settings.png", QSize(), QIcon.Normal, QIcon.Off)
         self.settingsTopBtn.setIcon(icon1)
@@ -332,6 +333,7 @@ class Ui_MainWindow(object):
         self.minimizeAppBtn.setMinimumSize(QSize(28, 28))
         self.minimizeAppBtn.setMaximumSize(QSize(28, 28))
         self.minimizeAppBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.minimizeAppBtn.setStyleSheet(u"image:url(:/icon/images/icons/cil-window-minimize.png)")
         icon2 = QIcon()
         icon2.addFile(u":/icons/images/icons/icon_minimize.png", QSize(), QIcon.Normal, QIcon.Off)
         self.minimizeAppBtn.setIcon(icon2)
@@ -344,13 +346,14 @@ class Ui_MainWindow(object):
         self.maximizeRestoreAppBtn.setMinimumSize(QSize(28, 28))
         self.maximizeRestoreAppBtn.setMaximumSize(QSize(28, 28))
         font4 = QFont()
-        font4.setFamily(u"Segoe UI")
+        font4.setFamilies([u"NanumGothic"])
         font4.setPointSize(10)
         font4.setBold(False)
         font4.setItalic(False)
         font4.setStyleStrategy(QFont.PreferDefault)
         self.maximizeRestoreAppBtn.setFont(font4)
         self.maximizeRestoreAppBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.maximizeRestoreAppBtn.setStyleSheet(u"image:url(:/icon/images/icons/cil-window-maximize.png)")
         icon3 = QIcon()
         icon3.addFile(u":/icons/images/icons/icon_maximize.png", QSize(), QIcon.Normal, QIcon.Off)
         self.maximizeRestoreAppBtn.setIcon(icon3)
@@ -363,6 +366,7 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setMinimumSize(QSize(28, 28))
         self.closeAppBtn.setMaximumSize(QSize(28, 28))
         self.closeAppBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.closeAppBtn.setStyleSheet(u"image:url(:/icon/images/icons/cil-x.png)")
         icon4 = QIcon()
         icon4.addFile(u":/icons/images/icons/icon_close.png", QSize(), QIcon.Normal, QIcon.Off)
         self.closeAppBtn.setIcon(icon4)
@@ -411,7 +415,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7 = QHBoxLayout()
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.horizontalLayout_7.setSizeConstraint(QLayout.SetDefaultConstraint)
-
         self.label = QLabel(self.home)
         self.label.setObjectName(u"label")
         sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
@@ -429,16 +432,9 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addLayout(self.horizontalLayout_7, 4, 0, 1, 1)
 
-        font4 = QFont()
-        font4.setFamily(u"NanumGothic")
-        font4.setPointSize(20)
-        font4.setBold(False)
-        font4.setItalic(False)
-
         self.gridLayout_3 = QGridLayout()
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.btn_hotamericano = QPushButton(self.home)
-        self.btn_hotamericano.setFont(font4)
         self.btn_hotamericano.setObjectName(u"btn_hotamericano")
         sizePolicy4.setHeightForWidth(self.btn_hotamericano.sizePolicy().hasHeightForWidth())
         self.btn_hotamericano.setSizePolicy(sizePolicy4)
@@ -451,7 +447,6 @@ class Ui_MainWindow(object):
 
         self.btn_cheeseball = QPushButton(self.home)
         self.btn_cheeseball.setObjectName(u"btn_cheeseball")
-        self.btn_cheeseball.setFont(font4)
         sizePolicy4.setHeightForWidth(self.btn_cheeseball.sizePolicy().hasHeightForWidth())
         self.btn_cheeseball.setSizePolicy(sizePolicy4)
         self.btn_cheeseball.setMinimumSize(QSize(50, 50))
@@ -601,6 +596,11 @@ class Ui_MainWindow(object):
         self.btn_Fanta.setMinimumSize(QSize(50, 50))
         self.btn_Fanta.setMaximumSize(QSize(150, 150))
         self.btn_Fanta.setSizeIncrement(QSize(50, 50))
+        font5 = QFont()
+        font5.setFamilies([u"NanumGothic"])
+        font5.setBold(False)
+        font5.setItalic(False)
+        self.btn_Fanta.setFont(font5)
         self.btn_Fanta.setStyleSheet(u"background-color: #D69803;")
 
         self.gridLayout_3.addWidget(self.btn_Fanta, 4, 2, 1, 1)
@@ -618,8 +618,8 @@ class Ui_MainWindow(object):
         self.btn_All_Del.setMinimumSize(QSize(110, 40))
         self.btn_All_Del.setMaximumSize(QSize(500, 150))
         self.btn_All_Del.setBaseSize(QSize(110, 40))
-        self.btn_All_Del.setFont(font1)
-        self.btn_All_Del.setStyleSheet(u"background-color: rgb(227, 149, 0);")
+        self.btn_All_Del.setFont(font5)
+        self.btn_All_Del.setStyleSheet(u"background-color: rgb(52, 59, 72);")
 
         self.horizontalLayout_6.addWidget(self.btn_All_Del)
 
@@ -630,8 +630,8 @@ class Ui_MainWindow(object):
         self.btu_Commit.setMinimumSize(QSize(110, 40))
         self.btu_Commit.setMaximumSize(QSize(500, 150))
         self.btu_Commit.setBaseSize(QSize(110, 40))
-        self.btu_Commit.setFont(font1)
-        self.btu_Commit.setStyleSheet(u"background-color: rgb(250, 164, 0);")
+        self.btu_Commit.setFont(font5)
+        self.btu_Commit.setStyleSheet(u"background-color: #D69803;")
 
         self.horizontalLayout_6.addWidget(self.btu_Commit)
 
@@ -639,15 +639,12 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addLayout(self.horizontalLayout_6, 4, 1, 1, 3)
 
         self.tableWidget = QTableWidget(self.home)
-        
-        self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
-
         if (self.tableWidget.columnCount() < 7):
             self.tableWidget.setColumnCount(7)
-        font5 = QFont()
-        font5.setStyleStrategy(QFont.PreferDefault)
+        font6 = QFont()
+        font6.setStyleStrategy(QFont.PreferDefault)
         __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setFont(font5);
+        __qtablewidgetitem.setFont(font6);
         self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
@@ -667,34 +664,113 @@ class Ui_MainWindow(object):
         self.tableWidget.setMinimumSize(QSize(220, 580))
         self.tableWidget.setMaximumSize(QSize(900, 1220))
         self.tableWidget.setBaseSize(QSize(220, 580))
+        self.tableWidget.setStyleSheet(u"")
         self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
-
 
         self.gridLayout_4.addWidget(self.tableWidget, 2, 2, 1, 1)
 
         self.stackedWidget.addWidget(self.home)
-        self.widgets = QWidget()
-        self.widgets.setObjectName(u"widgets")
-        self.widgets.setStyleSheet(u"b")
-        self.verticalLayout = QVBoxLayout(self.widgets)
+        self.nowSales = QWidget()
+        self.nowSales.setObjectName(u"nowSales")
+        self.nowSales.setStyleSheet(u"b")
+        self.verticalLayout = QVBoxLayout(self.nowSales)
         self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(10, 10, 10, 10)
-        self.stackedWidget.addWidget(self.widgets)
-        self.new_page = QWidget()
-        self.new_page.setObjectName(u"new_page")
-        self.verticalLayout_20 = QVBoxLayout(self.new_page)
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.widget_5 = QWidget(self.nowSales)
+        self.widget_5.setObjectName(u"widget_5")
+        self.salesListWidget = QListWidget(self.widget_5)
+        self.salesListWidget.setObjectName(u"salesListWidget")
+        self.salesListWidget.setGeometry(QRect(0, 0, 571, 661))
+        self.salesListWidget.setStyleSheet(u"#pagesContainer QListView #1 {\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(240, 235, 0, 255), stop:1 rgba(224, 143, 0, 255));\n"
+"	font: NanumGothic;\n"
+"	font-size: 17px;\n"
+"}")
+        self.salesListWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
+
+        self.horizontalLayout_9.addWidget(self.widget_5)
+
+        self.widget_4 = QWidget(self.nowSales)
+        self.widget_4.setObjectName(u"widget_4")
+        self.salesText = QPlainTextEdit(self.widget_4)
+        self.salesText.setObjectName(u"salesText")
+        self.salesText.setGeometry(QRect(0, 0, 571, 661))
+        self.salesText.setFont(font2)
+        self.salesText.setReadOnly(True)
+        self.salesText.setBackgroundVisible(False)
+        self.salesText.setCenterOnScroll(False)
+
+        self.horizontalLayout_9.addWidget(self.widget_4)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_9)
+
+        self.stackedWidget.addWidget(self.nowSales)
+        self.postSales = QWidget()
+        self.postSales.setObjectName(u"postSales")
+        self.verticalLayout_20 = QVBoxLayout(self.postSales)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.tableView = QTableView(self.new_page)
-        self.tableView.setObjectName(u"tableView")
+        self.gridLayout = QGridLayout()
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.dateEdit_2 = QDateEdit(self.postSales)
+        self.dateEdit_2.setObjectName(u"dateEdit_2")
 
-        # self.tableWidget.cellWidget(0, 4).layout().addChildWidget = QPushButton("Btn_0_4_Add")
-        # self.tableWidget.cellWidget(0, 4).layout().QPushButton("Btn_0_4_Del")
+        self.horizontalLayout_8.addWidget(self.dateEdit_2)
 
-        self.verticalLayout_20.addWidget(self.tableView)
+        self.label_2 = QLabel(self.postSales)
+        self.label_2.setObjectName(u"label_2")
 
-        self.stackedWidget.addWidget(self.new_page)
+        self.horizontalLayout_8.addWidget(self.label_2)
+
+        self.dateEdit = QDateEdit(self.postSales)
+        self.dateEdit.setObjectName(u"dateEdit")
+
+        self.horizontalLayout_8.addWidget(self.dateEdit)
+
+        self.label_3 = QLabel(self.postSales)
+        self.label_3.setObjectName(u"label_3")
+
+        self.horizontalLayout_8.addWidget(self.label_3)
+
+        self.pushButton = QPushButton(self.postSales)
+        self.pushButton.setObjectName(u"pushButton")
+
+        self.horizontalLayout_8.addWidget(self.pushButton)
+
+
+        self.gridLayout.addLayout(self.horizontalLayout_8, 2, 0, 1, 1)
+
+        self.widget = QWidget(self.postSales)
+        self.widget.setObjectName(u"widget")
+
+        self.gridLayout.addWidget(self.widget, 4, 3, 1, 1)
+
+        self.widget_3 = QWidget(self.postSales)
+        self.widget_3.setObjectName(u"widget_3")
+
+        self.gridLayout.addWidget(self.widget_3, 6, 3, 1, 1)
+
+        self.widget_2 = QWidget(self.postSales)
+        self.widget_2.setObjectName(u"widget_2")
+
+        self.gridLayout.addWidget(self.widget_2, 6, 0, 1, 1)
+
+        self.calendarWidget = QCalendarWidget(self.postSales)
+        self.calendarWidget.setObjectName(u"calendarWidget")
+        self.calendarWidget.setMaximumSize(QSize(400, 400))
+
+        self.gridLayout.addWidget(self.calendarWidget, 4, 0, 1, 1)
+
+
+        self.verticalLayout_20.addLayout(self.gridLayout)
+
+        self.stackedWidget.addWidget(self.postSales)
 
         self.verticalLayout_15.addWidget(self.stackedWidget)
 
@@ -717,11 +793,7 @@ class Ui_MainWindow(object):
         self.creditsLabel = QLabel(self.bottomBar)
         self.creditsLabel.setObjectName(u"creditsLabel")
         self.creditsLabel.setMaximumSize(QSize(16777215, 16))
-        font6 = QFont()
-        font6.setFamily(u"Segoe UI")
-        font6.setBold(False)
-        font6.setItalic(False)
-        self.creditsLabel.setFont(font6)
+        self.creditsLabel.setFont(font5)
         self.creditsLabel.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.horizontalLayout_5.addWidget(self.creditsLabel)
@@ -757,22 +829,23 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
+
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\uc800\uad6c\uba85\ud488\uaf48\ubc30\uae30 \uacc4\uc0b0 \ud0a4\uc624\uc2a4\ud06c", None))
-        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"\uaf48\ubc30\uae30", None))
+        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"PyDracula", None))
         self.titleLeftDescription.setText("")
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
         self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
-        self.btn_calender.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))
-        self.btn_chart.setText(QCoreApplication.translate("MainWindow", u"New", None))
+        self.btn_nowSales.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))
+        self.btn_postSales.setText(QCoreApplication.translate("MainWindow", u"New", None))
         self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
-        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"\ud658\uacbd\uc124\uc815", None))
+        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
         self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"\uc800\uad6c\uba85\ud488\uaf48\ubc30\uae30 \uacc4\uc0b0 \ud0a4\uc624\uc2a4\ud06c", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
@@ -822,6 +895,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"\uc218\ub7c9 \uc81c\uac70", None));
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None));
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\ubd80\ud130", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\uae4c\uc9c0", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\uac80\uc0c9", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: ParkSeongHyeon", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v0.0.1", None))
     # retranslateUi

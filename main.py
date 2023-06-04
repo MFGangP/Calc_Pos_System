@@ -45,11 +45,13 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow() # Ui_MainWindow ui_main.py
         self.ui.setupUi(self)
+
         global widgets # widgets 
-        global products
-        global orderitems
-        global orders
         widgets = self.ui
+
+        global products
+        # global orderitems
+        global orders
 
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ��������̷� ����Ŵϱ� false�� ����
@@ -73,9 +75,9 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         UIFunctions.uiDefinitions(self)
 
-        # QtableView_2 PARAMETERS
-        # ///////////////////////////////////////////////////////////////
-        widgets.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        # # QtableView_2 PARAMETERS
+        # # ///////////////////////////////////////////////////////////////
+        # widgets.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         # columnName = ['제품명', '개수', '가격', '총가격', '수량 추가', ' 수량 제거', '삭제']
         table = self.ui.tableWidget
@@ -107,8 +109,8 @@ class MainWindow(QMainWindow):
 
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
-        widgets.btn_calender.clicked.connect(self.buttonClick)
-        widgets.btn_chart.clicked.connect(self.buttonClick)
+        widgets.btn_nowSales.clicked.connect(self.buttonClick)
+        widgets.btn_postSales.clicked.connect(self.buttonClick)
         widgets.btn_save.clicked.connect(self.buttonClick)
         # 메뉴 생성 버튼
         widgets.btn_brezel.clicked.connect(self.menu_Clicked)
@@ -129,6 +131,9 @@ class MainWindow(QMainWindow):
         # 전체 삭제 버튼
         widgets.btn_All_Del.clicked.connect(self.all_Del_Button)
         widgets.btu_Commit.clicked.connect(self.commit_Button)
+        # 리스트 위젯 시그널
+        widgets.salesListWidget.itemClicked.connect(self.salesListWidget_ItemClicked)
+
         # SHOW APP
         # ///////////////////////////////////////////////////////////////
         self.show()
@@ -171,14 +176,14 @@ class MainWindow(QMainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW CALENDER PAGE 
-        if btnName == "btn_calender":
-            widgets.stackedWidget.setCurrentWidget(widgets.widgets)
+        if btnName == "btn_nowSales":
+            widgets.stackedWidget.setCurrentWidget(widgets.nowSales)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW CHART PAGE �Ǹ� ��� �׷��� Ȯ�ο� ������
-        if btnName == "btn_chart":
-            widgets.stackedWidget.setCurrentWidget(widgets.new_page) # SET PAGE
+        if btnName == "btn_postSales":
+            widgets.stackedWidget.setCurrentWidget(widgets.postSales) # SET PAGE
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
 
@@ -378,13 +383,83 @@ class MainWindow(QMainWindow):
     def commit_Button(self):
         button = self.sender()
         print(f'Button "{button.objectName()}" pressed!')
-        self.insert_Select_DB(1)
+        self.insert_DB()
         sum_Result = 0
         for i in range (self.ui.tableWidget.rowCount()):
             self.ui.tableWidget.removeRow(0)
             # print(f"Delete_'{i}'_Row")
         self.ui.label.setText('합계 : ' + str(sum_Result))
+        # 데이터 갱신해서 받아오기
+        # orderitems = self.orderitems_initDB()
+        orders = self.orders_initDB()
+        # 최근 주문 번호를 불러온다음 리스트 위젯에 추가 f"{orders[-1][0]}"
+        self.ui.salesListWidget.addItem(f"\n주문 번호 : {orders[-1][0]} \n시간 : {orders[-1][1]}\n")
+    # 리스트 위젯 해당 주문번호 눌릴 시 데이터 불러오기
 
+    # 리스트 위젯에서 선택한 주문 상세내역 보여주는 이벤트
+    def salesListWidget_ItemClicked(self):
+        # 주문 번호
+        print(self.ui.salesListWidget.currentItem().text())
+
+        self.conn = pymysql.connect(host='localhost', user='root', password='12345',
+                                        db='calckiosk_new', charset='utf8')
+        cur = self.conn.cursor()
+        # orders - ord_idx(주문번호 - AI), 
+        # prd.prdName(제품명), prd.prdPrice(제품가격)
+        # oim.quantity(제품 개수), oim.total_price(제품 총액), 
+        # order_price(주문 총액), order_dt(주문날짜)
+        salesListWidget_Select_query = f'''SELECT oim.ord_idx
+                                                , prd.prdName
+                                                , prd.prdPrice
+                                                , oim.quantity
+                                                , oim.total_price
+                                                , ods.order_price
+                                                , ods.order_dt
+                                             FROM orderitems as oim
+                                            INNER JOIN orders as ods
+                                               ON oim.ord_idx = ods.ord_idx
+                                            INNER JOIN products as prd
+                                               ON prd.prd_idx = oim.prd_idx
+                                            WHERE oim.ord_idx = {self.ui.salesListWidget.currentItem().text().split(' ')[3]}'''
+        cur.execute(salesListWidget_Select_query)
+        receipt_value = cur.fetchall()
+        # QTextCharFormat 객체 생성
+        form = QTextCharFormat() 
+        # 폰트 사이즈 변경
+        form.setFontPointSize(20)
+        # 폰트 적용
+        self.ui.salesText.setCurrentCharFormat(form)
+        # 상단 타이틀 표시
+        self.ui.salesText.setPlainText(f'주문 번호 : {receipt_value[0][0]}\n\n상품명\t\t\t단가\t수량\t금액\n')
+        # 폰트 적용
+        form.setFontPointSize(15)
+        # 폰트 적용
+        self.ui.salesText.setCurrentCharFormat(form)
+        # 글자 수 별로 탭 횟수 차등 
+        for item in range(len(receipt_value)):
+            if len(receipt_value[item][1]) >= 6:
+                self.ui.salesText.appendPlainText(f'''{receipt_value[item][1]}\t\t{format((receipt_value[item][2]), ',')}\t{format((receipt_value[item][3]), ',')}\t{format((receipt_value[item][4]), ',')}\n''')
+            elif len(receipt_value[item][1]) < 6:
+                self.ui.salesText.appendPlainText(f'''{receipt_value[item][1]}\t\t\t{format((receipt_value[item][2]), ',')}\t{format((receipt_value[item][3]), ',')}\t{format((receipt_value[item][4]), ',')}\n''')
+        # 하단 총액 폰트 사이즈 변경
+        form.setFontPointSize(30)
+        self.ui.salesText.setCurrentCharFormat(form)
+        # 총액 표시
+        self.ui.salesText.appendPlainText(f'''총액 : {format((receipt_value[item][5]), ',')}원''')
+        # 주문번호, 제품 이름, 제품 개수, 주문 시각, 단품 총 가격, 총합 가격
+        # SELECT oim.ord_idx
+        #      , prd.prdName
+        #      , oim.quantity
+        #      , ods.order_dt
+        #      , oim.total_price
+        #      , ods.order_price
+        #   FROM orderitems as oim
+        #  INNER JOIN orders as ods
+        #     ON oim.ord_idx = ods.ord_idx
+        #  INNER JOIN products as prd
+        #     ON prd.prd_idx = oim.prd_idx
+        #  WHERE oim.ord_idx = {self.ui.salesListWidget.currentItem().text()}
+    
     # 수량 추가 버튼 생성 이벤트
     def make_Add_Button(self, rowPlaceNum, colPlaceNum):
         # 추가/삭제 레이아웃 
@@ -559,6 +634,7 @@ class MainWindow(QMainWindow):
         self.conn.close() # 프로그램 종료할 때
         return products
     
+    # 제품 가격 정보 받기 위한 DB 쿼리문
     def orderitems_initDB(self):
         # db 위치 확인 바람
         self.conn = pymysql.connect(host='localhost', user='root', password='12345',
@@ -575,11 +651,12 @@ class MainWindow(QMainWindow):
                                           , total_price
                                        FROM orderitems;'''
         cur.execute(orderitems_SELECT_Query)
-        oim_products = cur.fetchall()
+        products = cur.fetchall()
         
         self.conn.close() # 프로그램 종료할 때
-        return oim_products
+        return products
     
+    # 주문 번호 받기 위한 DB 쿼리문
     def orders_initDB(self):
         # db 위치 확인 바람
         self.conn = pymysql.connect(host='localhost', user='root', password='12345',
@@ -593,126 +670,80 @@ class MainWindow(QMainWindow):
                                        , order_dt
                                        , order_price
                                     FROM orders;'''
+        
         cur.execute(orders_SELECT_Query)
         ord_row = cur.fetchall()
 
         self.conn.close() # 프로그램 종료할 때
         return ord_row
-    
+
+    # 제품 가격 업데이트를 위한 쿼리문은 완성 변수 설정 필요
     def update_DB(self):
         # db 위치 확인 바람
         self.conn = pymysql.connect(host='localhost', user='root', password='12345',
                                         db='calckiosk_new', charset='utf8')
         cur = self.conn.cursor()
         update_query = '''UPDATE calckiosk.products
-                             SET prd_idx = %s
-                               , prdName = %s
+                             SET prdName = %s
                                , prdPrice = %s
-                           WHERE idx = %s;'''
+                           WHERE prd_idx = %s;'''
             
         menu_index = None;
-        update_query_value = (int(products[menu_index])[0], (products[menu_index])[1], int(products[menu_index])[2], int(products[menu_index])[0])
+        update_query_value = ((products[menu_index])[1], int(products[menu_index])[2], int(products[menu_index])[0])
         cur.execute(update_query, update_query_value)
         products = cur.fetchall()            
         self.conn.commit()
         self.conn.close() # 프로그램 종료할 때
         return products
-        # INSERT INTO orderitems
-        #      ( prd_idx
-        #      , ord_idx
-        #      , quantity
-        #      , total_price)
-        # VALUES 
-        #      ( prd_idx
-        #      , ord_idx
-        #      , quantity
-        #      , total_price)
-        # INSERT INTO orders 
-	    #      ( order_dt
-        #      , order_price)
-        # VALUES
-        #      ( order_dt
-        #      , order_price)
-        # '''
 
-        # '''
-        # INSERT INTO products
-        #      ( prd_idx
-        #      , prdName
-        #      , prdPrice)
-        # VALUES
-        #      ( prd_idx
-        #      , prdName
-        #      , prdPrice);
-        # '''
-
-    def insert_Select_DB(self, mode):
-        insert_Db_Result = []
-        today = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    # DB에 INSERT 완성 2023-06-03
+    def insert_DB(self):
+        insert_Orders_DB = []
+        insert_Orderitems_DB = []
+        today = datetime.now().strftime('%Y년 %m월 %d일 %H시 %M분 %S초')
 
         self.conn = pymysql.connect(host='localhost', user='root', password='12345',
                                         db='calckiosk_new', charset='utf8')
-        
-        query = f'''INSERT INTO orderitems
-                         ( prd_idx
-                         , ord_idx
-                         , quantity
-                         , total_price)
-                    VALUES 
-                         ( prd_idx
-                         , ord_idx
-                         , quantity
-                         , total_price)
-                    INSERT INTO orders 
-                         ( order_dt
-                         , order_price)
-                    VALUES
-                         ( order_dt
-                         , order_price)'''
+        # orders - ord_idx(주문번호 - AI), order_dt(주문날짜), order_price(주문총액)
+        orders_query = f'''INSERT INTO orders 
+                                ( order_dt
+                                , order_price)
+                           VALUES
+                                ( %s
+                                , %s)'''
+        # orderitems - oim_idx(아이템 테이블 primary KEY - AI), prd_idx(제품 번호 - table = products), 
+        # ord_idx(주문 번호 - table = orders), quantity(제품 주문 개수 - 해당 제품), total_price(해당 제품 총액)
+        orderitems_Insert_Query = f'''INSERT INTO orderitems
+                                      SELECT 0
+                                           , (SELECT prd_idx
+                                                FROM products
+                                               WHERE prdName = %s)
+                                           , (SELECT ord_idx
+                                                FROM orders
+                                               ORDER BY ord_idx DESC LIMIT 1)
+                                           , %s
+                                           , %s '''
         cur = self.conn.cursor()
-        # insert 일 때
-        if mode == 1:
-            # 테이블 위젯안에 있는 row 개수만큼 반복
-            for i in range(self.ui.tableWidget.rowCount()):
-                # 제품 판매 가격이 비어있다면
-                if self.ui.tableWidget.item(i, 3)!= None:
-                    # 리스트 insert_Db_Result에 값 넣기
-                    insert_Db_Result.append((today, self.ui.tableWidget.item(i, 0).text(), self.ui.tableWidget.item(i, 1).text(), self.ui.tableWidget.item(i, 2).text(), self.ui.tableWidget.item(i, 3).text()))
-                    print(f"Insert {i+1}_row  : Complete!")
-                    # 쿼리문 실행
-                    cur.execute(query, insert_Db_Result[i])
-                else:
-                    break
-                # INSERT INTO calckiosk.sales
-                #      ( idx,
-                #        dateitem,
-                #        prdName,
-                #        count,
-                #        prdPrice,
-                #        sellPrice)
-                # VALUES (idx,
-                #        dateitem,
-                #        prdName,
-                #        count,
-                #        prdPrice,
-                #        sellPrice);
-        # select일 때
-        elif mode == 2: # 추후 추가 예정
-            # calckiosk.sales db 접속 해서 가격 가져오기
-            select_query = '''SELECT idx
-                                   , dateitem
-                                   , prdName
-                                   , prdPrice
-                                   , count
-                                   , sellPrice
-                                FROM calckiosk.sales;'''
-            
-
-            cur.execute(select_query)
-            products = cur.fetchall()
-            self.conn.close() # 프로그램 종료할 때
-            return products
-        
+        # 주문 번호 선 기입 - Orders
+        # 리스트 insert_Orders_DB에 값 넣기
+        insert_Orders_DB.append((today, self.ui.label.text().split(" : ")[1]))
+        # 쿼리문 실행
+        cur.execute(orders_query, insert_Orders_DB[0])
+        # 데이터 값 변경이 있을 때 commit 해줘야한다.
+        self.conn.commit()
+        # 제품 개수 및 개별 가격 주문 번호랑 함께 기입 - Orderitems
+        # 테이블 위젯안에 있는 row 개수만큼 반복
+        cur = self.conn.cursor()
+        for i in range(self.ui.tableWidget.rowCount()):
+            # 제품 판매 가격이 비어있다면
+            if self.ui.tableWidget.item(i, 3)!= None:
+                # 리스트 insert_Orderitems_DB에 값 넣기
+                insert_Orderitems_DB.append((self.ui.tableWidget.item(i, 0).text(), self.ui.tableWidget.item(i, 2).text(), self.ui.tableWidget.item(i, 3).text()))
+                print(f"Insert {i+1}_row  : Complete!")
+                # 쿼리문 실행
+                cur.execute(orderitems_Insert_Query, insert_Orderitems_DB[i])
+            else:
+                break
         # 데이터 값 변경이 있을 때 commit 해줘야한다.
         self.conn.commit()    
         self.conn.close() # 프로그램 종료할 때
