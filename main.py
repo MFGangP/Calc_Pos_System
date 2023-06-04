@@ -379,26 +379,34 @@ class MainWindow(QMainWindow):
         button = self.sender()
         print(f'Button "{button.objectName()}" pressed!')
         sum_Result = 0
-        for i in range (self.ui.tableWidget.rowCount()):
-            self.ui.tableWidget.removeRow(0)
-            # print(f"Delete_'{i}'_Row")
-        self.ui.label.setText('합계 : ' + str(sum_Result))
+        if self.ui.tableWidget.rowCount() == 0:
+            self.ui.label.setText("삭제할 데이터가 없습니다!!")
+            return
+        else:
+            for i in range (self.ui.tableWidget.rowCount()):
+                self.ui.tableWidget.removeRow(0)
+                # print(f"Delete_'{i}'_Row")
+            self.ui.label.setText('합계 : ' + str(sum_Result))
 
     # 판매 기록 저장 
     def commit_Button(self):
         button = self.sender()
         print(f'Button "{button.objectName()}" pressed!')
-        self.insert_DB()
-        sum_Result = 0
-        for i in range (self.ui.tableWidget.rowCount()):
-            self.ui.tableWidget.removeRow(0)
-            # print(f"Delete_'{i}'_Row")
-        self.ui.label.setText('합계 : ' + str(sum_Result))
-        # 데이터 갱신해서 받아오기
-        # orderitems = self.orderitems_initDB()
-        orders = self.orders_initDB()
-        # 최근 주문 번호를 불러온다음 리스트 위젯에 추가 f"{orders[-1][0]}"
-        self.ui.salesListWidget.addItem(f"\n주문 번호 : {orders[-1][0]} \n시간 : {orders[-1][1]}\n")
+        if self.ui.tableWidget.rowCount() == 0:
+            self.ui.label.setText("제품을 선택해주세요!!!")
+            return
+        else:
+            self.insert_DB()
+            sum_Result = 0
+            for i in range (self.ui.tableWidget.rowCount()):
+                self.ui.tableWidget.removeRow(0)
+                # print(f"Delete_'{i}'_Row")
+            self.ui.label.setText('합계 : ' + str(sum_Result))
+            # 데이터 갱신해서 받아오기
+            # orderitems = self.orderitems_initDB()
+            orders = self.orders_initDB()
+            # 최근 주문 번호를 불러온다음 리스트 위젯에 추가 f"{orders[-1][0]}"
+            self.ui.salesListWidget.addItem(f"\n주문 번호 : {orders[-1][0]} \n시간 : {orders[-1][1]}\n")
         
     # 리스트 위젯에서 선택한 주문 상세내역 보여주는 이벤트
     def salesListWidget_ItemClicked(self):

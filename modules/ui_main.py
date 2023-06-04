@@ -749,6 +749,10 @@ class Ui_MainWindow(object):
         self.del_List_Button.setSizePolicy(sizePolicy5)
         self.del_List_Button.setMinimumSize(QSize(571, 61))
         self.del_List_Button.setMaximumSize(QSize(900, 100))
+        self.del_List_Button.setStyleSheet(u"background-color: red;\n"
+                                            "color: #FFFFFF;\n"
+                                            "font-size: 30px;\n"
+                                            "text-align: center;")
 
         self.verticalLayout_7.addWidget(self.del_List_Button)
 
