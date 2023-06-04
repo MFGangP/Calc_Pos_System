@@ -84,15 +84,17 @@ class MainWindow(QMainWindow):
         # 컬럼 갯수 조절
         table.setColumnCount(all_Column)
         # 테이블 위젯 컬럼 크기 조절
-        table.setColumnWidth(0, self.width()*13/100)
-        table.setColumnWidth(1, self.width()*4/100)
-        table.setColumnWidth(2, self.width()*3/100)
-        table.setColumnWidth(3, self.width()*5/100)
-        table.setColumnWidth(4, self.width()*7/100) # 600
-        table.setColumnWidth(5, self.width()*7/100)
-        table.setColumnWidth(6, self.width()*2/100)
+        table.setColumnWidth(0, self.width()*5/30)
+        table.setColumnWidth(1, self.width()*3/30)
+        table.setColumnWidth(2, self.width()*2/30)
+        table.setColumnWidth(3, self.width()*2/30)
+        table.setColumnWidth(4, self.width()*3/30) # 600
+        table.setColumnWidth(5, self.width()*3/30)
+        table.setColumnWidth(6, self.width()*1/30)
 
         #'번호' = AI(불필요),'제품명','개수','가격','수량 추가',' 수량 제거','삭제'
+        v_Header = table.verticalHeader()
+        v_Header.setFixedWidth(22)
         header = table.horizontalHeader()       
         header.setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
         header.setSectionResizeMode(1, QHeaderView.ResizeMode.Fixed)
@@ -135,8 +137,9 @@ class MainWindow(QMainWindow):
         widgets.salesListWidget.itemClicked.connect(self.salesListWidget_ItemClicked)
 
         # SHOW APP
-        # ///////////////////////////////////////////////////////////////
-        self.show()
+        # ///////////////////////////////////////////////////////////////\
+
+        self.showFullScreen()
 
         # SET CUSTOM THEME
         # ///////////////////////////////////////////////////////////////

@@ -68,13 +68,13 @@ class UIFunctions(MainWindow):
             else:
                 widthExtended = standard
 
-            # ANIMATION
-            self.animation = QPropertyAnimation(self.ui.leftMenuBg, b"minimumWidth")
-            self.animation.setDuration(Settings.TIME_ANIMATION)
-            self.animation.setStartValue(width)
-            self.animation.setEndValue(widthExtended)
-            self.animation.setEasingCurve(QEasingCurve.InOutQuart)
-            self.animation.start()
+            # # ANIMATION
+            # self.animation = QPropertyAnimation(self.ui.leftMenuBg, b"minimumWidth")
+            # self.animation.setDuration(Settings.TIME_ANIMATION)
+            # self.animation.setStartValue(width)
+            # self.animation.setEndValue(widthExtended)
+            # self.animation.setEasingCurve(QEasingCurve.InOutQuart)
+            # self.animation.start()
 
     # TOGGLE LEFT BOX
     # ///////////////////////////////////////////////////////////////

@@ -219,10 +219,12 @@ Content App */
 QTableWidget */
 QTableWidget {	
 	background-color: transparent;
-	padding: 10px;
+	padding: 20px;
 	border-radius: 5px;
 	gridline-color: #9faeda;
     outline: none;
+	font: NanumGothic;
+	font-size: 20px;
 }
 QTableWidget::item{
 	border-color: #FFE2B1;
@@ -524,10 +526,10 @@ Button */
 	border: 2px solid #FFC777;
 	border-radius: 5px;	
 	background-color: #FFC777;
-    color: #f8f8f2;	
 	text-align: bottom;
 	font: NanumGothic;
-	font-size: 17px;
+	font: 18px;
+    color: #000000;	
 }
 #pagesContainer QPushButton:hover {
 	background-color: #D69803;
@@ -549,6 +551,7 @@ QListWidget */
 	color: black;
 	selection-color: rgb(0, 0, 0);
 	font: NanumGothic;
+	font-size: 17px;
 }
 #pagesContainer QListView::item:selected { 
 	background-color: #E39500; 
