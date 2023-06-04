@@ -1749,7 +1749,7 @@ btn_pomegranate{
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QGridLayout" name="gridLayout_4">
@@ -2614,7 +2614,7 @@ text-align: center;</string>
                             </widget>
                            </item>
                            <item>
-                            <widget class="QPushButton" name="del_List_Widget">
+                            <widget class="QPushButton" name="del_List_Button">
                              <property name="sizePolicy">
                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                                <horstretch>0</horstretch>
@@ -2648,6 +2648,9 @@ text-align: center;</string>
                       <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
                         <layout class="QGridLayout" name="gridLayout">
+                         <item row="6" column="0">
+                          <widget class="QWidget" name="widget_2" native="true"/>
+                         </item>
                          <item row="2" column="0">
                           <layout class="QHBoxLayout" name="horizontalLayout_8">
                            <item>
@@ -2678,15 +2681,6 @@ text-align: center;</string>
                             </widget>
                            </item>
                           </layout>
-                         </item>
-                         <item row="4" column="3">
-                          <widget class="QWidget" name="widget" native="true"/>
-                         </item>
-                         <item row="6" column="3">
-                          <widget class="QWidget" name="widget_3" native="true"/>
-                         </item>
-                         <item row="6" column="0">
-                          <widget class="QWidget" name="widget_2" native="true"/>
                          </item>
                          <item row="4" column="0">
                           <widget class="QCalendarWidget" name="calendarWidget">
@@ -2859,6 +2853,12 @@ text-align: center;</string>
 }</string>
                            </property>
                           </widget>
+                         </item>
+                         <item row="4" column="3">
+                          <widget class="QWidget" name="widget" native="true"/>
+                         </item>
+                         <item row="6" column="3">
+                          <widget class="QWidget" name="widget_3" native="true"/>
                          </item>
                         </layout>
                        </item>
