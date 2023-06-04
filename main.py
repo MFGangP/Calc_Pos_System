@@ -90,7 +90,7 @@ class MainWindow(QMainWindow):
         table.setColumnWidth(3, self.width()*2/30)
         table.setColumnWidth(4, self.width()*3/30) # 600
         table.setColumnWidth(5, self.width()*3/30)
-        table.setColumnWidth(6, self.width()*1/30)
+        table.setColumnWidth(6, self.width()*2/30)
 
         #'번호' = AI(불필요),'제품명','개수','가격','수량 추가',' 수량 제거','삭제'
         v_Header = table.verticalHeader()
@@ -135,6 +135,8 @@ class MainWindow(QMainWindow):
         widgets.btu_Commit.clicked.connect(self.commit_Button)
         # 리스트 위젯 시그널
         widgets.salesListWidget.itemClicked.connect(self.salesListWidget_ItemClicked)
+        # 리스트 위젯 결제건 삭제 시그널
+        widgets.del_List_Button.clicked.connect(self.del_List_Button_Clicked)
 
         # SHOW APP
         # ///////////////////////////////////////////////////////////////\
@@ -397,13 +399,11 @@ class MainWindow(QMainWindow):
         orders = self.orders_initDB()
         # 최근 주문 번호를 불러온다음 리스트 위젯에 추가 f"{orders[-1][0]}"
         self.ui.salesListWidget.addItem(f"\n주문 번호 : {orders[-1][0]} \n시간 : {orders[-1][1]}\n")
-    # 리스트 위젯 해당 주문번호 눌릴 시 데이터 불러오기
-
+        
     # 리스트 위젯에서 선택한 주문 상세내역 보여주는 이벤트
     def salesListWidget_ItemClicked(self):
         # 주문 번호
-        print(self.ui.salesListWidget.currentItem().text())
-
+        # print(self.ui.salesListWidget.currentItem().text())
         self.conn = pymysql.connect(host='localhost', user='root', password='12345',
                                         db='calckiosk_new', charset='utf8')
         cur = self.conn.cursor()
@@ -463,6 +463,15 @@ class MainWindow(QMainWindow):
         #     ON prd.prd_idx = oim.prd_idx
         #  WHERE oim.ord_idx = {self.ui.salesListWidget.currentItem().text()}
     
+    # 리스트 위젯 주문 완료건 삭제 이벤트
+    def del_List_Button_Clicked(self):
+        # 현재 선택되어있는 Row에 해당하는 Item 삭제
+        self.ui.salesListWidget.takeItem(self.ui.salesListWidget.currentRow())
+        # print(f"delete : {self.ui.salesListWidget.currentRow()}/row Item")
+        # 제품 영수증 목록 삭제
+        self.ui.salesText.setPlainText(None)
+        # print(f"delete salesText content")
+
     # 수량 추가 버튼 생성 이벤트
     def make_Add_Button(self, rowPlaceNum, colPlaceNum):
         # 추가/삭제 레이아웃 

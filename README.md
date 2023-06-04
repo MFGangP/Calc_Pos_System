@@ -28,3 +28,15 @@
 	- 제품 기본 가격 변경 기능
 	- 매출 조회 기능 등..
 	- 디자인 작업
+	
+## 네번째 업로드 (2023.06.04)
+	- 전체 디자인 작업 및 수정
+	- 주문번호에 따른 판매 기록 기능(과거 데이터 조회 기능 추가 필요)
+	- 판매 기록 삭제 기능 추가
+	- 버튼 사진 추가
+	
+	TODO:
+	- 제품 기본 가격 변경 기능 추가 (DB쿼리는 완성)
+	- 과거 시점 매출 조회 기능 추가 필요
+	
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/Del_ListWidget.gif?raw=true" width="640">

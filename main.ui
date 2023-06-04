@@ -2557,68 +2557,88 @@ text-align: center;</string>
                        <item>
                         <layout class="QHBoxLayout" name="horizontalLayout_9">
                          <item>
-                          <widget class="QWidget" name="widget_5" native="true">
-                           <widget class="QListWidget" name="salesListWidget">
-                            <property name="geometry">
-                             <rect>
-                              <x>0</x>
-                              <y>0</y>
-                              <width>571</width>
-                              <height>661</height>
-                             </rect>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
-                            <property name="editTriggers">
-                             <set>QAbstractItemView::NoEditTriggers</set>
-                            </property>
-                           </widget>
+                          <widget class="QListWidget" name="salesListWidget">
+                           <property name="minimumSize">
+                            <size>
+                             <width>573</width>
+                             <height>661</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>900</width>
+                             <height>1220</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true"/>
+                           </property>
+                           <property name="editTriggers">
+                            <set>QAbstractItemView::NoEditTriggers</set>
+                           </property>
                           </widget>
                          </item>
                          <item>
-                          <widget class="QWidget" name="widget_4" native="true">
-                           <widget class="QPlainTextEdit" name="salesText">
-                            <property name="geometry">
-                             <rect>
-                              <x>0</x>
-                              <y>0</y>
-                              <width>571</width>
-                              <height>591</height>
-                             </rect>
-                            </property>
-                            <property name="font">
-                             <font>
-                              <family>NanumGothic</family>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="readOnly">
-                             <bool>true</bool>
-                            </property>
-                            <property name="backgroundVisible">
-                             <bool>false</bool>
-                            </property>
-                            <property name="centerOnScroll">
-                             <bool>false</bool>
-                            </property>
-                           </widget>
-                           <widget class="QPushButton" name="del_List_View">
-                            <property name="geometry">
-                             <rect>
-                              <x>0</x>
-                              <y>600</y>
-                              <width>571</width>
-                              <height>61</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>PushButton</string>
-                            </property>
-                           </widget>
-                          </widget>
+                          <layout class="QVBoxLayout" name="verticalLayout_7">
+                           <item>
+                            <widget class="QPlainTextEdit" name="salesText">
+                             <property name="minimumSize">
+                              <size>
+                               <width>571</width>
+                               <height>591</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>900</width>
+                               <height>1120</height>
+                              </size>
+                             </property>
+                             <property name="font">
+                              <font>
+                               <family>NanumGothic</family>
+                               <pointsize>10</pointsize>
+                               <italic>false</italic>
+                               <bold>false</bold>
+                              </font>
+                             </property>
+                             <property name="readOnly">
+                              <bool>true</bool>
+                             </property>
+                             <property name="backgroundVisible">
+                              <bool>false</bool>
+                             </property>
+                             <property name="centerOnScroll">
+                              <bool>false</bool>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="del_List_Widget">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="minimumSize">
+                              <size>
+                               <width>571</width>
+                               <height>61</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>900</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>PushButton</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
                          </item>
                         </layout>
                        </item>

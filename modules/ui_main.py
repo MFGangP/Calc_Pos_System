@@ -718,37 +718,42 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(10, 10, 10, 10)
         self.horizontalLayout_9 = QHBoxLayout()
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.widget_5 = QWidget(self.nowSales)
-        self.widget_5.setObjectName(u"widget_5")
-        self.salesListWidget = QListWidget(self.widget_5)
+        self.salesListWidget = QListWidget(self.nowSales)
         self.salesListWidget.setObjectName(u"salesListWidget")
-        self.salesListWidget.setGeometry(QRect(0, 0, 571, 661))
+        self.salesListWidget.setMinimumSize(QSize(573, 661))
+        self.salesListWidget.setMaximumSize(QSize(900, 1220))
         self.salesListWidget.setStyleSheet(u"")
         self.salesListWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
-        self.horizontalLayout_9.addWidget(self.widget_5)
+        self.horizontalLayout_9.addWidget(self.salesListWidget)
 
-        self.widget_4 = QWidget(self.nowSales)
-        self.widget_4.setObjectName(u"widget_4")
-        self.salesText = QPlainTextEdit(self.widget_4)
+        self.verticalLayout_7 = QVBoxLayout()
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.salesText = QPlainTextEdit(self.nowSales)
         self.salesText.setObjectName(u"salesText")
-        self.salesText.setGeometry(QRect(0, 0, 571, 591))
+        self.salesText.setMinimumSize(QSize(571, 591))
+        self.salesText.setMaximumSize(QSize(900, 1120))
         self.salesText.setFont(font1)
         self.salesText.setReadOnly(True)
         self.salesText.setBackgroundVisible(False)
         self.salesText.setCenterOnScroll(False)
-        self.del_List_View = QPushButton(self.widget_4)
-        self.del_List_View.setObjectName(u"del_List_View")
-        self.del_List_View.setGeometry(QRect(0, 600, 571, 61))
-        self.del_List_View.setStyleSheet(u"border: 2px solid #FFC777;"
-                                        "border-radius: 5px;"	
-                                        "background-color: #FFC777;"
-                                        "text-align: Center;"
-                                        "font: NanumGothic;"
-                                        "font: 18px;"
-                                        "color: #000000;")
 
-        self.horizontalLayout_9.addWidget(self.widget_4)
+        self.verticalLayout_7.addWidget(self.salesText)
+
+        self.del_List_Button = QPushButton(self.nowSales)
+        self.del_List_Button.setObjectName(u"del_List_Button")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.del_List_Button.sizePolicy().hasHeightForWidth())
+        self.del_List_Button.setSizePolicy(sizePolicy5)
+        self.del_List_Button.setMinimumSize(QSize(571, 61))
+        self.del_List_Button.setMaximumSize(QSize(900, 100))
+
+        self.verticalLayout_7.addWidget(self.del_List_Button)
+
+
+        self.horizontalLayout_9.addLayout(self.verticalLayout_7)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_9)
@@ -1103,7 +1108,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"\uc218\ub7c9 \uc81c\uac70", None));
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None));
-        self.del_List_View.setText(QCoreApplication.translate("MainWindow", u"\uc8fc\ubb38\uc11c\u0020\uc0ad\uc81c", None))
+        self.del_List_Button.setText(QCoreApplication.translate("MainWindow", u"\uc8fc\ubb38\uc11c\u0020\uc0ad\uc81c", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\ubd80\ud130", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\uae4c\uc9c0", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\uac80\uc0c9", None))
