@@ -16,7 +16,6 @@
 # ///////////////////////////////////////////////////////////////
 import sys
 import os
-import platform
 import pymysql
 from datetime import datetime
 # IMPORT / GUI AND MODULES AND WIDGETS
