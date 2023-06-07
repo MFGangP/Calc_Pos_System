@@ -56,3 +56,5 @@
 	TODO:
 	- 일,월,년 매출을 확인 할 수 있는 매출 페이지 제작
 	- 당일 삭제된 주문 번호를 조회 할 수 있는 페이지 제작
+	
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/2023-06-07_rasberrypi4_ver.gif?raw=true" width="640">
