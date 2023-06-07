@@ -30,16 +30,16 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1920, 1200)
+        MainWindow.resize(1280, 720)
         sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setMinimumSize(QSize(1920, 1200))
-        MainWindow.setMaximumSize(QSize(1920, 1200))
+        MainWindow.setMinimumSize(QSize(1280, 720))
+        MainWindow.setMaximumSize(QSize(1280, 720))
         MainWindow.setSizeIncrement(QSize(0, 0))
-        MainWindow.setBaseSize(QSize(1920, 1200))
+        MainWindow.setBaseSize(QSize(1280, 720))
         font = QFont()
         font.setFamily(u"\ub098\ub214\uace0\ub515")
         font.setPointSize(10)
@@ -80,8 +80,9 @@ class Ui_MainWindow(object):
         self.appLayout.setContentsMargins(0, 0, 0, 0)
         self.leftMenuBg = QFrame(self.bgApp)
         self.leftMenuBg.setObjectName(u"leftMenuBg")
-        self.leftMenuBg.setMinimumSize(QSize(120, 0))
-        self.leftMenuBg.setMaximumSize(QSize(120, 16777215))
+        # leftMenuBg col size
+        self.leftMenuBg.setMinimumSize(QSize(100, 0))
+        self.leftMenuBg.setMaximumSize(QSize(100, 16777215))
         self.leftMenuBg.setFrameShape(QFrame.NoFrame)
         self.leftMenuBg.setFrameShadow(QFrame.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.leftMenuBg)
@@ -150,14 +151,14 @@ class Ui_MainWindow(object):
         self.btn_home.setObjectName(u"btn_home")
         sizePolicy1.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
         self.btn_home.setSizePolicy(sizePolicy1)
-        self.btn_home.setMinimumSize(QSize(0, 100))
+        self.btn_home.setMinimumSize(QSize(0, 50))
         self.btn_home.setFont(font1)
         self.btn_home.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_home.setLayoutDirection(Qt.LeftToRight)
         self.btn_home.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-home.png);"
                                      "color: ffffff;"
                                      "font: NanumGothic;"
-                                     "font-size: 35px;")
+                                     "font-size: 20px;")
 
         self.verticalLayout_8.addWidget(self.btn_home)
 
@@ -165,14 +166,14 @@ class Ui_MainWindow(object):
         self.btn_nowSales.setObjectName(u"btn_nowSales")
         sizePolicy1.setHeightForWidth(self.btn_nowSales.sizePolicy().hasHeightForWidth())
         self.btn_nowSales.setSizePolicy(sizePolicy1)
-        self.btn_nowSales.setMinimumSize(QSize(0, 100))
+        self.btn_nowSales.setMinimumSize(QSize(0, 50))
         self.btn_nowSales.setFont(font1)
         self.btn_nowSales.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_nowSales.setLayoutDirection(Qt.LeftToRight)
         self.btn_nowSales.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-calendar-check.png);"
                                          "color: ffffff;"
                                          "font: NanumGothic;"
-                                         "font-size: 35px;")
+                                         "font-size: 20px;")
 
         self.verticalLayout_8.addWidget(self.btn_nowSales)
 
@@ -180,14 +181,14 @@ class Ui_MainWindow(object):
         self.btn_postSales.setObjectName(u"btn_postSales")
         sizePolicy1.setHeightForWidth(self.btn_postSales.sizePolicy().hasHeightForWidth())
         self.btn_postSales.setSizePolicy(sizePolicy1)
-        self.btn_postSales.setMinimumSize(QSize(0, 100))
+        self.btn_postSales.setMinimumSize(QSize(0, 50))
         self.btn_postSales.setFont(font1)
         self.btn_postSales.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_postSales.setLayoutDirection(Qt.LeftToRight)
         self.btn_postSales.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-chart-line.png);"
                                           "color: ffffff;"
                                           "font: NanumGothic;"
-                                          "font-size: 35px;")
+                                          "font-size: 20px;")
 
         self.verticalLayout_8.addWidget(self.btn_postSales)
 
@@ -195,14 +196,14 @@ class Ui_MainWindow(object):
         self.btn_exit.setObjectName(u"btn_exit")
         sizePolicy1.setHeightForWidth(self.btn_exit.sizePolicy().hasHeightForWidth())
         self.btn_exit.setSizePolicy(sizePolicy1)
-        self.btn_exit.setMinimumSize(QSize(0, 100))
+        self.btn_exit.setMinimumSize(QSize(0, 50))
         self.btn_exit.setFont(font1)
         self.btn_exit.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_exit.setLayoutDirection(Qt.LeftToRight)
         self.btn_exit.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-x.png);"
                                      "color: ffffff;"
                                      "font: NanumGothic;"
-                                     "font-size: 35px;")
+                                     "font-size: 20px;")
 
         self.verticalLayout_8.addWidget(self.btn_exit)
 
@@ -401,9 +402,9 @@ class Ui_MainWindow(object):
         sizePolicy4.setVerticalStretch(0)
         sizePolicy4.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy4)
-        self.label.setMinimumSize(QSize(1000, 150))
-        self.label.setMaximumSize(QSize(1000, 150))
-        self.label.setBaseSize(QSize(1000, 150))
+        self.label.setMinimumSize(QSize(700, 70))
+        self.label.setMaximumSize(QSize(700, 70))
+        self.label.setBaseSize(QSize(700, 70))
         font5 = QFont()
         font5.setFamily(u"NanumGothic")
         font5.setBold(False)
@@ -421,8 +422,8 @@ class Ui_MainWindow(object):
         self.btn_brezel.setObjectName(u"btn_brezel")
         sizePolicy4.setHeightForWidth(self.btn_brezel.sizePolicy().hasHeightForWidth())
         self.btn_brezel.setSizePolicy(sizePolicy4)
-        self.btn_brezel.setMinimumSize(QSize(50, 50))
-        self.btn_brezel.setMaximumSize(QSize(300, 300))
+        self.btn_brezel.setMinimumSize(QSize(120, 120))
+        self.btn_brezel.setMaximumSize(QSize(120, 120))
         self.btn_brezel.setSizeIncrement(QSize(50, 50))
         self.btn_brezel.setStyleSheet(u"background-color: #D69803; \n"
                                        "image: url(:/images/images/images/\uaf48\ubc30\uae30.jpg);\n"
@@ -435,8 +436,8 @@ class Ui_MainWindow(object):
         self.btn_americano.setObjectName(u"btn_americano")
         sizePolicy4.setHeightForWidth(self.btn_americano.sizePolicy().hasHeightForWidth())
         self.btn_americano.setSizePolicy(sizePolicy4)
-        self.btn_americano.setMinimumSize(QSize(50, 50))
-        self.btn_americano.setMaximumSize(QSize(300, 300))
+        self.btn_americano.setMinimumSize(QSize(120, 120))
+        self.btn_americano.setMaximumSize(QSize(120, 120))
         self.btn_americano.setSizeIncrement(QSize(50, 50))
         self.btn_americano.setStyleSheet(u"background-color: #D69803;\n"
                                           "image: url(:/images/images/images/\uc544\uc774\uc2a4\uc544\uba54\ub9ac\uce74\ub178.jpg);\n"
@@ -448,8 +449,8 @@ class Ui_MainWindow(object):
         self.btn_donuts.setObjectName(u"btn_donuts")
         sizePolicy4.setHeightForWidth(self.btn_donuts.sizePolicy().hasHeightForWidth())
         self.btn_donuts.setSizePolicy(sizePolicy4)
-        self.btn_donuts.setMinimumSize(QSize(50, 50))
-        self.btn_donuts.setMaximumSize(QSize(300, 300))
+        self.btn_donuts.setMinimumSize(QSize(120, 120))
+        self.btn_donuts.setMaximumSize(QSize(120, 120))
         self.btn_donuts.setSizeIncrement(QSize(50, 50))
         self.btn_donuts.setStyleSheet(u"background-color: #D69803;\n"
                                         "image: url(:/images/images/images/\ub3c4\ub108\uce20.jpg);\n"  
@@ -461,8 +462,8 @@ class Ui_MainWindow(object):
         self.btn_brezel_set.setObjectName(u"btn_brezel_set")
         sizePolicy4.setHeightForWidth(self.btn_brezel_set.sizePolicy().hasHeightForWidth())
         self.btn_brezel_set.setSizePolicy(sizePolicy4)
-        self.btn_brezel_set.setMinimumSize(QSize(50, 50))
-        self.btn_brezel_set.setMaximumSize(QSize(300, 300))
+        self.btn_brezel_set.setMinimumSize(QSize(120, 120))
+        self.btn_brezel_set.setMaximumSize(QSize(120, 120))
         self.btn_brezel_set.setSizeIncrement(QSize(50, 50))
         self.btn_brezel_set.setStyleSheet(u"background-color: #D69803;\n"
                                         "image: url(:/images/images/images/\uaf48\ubc30\uae303\uac1c.jpg);\n"
@@ -474,8 +475,8 @@ class Ui_MainWindow(object):
         self.btn_coke.setObjectName(u"btn_coke")
         sizePolicy4.setHeightForWidth(self.btn_coke.sizePolicy().hasHeightForWidth())
         self.btn_coke.setSizePolicy(sizePolicy4)
-        self.btn_coke.setMinimumSize(QSize(50, 50))
-        self.btn_coke.setMaximumSize(QSize(300, 300))
+        self.btn_coke.setMinimumSize(QSize(120, 120))
+        self.btn_coke.setMaximumSize(QSize(120, 120))
         self.btn_coke.setSizeIncrement(QSize(50, 50))
         self.btn_coke.setStyleSheet(u"background-color: #D69803;\n"
                                      "image: url(:/images/images/images/\ucf5c\ub77c.jpg);\n"
@@ -487,8 +488,8 @@ class Ui_MainWindow(object):
         self.btn_hotamericano.setObjectName(u"btn_hotamericano")
         sizePolicy4.setHeightForWidth(self.btn_hotamericano.sizePolicy().hasHeightForWidth())
         self.btn_hotamericano.setSizePolicy(sizePolicy4)
-        self.btn_hotamericano.setMinimumSize(QSize(50, 50))
-        self.btn_hotamericano.setMaximumSize(QSize(300, 300))
+        self.btn_hotamericano.setMinimumSize(QSize(120, 120))
+        self.btn_hotamericano.setMaximumSize(QSize(120, 120))
         self.btn_hotamericano.setSizeIncrement(QSize(50, 50))
         self.btn_hotamericano.setStyleSheet(u"background-color: #D69803;\n"
                                              "image: url(:/images/images/images/\ub530\ub73b\ud55c \uc544\uba54\ub9ac\uce74\ub178.jpg);\n"
@@ -500,8 +501,8 @@ class Ui_MainWindow(object):
         self.btn_peach.setObjectName(u"btn_peach")
         sizePolicy4.setHeightForWidth(self.btn_peach.sizePolicy().hasHeightForWidth())
         self.btn_peach.setSizePolicy(sizePolicy4)
-        self.btn_peach.setMinimumSize(QSize(50, 50))
-        self.btn_peach.setMaximumSize(QSize(300, 300))
+        self.btn_peach.setMinimumSize(QSize(120, 120))
+        self.btn_peach.setMaximumSize(QSize(120, 120))
         self.btn_peach.setSizeIncrement(QSize(50, 50))
         self.btn_peach.setAutoFillBackground(False)
         self.btn_peach.setStyleSheet(u"background-color: #D69803;\n"
@@ -514,8 +515,8 @@ class Ui_MainWindow(object):
         self.btn_pomegranate.setObjectName(u"btn_pomegranate")
         sizePolicy4.setHeightForWidth(self.btn_pomegranate.sizePolicy().hasHeightForWidth())
         self.btn_pomegranate.setSizePolicy(sizePolicy4)
-        self.btn_pomegranate.setMinimumSize(QSize(50, 50))
-        self.btn_pomegranate.setMaximumSize(QSize(300, 300))
+        self.btn_pomegranate.setMinimumSize(QSize(120, 120))
+        self.btn_pomegranate.setMaximumSize(QSize(120, 120))
         self.btn_pomegranate.setSizeIncrement(QSize(50, 50))
         self.btn_pomegranate.setStyleSheet(u"background-color: #D69803;\n"
                                             "image: url(:/images/images/images/\uc11d\ub958.jpg);\n"
@@ -528,8 +529,8 @@ class Ui_MainWindow(object):
         self.btn_cider.setObjectName(u"btn_cider")
         sizePolicy4.setHeightForWidth(self.btn_cider.sizePolicy().hasHeightForWidth())
         self.btn_cider.setSizePolicy(sizePolicy4)
-        self.btn_cider.setMinimumSize(QSize(50, 50))
-        self.btn_cider.setMaximumSize(QSize(300, 300))
+        self.btn_cider.setMinimumSize(QSize(120, 120))
+        self.btn_cider.setMaximumSize(QSize(120, 120))
         self.btn_cider.setSizeIncrement(QSize(50, 50))
         self.btn_cider.setStyleSheet(u"background-color: #D69803;\n"
                                       "image: url(:/images/images/images/\uc0ac\uc774\ub2e4.jpg);\n"
@@ -541,8 +542,8 @@ class Ui_MainWindow(object):
         self.btn_cheeseball.setObjectName(u"btn_cheeseball")
         sizePolicy4.setHeightForWidth(self.btn_cheeseball.sizePolicy().hasHeightForWidth())
         self.btn_cheeseball.setSizePolicy(sizePolicy4)
-        self.btn_cheeseball.setMinimumSize(QSize(50, 50))
-        self.btn_cheeseball.setMaximumSize(QSize(300, 300))
+        self.btn_cheeseball.setMinimumSize(QSize(120, 120))
+        self.btn_cheeseball.setMaximumSize(QSize(120, 120))
         self.btn_cheeseball.setSizeIncrement(QSize(50, 50))
         self.btn_cheeseball.setStyleSheet(u"background-color: #D69803;\n"
                                            "image: url(:/images/images/images/\uce58\uc988\ubcfc.jpg);\n"
@@ -554,8 +555,8 @@ class Ui_MainWindow(object):
         self.btn_dinoagg.setObjectName(u"btn_dinoagg")
         sizePolicy4.setHeightForWidth(self.btn_dinoagg.sizePolicy().hasHeightForWidth())
         self.btn_dinoagg.setSizePolicy(sizePolicy4)
-        self.btn_dinoagg.setMinimumSize(QSize(50, 50))
-        self.btn_dinoagg.setMaximumSize(QSize(300, 300))
+        self.btn_dinoagg.setMinimumSize(QSize(120, 120))
+        self.btn_dinoagg.setMaximumSize(QSize(120, 120))
         self.btn_dinoagg.setSizeIncrement(QSize(50, 50))
         self.btn_dinoagg.setStyleSheet(u"background-color: #D69803;\n"
                                         "image: url(:/images/images/images/\uacf5\ub8e1\uc54c.jpg);\n"
@@ -567,8 +568,8 @@ class Ui_MainWindow(object):
         self.btn_Fanta.setObjectName(u"btn_Fanta")
         sizePolicy4.setHeightForWidth(self.btn_Fanta.sizePolicy().hasHeightForWidth())
         self.btn_Fanta.setSizePolicy(sizePolicy4)
-        self.btn_Fanta.setMinimumSize(QSize(50, 50))
-        self.btn_Fanta.setMaximumSize(QSize(300, 300))
+        self.btn_Fanta.setMinimumSize(QSize(120, 120))
+        self.btn_Fanta.setMaximumSize(QSize(120, 120))
         self.btn_Fanta.setSizeIncrement(QSize(50, 50))
         self.btn_Fanta.setFont(font5)
         self.btn_Fanta.setStyleSheet(u"background-color: #D69803;\n"
@@ -581,8 +582,8 @@ class Ui_MainWindow(object):
         self.btn_hotdog.setObjectName(u"btn_hotdog")
         sizePolicy4.setHeightForWidth(self.btn_hotdog.sizePolicy().hasHeightForWidth())
         self.btn_hotdog.setSizePolicy(sizePolicy4)
-        self.btn_hotdog.setMinimumSize(QSize(50, 50))
-        self.btn_hotdog.setMaximumSize(QSize(300, 300))
+        self.btn_hotdog.setMinimumSize(QSize(120, 120))
+        self.btn_hotdog.setMaximumSize(QSize(120, 120))
         self.btn_hotdog.setSizeIncrement(QSize(50, 50))
         self.btn_hotdog.setStyleSheet(u"background-color: #D69803;\n"
                                         "image: url(:/images/images/images/\ud56b\ub3c4\uadf8.jpg);\n"
@@ -594,8 +595,8 @@ class Ui_MainWindow(object):
         self.btn_blueberries.setObjectName(u"btn_blueberries")
         sizePolicy4.setHeightForWidth(self.btn_blueberries.sizePolicy().hasHeightForWidth())
         self.btn_blueberries.setSizePolicy(sizePolicy4)
-        self.btn_blueberries.setMinimumSize(QSize(50, 50))
-        self.btn_blueberries.setMaximumSize(QSize(300, 300))
+        self.btn_blueberries.setMinimumSize(QSize(120, 120))
+        self.btn_blueberries.setMaximumSize(QSize(120, 120))
         self.btn_blueberries.setSizeIncrement(QSize(50, 50))
         self.btn_blueberries.setStyleSheet(u"background-color: #D69803;\n"
                                         "image: url(:/images/images/images/\ube14\ub8e8\ubca0\ub9ac.jpg);\n"
@@ -607,8 +608,8 @@ class Ui_MainWindow(object):
         self.btn_plum.setObjectName(u"btn_plum")
         sizePolicy4.setHeightForWidth(self.btn_plum.sizePolicy().hasHeightForWidth())
         self.btn_plum.setSizePolicy(sizePolicy4)
-        self.btn_plum.setMinimumSize(QSize(50, 50))
-        self.btn_plum.setMaximumSize(QSize(300, 300))
+        self.btn_plum.setMinimumSize(QSize(120, 120))
+        self.btn_plum.setMaximumSize(QSize(120, 120))
         self.btn_plum.setSizeIncrement(QSize(50, 50))
         self.btn_plum.setStyleSheet(u"background-color: #D69803;\n"
                                      "image: url(:/images/images/images/\ub9e4\uc2e4.jpg);\n"
@@ -626,13 +627,13 @@ class Ui_MainWindow(object):
         self.btn_All_Del.setObjectName(u"btn_All_Del")
         sizePolicy4.setHeightForWidth(self.btn_All_Del.sizePolicy().hasHeightForWidth())
         self.btn_All_Del.setSizePolicy(sizePolicy4)
-        self.btn_All_Del.setMinimumSize(QSize(600, 150))
-        self.btn_All_Del.setMaximumSize(QSize(600, 150))
-        self.btn_All_Del.setBaseSize(QSize(600, 150))
+        self.btn_All_Del.setMinimumSize(QSize(300, 70))
+        self.btn_All_Del.setMaximumSize(QSize(300, 70))
+        self.btn_All_Del.setBaseSize(QSize(300, 70))
         self.btn_All_Del.setFont(font5)
         self.btn_All_Del.setStyleSheet(u"background-color: rgb(52, 59, 72);"
                                        "text-align: center;"
-                                       "font: bold 70px;"
+                                       "font: bold 30px;"
                                        "color: #FFFFFF")
 
         self.horizontalLayout_6.addWidget(self.btn_All_Del)
@@ -641,13 +642,13 @@ class Ui_MainWindow(object):
         self.btu_Commit.setObjectName(u"btu_Commit")
         sizePolicy4.setHeightForWidth(self.btu_Commit.sizePolicy().hasHeightForWidth())
         self.btu_Commit.setSizePolicy(sizePolicy4)
-        self.btu_Commit.setMinimumSize(QSize(600, 150))
-        self.btu_Commit.setMaximumSize(QSize(600, 150))
-        self.btu_Commit.setBaseSize(QSize(600, 150))
+        self.btu_Commit.setMinimumSize(QSize(300, 70))
+        self.btu_Commit.setMaximumSize(QSize(300, 70))
+        self.btu_Commit.setBaseSize(QSize(300, 70))
         self.btu_Commit.setFont(font5)
         self.btu_Commit.setStyleSheet(u"background-color: #D69803;"
                                        "text-align: center;"
-                                       "font: bold 70px;"
+                                       "font: bold 30px;"
                                        "color: #FFFFFF")
 
         self.horizontalLayout_6.addWidget(self.btu_Commit)
@@ -678,9 +679,9 @@ class Ui_MainWindow(object):
         self.tableWidget.setObjectName(u"tableWidget")
         sizePolicy4.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
         self.tableWidget.setSizePolicy(sizePolicy4)
-        self.tableWidget.setMinimumSize(QSize(220, 580))
-        self.tableWidget.setMaximumSize(QSize(1200, 1220))
-        self.tableWidget.setBaseSize(QSize(220, 580))
+        self.tableWidget.setMinimumSize(QSize(600, 500))
+        self.tableWidget.setMaximumSize(QSize(600, 500))
+        self.tableWidget.setBaseSize(QSize(600, 500))
         self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
 
@@ -698,8 +699,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.salesListWidget = QListWidget(self.nowSales)
         self.salesListWidget.setObjectName(u"salesListWidget")
-        self.salesListWidget.setMinimumSize(QSize(1200, 1420))
-        self.salesListWidget.setMaximumSize(QSize(1200, 1420))
+        self.salesListWidget.setMinimumSize(QSize(550, 600))
+        self.salesListWidget.setMaximumSize(QSize(550, 600))
         self.salesListWidget.setStyleSheet(u"")
         self.salesListWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
@@ -709,8 +710,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.salesText = QPlainTextEdit(self.nowSales)
         self.salesText.setObjectName(u"salesText")
-        self.salesText.setMinimumSize(QSize(1200, 1320))
-        self.salesText.setMaximumSize(QSize(1200, 1320))
+        self.salesText.setMinimumSize(QSize(550, 550))
+        self.salesText.setMaximumSize(QSize(550, 550))
         self.salesText.setFont(font1)
         self.salesText.setReadOnly(True)
         self.salesText.setBackgroundVisible(False)
@@ -725,8 +726,8 @@ class Ui_MainWindow(object):
         sizePolicy5.setVerticalStretch(0)
         sizePolicy5.setHeightForWidth(self.del_List_Button.sizePolicy().hasHeightForWidth())
         self.del_List_Button.setSizePolicy(sizePolicy5)
-        self.del_List_Button.setMinimumSize(QSize(1200, 100))
-        self.del_List_Button.setMaximumSize(QSize(1200, 100))
+        self.del_List_Button.setMinimumSize(QSize(550, 50))
+        self.del_List_Button.setMaximumSize(QSize(550, 50))
         self.del_List_Button.setStyleSheet(u"background-color: red;\n"
                                             "color: #FFFFFF;\n"
                                             "font-size: 30px;\n"
