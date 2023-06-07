@@ -1094,5 +1094,5 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\uae4c\uc9c0", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\uac80\uc0c9", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: ParkSeongHyeon", None))
-        self.version.setText(QCoreApplication.translate("MainWindow", u"v0.0.1", None))
+        self.version.setText(QCoreApplication.translate("MainWindow", u"v0.1.0", None))
     # retranslateUi
