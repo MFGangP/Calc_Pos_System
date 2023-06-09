@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2560</width>
-    <height>1600</height>
+    <width>1280</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,14 +19,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>2560</width>
-    <height>1600</height>
+    <width>1280</width>
+    <height>720</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>2560</width>
-    <height>1600</height>
+    <width>1280</width>
+    <height>800</height>
    </size>
   </property>
   <property name="sizeIncrement">
@@ -794,7 +794,182 @@ btn_pomegranate{
 	font-size: 17px;
 }
 /* //////////////////////////////////////////////////////////////////////////////////////// */
-</string>
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+/* style for top navigation area ###############################################*/ 
+
+#qt_calendar_navigationbar {
+    background-color: #FFC777;
+	border: 2px solid  #B8E2FF;
+	border-bottom: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+/* style for month change buttons ############################################ */
+
+#qt_calendar_prevmonth, 
+#qt_calendar_nextmonth {
+	/* border delete */
+    border: none;  
+    /* delete default icons */
+	qproperty-icon: none; 
+	
+    min-width: 50px;
+    max-width: 50px;
+    min-height: 20px;
+    max-height: 20px;
+
+    border-radius: 5px; 
+	/* set background transparent */
+    background-color: transparent; 
+	padding: 5px;
+}
+
+/* style for pre month button ############################################ */
+
+#qt_calendar_prevmonth {
+	/* set text for button */
+	/* qproperty-text: PREV; */
+	margin-left: 15px;
+	image: url(:/icon/images/icons/cil-caret-left.png);
+}
+
+/* style for next month button ########################################### */
+#qt_calendar_nextmonth {
+	margin-right: 15px;
+	image: url(:/icon/images/icons/cil-caret-right.png);
+    /* qproperty-text: NEXT; */
+}
+#qt_calendar_prevmonth:hover, 
+#qt_calendar_nextmonth:hover {
+    background-color: #55aaff;
+}
+
+#qt_calendar_prevmonth:pressed, 
+#qt_calendar_nextmonth:pressed {
+    background-color: rgba(235, 235, 235, 100);
+}
+
+
+/* Style for month and year buttons #################################### */
+
+#qt_calendar_yearbutton {
+	width: 60px;
+    color: white;
+	background-color: #55aaff;
+	margin:5px;
+    border-radius: 5px;
+	font-size: 15px;
+	padding:0px 10px;
+}
+
+#qt_calendar_monthbutton {
+	width: 60px;
+    color: white;
+	background-color: #55aaff;
+	font-size: 15px;
+	margin:5px 0px;
+    border-radius: 5px;
+	padding:0px 2px;
+}
+
+#qt_calendar_yearbutton:hover, 
+#qt_calendar_monthbutton:hover {
+    background-color: #FFC777;
+}
+
+#qt_calendar_yearbutton:pressed, 
+#qt_calendar_monthbutton:pressed {
+    background-color: rgba(235, 235, 235, 100);
+}
+
+/* Style for year input lineEdit ######################################*/
+
+#qt_calendar_yearedit {
+    min-width: 70px;
+    color: white;
+    background: #FFC777;
+	font-size: 15px;
+}
+
+/* Style for year change buttons ######################################*/
+
+#qt_calendar_yearedit::up-button { 
+	image: url(:/icon/images/icons/cil-caret-top.png);
+    subcontrol-position: right;
+	background-color: #FFC777;
+}
+
+#qt_calendar_yearedit::down-button { 
+	image: url(:/icon/images/icons/cil-caret-bottom.png);
+    subcontrol-position: left; 
+	background-color: #FFC777;
+}
+
+#qt_calendar_yearedit::down-button, 
+#qt_calendar_yearedit::up-button {
+	width: 15px;
+	height: 25px;
+	padding: 0px 5px;
+	border-radius:3px;
+}
+
+#qt_calendar_yearedit::down-button:hover, 
+#qt_calendar_yearedit::up-button:hover {
+	background-color: #55aaff;
+}
+
+/* Style for month select menu ##################################### */
+
+#calendarWidget QToolButton QMenu {
+    background-color: black;
+    color: white;
+}
+#calendarWidget QToolButton QMenu::item {
+	/*padding: 10px;*/
+}
+#calendarWidget QToolButton QMenu::item:selected:enabled {
+    background-color: #55aaff;
+}
+
+#calendarWidget QToolButton::menu-indicator {
+	/* Remove toolButton arrow */
+    /*image: none; */
+	subcontrol-position: right center;
+	margin-top: 10px;
+	width:20px;
+}
+
+/* Style for calendar table ########################################## */
+#qt_calendar_calendarview {
+	/* Remove the selected dashed box */
+    outline: 0px;
+
+	border: 2px solid  #B8E2FF;
+	border-top: 0px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+#qt_calendar_calendarview::item:hover {
+    border-radius:5px;
+	background-color:#aaffff;
+}
+
+#qt_calendar_calendarview::item:selected {
+    background-color: #55aa7f; 
+	border-radius:5px;
+}
+
+QCalendarWidget QAbstractItemView:enabled{
+	background-color: gray;
+    color: white;
+}
+QCalendarWidget QAbstractItemView:disabled{
+	background-color: gray;
+    color: #FFC777;
+}</string>
    </property>
    <layout class="QVBoxLayout" name="appMargins">
     <property name="spacing">
@@ -1755,7 +1930,7 @@ btn_pomegranate{
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QGridLayout" name="gridLayout_4">
@@ -2660,7 +2835,21 @@ text-align: center;</string>
                          <item row="2" column="0">
                           <layout class="QHBoxLayout" name="horizontalLayout_8">
                            <item>
-                            <widget class="QDateEdit" name="dateEdit_2"/>
+                            <widget class="QDateEdit" name="dateEdit_2">
+                             <property name="autoFillBackground">
+                              <bool>false</bool>
+                             </property>
+                             <property name="calendarPopup">
+                              <bool>true</bool>
+                             </property>
+                             <property name="date">
+                              <date>
+                               <year>2000</year>
+                               <month>1</month>
+                               <day>2</day>
+                              </date>
+                             </property>
+                            </widget>
                            </item>
                            <item>
                             <widget class="QLabel" name="label_2">
@@ -2697,10 +2886,11 @@ text-align: center;</string>
                             </size>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">/* style for top navigation area ###############################################*/ 
+                            <string notr="true">/* //////////////////////////////////////////////////////////////////////////////////////// */
+/* style for top navigation area ###############################################*/ 
 
 #qt_calendar_navigationbar {
-    background-color: #fff;
+    background-color: #FFC777;
 	border: 2px solid  #B8E2FF;
 	border-bottom: 0px;
 	border-top-left-radius: 5px;
@@ -2716,10 +2906,10 @@ text-align: center;</string>
     /* delete default icons */
 	qproperty-icon: none; 
 	
-    min-width: 13px;
-    max-width: 13px;
-    min-height: 13px;
-    max-height: 13px;
+    min-width: 50px;
+    max-width: 50px;
+    min-height: 25px;
+    max-height: 25px;
 
     border-radius: 5px; 
 	/* set background transparent */
@@ -2731,16 +2921,18 @@ text-align: center;</string>
 
 #qt_calendar_prevmonth {
 	/* set text for button */
-	/*qproperty-text: &amp;quot;&amp;gt;&amp;quot;;*/
-	margin-left:5px;
-	image: url(:/icon/arrow-119-48.ico);
+	/* qproperty-text: PREV; */
+	margin-left: 15px;
+	image: url(:/icon/images/icons/cil-caret-left.png);
+	margin: 0px;
 }
 
 /* style for next month button ########################################### */
 #qt_calendar_nextmonth {
-	margin-right:5px;
-	image: url(:/icon/arrow-19-48.ico);
-    /* qproperty-text: &amp;quot;&amp;gt;&amp;quot;; */
+    /* qproperty-text: NEXT; */
+	margin-right: 15px;
+	image: url(:/icon/images/icons/cil-caret-right.png);
+	margin: 0px;
 }
 #qt_calendar_prevmonth:hover, 
 #qt_calendar_nextmonth:hover {
@@ -2753,20 +2945,23 @@ text-align: center;</string>
 }
 
 
-/* Style for month and yeat buttons #################################### */
+/* Style for month and year buttons #################################### */
 
 #qt_calendar_yearbutton {
-    color: #000;
+	width: 50px;
+    color: black;
+	background-color: #ffffff;
 	margin:5px;
     border-radius: 5px;
-	font-size: 13px;
+	font-size: 15px;
 	padding:0px 10px;
 }
 
- #qt_calendar_monthbutton {
-	width: 110px;
-    color: #000;
-	font-size: 13px;
+#qt_calendar_monthbutton {
+	width: 50px;
+    color: black;
+	background-color: #ffffff;
+	font-size: 15px;
 	margin:5px 0px;
     border-radius: 5px;
 	padding:0px 2px;
@@ -2782,30 +2977,35 @@ text-align: center;</string>
     background-color: rgba(235, 235, 235, 100);
 }
 
+
 /* Style for year input lineEdit ######################################*/
 
 #qt_calendar_yearedit {
-    min-width: 53px;
-    color: #000;
-    background: transparent;
-	font-size: 13px;
+    min-width: 60px;
+    color: black;
+    background: #ffffff;
+	font-size: 15px;
+	text-align: center;
 }
 
 /* Style for year change buttons ######################################*/
 
 #qt_calendar_yearedit::up-button { 
-	image: url(:/icon/arrow-151-48.ico);
+	image: url(:/icon/images/icons/cil-caret-top.png);
     subcontrol-position: right;
+	background-color: #FFC777;
 }
 
 #qt_calendar_yearedit::down-button { 
-	image: url(:/icon/arrow-213-48.ico);
+	image: url(:/icon/images/icons/cil-caret-bottom.png);
     subcontrol-position: left; 
+	background-color: #FFC777;
 }
 
 #qt_calendar_yearedit::down-button, 
 #qt_calendar_yearedit::up-button {
-	width:10px;
+	width: 15px;
+	height: 25px;
 	padding: 0px 5px;
 	border-radius:3px;
 }
@@ -2818,19 +3018,18 @@ text-align: center;</string>
 /* Style for month select menu ##################################### */
 
 #calendarWidget QToolButton QMenu {
-     background-color: white;
-
+    background-color: white;
 }
 #calendarWidget QToolButton QMenu::item {
 	/*padding: 10px;*/
 }
- #calendarWidget QToolButton QMenu::item:selected:enabled {
+#calendarWidget QToolButton QMenu::item:selected:enabled {
     background-color: #55aaff;
 }
 
 #calendarWidget QToolButton::menu-indicator {
 	/* Remove toolButton arrow */
-      /*image: none; */
+    /*image: none; */
 	nosubcontrol-origin: margin;
 	subcontrol-position: right center;
 	margin-top: 10px;
@@ -2849,13 +3048,22 @@ text-align: center;</string>
 }
 
 #qt_calendar_calendarview::item:hover {
-   border-radius:5px;
+    border-radius:5px;
 	background-color:#aaffff;
 }
 
 #qt_calendar_calendarview::item:selected {
     background-color: #55aa7f; 
 	border-radius:5px;
+}
+
+QCalendarWidget QAbstractItemView:enabled{
+	background-color: white;
+    color: black;
+}
+QCalendarWidget QAbstractItemView:disabled{
+	background-color: white;
+    color: #FFC777;
 }</string>
                            </property>
                           </widget>

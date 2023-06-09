@@ -125,20 +125,20 @@ class MainWindow(QMainWindow):
         # SHOW APP
         # ///////////////////////////////////////////////////////////////\
 
-        self.showFullScreen()
+        #self.showFullScreen()
+        self.showNormal()
+        # # SET CUSTOM THEME
+        # # ///////////////////////////////////////////////////////////////
+        # useCustomTheme = False
+        # themeFile = "./themes/py_dracula_light.qss"
 
-        # SET CUSTOM THEME
-        # ///////////////////////////////////////////////////////////////
-        useCustomTheme = False
-        themeFile = "./themes/py_dracula_light.qss"
+        # # SET THEME AND HACKS
+        # if useCustomTheme:
+        #     # LOAD AND APPLY STYLE
+        #     UIFunctions.theme(self, themeFile, True)
 
-        # SET THEME AND HACKS
-        if useCustomTheme:
-            # LOAD AND APPLY STYLE
-            UIFunctions.theme(self, themeFile, True)
-
-            # SET HACKS
-            AppFunctions.setThemeHack(self)
+        #     # SET HACKS
+        #     AppFunctions.setThemeHack(self)
 
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////

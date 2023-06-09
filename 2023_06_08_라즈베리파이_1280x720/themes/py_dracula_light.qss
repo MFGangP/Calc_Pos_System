@@ -769,18 +769,19 @@ btn_pomegranate{
 /* Style for month and year buttons #################################### */
 
 #qt_calendar_yearbutton {
-    color: black;
-	width: 100px;
-	background-color: #FFC777;
+	width: 60px;
+    color: white;
+	background-color: #55aaff;
 	margin:5px;
     border-radius: 5px;
 	font-size: 15px;
 	padding:0px 10px;
 }
 
- #qt_calendar_monthbutton {
-	width: 100px;
-    color: black;
+#qt_calendar_monthbutton {
+	width: 60px;
+    color: white;
+	background-color: #55aaff;
 	font-size: 15px;
 	margin:5px 0px;
     border-radius: 5px;
@@ -789,7 +790,7 @@ btn_pomegranate{
 
 #qt_calendar_yearbutton:hover, 
 #qt_calendar_monthbutton:hover {
-    background-color: #55aaff;
+    background-color: #FFC777;
 }
 
 #qt_calendar_yearbutton:pressed, 
@@ -800,11 +801,10 @@ btn_pomegranate{
 /* Style for year input lineEdit ######################################*/
 
 #qt_calendar_yearedit {
-    min-width: 100px;
-    color: black;
-    background: #91D3FF;
+    min-width: 70px;
+    color: white;
+    background: #FFC777;
 	font-size: 15px;
-	text-align: center;
 }
 
 /* Style for year change buttons ######################################*/
@@ -837,19 +837,19 @@ btn_pomegranate{
 /* Style for month select menu ##################################### */
 
 #calendarWidget QToolButton QMenu {
-     background-color: white;
+    background-color: black;
+    color: white;
 }
 #calendarWidget QToolButton QMenu::item {
 	/*padding: 10px;*/
 }
- #calendarWidget QToolButton QMenu::item:selected:enabled {
+#calendarWidget QToolButton QMenu::item:selected:enabled {
     background-color: #55aaff;
 }
 
 #calendarWidget QToolButton::menu-indicator {
 	/* Remove toolButton arrow */
     /*image: none; */
-	nosubcontrol-origin: margin;
 	subcontrol-position: right center;
 	margin-top: 10px;
 	width:20px;
@@ -876,5 +876,13 @@ btn_pomegranate{
 	border-radius:5px;
 }
 
+QCalendarWidget QAbstractItemView:enabled{
+	background-color: gray;
+    color: white;
+}
+QCalendarWidget QAbstractItemView:disabled{
+	background-color: gray;
+    color: #FFC777;
+}
 /* //////////////////////////////////////////////////////////////////////////////////////// */
 /* style for  area ###############################################*/ 
