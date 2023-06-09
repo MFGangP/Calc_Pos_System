@@ -750,20 +750,22 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.horizontalLayout_8 = QHBoxLayout()
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.dateEdit_2 = QDateEdit(self.postSales)
-        self.dateEdit_2.setObjectName(u"dateEdit_2")
-
-        self.horizontalLayout_8.addWidget(self.dateEdit_2)
+        self.pastDateEdit = QDateEdit(self.postSales)
+        self.pastDateEdit.setObjectName(u"pastDateEdit")
+        self.pastDateEdit.setMinimumSize(100, 30)
+        self.pastDateEdit.setCalendarPopup(True)
+        self.horizontalLayout_8.addWidget(self.pastDateEdit)
 
         self.label_2 = QLabel(self.postSales)
         self.label_2.setObjectName(u"label_2")
 
         self.horizontalLayout_8.addWidget(self.label_2)
 
-        self.dateEdit = QDateEdit(self.postSales)
-        self.dateEdit.setObjectName(u"dateEdit")
-
-        self.horizontalLayout_8.addWidget(self.dateEdit)
+        self.latestDateEdit = QDateEdit(self.postSales)
+        self.latestDateEdit.setObjectName(u"latestDateEdit")
+        self.latestDateEdit.setMinimumSize(100, 30)
+        self.latestDateEdit.setCalendarPopup(True)
+        self.horizontalLayout_8.addWidget(self.latestDateEdit)
 
         self.label_3 = QLabel(self.postSales)
         self.label_3.setObjectName(u"label_3")
@@ -796,7 +798,14 @@ class Ui_MainWindow(object):
         self.calendarWidget = QCalendarWidget(self.postSales)
         self.calendarWidget.setObjectName(u"calendarWidget")
         self.calendarWidget.setMaximumSize(QSize(400, 400))
-
+        self.calendarWidget.setStyleSheet(u"QCalendarWidget QAbstractItemView:enabled{"+
+                                                "background-color: white;"+
+                                                "color: black;"+
+                                                "}"+
+                                                "QCalendarWidget QAbstractItemView:disabled{"+
+                                                "background-color: white;"+
+                                                "color: #FFC777;"+
+                                                "}")
         self.gridLayout.addWidget(self.calendarWidget, 4, 0, 1, 1)
 
 

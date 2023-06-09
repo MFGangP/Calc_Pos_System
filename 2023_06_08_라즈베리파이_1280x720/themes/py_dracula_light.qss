@@ -713,7 +713,7 @@ btn_pomegranate{
 /* style for top navigation area ###############################################*/ 
 
 #qt_calendar_navigationbar {
-    background-color: #fff;
+    background-color: #FFC777;
 	border: 2px solid  #B8E2FF;
 	border-bottom: 0px;
 	border-top-left-radius: 5px;
@@ -729,10 +729,10 @@ btn_pomegranate{
     /* delete default icons */
 	qproperty-icon: none; 
 	
-    min-width: 13px;
-    max-width: 13px;
-    min-height: 13px;
-    max-height: 13px;
+    min-width: 50px;
+    max-width: 50px;
+    min-height: 20px;
+    max-height: 20px;
 
     border-radius: 5px; 
 	/* set background transparent */
@@ -744,16 +744,16 @@ btn_pomegranate{
 
 #qt_calendar_prevmonth {
 	/* set text for button */
-	/*qproperty-text: &quot;&gt;&quot;;*/
-	margin-left:5px;
-	image: url(:/icon/arrow-119-48.ico);
+	/* qproperty-text: PREV; */
+	margin-left: 15px;
+	image: url(:/icon/images/icons/cil-caret-left.png);
 }
 
 /* style for next month button ########################################### */
 #qt_calendar_nextmonth {
-	margin-right:5px;
-	image: url(:/icon/arrow-19-48.ico);
-    /* qproperty-text: &quot;&gt;&quot;; */
+	margin-right: 15px;
+	image: url(:/icon/images/icons/cil-caret-right.png);
+    /* qproperty-text: NEXT; */
 }
 #qt_calendar_prevmonth:hover, 
 #qt_calendar_nextmonth:hover {
@@ -766,20 +766,22 @@ btn_pomegranate{
 }
 
 
-/* Style for month and yeat buttons #################################### */
+/* Style for month and year buttons #################################### */
 
 #qt_calendar_yearbutton {
-    color: #000;
+    color: black;
+	width: 100px;
+	background-color: #FFC777;
 	margin:5px;
     border-radius: 5px;
-	font-size: 13px;
+	font-size: 15px;
 	padding:0px 10px;
 }
 
  #qt_calendar_monthbutton {
-	width: 110px;
-    color: #000;
-	font-size: 13px;
+	width: 100px;
+    color: black;
+	font-size: 15px;
 	margin:5px 0px;
     border-radius: 5px;
 	padding:0px 2px;
@@ -798,27 +800,31 @@ btn_pomegranate{
 /* Style for year input lineEdit ######################################*/
 
 #qt_calendar_yearedit {
-    min-width: 53px;
-    color: #000;
-    background: transparent;
-	font-size: 13px;
+    min-width: 100px;
+    color: black;
+    background: #91D3FF;
+	font-size: 15px;
+	text-align: center;
 }
 
 /* Style for year change buttons ######################################*/
 
 #qt_calendar_yearedit::up-button { 
-	image: url(:/icon/arrow-151-48.ico);
+	image: url(:/icon/images/icons/cil-caret-top.png);
     subcontrol-position: right;
+	background-color: #FFC777;
 }
 
 #qt_calendar_yearedit::down-button { 
-	image: url(:/icon/arrow-213-48.ico);
+	image: url(:/icon/images/icons/cil-caret-bottom.png);
     subcontrol-position: left; 
+	background-color: #FFC777;
 }
 
 #qt_calendar_yearedit::down-button, 
 #qt_calendar_yearedit::up-button {
-	width:10px;
+	width: 15px;
+	height: 25px;
 	padding: 0px 5px;
 	border-radius:3px;
 }
@@ -832,7 +838,6 @@ btn_pomegranate{
 
 #calendarWidget QToolButton QMenu {
      background-color: white;
-
 }
 #calendarWidget QToolButton QMenu::item {
 	/*padding: 10px;*/
@@ -843,7 +848,7 @@ btn_pomegranate{
 
 #calendarWidget QToolButton::menu-indicator {
 	/* Remove toolButton arrow */
-      /*image: none; */
+    /*image: none; */
 	nosubcontrol-origin: margin;
 	subcontrol-position: right center;
 	margin-top: 10px;
@@ -862,7 +867,7 @@ btn_pomegranate{
 }
 
 #qt_calendar_calendarview::item:hover {
-   border-radius:5px;
+    border-radius:5px;
 	background-color:#aaffff;
 }
 
