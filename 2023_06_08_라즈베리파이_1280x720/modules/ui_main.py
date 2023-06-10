@@ -134,21 +134,10 @@ class Ui_MainWindow(object):
         self.verticalMenuLayout.setSpacing(0)
         self.verticalMenuLayout.setObjectName(u"verticalMenuLayout")
         self.verticalMenuLayout.setContentsMargins(0, 0, 0, 0)
-        self.toggleBox = QFrame(self.leftMenuFrame)
-        self.toggleBox.setObjectName(u"toggleBox")
-        self.toggleBox.setMaximumSize(QSize(16777215, 45))
-        self.toggleBox.setFrameShape(QFrame.NoFrame)
-        self.toggleBox.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_4 = QVBoxLayout(self.toggleBox)
-        self.verticalLayout_4.setSpacing(0)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
 
         sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
-
-        self.verticalMenuLayout.addWidget(self.toggleBox)
 
         sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
