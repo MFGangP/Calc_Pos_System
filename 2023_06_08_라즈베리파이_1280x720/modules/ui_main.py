@@ -1088,7 +1088,7 @@ class Ui_MainWindow(object):
         self.btn_nowSales.setText(QCoreApplication.translate("MainWindow", u"\uc8fc\ubb38", None))
         self.btn_postSales.setText(QCoreApplication.translate("MainWindow", u"\ub9e4\ucd9c", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
-        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
+        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"", None))
         self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"\uc800\uad6c\uba85\ud488\uaf48\ubc30\uae30 \uacc4\uc0b0 \ud0a4\uc624\uc2a4\ud06c", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
