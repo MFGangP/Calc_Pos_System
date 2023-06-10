@@ -143,21 +143,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.toggleButton = QPushButton(self.toggleBox)
-        self.toggleButton.setObjectName(u"toggleButton")
+
         sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.toggleButton.sizePolicy().hasHeightForWidth())
-        self.toggleButton.setSizePolicy(sizePolicy2)
-        self.toggleButton.setMinimumSize(QSize(0, 45))
-        self.toggleButton.setFont(font1)
-        self.toggleButton.setCursor(QCursor(Qt.PointingHandCursor))
-        self.toggleButton.setLayoutDirection(Qt.LeftToRight)
-        self.toggleButton.setStyleSheet(u"background-image: url(:/icon/images/icons/icon_menu.png);")
-
-        self.verticalLayout_4.addWidget(self.toggleButton)
-
 
         self.verticalMenuLayout.addWidget(self.toggleBox)
 
@@ -232,18 +221,6 @@ class Ui_MainWindow(object):
                                      "font-size: 20px;")
 
         self.verticalLayout_8.addWidget(self.btn_exit)
-
-        self.btn_save = QPushButton(self.topMenu)
-        self.btn_save.setObjectName(u"btn_save")
-        sizePolicy2.setHeightForWidth(self.btn_save.sizePolicy().hasHeightForWidth())
-        self.btn_save.setSizePolicy(sizePolicy2)
-        self.btn_save.setMinimumSize(QSize(0, 45))
-        self.btn_save.setFont(font1)
-        self.btn_save.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_save.setLayoutDirection(Qt.LeftToRight)
-        self.btn_save.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-save.png)")
-
-        self.verticalLayout_8.addWidget(self.btn_save)
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
 
