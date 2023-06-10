@@ -134,6 +134,32 @@ class Ui_MainWindow(object):
         self.verticalMenuLayout.setSpacing(0)
         self.verticalMenuLayout.setObjectName(u"verticalMenuLayout")
         self.verticalMenuLayout.setContentsMargins(0, 0, 0, 0)
+        self.toggleBox = QFrame(self.leftMenuFrame)
+        self.toggleBox.setObjectName(u"toggleBox")
+        self.toggleBox.setMaximumSize(QSize(16777215, 45))
+        self.toggleBox.setFrameShape(QFrame.NoFrame)
+        self.toggleBox.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_4 = QVBoxLayout(self.toggleBox)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.toggleButton = QPushButton(self.toggleBox)
+        self.toggleButton.setObjectName(u"toggleButton")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.toggleButton.sizePolicy().hasHeightForWidth())
+        self.toggleButton.setSizePolicy(sizePolicy2)
+        self.toggleButton.setMinimumSize(QSize(0, 45))
+        self.toggleButton.setFont(font1)
+        self.toggleButton.setCursor(QCursor(Qt.PointingHandCursor))
+        self.toggleButton.setLayoutDirection(Qt.LeftToRight)
+        self.toggleButton.setStyleSheet(u"background-image: url(:/icon/images/icons/icon_menu.png);")
+
+        self.verticalLayout_4.addWidget(self.toggleButton)
+
+
+        self.verticalMenuLayout.addWidget(self.toggleBox)
 
         sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
@@ -207,6 +233,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.btn_exit)
 
+        self.btn_save = QPushButton(self.topMenu)
+        self.btn_save.setObjectName(u"btn_save")
+        sizePolicy2.setHeightForWidth(self.btn_save.sizePolicy().hasHeightForWidth())
+        self.btn_save.setSizePolicy(sizePolicy2)
+        self.btn_save.setMinimumSize(QSize(0, 45))
+        self.btn_save.setFont(font1)
+        self.btn_save.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_save.setLayoutDirection(Qt.LeftToRight)
+        self.btn_save.setStyleSheet(u"background-image: url(:/icon/images/icons/cil-save.png)")
+
+        self.verticalLayout_8.addWidget(self.btn_save)
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
 
@@ -746,59 +783,61 @@ class Ui_MainWindow(object):
         self.postSales.setObjectName(u"postSales")
         self.verticalLayout_20 = QVBoxLayout(self.postSales)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.gridLayout = QGridLayout()
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.horizontalLayout_8 = QHBoxLayout()
-        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.pastDateEdit = QDateEdit(self.postSales)
-        self.pastDateEdit.setObjectName(u"pastDateEdit")
-        self.pastDateEdit.setMinimumSize(100, 30)
-        self.pastDateEdit.setCalendarPopup(True)
-        self.horizontalLayout_8.addWidget(self.pastDateEdit)
 
-        self.label_2 = QLabel(self.postSales)
-        self.label_2.setObjectName(u"label_2")
+        self.tabWidget = QTabWidget(self.postSales)
+        self.tabWidget.setObjectName(u"tabWidget")
+        self.tabWidget.setTabPosition(QTabWidget.North)
+        self.tabWidget.setTabShape(QTabWidget.Rounded)
+        self.tabWidget.setDocumentMode(False)
+        self.tabWidget.setTabsClosable(False)
+        self.tabWidget.setMovable(False)
+        self.tabWidget.setTabBarAutoHide(False)
+        self.daily_sales = QWidget()
+        self.daily_sales.setObjectName(u"daily_sales")
+        self.cal_daily_sales = QCalendarWidget(self.daily_sales)
+        self.cal_daily_sales.setObjectName(u"cal_daily_sales")
+        self.cal_daily_sales.setGeometry(QRect(0, 0, 300, 310))
+        self.cal_daily_sales.setMaximumSize(QSize(300, 310))
+        self.cal_daily_sales.setMinimumDate(QDate(2023, 6, 1))
+        self.cal_daily_sales.setFirstDayOfWeek(Qt.Sunday)
+        self.cal_daily_sales.setSelectionMode(QCalendarWidget.SingleSelection)
+        self.cal_daily_sales.setHorizontalHeaderFormat(QCalendarWidget.ShortDayNames)
+        self.cal_daily_sales.setVerticalHeaderFormat(QCalendarWidget.NoVerticalHeader)
+        self.cal_daily_sales.setDateEditEnabled(False)
+        self.cal_daily_sales_2 = QCalendarWidget(self.daily_sales)
+        self.cal_daily_sales_2.setObjectName(u"cal_daily_sales_2")
+        self.cal_daily_sales_2.setGeometry(QRect(0, 327, 300, 310))
+        self.cal_daily_sales_2.setMaximumSize(QSize(300, 310))
+        self.cal_daily_sales_2.setFirstDayOfWeek(Qt.Sunday)
+        self.cal_daily_sales_2.setHorizontalHeaderFormat(QCalendarWidget.ShortDayNames)
+        self.cal_daily_sales_2.setVerticalHeaderFormat(QCalendarWidget.NoVerticalHeader)
+        self.lsw_daily_sales = QListWidget(self.daily_sales)
+        self.lsw_daily_sales.setObjectName(u"lsw_daily_sales")
+        self.lsw_daily_sales.setGeometry(QRect(305, 0, 420, 570))
+        self.btn_cal_priod = QPushButton(self.daily_sales)
+        self.btn_cal_priod.setObjectName(u"btn_cal_priod")
+        self.btn_cal_priod.setGeometry(QRect(305, 574, 420, 63))
+        sizePolicy1.setHeightForWidth(self.btn_cal_priod.sizePolicy().hasHeightForWidth())
+        self.btn_cal_priod.setSizePolicy(sizePolicy1)
+        self.btn_cal_priod.setMinimumSize(QSize(400, 60))
+        self.btn_cal_priod.setMaximumSize(QSize(900, 100))
+        self.pte_daily_sales = QPlainTextEdit(self.daily_sales)
+        self.pte_daily_sales.setObjectName(u"pte_daily_sales")
+        self.pte_daily_sales.setGeometry(QRect(730, 0, 420, 636))
+        self.pte_daily_sales.setMinimumSize(QSize(400, 570))
+        self.pte_daily_sales.setMaximumSize(QSize(900, 1120))
+        self.pte_daily_sales.setFont(font1)
+        self.pte_daily_sales.setReadOnly(True)
+        self.pte_daily_sales.setBackgroundVisible(False)
+        self.pte_daily_sales.setCenterOnScroll(False)
+        self.tabWidget.addTab(self.daily_sales, "")
+        self.sales_by_priod = QWidget()
+        self.sales_by_priod.setObjectName(u"sales_by_priod")
+        self.tabWidget.addTab(self.sales_by_priod, "")
 
-        self.horizontalLayout_8.addWidget(self.label_2)
+        self.verticalLayout_20.addWidget(self.tabWidget)
 
-        self.latestDateEdit = QDateEdit(self.postSales)
-        self.latestDateEdit.setObjectName(u"latestDateEdit")
-        self.latestDateEdit.setMinimumSize(100, 30)
-        self.latestDateEdit.setCalendarPopup(True)
-        self.horizontalLayout_8.addWidget(self.latestDateEdit)
-
-        self.label_3 = QLabel(self.postSales)
-        self.label_3.setObjectName(u"label_3")
-
-        self.horizontalLayout_8.addWidget(self.label_3)
-
-        self.pushButton = QPushButton(self.postSales)
-        self.pushButton.setObjectName(u"pushButton")
-
-        self.horizontalLayout_8.addWidget(self.pushButton)
-
-
-        self.gridLayout.addLayout(self.horizontalLayout_8, 2, 0, 1, 1)
-
-        self.widget = QWidget(self.postSales)
-        self.widget.setObjectName(u"widget")
-
-        self.gridLayout.addWidget(self.widget, 4, 3, 1, 1)
-
-        self.widget_3 = QWidget(self.postSales)
-        self.widget_3.setObjectName(u"widget_3")
-
-        self.gridLayout.addWidget(self.widget_3, 6, 3, 1, 1)
-
-        self.widget_2 = QWidget(self.postSales)
-        self.widget_2.setObjectName(u"widget_2")
-
-        self.gridLayout.addWidget(self.widget_2, 6, 0, 1, 1)
-
-        self.calendarWidget = QCalendarWidget(self.postSales)
-        self.calendarWidget.setObjectName(u"calendarWidget")
-        self.calendarWidget.setMaximumSize(QSize(400, 400))
-        self.calendarWidget.setStyleSheet(u"/* //////////////////////////////////////////////////////////////////////////////////////// */\n"
+        self.cal_daily_sales.setStyleSheet(u"/* //////////////////////////////////////////////////////////////////////////////////////// */\n"
                                                 "/* style for top navigation area ###############################################*/ \n"
                                                 "\n"
                                                 "#qt_calendar_navigationbar {\n"
@@ -876,7 +915,7 @@ class Ui_MainWindow(object):
                                                 "	background-color: #ffffff;\n"
                                                 "	font-size: 15px;\n"
                                                 "	margin:5px 0px;\n"
-                                                "    border-radius: 5px;\n"
+                                                "       border-radius: 5px;\n"
                                                 "	padding:0px 2px;\n"
                                                 "}\n"
                                                 "\n"
@@ -889,18 +928,18 @@ class Ui_MainWindow(object):
                                                 "#qt_calendar_monthbutton:pressed {\n"
                                                 "    background-color: rgba(235, 235, 235, 100);\n"
                                                 "}\n"
-                                                "\n"
-                                                "\n"
                                                 "/* Style for year input lineEdit ######################################*/\n"
                                                 "\n"
                                                 "#qt_calendar_yearedit {\n"
-                                                "       min-width: 70px;\n"
-                                                "       color: black;\n"
-                                                "       background: #91D3FF;\n"
-                                                "       font-size: 15px;\n"
+                                                "    min-width: 70px;\n"
+                                                "    color: black;\n"
+                                                "    background: #ffffff;\n"
+                                                "	font-size: 15px;\n"
                                                 "	text-align: center;\n"
+                                                "	margin:5px 0px;\n"
+                                                "    border-radius: 5px;\n"
+                                                "	padding:0px 1px;\n"
                                                 "}\n"
-                                                "\n"
                                                 "/* Style for year change buttons ######################################*/\n"
                                                 "\n"
                                                 "#qt_calendar_yearedit::up-button { \n"
@@ -979,10 +1018,7 @@ class Ui_MainWindow(object):
                                                 "	background-color: white;\n"
                                                 "    color: #FFC777;\n"
                                                 "}")
-        self.gridLayout.addWidget(self.calendarWidget, 4, 0, 1, 1)
-
-
-        self.verticalLayout_20.addLayout(self.gridLayout)
+        self.cal_daily_sales_2.setStyleSheet(self.cal_daily_sales.styleSheet())
 
         self.stackedWidget.addWidget(self.postSales)
 
@@ -1043,8 +1079,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
-
+        self.stackedWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -1108,9 +1144,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None));
         self.del_List_Button.setText(QCoreApplication.translate("MainWindow", u"\uc8fc\ubb38\uc11c\u0020\uc0ad\uc81c", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\ubd80\ud130", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\uae4c\uc9c0", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\uac80\uc0c9", None))
+        self.btn_cal_priod.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.daily_sales), QCoreApplication.translate("MainWindow", u"\uc77c\ubcc4 \ud310\ub9e4 \ud604\ud669", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.sales_by_priod), QCoreApplication.translate("MainWindow", u"\uae30\uac04\ubcc4 \ub9e4\ucd9c \ud604\ud669", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: ParkSeongHyeon", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v0.1.0", None))
     # retranslateUi
