@@ -58,3 +58,14 @@
 	- 당일 삭제된 주문 번호를 조회 할 수 있는 페이지 제작
 	
 <img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/2023-06-07_rasberrypi4_ver.gif?raw=true" width="640">
+
+## 일곱번째 업로드 (2023.06.11)
+	- 현재까지 제작된 버전(v0.1.0)으로 가게에 가설치 완료
+	
+	TODO:
+	- 현장에서 본 결과 추가 주문이 상당히 많은 것을 확인 => 주문 수정 기능이 필요
+	- 당일 삭제된 주문 번호를 조회 할 수 있는 페이지 제작
+	- 일,월,년 매출을 확인 할 수 있는 매출 페이지 제작
+
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/20230611_191844666_01.jpg?raw=true" width="640">
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/20230611_191844666_02.jpg?raw=true" width="640">
