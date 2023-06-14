@@ -68,7 +68,6 @@
     <font>
      <family>NanumGothic</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
     </font>
@@ -1112,7 +1111,6 @@ QCalendarWidget QAbstractItemView:disabled{
               <font>
                <family>NanumGothic</family>
                <pointsize>12</pointsize>
-               <weight>7</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -1143,7 +1141,6 @@ QCalendarWidget QAbstractItemView:disabled{
               <font>
                <family>NanumGothic</family>
                <pointsize>8</pointsize>
-               <weight>50</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -1235,7 +1232,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1299,7 +1295,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1336,7 +1331,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1373,7 +1367,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1410,7 +1403,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1447,7 +1439,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1511,7 +1502,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1647,7 +1637,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1787,7 +1776,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                     <stylestrategy>PreferDefault</stylestrategy>
@@ -2411,7 +2399,6 @@ image: url(:/images/images/images/석류.jpg);</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2532,7 +2519,6 @@ image: url(:/images/images/images/핫도그.jpg);</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2585,7 +2571,6 @@ image: url(:/images/images/images/핫도그.jpg);</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>75</weight>
                              <italic>false</italic>
                              <bold>true</bold>
                             </font>
@@ -2636,7 +2621,6 @@ font: bold 40px;</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2795,7 +2779,6 @@ text-align: center;</string>
                               <font>
                                <family>NanumGothic</family>
                                <pointsize>10</pointsize>
-                               <weight>50</weight>
                                <italic>false</italic>
                                <bold>false</bold>
                               </font>
@@ -3393,7 +3376,6 @@ QCalendarWidget QAbstractItemView:disabled{
                                <font>
                                 <family>NanumGothic</family>
                                 <pointsize>10</pointsize>
-                                <weight>50</weight>
                                 <italic>false</italic>
                                 <bold>false</bold>
                                </font>
@@ -3477,7 +3459,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>-1</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
