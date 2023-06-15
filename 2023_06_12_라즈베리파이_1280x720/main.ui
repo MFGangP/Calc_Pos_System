@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>800</height>
+    <height>720</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -2729,13 +2729,13 @@ text-align: center;</string>
                            <property name="minimumSize">
                             <size>
                              <width>410</width>
-                             <height>660</height>
+                             <height>577</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
                              <width>410</width>
-                             <height>550</height>
+                             <height>577</height>
                             </size>
                            </property>
                            <property name="font">
@@ -2768,13 +2768,13 @@ text-align: center;</string>
                            <property name="minimumSize">
                             <size>
                              <width>290</width>
-                             <height>100</height>
+                             <height>80</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
                              <width>290</width>
-                             <height>100</height>
+                             <height>80</height>
                             </size>
                            </property>
                            <property name="text">
@@ -2787,13 +2787,13 @@ text-align: center;</string>
                            <property name="minimumSize">
                             <size>
                              <width>290</width>
-                             <height>110</height>
+                             <height>90</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
                              <width>290</width>
-                             <height>110</height>
+                             <height>90</height>
                             </size>
                            </property>
                            <property name="text">
@@ -2806,13 +2806,13 @@ text-align: center;</string>
                            <property name="minimumSize">
                             <size>
                              <width>410</width>
-                             <height>660</height>
+                             <height>577</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
                              <width>410</width>
-                             <height>660</height>
+                             <height>577</height>
                             </size>
                            </property>
                           </widget>
@@ -2822,13 +2822,13 @@ text-align: center;</string>
                            <property name="minimumSize">
                             <size>
                              <width>290</width>
-                             <height>110</height>
+                             <height>90</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
                              <width>290</width>
-                             <height>110</height>
+                             <height>90</height>
                             </size>
                            </property>
                            <property name="text">
@@ -2841,13 +2841,13 @@ text-align: center;</string>
                            <property name="minimumSize">
                             <size>
                              <width>290</width>
-                             <height>320</height>
+                             <height>300</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
                              <width>290</width>
-                             <height>320</height>
+                             <height>300</height>
                             </size>
                            </property>
                            <property name="styleSheet">
