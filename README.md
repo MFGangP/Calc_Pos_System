@@ -69,3 +69,14 @@
 
 <img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/20230611_191844666_01.jpg?raw=true" width="640">
 <img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/20230611_191844666_02.jpg?raw=true" width="640">
+
+## 여덟번째 업로드 (2023.06.15)
+	- 일정 기간 내 주문 기록 및 당일 삭제된 주문번호를 확인 하기 위한 페이지 UI 변경
+	- 날짜 선택 시 표시 되게 수정
+	
+	TODO:
+	- 주문 수정 기능
+	- 조회 페이지 로직 구현
+	- 매출 요약 페이지 제작
+	
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/select_Date.png?raw=true" width="640">

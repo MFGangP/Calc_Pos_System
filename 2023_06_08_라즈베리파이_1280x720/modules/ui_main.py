@@ -753,8 +753,8 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.pte_daily_sales = QPlainTextEdit(self.postSales)
         self.pte_daily_sales.setObjectName(u"pte_daily_sales")
-        self.pte_daily_sales.setMinimumSize(QSize(410, 660))
-        self.pte_daily_sales.setMaximumSize(QSize(410, 550))
+        self.pte_daily_sales.setMinimumSize(QSize(410, 605))
+        self.pte_daily_sales.setMaximumSize(QSize(410, 605))
         self.pte_daily_sales.setFont(font1)
         self.pte_daily_sales.setReadOnly(True)
         self.pte_daily_sales.setBackgroundVisible(False)
@@ -766,29 +766,29 @@ class Ui_MainWindow(object):
         self.btn_cal_priod.setObjectName(u"btn_cal_priod")
         sizePolicy1.setHeightForWidth(self.btn_cal_priod.sizePolicy().hasHeightForWidth())
         self.btn_cal_priod.setSizePolicy(sizePolicy1)
-        self.btn_cal_priod.setMinimumSize(QSize(290, 100))
-        self.btn_cal_priod.setMaximumSize(QSize(290, 100))
+        self.btn_cal_priod.setMinimumSize(QSize(290, 80))
+        self.btn_cal_priod.setMaximumSize(QSize(290, 80))
 
         self.gridLayout_2.addWidget(self.btn_cal_priod, 3, 0, 1, 1)
 
         self.Lbl_To = QLabel(self.postSales)
         self.Lbl_To.setObjectName(u"Lbl_To")
-        self.Lbl_To.setMinimumSize(QSize(290, 110))
-        self.Lbl_To.setMaximumSize(QSize(290, 110))
+        self.Lbl_To.setMinimumSize(QSize(290, 90))
+        self.Lbl_To.setMaximumSize(QSize(290, 90))
 
         self.gridLayout_2.addWidget(self.Lbl_To, 1, 0, 1, 1)
 
         self.lsw_daily_sales = QListWidget(self.postSales)
         self.lsw_daily_sales.setObjectName(u"lsw_daily_sales")
-        self.lsw_daily_sales.setMinimumSize(QSize(410, 660))
-        self.lsw_daily_sales.setMaximumSize(QSize(410, 660))
+        self.lsw_daily_sales.setMinimumSize(QSize(410, 605))
+        self.lsw_daily_sales.setMaximumSize(QSize(410, 605))
 
         self.gridLayout_2.addWidget(self.lsw_daily_sales, 0, 2, 1, 1)
 
         self.Lbl_From = QLabel(self.postSales)
         self.Lbl_From.setObjectName(u"Lbl_From")
-        self.Lbl_From.setMinimumSize(QSize(290, 110))
-        self.Lbl_From.setMaximumSize(QSize(290, 110))
+        self.Lbl_From.setMinimumSize(QSize(290, 90))
+        self.Lbl_From.setMaximumSize(QSize(290, 90))
 
         self.gridLayout_2.addWidget(self.Lbl_From, 2, 0, 1, 1)
 
@@ -1114,7 +1114,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.del_List_Button.setText(QCoreApplication.translate("MainWindow", u"\uc8fc\ubb38\uc11c\u0020\uc0ad\uc81c", None))
-        self.btn_cal_priod.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.btn_cal_priod.setText(QCoreApplication.translate("MainWindow", u"\uac80\uc0c9", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: ParkSeongHyeon", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v0.1.0", None))
     # retranslateUi
