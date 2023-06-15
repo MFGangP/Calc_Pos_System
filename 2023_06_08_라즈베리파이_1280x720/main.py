@@ -125,8 +125,8 @@ class MainWindow(QMainWindow):
         # SHOW APP
         # ///////////////////////////////////////////////////////////////\
 
-        self.showFullScreen()
-        #self.showNormal()
+        # self.showFullScreen()
+        self.showNormal()
         # # SET CUSTOM THEME
         # # ///////////////////////////////////////////////////////////////
         # useCustomTheme = False

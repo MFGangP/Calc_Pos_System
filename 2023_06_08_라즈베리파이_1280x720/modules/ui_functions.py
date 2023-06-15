@@ -13,6 +13,7 @@ class UIFunctions(MainWindow):
     def __init__(self):
         super().__init__()
 
+		# get the calendar default highlight setting
     # MAXIMIZE/RESTORE
     # ///////////////////////////////////////////////////////////////
     def maximize_restore(self):

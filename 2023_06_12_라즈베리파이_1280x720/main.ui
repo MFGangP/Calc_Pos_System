@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>720</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -68,7 +68,6 @@
     <font>
      <family>NanumGothic</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
     </font>
@@ -1112,7 +1111,6 @@ QCalendarWidget QAbstractItemView:disabled{
               <font>
                <family>NanumGothic</family>
                <pointsize>12</pointsize>
-               <weight>7</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -1143,7 +1141,6 @@ QCalendarWidget QAbstractItemView:disabled{
               <font>
                <family>NanumGothic</family>
                <pointsize>8</pointsize>
-               <weight>50</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -1229,7 +1226,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1266,7 +1262,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1303,7 +1298,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1340,7 +1334,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1404,7 +1397,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1540,7 +1532,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1680,7 +1671,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                     <stylestrategy>PreferDefault</stylestrategy>
@@ -2304,7 +2294,6 @@ image: url(:/images/images/images/석류.jpg);</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2425,7 +2414,6 @@ image: url(:/images/images/images/핫도그.jpg);</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2478,7 +2466,6 @@ image: url(:/images/images/images/핫도그.jpg);</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>75</weight>
                              <italic>false</italic>
                              <bold>true</bold>
                             </font>
@@ -2529,7 +2516,6 @@ font: bold 40px;</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2688,7 +2674,6 @@ text-align: center;</string>
                               <font>
                                <family>NanumGothic</family>
                                <pointsize>10</pointsize>
-                               <weight>50</weight>
                                <italic>false</italic>
                                <bold>false</bold>
                               </font>
@@ -2738,58 +2723,135 @@ text-align: center;</string>
                      <widget class="QWidget" name="postSales">
                       <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
-                        <widget class="QTabWidget" name="tabWidget">
-                         <property name="tabPosition">
-                          <enum>QTabWidget::North</enum>
-                         </property>
-                         <property name="tabShape">
-                          <enum>QTabWidget::Rounded</enum>
-                         </property>
-                         <property name="currentIndex">
-                          <number>0</number>
-                         </property>
-                         <property name="documentMode">
-                          <bool>false</bool>
-                         </property>
-                         <property name="tabsClosable">
-                          <bool>false</bool>
-                         </property>
-                         <property name="movable">
-                          <bool>false</bool>
-                         </property>
-                         <property name="tabBarAutoHide">
-                          <bool>false</bool>
-                         </property>
-                         <widget class="QWidget" name="daily_sales">
-                          <attribute name="title">
-                           <string>일별 판매 현황</string>
-                          </attribute>
-                          <widget class="QWidget" name="verticalLayoutWidget">
-                           <property name="geometry">
-                            <rect>
-                             <x>0</x>
-                             <y>0</y>
-                             <width>302</width>
-                             <height>561</height>
-                            </rect>
+                        <layout class="QGridLayout" name="gridLayout_2">
+                         <item row="0" column="3">
+                          <widget class="QPlainTextEdit" name="pte_daily_sales">
+                           <property name="minimumSize">
+                            <size>
+                             <width>410</width>
+                             <height>660</height>
+                            </size>
                            </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_5">
-                            <item>
-                             <widget class="QCalendarWidget" name="cal_daily_sales">
-                              <property name="minimumSize">
-                               <size>
-                                <width>290</width>
-                                <height>272</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>290</width>
-                                <height>272</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">/* //////////////////////////////////////////////////////////////////////////////////////// */
+                           <property name="maximumSize">
+                            <size>
+                             <width>410</width>
+                             <height>550</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>NanumGothic</family>
+                             <pointsize>10</pointsize>
+                             <italic>false</italic>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="readOnly">
+                            <bool>true</bool>
+                           </property>
+                           <property name="backgroundVisible">
+                            <bool>false</bool>
+                           </property>
+                           <property name="centerOnScroll">
+                            <bool>false</bool>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="0">
+                          <widget class="QPushButton" name="btn_cal_priod">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>290</width>
+                             <height>100</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>290</width>
+                             <height>100</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>PushButton</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="1" column="0">
+                          <widget class="QLabel" name="Lbl_To">
+                           <property name="minimumSize">
+                            <size>
+                             <width>290</width>
+                             <height>110</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>290</width>
+                             <height>110</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>TextLabel</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="2">
+                          <widget class="QListWidget" name="lsw_daily_sales">
+                           <property name="minimumSize">
+                            <size>
+                             <width>410</width>
+                             <height>660</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>410</width>
+                             <height>660</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="0">
+                          <widget class="QLabel" name="Lbl_From">
+                           <property name="minimumSize">
+                            <size>
+                             <width>290</width>
+                             <height>110</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>290</width>
+                             <height>110</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>TextLabel</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="0">
+                          <widget class="QCalendarWidget" name="cal_daily_sales">
+                           <property name="minimumSize">
+                            <size>
+                             <width>290</width>
+                             <height>320</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>290</width>
+                             <height>320</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">/* //////////////////////////////////////////////////////////////////////////////////////// */
 /* style for top navigation area ###############################################*/ 
 
 #qt_calendar_navigationbar {
@@ -2970,604 +3032,32 @@ QCalendarWidget QAbstractItemView:disabled{
 	background-color: white;
     color: #FFC777;
 }</string>
-                              </property>
-                              <property name="minimumDate">
-                               <date>
-                                <year>2023</year>
-                                <month>6</month>
-                                <day>1</day>
-                               </date>
-                              </property>
-                              <property name="firstDayOfWeek">
-                               <enum>Qt::Sunday</enum>
-                              </property>
-                              <property name="selectionMode">
-                               <enum>QCalendarWidget::SingleSelection</enum>
-                              </property>
-                              <property name="horizontalHeaderFormat">
-                               <enum>QCalendarWidget::ShortDayNames</enum>
-                              </property>
-                              <property name="verticalHeaderFormat">
-                               <enum>QCalendarWidget::NoVerticalHeader</enum>
-                              </property>
-                              <property name="dateEditEnabled">
-                               <bool>false</bool>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QCalendarWidget" name="cal_daily_sales_2">
-                              <property name="minimumSize">
-                               <size>
-                                <width>290</width>
-                                <height>272</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>290</width>
-                                <height>272</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">/* //////////////////////////////////////////////////////////////////////////////////////// */
-/* style for top navigation area ###############################################*/ 
-
-#qt_calendar_navigationbar {
-    background-color: #FFC777;
-	border: 2px solid  #B8E2FF;
-	border-bottom: 0px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-}
-
-/* style for month change buttons ############################################ */
-
-#qt_calendar_prevmonth, 
-#qt_calendar_nextmonth {
-	/* border delete */
-    border: none;  
-    /* delete default icons */
-	qproperty-icon: none; 
-	
-    min-width: 50px;
-    max-width: 50px;
-    min-height: 25px;
-    max-height: 25px;
-
-    border-radius: 5px; 
-	/* set background transparent */
-    background-color: transparent; 
-	padding: 5px;
-}
-
-/* style for pre month button ############################################ */
-
-#qt_calendar_prevmonth {
-	/* set text for button */
-	/* qproperty-text: PREV; */
-	margin-left: 15px;
-	image: url(:/icon/images/icons/cil-caret-left.png);
-	margin: 0px;
-}
-
-/* style for next month button ########################################### */
-#qt_calendar_nextmonth {
-    /* qproperty-text: NEXT; */
-	margin-right: 15px;
-	image: url(:/icon/images/icons/cil-caret-right.png);
-	margin: 0px;
-}
-#qt_calendar_prevmonth:hover, 
-#qt_calendar_nextmonth:hover {
-    background-color: #55aaff;
-}
-
-#qt_calendar_prevmonth:pressed, 
-#qt_calendar_nextmonth:pressed {
-    background-color: rgba(235, 235, 235, 100);
-}
-
-/* Style for month and year buttons #################################### */
-
-#qt_calendar_yearbutton {
-	width: 60px;
-    color: black;
-	background-color: white;
-	margin:5px;
-    border-radius: 5px;
-	font-size: 15px;
-	padding:0px 10px;
-}
-
-#qt_calendar_monthbutton {
-	width: 60px;
-    color: black;
-	background-color: white;
-	font-size: 15px;
-	margin:5px 0px;
-    border-radius: 5px;
-	padding:0px 2px;
-}
-
-#qt_calendar_yearbutton:hover, 
-#qt_calendar_monthbutton:hover {
-    background-color: #FFC777;
-}
-
-#qt_calendar_yearbutton:pressed, 
-#qt_calendar_monthbutton:pressed {
-    background-color: rgba(235, 235, 235, 100);
-}
-
-
-/* Style for year input lineEdit ######################################*/
-
-#qt_calendar_yearedit {
-    min-width: 70px;
-    color: black;
-    background: #ffffff;
-	font-size: 15px;
-	text-align: center;
-	margin:5px 0px;
-    border-radius: 5px;
-	padding:0px 1px;
-}
-
-/* Style for year change buttons ######################################*/
-
-#qt_calendar_yearedit::up-button { 
-	image: url(:/icon/images/icons/cil-caret-top.png);
-    subcontrol-position: right;
-	background-color: #FFC777;
-}
-
-#qt_calendar_yearedit::down-button { 
-	image: url(:/icon/images/icons/cil-caret-bottom.png);
-    subcontrol-position: left; 
-	background-color: #FFC777;
-}
-
-#qt_calendar_yearedit::down-button, 
-#qt_calendar_yearedit::up-button {
-	width: 15px;
-	height: 25px;
-	padding: 0px 5px;
-	border-radius:3px;
-}
-
-#qt_calendar_yearedit::down-button:hover, 
-#qt_calendar_yearedit::up-button:hover {
-	background-color: #55aaff;
-}
-
-/* Style for month select menu ##################################### */
-
-#calendarWidget QToolButton QMenu {
-    background-color: white;
-}
-#calendarWidget QToolButton QMenu::item {
-	/*padding: 10px;*/
-}
-#calendarWidget QToolButton QMenu::item:selected:enabled {
-    background-color: #55aaff;
-}
-
-#calendarWidget QToolButton::menu-indicator {
-	/* Remove toolButton arrow */
-    /*image: none; */
-	nosubcontrol-origin: margin;
-	subcontrol-position: right center;
-	margin-top: 10px;
-	width:20px;
-}
-
-/* Style for calendar table ########################################## */
-#qt_calendar_calendarview {
-	/* Remove the selected dashed box */
-    outline: 0px;
-
-	border: 2px solid  #B8E2FF;
-	border-top: 0px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-
-#qt_calendar_calendarview::item:hover {
-    border-radius:5px;
-	background-color:#aaffff;
-}
-
-#qt_calendar_calendarview::item:selected {
-    background-color: #55aa7f; 
-	border-radius:5px;
-}
-
-QCalendarWidget QAbstractItemView:enabled{
-	background-color: white;
-    color: black;
-}
-QCalendarWidget QAbstractItemView:disabled{
-	background-color: white;
-    color: #FFC777;
-}</string>
-                              </property>
-                              <property name="firstDayOfWeek">
-                               <enum>Qt::Sunday</enum>
-                              </property>
-                              <property name="horizontalHeaderFormat">
-                               <enum>QCalendarWidget::ShortDayNames</enum>
-                              </property>
-                              <property name="verticalHeaderFormat">
-                               <enum>QCalendarWidget::NoVerticalHeader</enum>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                          <widget class="QWidget" name="verticalLayoutWidget_2">
-                           <property name="geometry">
-                            <rect>
-                             <x>300</x>
-                             <y>0</y>
-                             <width>421</width>
-                             <height>561</height>
-                            </rect>
                            </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_11">
-                            <item>
-                             <widget class="QListWidget" name="lsw_daily_sales">
-                              <property name="minimumSize">
-                               <size>
-                                <width>410</width>
-                                <height>490</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>410</width>
-                                <height>490</height>
-                               </size>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QPushButton" name="btn_cal_priod">
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="minimumSize">
-                               <size>
-                                <width>410</width>
-                                <height>50</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>410</width>
-                                <height>50</height>
-                               </size>
-                              </property>
-                              <property name="text">
-                               <string>PushButton</string>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                          <widget class="QWidget" name="verticalLayoutWidget_3">
-                           <property name="geometry">
-                            <rect>
-                             <x>720</x>
-                             <y>0</y>
-                             <width>412</width>
-                             <height>561</height>
-                            </rect>
+                           <property name="minimumDate">
+                            <date>
+                             <year>2023</year>
+                             <month>6</month>
+                             <day>1</day>
+                            </date>
                            </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_12">
-                            <item>
-                             <widget class="QPlainTextEdit" name="pte_daily_sales">
-                              <property name="minimumSize">
-                               <size>
-                                <width>410</width>
-                                <height>550</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>410</width>
-                                <height>550</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>NanumGothic</family>
-                                <pointsize>10</pointsize>
-                                <weight>50</weight>
-                                <italic>false</italic>
-                                <bold>false</bold>
-                               </font>
-                              </property>
-                              <property name="readOnly">
-                               <bool>true</bool>
-                              </property>
-                              <property name="backgroundVisible">
-                               <bool>false</bool>
-                              </property>
-                              <property name="centerOnScroll">
-                               <bool>false</bool>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </widget>
-                         <widget class="QWidget" name="sales_by_priod">
-                          <attribute name="title">
-                           <string>기간별 매출 현황</string>
-                          </attribute>
-                          <widget class="QWidget" name="verticalLayoutWidget_4">
-                           <property name="geometry">
-                            <rect>
-                             <x>300</x>
-                             <y>0</y>
-                             <width>851</width>
-                             <height>551</height>
-                            </rect>
+                           <property name="firstDayOfWeek">
+                            <enum>Qt::Sunday</enum>
                            </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_13"/>
-                          </widget>
-                          <widget class="QWidget" name="verticalLayoutWidget_5">
-                           <property name="geometry">
-                            <rect>
-                             <x>0</x>
-                             <y>0</y>
-                             <width>302</width>
-                             <height>561</height>
-                            </rect>
+                           <property name="gridVisible">
+                            <bool>true</bool>
                            </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_10">
-                            <item>
-                             <widget class="QCalendarWidget" name="cal_daily_sales_3">
-                              <property name="minimumSize">
-                               <size>
-                                <width>290</width>
-                                <height>272</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>290</width>
-                                <height>272</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">/* //////////////////////////////////////////////////////////////////////////////////////// */
-/* style for top navigation area ###############################################*/ 
-
-#qt_calendar_navigationbar {
-    background-color: #FFC777;
-	border: 2px solid  #B8E2FF;
-	border-bottom: 0px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-}
-
-/* style for month change buttons ############################################ */
-
-#qt_calendar_prevmonth, 
-#qt_calendar_nextmonth {
-	/* border delete */
-    border: none;  
-    /* delete default icons */
-	qproperty-icon: none; 
-	
-    min-width: 50px;
-    max-width: 50px;
-    min-height: 25px;
-    max-height: 25px;
-
-    border-radius: 5px; 
-	/* set background transparent */
-    background-color: transparent; 
-	padding: 5px;
-}
-
-/* style for pre month button ############################################ */
-
-#qt_calendar_prevmonth {
-	/* set text for button */
-	/* qproperty-text: PREV; */
-	margin-left: 15px;
-	image: url(:/icon/images/icons/cil-caret-left.png);
-	margin: 0px;
-}
-
-/* style for next month button ########################################### */
-#qt_calendar_nextmonth {
-    /* qproperty-text: NEXT; */
-	margin-right: 15px;
-	image: url(:/icon/images/icons/cil-caret-right.png);
-	margin: 0px;
-}
-#qt_calendar_prevmonth:hover, 
-#qt_calendar_nextmonth:hover {
-    background-color: #55aaff;
-}
-
-#qt_calendar_prevmonth:pressed, 
-#qt_calendar_nextmonth:pressed {
-    background-color: rgba(235, 235, 235, 100);
-}
-
-/* Style for month and year buttons #################################### */
-
-#qt_calendar_yearbutton {
-	width: 60px;
-    color: black;
-	background-color: white;
-	margin:5px;
-    border-radius: 5px;
-	font-size: 15px;
-	padding:0px 10px;
-}
-
-#qt_calendar_monthbutton {
-	width: 60px;
-    color: black;
-	background-color: white;
-	font-size: 15px;
-	margin:5px 0px;
-    border-radius: 5px;
-	padding:0px 2px;
-}
-
-#qt_calendar_yearbutton:hover, 
-#qt_calendar_monthbutton:hover {
-    background-color: #FFC777;
-}
-
-#qt_calendar_yearbutton:pressed, 
-#qt_calendar_monthbutton:pressed {
-    background-color: rgba(235, 235, 235, 100);
-}
-
-
-/* Style for year input lineEdit ######################################*/
-
-#qt_calendar_yearedit {
-    min-width: 70px;
-    color: black;
-    background: #ffffff;
-	font-size: 15px;
-	text-align: center;
-	margin:5px 0px;
-    border-radius: 5px;
-	padding:0px 1px;
-}
-
-/* Style for year change buttons ######################################*/
-
-#qt_calendar_yearedit::up-button { 
-	image: url(:/icon/images/icons/cil-caret-top.png);
-    subcontrol-position: right;
-	background-color: #FFC777;
-}
-
-#qt_calendar_yearedit::down-button { 
-	image: url(:/icon/images/icons/cil-caret-bottom.png);
-    subcontrol-position: left; 
-	background-color: #FFC777;
-}
-
-#qt_calendar_yearedit::down-button, 
-#qt_calendar_yearedit::up-button {
-	width: 15px;
-	height: 25px;
-	padding: 0px 5px;
-	border-radius:3px;
-}
-
-#qt_calendar_yearedit::down-button:hover, 
-#qt_calendar_yearedit::up-button:hover {
-	background-color: #55aaff;
-}
-
-/* Style for month select menu ##################################### */
-
-#calendarWidget QToolButton QMenu {
-    background-color: white;
-}
-#calendarWidget QToolButton QMenu::item {
-	/*padding: 10px;*/
-}
-#calendarWidget QToolButton QMenu::item:selected:enabled {
-    background-color: #55aaff;
-}
-
-#calendarWidget QToolButton::menu-indicator {
-	/* Remove toolButton arrow */
-    /*image: none; */
-	nosubcontrol-origin: margin;
-	subcontrol-position: right center;
-	margin-top: 10px;
-	width:20px;
-}
-
-/* Style for calendar table ########################################## */
-#qt_calendar_calendarview {
-	/* Remove the selected dashed box */
-    outline: 0px;
-
-	border: 2px solid  #B8E2FF;
-	border-top: 0px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-
-#qt_calendar_calendarview::item:hover {
-    border-radius:5px;
-	background-color:#aaffff;
-}
-
-#qt_calendar_calendarview::item:selected {
-    background-color: #55aa7f; 
-	border-radius:5px;
-}
-
-QCalendarWidget QAbstractItemView:enabled{
-	background-color: white;
-    color: black;
-}
-QCalendarWidget QAbstractItemView:disabled{
-	background-color: white;
-    color: #FFC777;
-}</string>
-                              </property>
-                              <property name="minimumDate">
-                               <date>
-                                <year>2023</year>
-                                <month>6</month>
-                                <day>1</day>
-                               </date>
-                              </property>
-                              <property name="firstDayOfWeek">
-                               <enum>Qt::Sunday</enum>
-                              </property>
-                              <property name="selectionMode">
-                               <enum>QCalendarWidget::SingleSelection</enum>
-                              </property>
-                              <property name="horizontalHeaderFormat">
-                               <enum>QCalendarWidget::ShortDayNames</enum>
-                              </property>
-                              <property name="verticalHeaderFormat">
-                               <enum>QCalendarWidget::NoVerticalHeader</enum>
-                              </property>
-                              <property name="dateEditEnabled">
-                               <bool>false</bool>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <spacer name="verticalSpacer">
-                              <property name="orientation">
-                               <enum>Qt::Vertical</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>20</width>
-                                <height>40</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                           </layout>
+                           <property name="horizontalHeaderFormat">
+                            <enum>QCalendarWidget::ShortDayNames</enum>
+                           </property>
+                           <property name="verticalHeaderFormat">
+                            <enum>QCalendarWidget::NoVerticalHeader</enum>
+                           </property>
+                           <property name="dateEditEnabled">
+                            <bool>false</bool>
+                           </property>
                           </widget>
-                         </widget>
-                        </widget>
+                         </item>
+                        </layout>
                        </item>
                       </layout>
                      </widget>
@@ -3627,7 +3117,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>-1</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
