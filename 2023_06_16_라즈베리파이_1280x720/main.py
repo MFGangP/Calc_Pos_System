@@ -460,10 +460,37 @@ class MainWindow(QMainWindow):
     def search_Order_Using_Calendar(self):
         # 캘린더를 선택 했을 때 날짜 범위(2개)를 선택 할 수 있어야 되고
         # 라벨에 기록이 남아야 된다.
+
+        cal_Daily_Sales_Select_Date = QDate(int(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d').split('-')[0]),
+                                            int(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d').split('-')[1]),
+                                            int(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d').split('-')[2]))
+
+        Lbl_To_Text_Date = QDate(self.ui.Lbl_To.text().split('-')[0],
+                                 self.ui.Lbl_To.text().split('-')[1],
+                                 self.ui.Lbl_To.text().split('-')[2])
+        
+        Lbl_From_Text_Date = QDate(self.ui.Lbl_From.text().split('-')[0],
+                                   self.ui.Lbl_From.text().split('-')[1],
+                                   self.ui.Lbl_From.text().split('-')[2])
+        
+        # Lbl_To 라벨이 빈칸일 경우
         if self.ui.Lbl_To.text() is '':
+            # 텍스트를 날짜 형식으로 채운다.
             self.ui.Lbl_To.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+        # Lbl_To 라벨이 빈칸이 아닐 경우
         elif self.ui.Lbl_To.text() is not '':
-            self.ui.Lbl_From.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+            # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜 보다 클 경우
+            if cal_Daily_Sales_Select_Date > Lbl_To_Text_Date:
+                # Lbl_From 라벨에 기존의 날짜를 옮겨 적고 Lbl_To에 선택된 날짜를 대입.
+                self.ui.Lbl_From.setText(self.ui.Lbl_To.text())
+                
+                self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d')
+            # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜 보다 작을 경우
+            elif cal_Daily_Sales_Select_Date < Lbl_To_Text_Date:
+                self.ui.Lbl_To.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+            # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜과 같을 경우
+            else:
+                self.ui.Lbl_From.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
 
     # 리스트 위젯 주문 완료건 삭제 이벤트
     def del_List_Button_Clicked(self):

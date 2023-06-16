@@ -59,7 +59,7 @@ class Ui_MainWindow(object):
         font1.setItalic(False)
         self.styleSheet.setFont(font1)
 
-        qss_file = './themes/py_dracula_light.qss'  # QSS 파일 경로
+        qss_file = './2023_06_16_라즈베리파이_1280x720/themes/py_dracula_light.qss'  # QSS 파일 경로
 
         with open(qss_file, 'r') as f:
                 style_sheet = f.read()
