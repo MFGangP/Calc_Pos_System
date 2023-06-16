@@ -59,7 +59,7 @@ class Ui_MainWindow(object):
         font1.setItalic(False)
         self.styleSheet.setFont(font1)
 
-        qss_file = 'C:/Source/Calc_Kiosk_System/2023_06_12_라즈베리파이_1280x720/themes/py_dracula_light.qss'  # QSS 파일 경로
+        qss_file = './themes/py_dracula_light.qss'  # QSS 파일 경로
 
         with open(qss_file, 'r') as f:
                 style_sheet = f.read()
@@ -749,270 +749,249 @@ class Ui_MainWindow(object):
         self.postSales.setObjectName(u"postSales")
         self.verticalLayout_20 = QVBoxLayout(self.postSales)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-
-        self.tabWidget = QTabWidget(self.postSales)
-        self.tabWidget.setObjectName(u"tabWidget")
-        self.tabWidget.setTabPosition(QTabWidget.North)
-        self.tabWidget.setTabShape(QTabWidget.Rounded)
-        self.tabWidget.setDocumentMode(False)
-        self.tabWidget.setTabsClosable(False)
-        self.tabWidget.setMovable(False)
-        self.tabWidget.setTabBarAutoHide(False)
-        self.daily_sales = QWidget()
-        self.daily_sales.setObjectName(u"daily_sales")
-        self.verticalLayoutWidget = QWidget(self.daily_sales)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(0, 0, 302, 577))
-        self.verticalLayout_5 = QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.cal_daily_sales = QCalendarWidget(self.daily_sales)
-        self.cal_daily_sales.setObjectName(u"cal_daily_sales")
-        self.cal_daily_sales.setGeometry(QRect(0, 0, 300, 280))
-        self.cal_daily_sales.setMaximumSize(QSize(290, 285))
-        self.cal_daily_sales.setFirstDayOfWeek(Qt.Sunday)
-        self.cal_daily_sales.setSelectionMode(QCalendarWidget.SingleSelection)
-        self.cal_daily_sales.setHorizontalHeaderFormat(QCalendarWidget.ShortDayNames)
-        self.cal_daily_sales.setVerticalHeaderFormat(QCalendarWidget.NoVerticalHeader)
-        self.cal_daily_sales.setDateEditEnabled(False)
-        self.cal_daily_sales_2 = QCalendarWidget(self.daily_sales)
-        self.cal_daily_sales_2.setObjectName(u"cal_daily_sales_2")
-        self.cal_daily_sales_2.setGeometry(QRect(0, 300, 300, 280))
-        self.cal_daily_sales_2.setMaximumSize(QSize(290, 285))
-        self.cal_daily_sales_2.setFirstDayOfWeek(Qt.Sunday)
-        self.cal_daily_sales_2.setHorizontalHeaderFormat(QCalendarWidget.ShortDayNames)
-        self.cal_daily_sales_2.setVerticalHeaderFormat(QCalendarWidget.NoVerticalHeader)
-
-        self.verticalLayout_5.addWidget(self.cal_daily_sales)
-        self.verticalLayout_5.addWidget(self.cal_daily_sales_2)
-
-        self.verticalLayoutWidget_2 = QWidget(self.daily_sales)
-        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(300, 0, 421, 577))
-        self.verticalLayout_11 = QVBoxLayout(self.verticalLayoutWidget_2)
-        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.lsw_daily_sales = QListWidget(self.verticalLayoutWidget_2)
-        self.lsw_daily_sales.setObjectName(u"lsw_daily_sales")
-        self.lsw_daily_sales.setMinimumSize(QSize(410, 520))
-        self.lsw_daily_sales.setMaximumSize(QSize(410, 520))
-        self.verticalLayout_11.addWidget(self.lsw_daily_sales)
-        self.btn_cal_priod = QPushButton(self.verticalLayoutWidget_2)
-        self.btn_cal_priod.setObjectName(u"btn_cal_priod")
-        sizePolicy1.setHeightForWidth(self.btn_cal_priod.sizePolicy().hasHeightForWidth())
-        self.btn_cal_priod.setSizePolicy(sizePolicy1)
-        self.btn_cal_priod.setMinimumSize(QSize(410, 55))
-        self.btn_cal_priod.setMaximumSize(QSize(410, 55))
-        self.verticalLayout_11.addWidget(self.btn_cal_priod)
-
-        self.verticalLayoutWidget_3 = QWidget(self.daily_sales)
-        self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
-        self.verticalLayoutWidget_3.setGeometry(QRect(720, 0, 412, 577))
-        self.verticalLayout_12 = QVBoxLayout(self.verticalLayoutWidget_3)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.pte_daily_sales = QPlainTextEdit(self.verticalLayoutWidget_3)
+        self.gridLayout_2 = QGridLayout()
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.pte_daily_sales = QPlainTextEdit(self.postSales)
         self.pte_daily_sales.setObjectName(u"pte_daily_sales")
-        self.pte_daily_sales.setMinimumSize(QSize(410, 577))
-        self.pte_daily_sales.setMaximumSize(QSize(410, 577))
+        self.pte_daily_sales.setMinimumSize(QSize(410, 605))
+        self.pte_daily_sales.setMaximumSize(QSize(410, 605))
         self.pte_daily_sales.setFont(font1)
         self.pte_daily_sales.setReadOnly(True)
         self.pte_daily_sales.setBackgroundVisible(False)
         self.pte_daily_sales.setCenterOnScroll(False)
 
-        self.verticalLayout_12.addWidget(self.pte_daily_sales)
+        self.gridLayout_2.addWidget(self.pte_daily_sales, 0, 3, 1, 1)
 
-        self.tabWidget.addTab(self.daily_sales, "")
-        self.sales_by_priod = QWidget()
-        self.sales_by_priod.setObjectName(u"sales_by_priod")
-        self.tabWidget.addTab(self.sales_by_priod, "")
+        self.btn_cal_priod = QPushButton(self.postSales)
+        self.btn_cal_priod.setObjectName(u"btn_cal_priod")
+        sizePolicy1.setHeightForWidth(self.btn_cal_priod.sizePolicy().hasHeightForWidth())
+        self.btn_cal_priod.setSizePolicy(sizePolicy1)
+        self.btn_cal_priod.setMinimumSize(QSize(290, 80))
+        self.btn_cal_priod.setMaximumSize(QSize(290, 80))
 
-        self.verticalLayout_20.addWidget(self.tabWidget)
+        self.gridLayout_2.addWidget(self.btn_cal_priod, 3, 0, 1, 1)
 
-        self.stackedWidget.addWidget(self.postSales)
+        self.Lbl_To = QLabel(self.postSales)
+        self.Lbl_To.setObjectName(u"Lbl_To")
+        self.Lbl_To.setMinimumSize(QSize(290, 90))
+        self.Lbl_To.setMaximumSize(QSize(290, 90))
 
+        self.gridLayout_2.addWidget(self.Lbl_To, 1, 0, 1, 1)
+
+        self.lsw_daily_sales = QListWidget(self.postSales)
+        self.lsw_daily_sales.setObjectName(u"lsw_daily_sales")
+        self.lsw_daily_sales.setMinimumSize(QSize(410, 605))
+        self.lsw_daily_sales.setMaximumSize(QSize(410, 605))
+
+        self.gridLayout_2.addWidget(self.lsw_daily_sales, 0, 2, 1, 1)
+
+        self.Lbl_From = QLabel(self.postSales)
+        self.Lbl_From.setObjectName(u"Lbl_From")
+        self.Lbl_From.setMinimumSize(QSize(290, 90))
+        self.Lbl_From.setMaximumSize(QSize(290, 90))
+
+        self.gridLayout_2.addWidget(self.Lbl_From, 2, 0, 1, 1)
+
+        self.cal_daily_sales = QCalendarWidget(self.postSales)
+        self.cal_daily_sales.setObjectName(u"cal_daily_sales")
+        self.cal_daily_sales.setMinimumSize(QSize(290, 320))
+        self.cal_daily_sales.setMaximumSize(QSize(290, 320))
         self.cal_daily_sales.setStyleSheet(u"/* //////////////////////////////////////////////////////////////////////////////////////// */\n"
-                                                "/* style for top navigation area ###############################################*/ \n"
-                                                "\n"
-                                                "#qt_calendar_navigationbar {\n"
-                                                "    background-color: #FFC777;\n"
-                                                "	border: 2px solid  #B8E2FF;\n"
-                                                "	border-bottom: 0px;\n"
-                                                "	border-top-left-radius: 5px;\n"
-                                                "	border-top-right-radius: 5px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "/* style for month change buttons ############################################ */\n"
-                                                "\n"
-                                                "#qt_calendar_prevmonth, \n"
-                                                "#qt_calendar_nextmonth {\n"
-                                                "	/* border delete */\n"
-                                                "    border: none;  \n"
-                                                "    /* delete default icons */\n"
-                                                "	qproperty-icon: none; \n"
-                                                "	\n"
-                                                "    min-width: 50px;\n"
-                                                "    max-width: 50px;\n"
-                                                "    min-height: 25px;\n"
-                                                "    max-height: 25px;\n"
-                                                "\n"
-                                                "    border-radius: 5px; \n"
-                                                "	/* set background transparent */\n"
-                                                "    background-color: transparent; \n"
-                                                "	padding: 5px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "/* style for pre month button ############################################ */\n"
-                                                "\n"
-                                                "#qt_calendar_prevmonth {\n"
-                                                ""
-                                                                        "	/* set text for button */\n"
-                                                "	/* qproperty-text: PREV; */\n"
-                                                "	margin-left: 15px;\n"
-                                                "	image: url(:/icon/images/icons/cil-caret-left.png);\n"
-                                                "	margin: 0px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "/* style for next month button ########################################### */\n"
-                                                "#qt_calendar_nextmonth {\n"
-                                                "    /* qproperty-text: NEXT; */\n"
-                                                "	margin-right: 15px;\n"
-                                                "	image: url(:/icon/images/icons/cil-caret-right.png);\n"
-                                                "	margin: 0px;\n"
-                                                "}\n"
-                                                "#qt_calendar_prevmonth:hover, \n"
-                                                "#qt_calendar_nextmonth:hover {\n"
-                                                "    background-color: #55aaff;\n"
-                                                "}\n"
-                                                "\n"
-                                                "#qt_calendar_prevmonth:pressed, \n"
-                                                "#qt_calendar_nextmonth:pressed {\n"
-                                                "    background-color: rgba(235, 235, 235, 100);\n"
-                                                "}\n"
-                                                "\n"
-                                                "\n"
-                                                "/* Style for month and year buttons #################################### */\n"
-                                                "\n"
-                                                "#qt_calendar_yearbutton {\n"
-                                                "	width: 60px;\n"
-                                                "    color: black;\n"
-                                                "	background-color: #ffffff;\n"
-                                                "	margin:5px;\n"
-                                                "    border-radius: 5px;\n"
-                                                "	font-size: 15px;\n"
-                                                "	padding:0px 10px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "#qt_calendar_monthbutton {\n"
-                                                "	width: 60px;\n"
-                                                "       color: black;\n"
-                                                "	background-color: #ffffff;\n"
-                                                "	font-size: 15px;\n"
-                                                "	margin:5px 0px;\n"
-                                                "       border-radius: 5px;\n"
-                                                "	padding:0px 2px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "#qt_calendar_yearbutton:hover, \n"
-                                                "#qt_calendar_monthbutton:hover {\n"
-                                                "    background-color: #55aaff;\n"
-                                                "}\n"
-                                                "\n"
-                                                "#qt_calendar_yearbutton:pressed, \n"
-                                                "#qt_calendar_monthbutton:pressed {\n"
-                                                "    background-color: rgba(235, 235, 235, 100);\n"
-                                                "}\n"
-                                                "/* Style for year input lineEdit ######################################*/\n"
-                                                "\n"
-                                                "#qt_calendar_yearedit {\n"
-                                                "    min-width: 70px;\n"
-                                                "    color: black;\n"
-                                                "    background: #ffffff;\n"
-                                                "	font-size: 15px;\n"
-                                                "	text-align: center;\n"
-                                                "	margin:5px 0px;\n"
-                                                "    border-radius: 5px;\n"
-                                                "	padding:0px 1px;\n"
-                                                "}\n"
-                                                "/* Style for year change buttons ######################################*/\n"
-                                                "\n"
-                                                "#qt_calendar_yearedit::up-button { \n"
-                                                "	image: url(:/icon/images/icons/cil-caret-top.png);\n"
-                                                "    subcontrol-position: right;\n"
-                                                "	background-color: #FFC777;\n"
-                                                "}\n"
-                                                "\n"
-                                                "#qt_calendar_yearedit::down-button { \n"
-                                                "	image: url(:/icon/images/icons/cil-caret-bottom.png);\n"
-                                                ""
-                                                                        "    subcontrol-position: left; \n"
-                                                "	background-color: #FFC777;\n"
-                                                "}\n"
-                                                "\n"
-                                                "#qt_calendar_yearedit::down-button, \n"
-                                                "#qt_calendar_yearedit::up-button {\n"
-                                                "	width: 15px;\n"
-                                                "	height: 25px;\n"
-                                                "	padding: 0px 5px;\n"
-                                                "	border-radius:3px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "#qt_calendar_yearedit::down-button:hover, \n"
-                                                "#qt_calendar_yearedit::up-button:hover {\n"
-                                                "	background-color: #55aaff;\n"
-                                                "}\n"
-                                                "\n"
-                                                "/* Style for month select menu ##################################### */\n"
-                                                "\n"
-                                                "#calendarWidget QToolButton QMenu {\n"
-                                                "    background-color: white;\n"
-                                                "}\n"
-                                                "#calendarWidget QToolButton QMenu::item {\n"
-                                                "	/*padding: 10px;*/\n"
-                                                "}\n"
-                                                "#calendarWidget QToolButton QMenu::item:selected:enabled {\n"
-                                                "    background-color: #55aaff;\n"
-                                                "}\n"
-                                                "\n"
-                                                "#calendarWidget QToolButton::menu-indicator {\n"
-                                                "	/* Remove toolButton arrow */\n"
-                                                "       /*image: none; */\n"
-                                                "	subcontrol-position: right center;\n"
-                                                "	margin-top: 10px;\n"
-                                                "	width:20px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "/* Style for calendar table ###########################"
-                                                                        "############### */\n"
-                                                "#qt_calendar_calendarview {\n"
-                                                "	/* Remove the selected dashed box */\n"
-                                                "    outline: 0px;\n"
-                                                "\n"
-                                                "	border: 2px solid  #B8E2FF;\n"
-                                                "	border-top: 0px;\n"
-                                                "	border-bottom-left-radius: 5px;\n"
-                                                "	border-bottom-right-radius: 5px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "#qt_calendar_calendarview::item:hover {\n"
-                                                "    border-radius:5px;\n"
-                                                "	background-color:#aaffff;\n"
-                                                "}\n"
-                                                "\n"
-                                                "#qt_calendar_calendarview::item:selected {\n"
-                                                "    background-color: #55aa7f; \n"
-                                                "	border-radius:5px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QCalendarWidget QAbstractItemView:enabled{\n"
-                                                "	background-color: white;\n"
-                                                "    color: black;\n"
-                                                "}\n"
-                                                "QCalendarWidget QAbstractItemView:disabled{\n"
-                                                "	background-color: white;\n"
-                                                "    color: #FFC777;\n"
-                                                "}")
-        self.cal_daily_sales_2.setStyleSheet(self.cal_daily_sales.styleSheet())
+"/* style for top navigation area ###############################################*/ \n"
+"\n"
+"#qt_calendar_navigationbar {\n"
+"    background-color: #FFC777;\n"
+"	border: 2px solid  #B8E2FF;\n"
+"	border-bottom: 0px;\n"
+"	border-top-left-radius: 5px;\n"
+"	border-top-right-radius: 5px;\n"
+"}\n"
+"\n"
+"/* style for month change buttons ############################################ */\n"
+"\n"
+"#qt_calendar_prevmonth, \n"
+"#qt_calendar_nextmonth {\n"
+"	/* border delete */\n"
+"    border: none;  \n"
+"    /* delete default icons */\n"
+"	qproperty-icon: none; \n"
+"	\n"
+"    min-width: 50px;\n"
+"    max-width: 50px;\n"
+"    min-height: 25px;\n"
+"    max-height: 25px;\n"
+"\n"
+"    border-radius: 5px; \n"
+"	/* set background transparent */\n"
+"    background-color: transparent; \n"
+"	padding: 5px;\n"
+"}\n"
+"\n"
+"/* style for pre month button ############################################ */\n"
+"\n"
+"#qt_calendar_prevmonth {\n"
+""
+                        "	/* set text for button */\n"
+"	/* qproperty-text: PREV; */\n"
+"	margin-left: 15px;\n"
+"	image: url(:/icon/images/icons/cil-caret-left.png);\n"
+"	margin: 0px;\n"
+"}\n"
+"\n"
+"/* style for next month button ########################################### */\n"
+"#qt_calendar_nextmonth {\n"
+"    /* qproperty-text: NEXT; */\n"
+"	margin-right: 15px;\n"
+"	image: url(:/icon/images/icons/cil-caret-right.png);\n"
+"	margin: 0px;\n"
+"}\n"
+"#qt_calendar_prevmonth:hover, \n"
+"#qt_calendar_nextmonth:hover {\n"
+"    background-color: #55aaff;\n"
+"}\n"
+"\n"
+"#qt_calendar_prevmonth:pressed, \n"
+"#qt_calendar_nextmonth:pressed {\n"
+"    background-color: rgba(235, 235, 235, 100);\n"
+"}\n"
+"\n"
+"/* Style for month and year buttons #################################### */\n"
+"\n"
+"#qt_calendar_yearbutton {\n"
+"	width: 60px;\n"
+"    color: black;\n"
+"	background-color: white;\n"
+"	margin:5px;\n"
+"    border-radius: 5px;\n"
+"	font-size: 15px;\n"
+"	padding:0px 10px;\n"
+"}\n"
+"\n"
+"#qt_calendar_monthbutton {\n"
+"	width: 60px;\n"
+"    color"
+                        ": black;\n"
+"	background-color: white;\n"
+"	font-size: 15px;\n"
+"	margin:5px 0px;\n"
+"    border-radius: 5px;\n"
+"	padding:0px 2px;\n"
+"}\n"
+"\n"
+"#qt_calendar_yearbutton:hover, \n"
+"#qt_calendar_monthbutton:hover {\n"
+"    background-color: #FFC777;\n"
+"}\n"
+"\n"
+"#qt_calendar_yearbutton:pressed, \n"
+"#qt_calendar_monthbutton:pressed {\n"
+"    background-color: rgba(235, 235, 235, 100);\n"
+"}\n"
+"\n"
+"\n"
+"/* Style for year input lineEdit ######################################*/\n"
+"\n"
+"#qt_calendar_yearedit {\n"
+"    min-width: 70px;\n"
+"    color: black;\n"
+"    background: #ffffff;\n"
+"	font-size: 15px;\n"
+"	text-align: center;\n"
+"	margin:5px 0px;\n"
+"    border-radius: 5px;\n"
+"	padding:0px 1px;\n"
+"}\n"
+"\n"
+"/* Style for year change buttons ######################################*/\n"
+"\n"
+"#qt_calendar_yearedit::up-button { \n"
+"	image: url(:/icon/images/icons/cil-caret-top.png);\n"
+"    subcontrol-position: right;\n"
+"	background-color: #FFC777;\n"
+"}\n"
+"\n"
+"#qt_calendar_yearedit::down-button { \n"
+""
+                        "	image: url(:/icon/images/icons/cil-caret-bottom.png);\n"
+"    subcontrol-position: left; \n"
+"	background-color: #FFC777;\n"
+"}\n"
+"\n"
+"#qt_calendar_yearedit::down-button, \n"
+"#qt_calendar_yearedit::up-button {\n"
+"	width: 15px;\n"
+"	height: 25px;\n"
+"	padding: 0px 5px;\n"
+"	border-radius:3px;\n"
+"}\n"
+"\n"
+"#qt_calendar_yearedit::down-button:hover, \n"
+"#qt_calendar_yearedit::up-button:hover {\n"
+"	background-color: #55aaff;\n"
+"}\n"
+"\n"
+"/* Style for month select menu ##################################### */\n"
+"\n"
+"#calendarWidget QToolButton QMenu {\n"
+"    background-color: white;\n"
+"}\n"
+"#calendarWidget QToolButton QMenu::item {\n"
+"	/*padding: 10px;*/\n"
+"}\n"
+"#calendarWidget QToolButton QMenu::item:selected:enabled {\n"
+"    background-color: #55aaff;\n"
+"}\n"
+"\n"
+"#calendarWidget QToolButton::menu-indicator {\n"
+"	/* Remove toolButton arrow */\n"
+"    /*image: none; */\n"
+"	nosubcontrol-origin: margin;\n"
+"	subcontrol-position: right center;\n"
+"	margin-top: 10px;\n"
+"	width:20px;\n"
+"}\n"
+"\n"
+""
+                        "/* Style for calendar table ########################################## */\n"
+"#qt_calendar_calendarview {\n"
+"	/* Remove the selected dashed box */\n"
+"    outline: 0px;\n"
+"\n"
+"	border: 2px solid  #B8E2FF;\n"
+"	border-top: 0px;\n"
+"	border-bottom-left-radius: 5px;\n"
+"	border-bottom-right-radius: 5px;\n"
+"}\n"
+"\n"
+"#qt_calendar_calendarview::item:hover {\n"
+"    border-radius:5px;\n"
+"	background-color:#aaffff;\n"
+"}\n"
+"\n"
+"#qt_calendar_calendarview::item:selected {\n"
+"    background-color: #55aa7f; \n"
+"	border-radius:5px;\n"
+"}\n"
+"\n"
+"QCalendarWidget QAbstractItemView:enabled{\n"
+"	background-color: white;\n"
+"    color: black;\n"
+"}\n"
+"QCalendarWidget QAbstractItemView:disabled{\n"
+"	background-color: white;\n"
+"    color: #FFC777;\n"
+"}")
+        self.cal_daily_sales.setMinimumDate(QDate(2023, 6, 1))
+        self.cal_daily_sales.setFirstDayOfWeek(Qt.Sunday)
+        self.cal_daily_sales.setSelectionMode(QCalendarWidget.SingleSelection)
+        self.cal_daily_sales.setHorizontalHeaderFormat(QCalendarWidget.ShortDayNames)
+        self.cal_daily_sales.setVerticalHeaderFormat(QCalendarWidget.NoVerticalHeader)
+        self.cal_daily_sales.setGridVisible(True)
+        self.cal_daily_sales.setDateEditEnabled(False)
+
+        self.gridLayout_2.addWidget(self.cal_daily_sales, 0, 0, 1, 1)
+
+        self.verticalLayout_20.addLayout(self.gridLayout_2)
 
         self.stackedWidget.addWidget(self.postSales)
 
@@ -1072,9 +1051,6 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.styleSheet)
 
         self.retranslateUi(MainWindow)
-
-        self.stackedWidget.setCurrentIndex(2)
-        self.tabWidget.setCurrentIndex(0)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -1138,9 +1114,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.del_List_Button.setText(QCoreApplication.translate("MainWindow", u"\uc8fc\ubb38\uc11c\u0020\uc0ad\uc81c", None))
-        self.btn_cal_priod.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.daily_sales), QCoreApplication.translate("MainWindow", u"\uc77c\ubcc4 \ud310\ub9e4 \ud604\ud669", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.sales_by_priod), QCoreApplication.translate("MainWindow", u"\uae30\uac04\ubcc4 \ub9e4\ucd9c \ud604\ud669", None))
+        self.btn_cal_priod.setText(QCoreApplication.translate("MainWindow", u"\uac80\uc0c9", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: ParkSeongHyeon", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v0.1.0", None))
     # retranslateUi

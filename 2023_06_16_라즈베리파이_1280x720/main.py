@@ -121,11 +121,13 @@ class MainWindow(QMainWindow):
         widgets.salesListWidget.itemClicked.connect(self.salesListWidget_ItemClicked)
         # 리스트 위젯 결제건 삭제 시그널
         widgets.del_List_Button.clicked.connect(self.del_List_Button_Clicked)
+        # 캘린더 위젯 날짜 선택 시그널
+        widgets.cal_daily_sales.clicked.connect(self.search_Order_Using_Calendar)
 
         # SHOW APP
         # ///////////////////////////////////////////////////////////////\
 
-        #self.showFullScreen()
+        # self.showFullScreen()
         self.showNormal()
         # # SET CUSTOM THEME
         # # ///////////////////////////////////////////////////////////////
@@ -453,7 +455,16 @@ class MainWindow(QMainWindow):
         #  INNER JOIN products as prd
         #     ON prd.prd_idx = oim.prd_idx
         #  WHERE oim.ord_idx = {self.ui.salesListWidget.currentItem().text()}
-    
+
+    # 캘린더 위젯 날짜 선택 이벤트
+    def search_Order_Using_Calendar(self):
+        # 캘린더를 선택 했을 때 날짜 범위(2개)를 선택 할 수 있어야 되고
+        # 라벨에 기록이 남아야 된다.
+        if self.ui.Lbl_To.text() is '':
+            self.ui.Lbl_To.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+        elif self.ui.Lbl_To.text() is not '':
+            self.ui.Lbl_From.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+
     # 리스트 위젯 주문 완료건 삭제 이벤트
     def del_List_Button_Clicked(self):
         # 현재 선택되어있는 Row에 해당하는 Item 삭제
