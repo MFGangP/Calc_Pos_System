@@ -464,33 +464,47 @@ class MainWindow(QMainWindow):
         cal_Daily_Sales_Select_Date = QDate(int(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d').split('-')[0]),
                                             int(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d').split('-')[1]),
                                             int(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d').split('-')[2]))
+        # Lbl_From 라벨이 빈칸이 아닐 경우
+        if self.ui.Lbl_From.text() is not '':
+            # Lbl_From의 QDate 형변환
+            Lbl_From_Text_Date = QDate(int(self.ui.Lbl_From.text().split('-')[0]),
+                                       int(self.ui.Lbl_From.text().split('-')[1]),
+                                       int(self.ui.Lbl_From.text().split('-')[2]))
+            # 기존의 Lbl_From_Text_Date가 달력에서 선택된 날짜보다 값이 크다면
+            if  Lbl_From_Text_Date > cal_Daily_Sales_Select_Date:
+                # Lbl_To 라벨 값과 비교 :
+                if 
+            # 기존의 Lbl_From_Text_Date가 달력에서 선택된 날짜보다 값이 작다면
+            elif Lbl_From_Text_Date < cal_Daily_Sales_Select_Date:
+                self.ui.Lbl_From.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
 
-        Lbl_To_Text_Date = QDate(self.ui.Lbl_To.text().split('-')[0],
-                                 self.ui.Lbl_To.text().split('-')[1],
-                                 self.ui.Lbl_To.text().split('-')[2])
-        
-        Lbl_From_Text_Date = QDate(self.ui.Lbl_From.text().split('-')[0],
-                                   self.ui.Lbl_From.text().split('-')[1],
-                                   self.ui.Lbl_From.text().split('-')[2])
-        
         # Lbl_To 라벨이 빈칸일 경우
-        if self.ui.Lbl_To.text() is '':
+        elif self.ui.Lbl_To.text() is '':
             # 텍스트를 날짜 형식으로 채운다.
             self.ui.Lbl_To.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
         # Lbl_To 라벨이 빈칸이 아닐 경우
         elif self.ui.Lbl_To.text() is not '':
-            # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜 보다 클 경우
-            if cal_Daily_Sales_Select_Date > Lbl_To_Text_Date:
-                # Lbl_From 라벨에 기존의 날짜를 옮겨 적고 Lbl_To에 선택된 날짜를 대입.
-                self.ui.Lbl_From.setText(self.ui.Lbl_To.text())
-                
-                self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d')
-            # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜 보다 작을 경우
-            elif cal_Daily_Sales_Select_Date < Lbl_To_Text_Date:
-                self.ui.Lbl_To.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
-            # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜과 같을 경우
-            else:
-                self.ui.Lbl_From.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+            # Lbl_From 라벨이 비어있는 경우
+            if self.ui.Lbl_From.text() is '':
+
+                Lbl_To_Text_Date = QDate(int(self.ui.Lbl_To.text().split('-')[0]),
+                                         int(self.ui.Lbl_To.text().split('-')[1]),
+                                         int(self.ui.Lbl_To.text().split('-')[2]))
+                # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜 보다 클 경우
+                if cal_Daily_Sales_Select_Date > Lbl_To_Text_Date:
+                    # Lbl_From 라벨에 기존의 날짜를 옮겨 적고 Lbl_To에 선택된 날짜를 대입.
+                    self.ui.Lbl_From.setText(self.ui.Lbl_To.text())
+                    self.ui.Lbl_To.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+
+                # 기존의 Lbl_To 라벨 값보다 날짜가 클 경우
+                elif cal_Daily_Sales_Select_Date < Lbl_To_Text_Date:
+                    # Lbl_From 라벨에 cal_Daily_Sales 캘린더에서 선택된 날짜 대입
+                    self.ui.Lbl_From.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+
+                # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜과 같을 경우
+                else:
+                    # Lbl_From 라벨에 cal_Daily_Sales 캘린더에서 선택된 날짜 대입
+                    self.ui.Lbl_From.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
 
     # 리스트 위젯 주문 완료건 삭제 이벤트
     def del_List_Button_Clicked(self):
