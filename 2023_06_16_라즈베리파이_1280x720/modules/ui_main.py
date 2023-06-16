@@ -769,12 +769,12 @@ class Ui_MainWindow(object):
         self.btn_cal_priod.setMinimumSize(QSize(290, 80))
         self.btn_cal_priod.setMaximumSize(QSize(290, 80))
 
-        self.gridLayout_2.addWidget(self.btn_cal_priod, 3, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.btn_cal_priod, 4, 0, 1, 1)
 
         self.Lbl_To = QLabel(self.postSales)
         self.Lbl_To.setObjectName(u"Lbl_To")
-        self.Lbl_To.setMinimumSize(QSize(290, 90))
-        self.Lbl_To.setMaximumSize(QSize(290, 90))
+        self.Lbl_To.setMinimumSize(QSize(290, 40))
+        self.Lbl_To.setMaximumSize(QSize(290, 40))
 
         self.gridLayout_2.addWidget(self.Lbl_To, 1, 0, 1, 1)
 
@@ -787,10 +787,20 @@ class Ui_MainWindow(object):
 
         self.Lbl_From = QLabel(self.postSales)
         self.Lbl_From.setObjectName(u"Lbl_From")
-        self.Lbl_From.setMinimumSize(QSize(290, 90))
-        self.Lbl_From.setMaximumSize(QSize(290, 90))
+        self.Lbl_From.setMinimumSize(QSize(290, 40))
+        self.Lbl_From.setMaximumSize(QSize(290, 40))
 
         self.gridLayout_2.addWidget(self.Lbl_From, 2, 0, 1, 1)
+
+        self.btn_cal_Reset = QPushButton(self.postSales)
+        self.btn_cal_Reset.setObjectName(u"btn_cal_Reset")
+        sizePolicy1.setHeightForWidth(self.btn_cal_Reset.sizePolicy().hasHeightForWidth())
+        self.btn_cal_Reset.setSizePolicy(sizePolicy1)
+        self.btn_cal_Reset.setMinimumSize(QSize(290, 80))
+        self.btn_cal_Reset.setMaximumSize(QSize(290, 80))
+
+        self.gridLayout_2.addWidget(self.btn_cal_Reset, 3, 0, 1, 1)
+
 
         self.cal_daily_sales = QCalendarWidget(self.postSales)
         self.cal_daily_sales.setObjectName(u"cal_daily_sales")

@@ -122,8 +122,9 @@ class MainWindow(QMainWindow):
         # 리스트 위젯 결제건 삭제 시그널
         widgets.del_List_Button.clicked.connect(self.del_List_Button_Clicked)
         # 캘린더 위젯 날짜 선택 시그널
-        widgets.cal_daily_sales.clicked.connect(self.search_Order_Using_Calendar)
-
+        widgets.cal_daily_sales.clicked.connect(self.select_Date_Calendar)
+        # 캘린더 위젯 날짜 초기화 시그널
+        widgets.btn_cal_Reset.clicked.connect(self.reset_Order_Using_Calendar)
         # SHOW APP
         # ///////////////////////////////////////////////////////////////\
 
@@ -457,13 +458,13 @@ class MainWindow(QMainWindow):
         #  WHERE oim.ord_idx = {self.ui.salesListWidget.currentItem().text()}
 
     # 캘린더 위젯 날짜 선택 이벤트
-    def search_Order_Using_Calendar(self):
+    def select_Date_Calendar(self):
         # 캘린더를 선택 했을 때 날짜 범위(2개)를 선택 할 수 있어야 되고
         # 라벨에 기록이 남아야 된다.
         now_Select_Date = self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d')
-        cal_Daily_Sales_Select_Date = QDate(int(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d').split('-')[0]),
-                                            int(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d').split('-')[1]),
-                                            int(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d').split('-')[2]))
+        cal_Daily_Sales_Select_Date = QDate(int(now_Select_Date.split('-')[0]),
+                                            int(now_Select_Date.split('-')[1]),
+                                            int(now_Select_Date.split('-')[2]))
         # Lbl_From 라벨이 빈칸이 아닐 경우
         if self.ui.Lbl_From.text() is not '':
             # Lbl_From의 QDate 형변환
@@ -479,18 +480,18 @@ class MainWindow(QMainWindow):
                 # 선택된 날짜가 Lbl_To보다 과거라면  
                 if Lbl_To_Text_Date > cal_Daily_Sales_Select_Date:
                     # 기존의 Lbl_To의 날짜 데이터를 선택된 날짜로 변경
-                    self.ui.Lbl_To.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+                    self.ui.Lbl_To.setText(now_Select_Date)
                 # 선택된 날짜가 Lbl_To보다 크면
                 elif Lbl_To_Text_Date <= cal_Daily_Sales_Select_Date:
                     # Lbl_To, Lbl_From 값 사이의 날짜이기 때문에 패스
                     pass
             # 기존의 Lbl_From_Text_Date가 달력에서 선택된 날짜보다 과거라면
             elif Lbl_From_Text_Date < cal_Daily_Sales_Select_Date:
-                self.ui.Lbl_From.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+                self.ui.Lbl_From.setText(now_Select_Date)
         # Lbl_To 라벨이 빈칸일 경우
         elif self.ui.Lbl_To.text() is '':
             # 텍스트를 날짜 형식으로 채운다.
-            self.ui.Lbl_To.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+            self.ui.Lbl_To.setText(now_Select_Date)
         # Lbl_To 라벨이 빈칸이 아닐 경우
         elif self.ui.Lbl_To.text() is not '':
             Lbl_To_Text_Date = QDate(int(self.ui.Lbl_To.text().split('-')[0]),
@@ -501,16 +502,30 @@ class MainWindow(QMainWindow):
                 # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜 보다 미래일 경우
                 if cal_Daily_Sales_Select_Date > Lbl_To_Text_Date:
                     # Lbl_From 라벨에 cal_Daily_Sales 캘린더에서 선택된 날짜 대입
-                    self.ui.Lbl_From.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+                    self.ui.Lbl_From.setText(now_Select_Date)
                 elif cal_Daily_Sales_Select_Date < Lbl_To_Text_Date:
                     # Lbl_From 라벨에 기존의 날짜를 옮겨 적고 Lbl_To에 선택된 날짜를 대입.
                     self.ui.Lbl_From.setText(self.ui.Lbl_To.text())
-                    self.ui.Lbl_To.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+                    self.ui.Lbl_To.setText(now_Select_Date)
                 # 기존의 Lbl_To 라벨 값보다 날짜가 클 경우
                 # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜과 같을 경우
                 else:
                     # Lbl_From 라벨에 cal_Daily_Sales 캘린더에서 선택된 날짜 대입
-                    self.ui.Lbl_From.setText(self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d'))
+                    self.ui.Lbl_From.setText(now_Select_Date)
+
+    # 날짜 선택 초기화 이벤트
+    def reset_Order_Using_Calendar(self):
+        self.ui.Lbl_To.setText('')
+        self.ui.Lbl_From.setText('')
+
+    # 일정 기간 내 주문 번호 및 기록 출력 이벤트
+    def search_Order_Using_Calendar(self):
+        # db 위치 확인 바람
+        self.conn = pymysql.connect(host='localhost', user='root', password='12345',
+                                        db='calckiosk_new', charset='utf8')
+        cur = self.conn.cursor()
+        # 기간 내 주문 번호 및 기록 불러오기
+        pass
 
     # 리스트 위젯 주문 완료건 삭제 이벤트
     def del_List_Button_Clicked(self):
