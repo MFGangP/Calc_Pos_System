@@ -98,6 +98,7 @@ class MainWindow(QMainWindow):
         widgets.btn_home.clicked.connect(self.buttonClick)
         widgets.btn_nowSales.clicked.connect(self.buttonClick)
         widgets.btn_postSales.clicked.connect(self.buttonClick)
+        widgets.toggleLeftBox.clicked.connect(self.buttonClick)
         # 메뉴 생성 버튼
         widgets.btn_brezel.clicked.connect(self.menu_Clicked)
         widgets.btn_brezel_set.clicked.connect(self.menu_Clicked)
@@ -129,7 +130,8 @@ class MainWindow(QMainWindow):
         widgets.btn_cal_priod.clicked.connect(self.make_OrderNum_Listwidget_Button)
         # 캘린더 페이지 리스트 위젯 시그널
         widgets.lsw_daily_sales.itemClicked.connect(self.search_OrderRecord_Using_Calendar)
-
+        # 콤보 박스 클릭 시그널
+        widgets.Cbo_Menu.currentTextChanged.connect(self.changed_Cbo_Menu_DB)
         # SHOW APP
         # ///////////////////////////////////////////////////////////////\
 
@@ -158,6 +160,9 @@ class MainWindow(QMainWindow):
         orderitems = self.orderitems_initDB()
         orders = self.orders_initDB()
 
+        for pds_list in products:
+            self.ui.Cbo_Menu.addItem(pds_list[1])
+
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
     # ///////////////////////////////////////////////////////////////
@@ -183,6 +188,11 @@ class MainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.postSales) # SET PAGE
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
+
+        if btnName == "toggleLeftBox":
+            widgets.stackedWidget.setCurrentWidget(widgets.change_Sales) 
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
@@ -665,6 +675,15 @@ class MainWindow(QMainWindow):
             self.ui.pte_daily_sales.appendPlainText(f'''총액 : {format((order_List[item][5]), ',')}원''')
 #############################################################################################
 
+    def changed_Cbo_Menu_DB(self):
+        Cbo_index = self.ui.Cbo_Menu.currentIndex()
+        self.ui.Lbl_Now_Menu_Price.setText(str(products[Cbo_index][2]))
+        
+# UPDATE products
+#    SET prdPrice = '1000'
+#  WHERE prd_idx = 1
+#############################################################################################
+
     # 수량 추가 버튼 생성 이벤트
     def make_Add_Button(self, rowPlaceNum, colPlaceNum):
         # 추가/삭제 레이아웃 
@@ -820,8 +839,6 @@ class MainWindow(QMainWindow):
             print('Mouse click: LEFT CLICK')
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
-
-
 
     # DB 접속 및 products 초기화
     def products_initDB(self):

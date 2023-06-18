@@ -391,6 +391,182 @@ class Ui_MainWindow(object):
         self.stackedWidget = QStackedWidget(self.pagesContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background: transparent;")
+
+########################################################################################
+        self.change_Sales = QWidget()
+        self.change_Sales.setObjectName(u"change_Sales")
+
+        self.gridLayoutWidget = QWidget(self.change_Sales)
+        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
+        self.gridLayoutWidget.setGeometry(QRect(0, 0, 1171, 601))
+
+        self.stackedWidget.addWidget(self.change_Sales)
+
+        self.gridLayout_6 = QGridLayout(self.gridLayoutWidget)
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_7 = QGridLayout()
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.Btn_8 = QPushButton(self.gridLayoutWidget)
+        self.Btn_8.setObjectName(u"Btn_8")
+        self.Btn_8.setMinimumSize(QSize(120, 120))
+        self.Btn_8.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_8, 3, 1, 1, 1)
+
+        self.Lbl_Menu_Change_Label = QLabel(self.gridLayoutWidget)
+        self.Lbl_Menu_Change_Label.setObjectName(u"Lbl_Menu_Change_Label")
+        self.Lbl_Menu_Change_Label.setMinimumSize(QSize(320, 0))
+        self.Lbl_Menu_Change_Label.setMaximumSize(QSize(320, 16777215))
+
+        self.gridLayout_7.addWidget(self.Lbl_Menu_Change_Label, 0, 0, 1, 3)
+
+        self.Btn_4 = QPushButton(self.gridLayoutWidget)
+        self.Btn_4.setObjectName(u"Btn_4")
+        self.Btn_4.setMinimumSize(QSize(120, 120))
+        self.Btn_4.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_4, 2, 0, 1, 1)
+
+        self.Btn_3 = QPushButton(self.gridLayoutWidget)
+        self.Btn_3.setObjectName(u"Btn_3")
+        self.Btn_3.setMinimumSize(QSize(120, 120))
+        self.Btn_3.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_3, 1, 2, 1, 1)
+
+        self.Btn_5 = QPushButton(self.gridLayoutWidget)
+        self.Btn_5.setObjectName(u"Btn_5")
+        self.Btn_5.setMinimumSize(QSize(120, 120))
+        self.Btn_5.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_5, 2, 1, 1, 1)
+
+        self.Btn_7 = QPushButton(self.gridLayoutWidget)
+        self.Btn_7.setObjectName(u"Btn_7")
+        self.Btn_7.setMinimumSize(QSize(120, 120))
+        self.Btn_7.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_7, 3, 0, 1, 1)
+
+        self.Btn_9 = QPushButton(self.gridLayoutWidget)
+        self.Btn_9.setObjectName(u"Btn_9")
+        self.Btn_9.setMinimumSize(QSize(120, 120))
+        self.Btn_9.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_9, 3, 2, 1, 1)
+
+        self.Btn_1 = QPushButton(self.gridLayoutWidget)
+        self.Btn_1.setObjectName(u"Btn_1")
+        self.Btn_1.setMinimumSize(QSize(120, 120))
+        self.Btn_1.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_1, 1, 0, 1, 1)
+
+        self.Btn_2 = QPushButton(self.gridLayoutWidget)
+        self.Btn_2.setObjectName(u"Btn_2")
+        self.Btn_2.setMinimumSize(QSize(120, 120))
+        self.Btn_2.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_2, 1, 1, 1, 1)
+
+        self.Btn_6 = QPushButton(self.gridLayoutWidget)
+        self.Btn_6.setObjectName(u"Btn_6")
+        self.Btn_6.setMinimumSize(QSize(120, 120))
+        self.Btn_6.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_6, 2, 2, 1, 1)
+
+        self.Btn_0 = QPushButton(self.gridLayoutWidget)
+        self.Btn_0.setObjectName(u"Btn_0")
+        self.Btn_0.setMinimumSize(QSize(120, 120))
+        self.Btn_0.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_0, 4, 1, 1, 1)
+
+        self.Btn_Del = QPushButton(self.gridLayoutWidget)
+        self.Btn_Del.setObjectName(u"Btn_Del")
+        self.Btn_Del.setMinimumSize(QSize(120, 120))
+        self.Btn_Del.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_Del, 4, 0, 1, 1)
+
+        self.Btn_Change_Commit = QPushButton(self.gridLayoutWidget)
+        self.Btn_Change_Commit.setObjectName(u"Btn_Change_Commit")
+        self.Btn_Change_Commit.setMinimumSize(QSize(120, 120))
+        self.Btn_Change_Commit.setMaximumSize(QSize(120, 120))
+
+        self.gridLayout_7.addWidget(self.Btn_Change_Commit, 4, 2, 1, 1)
+
+
+        self.gridLayout_6.addLayout(self.gridLayout_7, 0, 1, 4, 1)
+
+        self.Lbl_Check_Text = QLabel(self.gridLayoutWidget)
+        self.Lbl_Check_Text.setObjectName(u"Lbl_Check_Text")
+
+        self.gridLayout_6.addWidget(self.Lbl_Check_Text, 3, 0, 1, 1)
+
+        self.Btn_Change_Price = QPushButton(self.gridLayoutWidget)
+        self.Btn_Change_Price.setObjectName(u"Btn_Change_Price")
+        self.Btn_Change_Price.setMinimumSize(QSize(700, 100))
+        self.Btn_Change_Price.setMaximumSize(QSize(700, 100))
+
+        self.gridLayout_6.addWidget(self.Btn_Change_Price, 2, 0, 1, 1)
+
+        self.Lbl_Now_Menu_Price = QLabel(self.gridLayoutWidget)
+        self.Lbl_Now_Menu_Price.setObjectName(u"Lbl_Now_Menu_Price")
+
+        self.gridLayout_6.addWidget(self.Lbl_Now_Menu_Price, 1, 0, 1, 1)
+
+        self.Cbo_Menu = QComboBox(self.gridLayoutWidget)
+        self.Cbo_Menu.setObjectName(u"Cbo_Menu")
+        sizePolicy1.setHeightForWidth(self.Cbo_Menu.sizePolicy().hasHeightForWidth())
+        self.Cbo_Menu.setSizePolicy(sizePolicy1)
+        self.Cbo_Menu.setMinimumSize(QSize(700, 100))
+        self.Cbo_Menu.setMaximumSize(QSize(700, 100))
+        self.Cbo_Menu.setStyleSheet(u'''
+QComboBox{
+	background-color: #FFC777;
+	border-radius: 5px;
+	border: 2px solid #FFC777;
+	padding: 5px;
+	padding-left: 10px;
+     	background-color: white;
+	font: NanumGothic;
+	font-size: 25px;
+        color: black;
+}
+QComboBox:hover{
+	border: 2px solid #FFC777;
+     	background-color: white;
+}
+QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 30px; 
+	border-left-width: 3px;
+	border-left-color: #FFC777;
+	border-left-style: solid;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;	
+	background-image: url(:/icon/images/icons/cil-arrow-bottom.png);
+     	background-color: white;
+	background-position: center;
+	background-repeat: no-reperat;
+	font: NanumGothic;
+	font-size: 20px;
+ }
+
+QComboBox QAbstractItemView {
+	color: black;	
+	background-color: white;
+	padding: 10px;
+	selection-background-color: #FFC777;
+}
+''')
+
+        self.gridLayout_6.addWidget(self.Cbo_Menu, 0, 0, 1, 1)
+#######################################################################################
         self.home = QWidget()
         self.home.setObjectName(u"home")
         self.gridLayout_4 = QGridLayout(self.home)
@@ -1143,5 +1319,5 @@ class Ui_MainWindow(object):
         self.del_List_Button.setText(QCoreApplication.translate("MainWindow", u"\uc8fc\ubb38\uc11c\u0020\uc0ad\uc81c", None))
         self.btn_cal_priod.setText(QCoreApplication.translate("MainWindow", u"\uac80\uc0c9", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: ParkSeongHyeon", None))
-        self.version.setText(QCoreApplication.translate("MainWindow", u"v0.1.0", None))
+        self.version.setText(QCoreApplication.translate("MainWindow", u"v0.1.3", None))
     # retranslateUi
