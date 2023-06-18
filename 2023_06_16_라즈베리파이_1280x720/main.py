@@ -125,6 +125,11 @@ class MainWindow(QMainWindow):
         widgets.cal_daily_sales.clicked.connect(self.select_Date_Calendar)
         # 캘린더 위젯 날짜 초기화 시그널
         widgets.btn_cal_Reset.clicked.connect(self.reset_Order_Using_Calendar)
+        # 캘린더 위젯 검색 클릭 시그널
+        widgets.btn_cal_priod.clicked.connect(self.make_OrderNum_Listwidget_Button)
+        # 캘린더 페이지 리스트 위젯 시그널
+        widgets.lsw_daily_sales.itemClicked.connect(self.search_OrderRecord_Using_Calendar)
+
         # SHOW APP
         # ///////////////////////////////////////////////////////////////\
 
@@ -392,6 +397,7 @@ class MainWindow(QMainWindow):
             # 최근 주문 번호를 불러온다음 리스트 위젯에 추가 f"{orders[-1][0]}"
             self.ui.salesListWidget.addItem(f"\n주문 번호 : {orders[-1][0]} \n시간 : {orders[-1][1]}\n")
         
+
     # 리스트 위젯에서 선택한 주문 상세내역 보여주는 이벤트
     def salesListWidget_ItemClicked(self):
         # 주문 번호
@@ -461,22 +467,22 @@ class MainWindow(QMainWindow):
     def select_Date_Calendar(self):
         # 캘린더를 선택 했을 때 날짜 범위(2개)를 선택 할 수 있어야 되고
         # 라벨에 기록이 남아야 된다.
-        now_Select_Date = self.ui.cal_daily_sales.selectedDate().toString(f'yyyy-M-d')
-        cal_Daily_Sales_Select_Date = QDate(int(now_Select_Date.split('-')[0]),
-                                            int(now_Select_Date.split('-')[1]),
-                                            int(now_Select_Date.split('-')[2]))
+        now_Select_Date = self.ui.cal_daily_sales.selectedDate().toString(f'yyyy년 M월 d일')
+        cal_Daily_Sales_Select_Date = QDate(int(now_Select_Date.split(' ')[0].replace('년', '')),
+                                            int(now_Select_Date.split(' ')[1].replace('월', '')),
+                                            int(now_Select_Date.split(' ')[2].replace('일', '')))
         # Lbl_From 라벨이 빈칸이 아닐 경우
         if self.ui.Lbl_From.text() is not '':
             # Lbl_From의 QDate 형변환
-            Lbl_From_Text_Date = QDate(int(self.ui.Lbl_From.text().split('-')[0]),
-                                       int(self.ui.Lbl_From.text().split('-')[1]),
-                                       int(self.ui.Lbl_From.text().split('-')[2]))
+            Lbl_From_Text_Date = QDate(int(self.ui.Lbl_From.text().split(' ')[0].replace('년', '')),
+                                       int(self.ui.Lbl_From.text().split(' ')[1].replace('월', '')),
+                                       int(self.ui.Lbl_From.text().split(' ')[2].replace('일', '')))
             # 기존의 Lbl_From_Text_Date가 달력에서 선택된 날짜보다 미래라면
             if  Lbl_From_Text_Date > cal_Daily_Sales_Select_Date:
                 # Lbl_To 라벨 값과 비교 :
-                Lbl_To_Text_Date = QDate(int(self.ui.Lbl_To.text().split('-')[0]),
-                                         int(self.ui.Lbl_To.text().split('-')[1]),
-                                         int(self.ui.Lbl_To.text().split('-')[2]))
+                Lbl_To_Text_Date = QDate(int(self.ui.Lbl_To.text().split(' ')[0].replace('년', '')),
+                                         int(self.ui.Lbl_To.text().split(' ')[1].replace('월', '')),
+                                         int(self.ui.Lbl_To.text().split(' ')[2].replace('일', '')))
                 # 선택된 날짜가 Lbl_To보다 과거라면  
                 if Lbl_To_Text_Date > cal_Daily_Sales_Select_Date:
                     # 기존의 Lbl_To의 날짜 데이터를 선택된 날짜로 변경
@@ -494,9 +500,9 @@ class MainWindow(QMainWindow):
             self.ui.Lbl_To.setText(now_Select_Date)
         # Lbl_To 라벨이 빈칸이 아닐 경우
         elif self.ui.Lbl_To.text() is not '':
-            Lbl_To_Text_Date = QDate(int(self.ui.Lbl_To.text().split('-')[0]),
-                                     int(self.ui.Lbl_To.text().split('-')[1]),
-                                     int(self.ui.Lbl_To.text().split('-')[2]))
+            Lbl_To_Text_Date = QDate(int(self.ui.Lbl_To.text().split(' ')[0].replace('년', '')),
+                                     int(self.ui.Lbl_To.text().split(' ')[1].replace('월', '')),
+                                     int(self.ui.Lbl_To.text().split(' ')[2].replace('일', '')))
             # Lbl_From 라벨이 비어있는 경우
             if self.ui.Lbl_From.text() is '':
                 # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_To 라벨 날짜 보다 미래일 경우
@@ -517,15 +523,118 @@ class MainWindow(QMainWindow):
     def reset_Order_Using_Calendar(self):
         self.ui.Lbl_To.setText('')
         self.ui.Lbl_From.setText('')
+        self.ui.lsw_daily_sales.clear()
+        self.ui.pte_daily_sales.clear()
+    # 
+    def make_OrderNum_Listwidget_Button(self):
+        button = self.sender()
+        print(f'Button "{button.objectName()}" pressed!')
+        # 폰트 사이즈 변경
+        self.ui.lsw_daily_sales.setStyleSheet(u'''#pagesContainer QListWidget {
+                                                    background-color: white;;
+                                                    border-radius: 7px;
+                                                    border: 1px solid gray; 
+                                                    color: black;
+                                                    selection-color: rgb(0, 0, 0);
+                                                    font: NanumGothic;
+                                                    font-size: 15px;
+                                                }
+                                                #pagesContainer QListView::item:selected { 
+                                                    background-color: #E39500; 
+                                                    border-radius: 7px;
+                                                    border: 2px solid black;
+                                                }
+                                                #pagesContainer QListView::item:hover { 
+                                                    background-color: #FFC777; 
+                                                    border-radius: 7px;
+                                                    border: 2px solid black;
+                                                }''')
+        order_Numbers = self.search_OrderNum_Using_Calendar()
+        for orders in order_Numbers:
+            # 최근 주문 번호를 불러온다음 리스트 위젯에 추가 f"{orders[-1][0]}"
+            self.ui.lsw_daily_sales.addItem(f"\n주문 번호 : {orders[0]} \n시간 : {orders[1]}\n")
 
-    # 일정 기간 내 주문 번호 및 기록 출력 이벤트
-    def search_Order_Using_Calendar(self):
+    # 일정 기간 내 주문 번호 출력 이벤트
+    def search_OrderNum_Using_Calendar(self):
         # db 위치 확인 바람
         self.conn = pymysql.connect(host='localhost', user='root', password='12345',
                                         db='calckiosk_new', charset='utf8')
         cur = self.conn.cursor()
-        # 기간 내 주문 번호 및 기록 불러오기
-        pass
+        # 라벨에 날짜가 두 개 다 채워져있을 때
+        if self.ui.Lbl_From.text() != '' and self.ui.Lbl_To.text() != '':                  
+            search_Order_Number_Query = f'''SELECT ods.ord_idx
+                                                     , ods.order_dt
+                                                  FROM orders as ods
+                                                 WHERE STR_TO_DATE(ods.order_dt, '%Y년 %m월 %d일') = STR_TO_DATE('{self.ui.Lbl_To.text().replace('-', '년 ', 1).replace('-', '월 ', 2) + '일'}', '%Y년 %m월 %d일') AND STR_TO_DATE('{self.ui.Lbl_From.text().replace('-', '년 ', 1).replace('-', '월 ', 2) + '일'}', '%Y년 %m월 %d일')
+                                                 ORDER BY ods.ord_idx DESC'''
+        # 라벨에 날짜가 한 개만 채워져있을 때
+        elif self.ui.Lbl_From.text() != '' or self.ui.Lbl_To.text() != '':                          
+            search_Order_Number_Query = f'''SELECT ods.ord_idx
+                                                     , ods.order_dt
+                                                  FROM orders as ods
+                                                 WHERE STR_TO_DATE(ods.order_dt, '%Y년 %m월 %d일') = STR_TO_DATE('{self.ui.Lbl_To.text().replace('-', '년 ', 1).replace('-', '월 ', 2) + '일'}', '%Y년 %m월 %d일')
+                                                 ORDER BY ods.ord_idx DESC'''
+        # 주문 번호 가져오기
+        cur.execute(search_Order_Number_Query)
+        order_Numbers = cur.fetchall()
+        
+        self.conn.close()
+        return order_Numbers
+    
+    #  기간 내 주문 기록 불러오기
+    def search_OrderRecord_Using_Calendar(self):
+        self.conn = pymysql.connect(host='localhost', user='root', password='12345',
+                                        db='calckiosk_new', charset='utf8')
+        cur = self.conn.cursor()
+         # 기간 내 주문 기록 불러오기 - 단일 날짜
+        search_Order_Using_Calendar_Single_Query = f'''SELECT oim.ord_idx
+                                                            , prd.prdName
+                                                            , prd.prdPrice
+                                                            , oim.quantity
+                                                            , oim.total_price
+                                                            , ods.order_price
+                                                            , ods.order_dt
+                                                        FROM orderitems as oim
+                                                        INNER JOIN orders as ods
+                                                            ON oim.ord_idx = ods.ord_idx
+                                                        INNER JOIN products as prd
+                                                            ON prd.prd_idx = oim.prd_idx
+                                                        WHERE STR_TO_DATE(ods.order_dt, '%Y년 %m월 %d일') = STR_TO_DATE('{self.ui.Lbl_To.text().replace('-', '년 ', 1).replace('-', '월 ', 2) + '일'}', '%Y년 %m월 %d일')
+                                                            AND ods.ord_idx = {self.ui.lsw_daily_sales.currentItem().text().split(' ')[3]}'''
+        # 주문번호 중복 없이 정해진 기간 내 출력하는 쿼리문
+        cur.execute(search_Order_Using_Calendar_Single_Query)
+        order_List = cur.fetchall()        
+
+        if order_List is None:
+            print('출력 할 결과가 없습니다.')
+        else:
+            # QTextCharFormat 객체 생성
+            form = QTextCharFormat() 
+            # 폰트 사이즈 변경
+            form.setFontPointSize(20)
+            # 폰트 적용
+            self.ui.pte_daily_sales.setCurrentCharFormat(form)
+            # 상단 타이틀 표시
+            self.ui.pte_daily_sales.setPlainText(f'주문 번호 : {order_List[0][0]}\n\n상품명\t\t단가\t수량\t금액\n')
+            # 폰트 적용
+            form.setFontPointSize(15)
+            # 폰트 적용
+            self.ui.pte_daily_sales.setCurrentCharFormat(form)
+            # 글자 수 별로 탭 횟수 차등 
+            for item in range(len(order_List)):
+                if len(order_List[item][1]) <= 2:
+                    self.ui.pte_daily_sales.appendPlainText(f'''{order_List[item][1]}\t\t{format((order_List[item][2]), ',')}\t{format((order_List[item][3]), ',')}\t{format((order_List[item][4]), ',')}\n''')
+                elif len(order_List[item][1]) == 3:
+                    self.ui.pte_daily_sales.appendPlainText(f'''{order_List[item][1]}\t\t{format((order_List[item][2]), ',')}\t{format((order_List[item][3]), ',')}\t{format((order_List[item][4]), ',')}\n''')
+                elif len(order_List[item][1]) > 3:
+                    self.ui.pte_daily_sales.appendPlainText(f'''{order_List[item][1]}\t{format((order_List[item][2]), ',')}\t{format((order_List[item][3]), ',')}\t{format((order_List[item][4]), ',')}\n''')
+            
+            # 하단 총액 폰트 사이즈 변경            
+            form.setFontPointSize(20)
+            self.ui.pte_daily_sales.setCurrentCharFormat(form)
+            # 총액 표시
+            self.ui.pte_daily_sales.appendPlainText(f'''총액 : {format((order_List[item][5]), ',')}원''')
+            
 
     # 리스트 위젯 주문 완료건 삭제 이벤트
     def del_List_Button_Clicked(self):
@@ -692,6 +801,8 @@ class MainWindow(QMainWindow):
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
 
+
+
     # DB 접속 및 products 초기화
     def products_initDB(self):
         # db 위치 확인 바람
@@ -780,7 +891,7 @@ class MainWindow(QMainWindow):
         insert_Orders_DB = []
         insert_Orderitems_DB = []
         # python 3.7 특징 - https://github.com/sphinx-doc/sphinx/issues/2102
-        today = datetime.now().strftime('%Y년 %m월 %d일 %H시 %M분 %S초'.encode('unicode-escape').decode()).encode().decode('unicode-escape')
+        today = datetime.now().strftime(f'%Y-%m-%d %H:%M:%S'.encode('unicode-escape').decode()).encode().decode('unicode-escape')
 
         self.conn = pymysql.connect(host='localhost', user='root', password='12345',
                                         db='calckiosk_new', charset='utf8')

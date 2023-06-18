@@ -68,7 +68,6 @@
     <font>
      <family>NanumGothic</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
     </font>
@@ -1112,7 +1111,6 @@ QCalendarWidget QAbstractItemView:disabled{
               <font>
                <family>NanumGothic</family>
                <pointsize>12</pointsize>
-               <weight>7</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -1143,7 +1141,6 @@ QCalendarWidget QAbstractItemView:disabled{
               <font>
                <family>NanumGothic</family>
                <pointsize>8</pointsize>
-               <weight>50</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
@@ -1229,7 +1226,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1266,7 +1262,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1303,7 +1298,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1340,7 +1334,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1404,7 +1397,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1540,7 +1532,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1680,7 +1671,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>10</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                     <stylestrategy>PreferDefault</stylestrategy>
@@ -2304,7 +2294,6 @@ image: url(:/images/images/images/석류.jpg);</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2425,7 +2414,6 @@ image: url(:/images/images/images/핫도그.jpg);</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2478,7 +2466,6 @@ image: url(:/images/images/images/핫도그.jpg);</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>75</weight>
                              <italic>false</italic>
                              <bold>true</bold>
                             </font>
@@ -2529,7 +2516,6 @@ font: bold 40px;</string>
                             <font>
                              <family>NanumGothic</family>
                              <pointsize>-1</pointsize>
-                             <weight>50</weight>
                              <italic>false</italic>
                              <bold>false</bold>
                             </font>
@@ -2688,7 +2674,6 @@ text-align: center;</string>
                               <font>
                                <family>NanumGothic</family>
                                <pointsize>10</pointsize>
-                               <weight>50</weight>
                                <italic>false</italic>
                                <bold>false</bold>
                               </font>
@@ -2739,112 +2724,18 @@ text-align: center;</string>
                       <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
                         <layout class="QGridLayout" name="gridLayout_2">
-                         <item row="0" column="3">
-                          <widget class="QPlainTextEdit" name="pte_daily_sales">
-                           <property name="minimumSize">
-                            <size>
-                             <width>410</width>
-                             <height>577</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>410</width>
-                             <height>577</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>NanumGothic</family>
-                             <pointsize>10</pointsize>
-                             <weight>50</weight>
-                             <italic>false</italic>
-                             <bold>false</bold>
-                            </font>
-                           </property>
-                           <property name="readOnly">
-                            <bool>true</bool>
-                           </property>
-                           <property name="backgroundVisible">
-                            <bool>false</bool>
-                           </property>
-                           <property name="centerOnScroll">
-                            <bool>false</bool>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="0">
-                          <widget class="QPushButton" name="btn_cal_priod">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>290</width>
-                             <height>80</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>80</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>PushButton</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="0">
-                          <widget class="QLabel" name="Lbl_To">
-                           <property name="minimumSize">
-                            <size>
-                             <width>290</width>
-                             <height>90</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>290</width>
-                             <height>90</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>TextLabel</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="2">
-                          <widget class="QListWidget" name="lsw_daily_sales">
-                           <property name="minimumSize">
-                            <size>
-                             <width>410</width>
-                             <height>577</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>410</width>
-                             <height>577</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
                          <item row="2" column="0">
                           <widget class="QLabel" name="Lbl_From">
                            <property name="minimumSize">
                             <size>
                              <width>290</width>
-                             <height>90</height>
+                             <height>40</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
                              <width>290</width>
-                             <height>90</height>
+                             <height>40</height>
                             </size>
                            </property>
                            <property name="text">
@@ -3073,6 +2964,124 @@ QCalendarWidget QAbstractItemView:disabled{
                            </property>
                           </widget>
                          </item>
+                         <item row="0" column="3">
+                          <widget class="QPlainTextEdit" name="pte_daily_sales">
+                           <property name="minimumSize">
+                            <size>
+                             <width>410</width>
+                             <height>577</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>410</width>
+                             <height>577</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>NanumGothic</family>
+                             <pointsize>10</pointsize>
+                             <italic>false</italic>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="readOnly">
+                            <bool>true</bool>
+                           </property>
+                           <property name="backgroundVisible">
+                            <bool>false</bool>
+                           </property>
+                           <property name="centerOnScroll">
+                            <bool>false</bool>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="4" column="0">
+                          <widget class="QPushButton" name="btn_cal_priod">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>290</width>
+                             <height>80</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>290</width>
+                             <height>80</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>PushButton</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="2">
+                          <widget class="QListWidget" name="lsw_daily_sales">
+                           <property name="minimumSize">
+                            <size>
+                             <width>410</width>
+                             <height>577</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>410</width>
+                             <height>577</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="1" column="0">
+                          <widget class="QLabel" name="Lbl_To">
+                           <property name="minimumSize">
+                            <size>
+                             <width>290</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>290</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>TextLabel</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="0">
+                          <widget class="QPushButton" name="btn_cal_Reset">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>290</width>
+                             <height>80</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>290</width>
+                             <height>80</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>PushButton</string>
+                           </property>
+                          </widget>
+                         </item>
                         </layout>
                        </item>
                       </layout>
@@ -3133,7 +3142,6 @@ QCalendarWidget QAbstractItemView:disabled{
                    <font>
                     <family>NanumGothic</family>
                     <pointsize>-1</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>

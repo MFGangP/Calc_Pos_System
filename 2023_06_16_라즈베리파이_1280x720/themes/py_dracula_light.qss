@@ -532,7 +532,7 @@ Button */
 /*//////////////////////////////////////////////////////////////////////////////
 QListWidget */
 #pagesContainer QListWidget {
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(240, 235, 0, 255), stop:1 rgba(224, 143, 0, 255));
+	background-color: white;
 	border-radius: 7px;
 	border: 1px solid gray; 
 	color: black;

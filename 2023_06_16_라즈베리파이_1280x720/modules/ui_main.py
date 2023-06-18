@@ -753,8 +753,8 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.pte_daily_sales = QPlainTextEdit(self.postSales)
         self.pte_daily_sales.setObjectName(u"pte_daily_sales")
-        self.pte_daily_sales.setMinimumSize(QSize(410, 605))
-        self.pte_daily_sales.setMaximumSize(QSize(410, 605))
+        self.pte_daily_sales.setMinimumSize(QSize(460, 605))
+        self.pte_daily_sales.setMaximumSize(QSize(460, 605))
         self.pte_daily_sales.setFont(font1)
         self.pte_daily_sales.setReadOnly(True)
         self.pte_daily_sales.setBackgroundVisible(False)
@@ -780,8 +780,8 @@ class Ui_MainWindow(object):
 
         self.lsw_daily_sales = QListWidget(self.postSales)
         self.lsw_daily_sales.setObjectName(u"lsw_daily_sales")
-        self.lsw_daily_sales.setMinimumSize(QSize(410, 605))
-        self.lsw_daily_sales.setMaximumSize(QSize(410, 605))
+        self.lsw_daily_sales.setMinimumSize(QSize(360, 605))
+        self.lsw_daily_sales.setMaximumSize(QSize(360, 605))
 
         self.gridLayout_2.addWidget(self.lsw_daily_sales, 0, 2, 1, 1)
 
