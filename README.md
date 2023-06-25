@@ -1,4 +1,4 @@
-# Calc_Kiosk_System
+# Calc_Pos_System
 
 ## 첫번째 업로드
 	- 메뉴 및 가격 DB 생성
