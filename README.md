@@ -65,6 +65,7 @@
  		- Rasberry Pi 4 8GB
   		- zeuslap Z16 pro Max
    		- NorthBayou NB F100A 모니터암
+     		- Argon ONE V2
 	
 	TODO:
 	- 현장에서 본 결과 추가 주문이 상당히 많은 것을 확인 => 주문 수정 기능이 필요
