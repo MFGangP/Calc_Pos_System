@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="images">
+    <file>bread32.png</file>
+    <file>bread40.png</file>
+    <file>bread512.png</file>
+    <file>images.qrc</file>
+    <file>공룡알.jpg</file>
+    <file>꽈배기.jpg</file>
+    <file>꽈배기3개.jpg</file>
+    <file>도너츠.jpg</file>
+    <file>따뜻한 아메리카노.jpg</file>
+    <file>매실.jpg</file>
+    <file>복숭아.jpg</file>
+    <file>블루베리.jpg</file>
+    <file>사이다.jpg</file>
+    <file>석류.jpg</file>
+    <file>아이스아메리카노.jpg</file>
+    <file>치즈볼.jpg</file>
+    <file>콜라.jpg</file>
+    <file>핫도그.jpg</file>
+    <file>환타.jpg</file>
+  </qresource>
+</RCC>
