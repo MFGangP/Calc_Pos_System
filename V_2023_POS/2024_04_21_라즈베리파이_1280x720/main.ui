@@ -1112,7 +1112,7 @@ QCalendarWidget QAbstractItemView:disabled{
                <family>NanumGothic</family>
                <pointsize>12</pointsize>
                <italic>false</italic>
-               <bold>false</bold>
+               <fontweight></fontweight>
               </font>
              </property>
              <property name="text">
@@ -1825,7 +1825,7 @@ QCalendarWidget QAbstractItemView:disabled{
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="change_Sales">
                       <widget class="QWidget" name="gridLayoutWidget">
@@ -2444,7 +2444,7 @@ color: #000000;
 image: url(:/images/images/images/공룡알.jpg);</string>
                            </property>
                            <property name="text">
-                            <string>공룡알(4개)</string>
+                            <string>공룡알(3개)</string>
                            </property>
                           </widget>
                          </item>
