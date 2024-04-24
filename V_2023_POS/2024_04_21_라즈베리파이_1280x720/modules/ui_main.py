@@ -20,10 +20,10 @@
 # 테이블 위젯 내용 수정 금지
 # self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
 ################################################################################
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-from PySide2.QtWidgets import QTableWidget
+from PySide6.QtCore import *
+from PySide6.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtWidgets import QTableWidget
 from resources_rc import *
 
 class Ui_MainWindow(object):

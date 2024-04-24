@@ -13,18 +13,14 @@
 # https://doc.qt.io/qtforpython/licenses.html
 #
 # ///////////////////////////////////////////////////////////////
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import *
+from PySide6.QtGui import *
+from PySide6.QtWidgets import *
 # GUI FILE
-from . ui_main import Ui_MainWindow
-
+from ui_main import Ui_MainWindow
 # APP SETTINGS
-from . app_settings import Settings
-
+from app_settings import Settings
 # IMPORT FUNCTIONS
-from . ui_functions import *
-
+from ui_functions import *
 # APP FUNCTIONS
-from . app_functions import *
+from app_functions import *

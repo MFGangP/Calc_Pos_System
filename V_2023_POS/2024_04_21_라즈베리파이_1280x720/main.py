@@ -4,7 +4,10 @@ import pymysql
 from datetime import datetime
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
-from modules import *
+from modules import ui_main
+from modules import ui_functions
+from modules import app_functions
+from modules import app_settings
 from widgets import *
 
 # from matplotlib.backends.backend_qt6agg import FigureCanvasQTAgg as FigureCanvas
@@ -495,7 +498,7 @@ class MainWindow(QMainWindow):
                                             int(now_Select_Date.split(' ')[1].replace('월', '')),
                                             int(now_Select_Date.split(' ')[2].replace('일', '')))
         # Lbl_To 라벨이 빈칸이 아닐 경우
-        if self.ui.Lbl_To.text() is not '':
+        if self.ui.Lbl_To.text() != '':
             # Lbl_To QDate 형변환
             Lbl_To_Text_Date = QDate(int(self.ui.Lbl_To.text().split(' ')[0].replace('년', '')),
                                      int(self.ui.Lbl_To.text().split(' ')[1].replace('월', '')),
@@ -518,16 +521,16 @@ class MainWindow(QMainWindow):
             elif Lbl_To_Text_Date < cal_Daily_Sales_Select_Date:
                 self.ui.Lbl_To.setText(now_Select_Date + ' 까지')
         # Lbl_From 라벨이 빈칸일 경우
-        elif self.ui.Lbl_From.text() is '':
+        elif self.ui.Lbl_From.text() == '':
             # 텍스트를 날짜 형식으로 채운다.
             self.ui.Lbl_From.setText(now_Select_Date + ' 조회')
         # Lbl_From 라벨이 빈칸이 아닐 경우
-        elif self.ui.Lbl_From.text() is not '':
+        elif self.ui.Lbl_From.text() != '':
             Lbl_From_Text_Date = QDate(int(self.ui.Lbl_From.text().split(' ')[0].replace('년', '')),
                                      int(self.ui.Lbl_From.text().split(' ')[1].replace('월', '')),
                                      int(self.ui.Lbl_From.text().split(' ')[2].replace('일', '')))
             # Lbl_To 라벨이 비어있는 경우
-            if self.ui.Lbl_To.text() is '':
+            if self.ui.Lbl_To.text() == '':
                 # cal_Daily_Sales 캘린더에서 선택된 날짜가 Lbl_From 라벨 날짜 보다 미래일 경우
                 if cal_Daily_Sales_Select_Date > Lbl_From_Text_Date:
                     # 조회 단어 교체
