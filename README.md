@@ -94,3 +94,7 @@
 	 - 매출 요약 페이지 제작
 	 
 <img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/using_calendar.gif?raw=true" width="640">
+
+## 10번째 업로드 (2024.04.24)
+	- 기능 구현 수정이 필요해서 수정하던 도중 3.5 버전 이상의 python에서는 pyside2가 동작하지 않는 것을 확인
+	- 모든 코드를 pyside6에 맞춰서 수정해야할 것으로 보인다.
