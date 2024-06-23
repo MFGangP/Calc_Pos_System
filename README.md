@@ -110,7 +110,7 @@
     - pupspec.yaml 파일에 https://pub.dev/packages 패키지 버전을 지정해줘야된다. (sqflite: ^2.3.3+1, mysql_client: ^0.0.27)
     - macOS에서는 네트워크에 액세스하려면 특정 권한을 요청해야한다.
         -[macos/Runner/DebugProfile.entitlements를 열고 다음 키-값 쌍을 추가]
-,,,
+''' Dart
     <key>com.apple.security.network.client</key>
     <true/>
-,,,
+'''
