@@ -98,3 +98,19 @@
 ## 10번째 업로드 (2024.04.24)
 	- 기능 구현 수정이 필요해서 수정하던 도중 3.5 버전 이상의 python에서는 pyside2가 동작하지 않는 것을 확인
 	- 모든 코드를 pyside6에 맞춰서 수정해야할 것으로 보인다.
+
+## 11번째 업로드 (2024.05.16)
+    - 가격 및 메뉴명 수정 요정에 따른 DB 업데이트
+
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/IMG_3563.jpg?raw=true" width="640">
+
+
+## 12번째 업로드 (2024.06.22)
+    - 추후 개발 프로그램 방향을 flutter로 수정.
+    - pupspec.yaml 파일에 https://pub.dev/packages 패키지 버전을 지정해줘야된다. (sqflite: ^2.3.3+1, mysql_client: ^0.0.27)
+    - macOS에서는 네트워크에 액세스하려면 특정 권한을 요청해야한다.
+        -[macos/Runner/DebugProfile.entitlements를 열고 다음 키-값 쌍을 추가]
+'''
+    <key>com.apple.security.network.client</key>
+    <true/>
+'''
