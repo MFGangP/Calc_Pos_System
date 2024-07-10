@@ -8,11 +8,11 @@ class PosChartView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('First Route'),
+        title: const Text('Third Route'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: const Text('Open route'),
+          child: const Text('Third Route'),
           onPressed: () {
             // Navigate to second route when tapped.
           },

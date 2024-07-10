@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:possystem/Model/db_connector.dart';
 
-class PosHomeView extends StatelessWidget {
-  const PosHomeView({super.key});
+import 'package:flutter/material.dart';
 
+class PosHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Open route'),
-          onPressed: () {
-            // Navigate to second route when tapped.
-          },
+    return Column(
+      children: <Widget>[
+        Container(
+          width: 134.87,
+          height: 134.88,
+          decoration: ShapeDecoration(
+            color: Color(0xFFFBFBFB),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(13),
+            ),
+          ),
         ),
-      ),
+      ]
     );
   }
 }

@@ -8,11 +8,11 @@ class PosSettingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('First Route'),
+        title: const Text('Fourth Route'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: const Text('Open route'),
+          child: const Text('Fourth route'),
           onPressed: () {
             // Navigate to second route when tapped.
           },
