@@ -14,10 +14,13 @@ class _PosMenuViewState extends State<PosMenuView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    // 가로 축
       body: Row(
         children: <Widget>[
+        // 세로 축
           Column(
             children: <Widget>[
+            // 메뉴 버튼 생성
               _buildMenuIcon(Icons.home, 0),
               _buildMenuIcon(Icons.format_list_bulleted, 1),
               _buildMenuIcon(Icons.query_stats, 2),
@@ -25,6 +28,7 @@ class _PosMenuViewState extends State<PosMenuView> {
               _buildMenuIcon(Icons.settings, 3),
             ],
           ),
+          // Expanded는 child 요소를 렌더링 영역의 최대 사이즈까지 확장시켜 주는 위젯.
           Expanded(
             child: MenuList().pages[_activeIndex],
           ),
