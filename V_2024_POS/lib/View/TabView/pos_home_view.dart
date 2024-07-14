@@ -8,8 +8,8 @@ class PosHomeView extends StatelessWidget {
     return const Column(
       children: <Widget>[
         SizedBox(
-          width: 134.87,
-          height: 134.88,
+          width: 135,
+          height: 135,
           child: HomeViewMenuCell(),
         ),
       ]

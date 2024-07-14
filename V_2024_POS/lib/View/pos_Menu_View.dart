@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:possystem/View/Color/colors.dart';
 import 'package:possystem/ViewModel/menu_List.dart';
 
 class PosMenuView extends StatefulWidget {
@@ -71,7 +72,12 @@ class MenuIcon extends StatelessWidget {
       width: 52,
       height: 52,
       child: IconButton(
-        alignment: Alignment.center,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: menuBackGroundColor, // 이미 menuBackGroundColor는 Color 객체
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0), // 사각형 버튼
+          ),
+        ),  //
         icon: Icon(
           icon,
           color: isActive ? Colors.orange : Colors.grey,
