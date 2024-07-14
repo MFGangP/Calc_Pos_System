@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysql_client/mysql_client.dart';
-import 'package:possystem/Model/db_connector.dart';
+import 'package:possystem/Model/db_manager.dart';
 import 'package:possystem/View/pos_menu_view.dart';
 
 // main스레드는 runApp을 실행시키고 종료.

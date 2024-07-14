@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:possystem/Model/db_connector.dart';
+import 'package:possystem/Model/db_manager.dart';
 
-class PosSettingView extends StatelessWidget {
-  const PosSettingView({super.key});
+class PosChartView extends StatelessWidget {
+  const PosChartView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fourth Route'),
+        title: const Text('Third Route'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: const Text('Fourth route'),
+          child: const Text('Third Route'),
           onPressed: () {
             // Navigate to second route when tapped.
           },
