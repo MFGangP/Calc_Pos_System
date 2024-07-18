@@ -114,3 +114,11 @@
     <key>com.apple.security.network.client</key>
     <true/>
 ```
+
+## 13번째 업로드 (2024.07.22)
+    - 메뉴 바
+    - 버튼
+    - 데이터 테이블
+    - 페이지 생성
+
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/2024_07_22.jpg?raw=true" width="640">

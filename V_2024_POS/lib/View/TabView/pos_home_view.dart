@@ -14,48 +14,43 @@ class PosHomeView extends StatelessWidget {
       children: <Widget>[
         Row(
           children: [
+            Spacer(),
             Table(
               border: TableBorder.all(),
               columnWidths: const <int, TableColumnWidth>{
-                0: FixedColumnWidth(135),
-                1: FixedColumnWidth(135),
-                2: FixedColumnWidth(135),
-                3: FixedColumnWidth(135),
-                // IntrinsicColumnWidth(),
-                // FlexColumnWidth(),
+                0: IntrinsicColumnWidth(),
+                1: IntrinsicColumnWidth(),
+                2: IntrinsicColumnWidth(),
+                3: IntrinsicColumnWidth(),
               },
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              defaultColumnWidth: const FixedColumnWidth(10),
                   children: <TableRow>[
                     TableRow(
                       children: <Widget>[
-                      Container(
-                        width: 135,
-                        height: 135,
-                        child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
-                      ),
-                      Container(
-                        width: 135,
-                        height: 135,
-                        child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
-                      ),
-                      Container(
-                        width: 135,
-                        height: 135,
-                        child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
-                      ),
-                      Container(
-                        width: 135,
-                        height: 135,
-                        child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
-                      ),
+                        Container(
+                          width: 135,
+                          height: 135,
+                          child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
+                        ),
+                        Container(
+                          width: 135,
+                          height: 135,
+                          child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
+                        ),
+                        Container(
+                          width: 135,
+                          height: 135,
+                          child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
+                        ),
+                        Container(
+                          width: 135,
+                          height: 135,
+                          child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
+                        ),
                     ],
                   ),
                 ],
-            ),
-            SizedBox(
-              width: 135,
-              height: 135,
-              child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
             ),
             Spacer(),
             DataTable(

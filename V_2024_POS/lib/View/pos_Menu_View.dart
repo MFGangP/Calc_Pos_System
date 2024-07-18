@@ -22,6 +22,12 @@ class _PosMenuViewState extends State<PosMenuView> {
           Column(
             children: <Widget>[
             // 메뉴 버튼 생성
+             Container(
+               width: 52,
+               height: 52,
+               padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 6),
+               child: Image.asset('assets/images/logo.png'),
+              ),
               _buildMenuIcon(Icons.home, 0),
               _buildMenuIcon(Icons.format_list_bulleted, 1),
               _buildMenuIcon(Icons.query_stats, 2),
