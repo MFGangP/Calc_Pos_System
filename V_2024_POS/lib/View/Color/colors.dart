@@ -5,7 +5,7 @@ const mainBackGroundColor = Color(0xffF0F0F0);
 const menuBackGroundColor = Color(0xffFBFBFB);
 const iconBackGroundColor = Color(0xffF0F0F0);
 const tableBackGroundColor = Color(0xffFBFBFB);
-const tableRowBackGroundColor = Color(0xffFFC777);
+const tableColumnBackGroundColor = Color(0xffFFC777);
 
 // 아이콘 Defalt/Select 컬러
 const iconNonSelectedColor = Color(0xff7D7D7D);

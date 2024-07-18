@@ -1,10 +1,19 @@
+import 'dart:io';
+import 'package:window_manager/window_manager.dart';
 import 'package:flutter/material.dart';
+
 import 'package:mysql_client/mysql_client.dart';
 import 'package:possystem/Model/db_manager.dart';
 import 'package:possystem/View/pos_menu_view.dart';
 
+
 // main스레드는 runApp을 실행시키고 종료.
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await windowManager.ensureInitialized();
+  if (Platform.isWindows) {
+    WindowManager.instance.setSize(const Size(1280, 720));
+  }
   // 비동기로 실행됨(이벤트 루프에 등록된다)
   runApp(const MyApp());
 }
