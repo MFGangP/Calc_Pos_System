@@ -25,6 +25,7 @@ class _PosMenuViewState extends State<PosMenuView> {
              Container(
                width: 52,
                height: 52,
+               // Image 크기 조절을 위한 Padding 추가
                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 6),
                child: Image.asset('assets/images/logo.png'),
               ),
