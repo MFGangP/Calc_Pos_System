@@ -20,10 +20,10 @@ class HomeViewMenuCell extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-              minimumSize: const Size(135, 135),
-              backgroundColor: menuBackGroundColor, // 이미 menuBackGroundColor는 Color 객체
-              padding: EdgeInsets.zero, // 패딩 0으로 설정 기본 값이 너무 크게 설정되어 있음.
-              shape: RoundedRectangleBorder( // Border 설정
+            minimumSize: const Size(135, 135),
+            backgroundColor: menuBackGroundColor, // 이미 menuBackGroundColor는 Color 객체
+            padding: EdgeInsets.zero, // 패딩 0으로 설정 기본 값이 너무 크게 설정되어 있음.
+            shape: RoundedRectangleBorder( // Border 설정
               borderRadius: BorderRadius.circular(cornerRadius), // 사각형 버튼
             ),
           ),

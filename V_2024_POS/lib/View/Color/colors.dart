@@ -13,7 +13,7 @@ const iconSelectedColor = Color(0xffFFC777);
 
 // 글자 Text 컬러
 const menuTextColor = Color(0xff441906);
-const tableDeleteTextColor = Color(0xff676666);
+const tableDeleteRowColor = Color(0xff676666);
 const tableCostTextColor = Color(0xff441906);
 const tableRowTextColor = Color(0xff9C3E0F);
 const tableTotalCostColor = Color(0xffC54E09);

@@ -15,12 +15,19 @@ class HomeViewTableTitle extends StatelessWidget {
 
   static const double cornerRadius = 13;
 
+  Color _getTextColor() {
+    if (containerTitle == '삭제') {
+      return tableDeleteRowColor;
+    } else {
+      return menuTextColor; // 기본 색상
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
       width: containerWidth,
       height: containerHeight,
-      decoration: ShapeDecoration(
+      decoration: const ShapeDecoration(
         color: tableColumnBackGroundColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -30,7 +37,13 @@ class HomeViewTableTitle extends StatelessWidget {
         ),
       ),
       alignment: Alignment.center,
-      child: Text(containerTitle),
+        child: Text(
+          containerTitle,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: _getTextColor(),
+        ),
+      ),
     );
   }
 }

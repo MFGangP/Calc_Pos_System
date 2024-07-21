@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:possystem/Model/db_manager.dart';
 import 'package:possystem/View/Cell/homeview_menu_cell.dart';
 import 'package:possystem/View/Cell/tableview_title_cell.dart';
+import 'package:possystem/View/Cell/tableview_content_cell.dart';
 import '../Color/colors.dart';
 
 class PosHomeView extends StatelessWidget {
@@ -20,42 +21,29 @@ class PosHomeView extends StatelessWidget {
                       height: 30,
                     )
                 ),
-                Table(
-                  border: TableBorder.all(),
-                  columnWidths: const <int, TableColumnWidth>{
-                    0: IntrinsicColumnWidth(),
-                    1: IntrinsicColumnWidth(),
-                    2: IntrinsicColumnWidth(),
-                    3: IntrinsicColumnWidth(),
-                  },
-                  defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                  defaultColumnWidth: const FixedColumnWidth(10),
-                  children: <TableRow>[
-                    TableRow(
-                      children: <Widget>[
-                        Container(
-                          width: 135,
-                          height: 135,
-                          child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
-                        ),
-                        Container(
-                          width: 135,
-                          height: 135,
-                          child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
-                        ),
-                        Container(
-                          width: 135,
-                          height: 135,
-                          child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
-                        ),
-                        Container(
-                          width: 135,
-                          height: 135,
-                          child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
-                        ),
-                      ],
+                Row(
+                  children: [
+                    Container(
+                      width: 135,
+                      height: 135,
+                      child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
                     ),
-                  ],
+                    Container(
+                      width: 135,
+                      height: 135,
+                      child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
+                    ),
+                    Container(
+                      width: 135,
+                      height: 135,
+                      child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
+                    ),
+                    Container(
+                      width: 135,
+                      height: 135,
+                      child: HomeViewMenuCell(assetImagePath: "꽈배기.jpg",),
+                    ),
+                  ]
                 ),
               ],
             ),
@@ -86,38 +74,39 @@ class PosHomeView extends StatelessWidget {
                     ),
                   ],
                   rows: [
-                    DataRow(
-                      cells: [
-                        DataCell(Text('철수')),
-                        DataCell(Text('꽈배기')),
-                        DataCell(Text('4000')),
-                        DataCell(Text('1')),
-                      ]
-                    ),
-                    DataRow(
-                        cells: [
-                          DataCell(Text('철수')),
-                          DataCell(Text('꽈배기')),
-                          DataCell(Text('4000')),
-                          DataCell(Text('1')),
-                        ]
-                    ),
+                    // 만약 HomeViewMenuCell()이 눌려진다면 행이 하나씩 늘어나야 한다
+                    HomeViewTableContent.createDataRow(),
+                    HomeViewTableContent.createDataRow(),
+                    HomeViewTableContent.createDataRow(),
+                    HomeViewTableContent.createDataRow(),
+                    HomeViewTableContent.createDataRow(),
+                    HomeViewTableContent.createDataRow(),
                   ]
                 ),
                 Row(
                   children: [
                     ElevatedButton(
                         onPressed: null,
-                        child: Container(
-                          color: Colors.red,
-                        )
+                        style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(251, 57),
+                        backgroundColor: menuBackGroundColor, // 이미 menuBackGroundColor는 Color 객체
+                        padding: EdgeInsets.zero, // 패딩 0으로 설정 기본 값이 너무 크게 설정되어 있음.
+                        shape: RoundedRectangleBorder( // Border 설정
+                          borderRadius: BorderRadius.circular(20), // 사각형 버튼
+                        ),
+                      ), child: null,
                     ),
                     ElevatedButton(
-                        onPressed: null,
-                        child: Container(
-                          color: Colors.red,
-                        )
-                    )
+                      onPressed: null,
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(251, 57),
+                        backgroundColor: menuBackGroundColor, // 이미 menuBackGroundColor는 Color 객체
+                        padding: EdgeInsets.zero, // 패딩 0으로 설정 기본 값이 너무 크게 설정되어 있음.
+                        shape: RoundedRectangleBorder( // Border 설정
+                          borderRadius: BorderRadius.circular(20), // 사각형 버튼
+                        ),
+                      ), child: null,
+                    ),
                   ],
                 ),
               ],
