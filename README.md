@@ -121,11 +121,11 @@
     - 데이터 테이블
     - 페이지 생성
 
-<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/2024_07_19.jpg?raw=true" width="640">
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/2024_07_19.png?raw=true" width="640">
 
 ## 14번째 업로드 (2024.07.22)
     - 데이터 테이블
         - 테이블 타이틀 색상 조건부 변경
         - 테이블 행 버튼 및 데이터 틀 생성
     
-<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/2024_07_22.jpg?raw=true" width="640">
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/2024_07_22.png?raw=true" width="640">
