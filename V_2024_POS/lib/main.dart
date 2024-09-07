@@ -6,17 +6,30 @@ import 'package:mysql_client/mysql_client.dart';
 import 'package:possystem/Model/db_manager.dart';
 import 'package:possystem/View/pos_menu_view.dart';
 
+List product = [];
 
 // main스레드는 runApp을 실행시키고 종료.
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await windowManager.ensureInitialized();
-  if (Platform.isWindows) {
-    WindowManager.instance.setSize(const Size(1280, 720));
-  }
+
+  WindowOptions windowOptions = const WindowOptions(
+    size: Size(1280, 720),
+    center: true,
+    backgroundColor: Colors.transparent,
+    skipTaskbar: false,
+    titleBarStyle: TitleBarStyle.hidden,
+    windowButtonVisibility: false,
+  );
+
+  windowManager.waitUntilReadyToShow(windowOptions, () async {
+    await windowManager.show();
+    await windowManager.focus();
+  });
   // 비동기로 실행됨(이벤트 루프에 등록된다)
   runApp(const MyApp());
 }
+
 //StatelessWidget은 변화가 필요없는 화면을 구성할 때 사용하는 위젯 클래스이며, 그렇기 때문에 build 메서드는 한 번만 호출된다.
 class MyApp extends StatelessWidget {
   // Dart에서 super 키워드는 부모 클래스의 생성자를 호출하는 데 사용, StatefulWidget의 생성자를 호출하며, key 매개변수를 전달

@@ -5,7 +5,7 @@ import 'package:possystem/View/Color/colors.dart';
 
 class HomeViewTableContent{
 
-  static const double cornerRadius = 13;
+  static const double cornerRadius = 20;
 
   static DataRow createDataRow() {
     return DataRow(
@@ -31,7 +31,7 @@ class HomeViewTableContent{
             ),
           ),
         ),
-        DataCell(
+        const DataCell(
           Text(
             '블루베리 아이스티',
             textAlign: TextAlign.center,
@@ -56,6 +56,9 @@ class HomeViewTableContent{
         DataCell(
           Row(
             children: [
+              const SizedBox(
+                width: 7,
+              ),
               IconButton(
                 onPressed: () => {
                   log('Minus 1'),
@@ -73,7 +76,7 @@ class HomeViewTableContent{
                 ),
               ),
               const Spacer(),
-              Text(
+              const Text(
                 '1',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -97,6 +100,9 @@ class HomeViewTableContent{
                     borderRadius: BorderRadius.circular(cornerRadius),
                   ),
                 ),
+              ),
+              const SizedBox(
+                width: 7,
               ),
             ],
           ),

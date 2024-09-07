@@ -1,7 +1,7 @@
 import 'package:mysql_client/mysql_client.dart';
 
 class MySqlConnector {
-  Future<Map<String?, Map<String, String?>>> Products_initDB() async {
+  Future<List<Map<String, String?>>> Products_initDB() async {
     // MySQL 접속 설정
     final conn = await MySQLConnection.createConnection(
       host: '127.0.0.1',
@@ -15,21 +15,23 @@ class MySqlConnector {
     print("Connected");
 
     IResultSet products_SELECT_Query = await conn.execute('''SELECT prd_idx
-                                                           , prdName
-                                                           , prdPrice
-                                                        FROM products;''');
+                                                                  , prdName
+                                                                  , prdPrice
+                                                               FROM products;''');
 
-    var products = { for (var row in products_SELECT_Query.rows)
-      row.colAt(0): {
-        'prdName': row.colAt(1),
-        'prdPrice': row.colAt(2),
-      }
-    };
+    List<Map<String, String?>> products = [
+      for (var row in products_SELECT_Query.rows)
+        {
+          'prdName': row.colAt(1),
+          'prdPrice': row.colAt(2),
+        }
+    ];
 
     await conn.close();
 
+    print('products---------------------------------------------');
     print(products);
-    print('---------------------------------------------');
+
     return products;
   }
 
@@ -47,10 +49,10 @@ class MySqlConnector {
     print("Connected");
 
     IResultSet orders_SELECT_Query = await conn.execute(''' SELECT ord_idx
-                                       , order_dt
-                                       , order_price
-                                       , order_num
-                                    FROM orders;''');
+                                                                 , order_dt
+                                                                 , order_price
+                                                                 , order_num
+                                                              FROM orders;''');
 
     var orders = { for (var row in orders_SELECT_Query.rows)
       row.colAt(0): {
@@ -95,6 +97,7 @@ class MySqlConnector {
         'total_price': row.colAt(4),
       }
     };
+
 
     await conn.close();
 

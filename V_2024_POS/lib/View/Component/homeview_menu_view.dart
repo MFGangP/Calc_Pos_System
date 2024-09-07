@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:possystem/View/Color/colors.dart';
 
-class HomeViewMenuCell extends StatelessWidget {
-  final String assetImagePath; // 파일 이름을 위한 변수
+class HomeViewMenuButton extends StatelessWidget {
+  final String menuName; // 메뉴 이름
 
-  const HomeViewMenuCell({
+  const HomeViewMenuButton({
     super.key,
-    required this.assetImagePath, // 생성자에서 파일 이름을 받음
+    required this.menuName, // 생성자에서 메뉴 이름을 받음
   });
 
   static const double cornerRadius = 13;
@@ -15,7 +15,7 @@ class HomeViewMenuCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 135,
       height: 135,
       child: ElevatedButton(
@@ -37,17 +37,17 @@ class HomeViewMenuCell extends StatelessWidget {
               ),
               child: Image(
                 // 상수 키워드를 제거하고 변수를 사용하여 이미지 경로를 동적으로 구성해야 함.
-                image: AssetImage('$imagePathPrefix$assetImagePath'), // 이미지 경로와 파일 이름 조합
+                image: AssetImage('$imagePathPrefix$menuName.jpg'), // 이미지 경로와 파일 이름 조합
                 height: 102, // 높이 102
                 fit: BoxFit.fitWidth, // 그림 크기 가로 맞추기
               ),
             ),
             const Spacer(),
-            const Text('꽈배기',
+            Text(menuName,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: menuFont,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.bold,
                 color: menuTextColor,
               ),
             ),

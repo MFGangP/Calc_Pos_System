@@ -15,19 +15,24 @@ class _PosMenuViewState extends State<PosMenuView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: menuBackGroundColor,
     // 가로 축
       body: Row(
         children: <Widget>[
-        // 세로 축
+          // 세로 축
           Column(
             children: <Widget>[
+             const SizedBox(height: 10),
             // 메뉴 버튼 생성
              Container(
-               width: 52,
-               height: 52,
+               width: 72,
                // Image 크기 조절을 위한 Padding 추가
                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 6),
-               child: Image.asset('assets/images/logo.png'),
+               child: Image.asset(
+                        'assets/images/logo.png',
+                        height: 47,
+                        fit: BoxFit.contain,
+                      ),
               ),
               _buildMenuIcon(Icons.home, 0),
               _buildMenuIcon(Icons.format_list_bulleted, 1),
@@ -61,6 +66,7 @@ class _PosMenuViewState extends State<PosMenuView> {
   }
 }
 
+// 아이콘을 일정한 크기로 뽑기 위해 재사용을 하려고 만들 클래스
 class MenuIcon extends StatelessWidget {
   final IconData icon;
   final bool isActive;

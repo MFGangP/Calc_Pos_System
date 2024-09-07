@@ -3,13 +3,12 @@ import 'package:possystem/View/Color/colors.dart';
 
 class HomeViewTableTitle extends StatelessWidget {
   final double containerWidth;
-  final double containerHeight;
+  final double containerHeight = 39;
   final String containerTitle;
 
   const HomeViewTableTitle({
     super.key,
     required this.containerWidth,
-    required this.containerHeight,
     required this.containerTitle,
   });
 
