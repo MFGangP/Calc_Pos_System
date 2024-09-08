@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:possystem/Model/db_manager.dart';
 import 'package:possystem/View/Component/homeview_menu_view.dart';
+import 'package:possystem/View/Component/homeview_orederbutton_view.dart';
 import 'package:possystem/View/Component/tableview_title_view.dart';
 import 'package:possystem/View/Component/tableview_content_view.dart';
 import 'package:possystem/View/Color/colors.dart';
@@ -130,30 +131,10 @@ class _PosHomeViewState extends State<PosHomeView> {
                     headingRowHeight: 0, // 헤더 높이 조절 0 고정
                     columns: const [
                       // DataColumn 표시를 상단으로 뺐기 때문에 별도의 사이즈 선언을 해줘야함.
-                        DataColumn(
-                          label: SizedBox(
-                            width: 60, 
-                            child: Text(""),
-                          ),
-                        ),
-                        DataColumn(
-                          label: SizedBox(
-                            width: 230,
-                            child: Text(""),
-                          ),
-                        ),
-                        DataColumn(
-                          label: SizedBox(
-                            width: 100,
-                            child: Text(""),
-                          ),
-                        ),
-                        DataColumn(
-                          label: SizedBox(
-                            width: 132,
-                            child: Text(""),
-                          ),
-                        ),
+                        DataColumn(label: SizedBox(width: 60, child: Text(""),)),
+                        DataColumn(label: SizedBox(width: 230, child: Text(""),)),
+                        DataColumn(label: SizedBox(width: 100, child: Text(""),)),
+                        DataColumn(label: SizedBox(width: 132, child: Text(""),)),
                     ],
                     rows: [
                       // 만약 HomeViewMenuCell()이 눌려진다면 행이 하나씩 늘어나야 한다
@@ -173,63 +154,73 @@ class _PosHomeViewState extends State<PosHomeView> {
                   ),
                 ),
               ),
-              // 합계 표시
-              Container(
-                height: 62,
-                width: datatablewidth, // 고정된 너비 설정
-                decoration: const BoxDecoration(
-                  color: tableBackGroundColor, // 전체 배경색
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(cornerRadius),
-                    bottomRight: Radius.circular(cornerRadius)
-                  ), // 모서리 곡률 적용
-                ),
-                child: const Row(
-                  children: [
-                    Text("합계"),
-                    Text("62000원"),
-                  ],
-                ),
+              Column(
+                children: [
+                  // 구분선을 그리기 위한 컨테이너
+                  Container(
+                    height: 1,
+                    width: datatablewidth, // 고정된 너비 설정
+                    decoration: const BoxDecoration(
+                      color: tableBackGroundColor, // 전체 배경색
+                    ),
+                    child: const Divider(
+                      height: 2,
+                      indent: 15, // 시작점 조정
+                      endIndent: 15, // 끝점 조정
+                      color: tableTotalCostColor, // Divider의 색상
+                    ),
+                  ),
+                  // 합계를 표시하기 위한 컨테이너
+                  Container(
+                    height: 60,
+                    width: datatablewidth, // 고정된 너비 설정
+                    decoration: const BoxDecoration(
+                      color: tableBackGroundColor, // 전체 배경색
+                      borderRadius: 
+                      BorderRadius.only(
+                        bottomLeft: Radius.circular(cornerRadius),
+                        bottomRight: Radius.circular(cornerRadius),
+                      ), // 모서리 곡률 적용
+                    ),
+                    child: const Row(
+                      children: [
+                        SizedBox(
+                          width: 18,
+                        ),
+                        Text("합계",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: tableTotalCostColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        Spacer(),
+                        Text("62000원",
+                        textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: tableTotalCostColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 36,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 18,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
+              // 합계 표시
+              
               Row(
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(251, 57),
-                      backgroundColor: menuBackGroundColor, // 이미 menuBackGroundColor는 Color 객체
-                      padding: EdgeInsets.zero, // 패딩 0으로 설정 기본 값이 너무 크게 설정되어 있음.
-                      shape: RoundedRectangleBorder( // Border 설정
-                        borderRadius: BorderRadius.circular(cornerRadius), // 사각형 버튼
-                      ),
-                    ), 
-                    child: const Text("전체 삭제",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: buttonAllDelete,
-                      ),
-                    ),
-                  ),
+                  const HomeviewOrederbuttonView(buttonText: "전체 삭제", buttonBackGroundColor: buttonAllDeleteBackGround, buttonTextColor: buttonAllDelete, cornerRadius: cornerRadius),
                   const SizedBox(
-                    width: 22,
+                    width: 36,
                   ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(251, 57),
-                      backgroundColor: buttonOrderBackGround, // 이미 menuBackGroundColor는 Color 객체
-                      padding: EdgeInsets.zero, // 패딩 0으로 설정 기본 값이 너무 크게 설정되어 있음.
-                      shape: RoundedRectangleBorder( // Border 설정
-                        borderRadius: BorderRadius.circular(cornerRadius), // 사각형 버튼
-                      ),
-                    ), 
-                    child: const Text("주문",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: buttonOrder,
-                      ),
-                    ),
-                  ),
+                  const HomeviewOrederbuttonView(buttonText: "주문",buttonBackGroundColor: buttonOrderBackGround, buttonTextColor: buttonOrder, cornerRadius: cornerRadius),
                   SafeArea(
                     child: Container(
                     height: 100,

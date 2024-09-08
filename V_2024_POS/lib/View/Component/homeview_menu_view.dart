@@ -27,6 +27,7 @@ class HomeViewMenuButton extends StatelessWidget {
           shape: RoundedRectangleBorder( // Border 설정
             borderRadius: BorderRadius.circular(cornerRadius), // 사각형 버튼
           ),
+          elevation: 0, // 그림자 제거
         ),
         child: Column(
           children: [
