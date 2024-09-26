@@ -8,8 +8,8 @@ import 'package:possystem/View/TabView/pos_chart_view.dart';
 class MenuList{
   final List<Widget> pages = [
     PosHomeView(),
-    PosOrderView(),
-    PosChartView(),
-    PosSettingView(),
+    const PosOrderView(),
+    const PosChartView(),
+    const PosSettingView(),
   ];
 }

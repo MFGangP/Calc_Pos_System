@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:possystem/Model/db_manager.dart';
 
 class PosChartView extends StatelessWidget {
   const PosChartView({super.key});

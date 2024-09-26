@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:possystem/Model/db_manager.dart';
 
 class PosSettingView extends StatelessWidget {
   const PosSettingView({super.key});
