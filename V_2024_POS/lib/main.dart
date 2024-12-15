@@ -1,9 +1,6 @@
-import 'dart:io';
 import 'package:window_manager/window_manager.dart';
 import 'package:flutter/material.dart';
 
-import 'package:mysql_client/mysql_client.dart';
-import 'package:possystem/Model/db_manager.dart';
 import 'package:possystem/View/pos_menu_view.dart';
 
 List product = [];

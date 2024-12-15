@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:possystem/View/Color/colors.dart';
 
 class TableviewDataRowView extends StatefulWidget {
   final double containerWidth;
