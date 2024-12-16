@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:possystem/View/Color/colors.dart';
-import 'package:possystem/ViewModel/menu_List.dart';
+import 'package:possystem/shared/utils/color_constants.dart';
+import 'package:possystem/features/pos/presentation/pos_home_view/pos_home_view.dart';
+import 'package:possystem/features/pos/presentation/pos_setting_view/pos_setting_view.dart';
+import 'package:possystem/features/pos/presentation/pos_order_view/pos_order_view.dart';
+import 'package:possystem/features/pos/presentation/pos_chart_view/pos_chart_view.dart';
 
 class PosMenuView extends StatefulWidget {
   const PosMenuView({super.key});
@@ -16,23 +19,23 @@ class _PosMenuViewState extends State<PosMenuView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: menuBackGroundColor,
-    // 가로 축
+      // 가로 축
       body: Row(
         children: <Widget>[
           // 세로 축
           Column(
             children: <Widget>[
-             const SizedBox(height: 10),
-            // 메뉴 버튼 생성
-             Container(
-               width: 72,
-               // Image 크기 조절을 위한 Padding 추가
-               padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 6),
-               child: Image.asset(
-                        'assets/images/logo.png',
-                        height: 47,
-                        fit: BoxFit.contain,
-                      ),
+              const SizedBox(height: 10),
+              // 메뉴 버튼 생성
+              Container(
+                width: 72,
+                // Image 크기 조절을 위한 Padding 추가
+                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 6),
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  height: 47,
+                  fit: BoxFit.contain,
+                ),
               ),
               _buildMenuIcon(Icons.home, 0),
               _buildMenuIcon(Icons.format_list_bulleted, 1),
@@ -49,6 +52,7 @@ class _PosMenuViewState extends State<PosMenuView> {
       ),
     );
   }
+
   // 반복되는 위젯 그리기 작업을 줄이기 위해서 _buildMenuIcon 메서드를 사용하여 MenuIcon 위젯을 생성
   // 이 메서드는 icon과 index를 받아서 MenuIcon을 구성.
   Widget _buildMenuIcon(IconData icon, int index) {
@@ -64,6 +68,16 @@ class _PosMenuViewState extends State<PosMenuView> {
       },
     );
   }
+}
+
+// 페이지 리스트로 한번에 불러오기위해 선언
+class MenuList {
+  final List<Widget> pages = [
+    const PosHomeView(),
+    const PosOrderView(),
+    const PosChartView(),
+    const PosSettingView(),
+  ];
 }
 
 // 아이콘을 일정한 크기로 뽑기 위해 재사용을 하려고 만들 클래스
@@ -86,11 +100,12 @@ class MenuIcon extends StatelessWidget {
       height: 52,
       child: IconButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: menuBackGroundColor, // 이미 menuBackGroundColor는 Color 객체
+          backgroundColor:
+              menuBackGroundColor, // 이미 menuBackGroundColor는 Color 객체
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(0), // 사각형 버튼
           ),
-        ),  //
+        ), //
         icon: Icon(
           icon,
           color: isActive ? Colors.orange : Colors.grey,

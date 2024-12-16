@@ -1,7 +1,6 @@
 import 'package:window_manager/window_manager.dart';
 import 'package:flutter/material.dart';
-
-import 'package:possystem/View/pos_menu_view.dart';
+import 'package:possystem/shared/widgets/pos_Menu_View.dart';
 
 List product = [];
 
@@ -35,8 +34,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      return const MaterialApp(
-      home: PosMenuView(), // posMenuView를 호출합니다
-    );// Maximum size
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Pretendard',
+      ),
+      home: const PosMenuView(), // posMenuView를 호출합니다
+    ); // Maximum size
   }
 }
