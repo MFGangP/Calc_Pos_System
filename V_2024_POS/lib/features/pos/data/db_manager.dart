@@ -1,8 +1,9 @@
+import 'dart:ffi';
 
 import 'package:mysql_client/mysql_client.dart';
 
 class MySqlConnector {
-  Future<List<Map<String, String?>>> Products_initDB() async {
+  Future<List<Map<String, String?>>> productsInitDB() async {
     // MySQL 접속 설정
     final conn = await MySQLConnection.createConnection(
       host: '127.0.0.1',
@@ -15,7 +16,7 @@ class MySqlConnector {
 
     print("Connected");
 
-    IResultSet productsSelectQuery = await conn.execute('''SELECT prd_idx
+    IResultSet productsSelectQuery = await conn.execute('''SELECT prdIdx
                                                                 , prdName
                                                                 , prdPrice
                                                              FROM products;''');
@@ -36,7 +37,7 @@ class MySqlConnector {
     return products;
   }
 
-  Future<Map<String?, Map<String, String?>>> orders_initDB() async {
+  Future<Map<String?, Map<String, String?>>> ordersInitDB() async {
     // MySQL 접속 설정
     final conn = await MySQLConnection.createConnection(
       host: '127.0.0.1',
@@ -55,12 +56,13 @@ class MySqlConnector {
                                                                , order_num
                                                             FROM orders;''');
 
-    var orders = { for (var row in ordersSelectQuery.rows)
-      row.colAt(0): {
-        'order_dt': row.colAt(1),
-        'order_price': row.colAt(2),
-        'order_num': row.colAt(3)
-      }
+    var orders = {
+      for (var row in ordersSelectQuery.rows)
+        row.colAt(0): {
+          'order_dt': row.colAt(1),
+          'order_price': row.colAt(2),
+          'order_num': row.colAt(3)
+        }
     };
 
     await conn.close();
@@ -70,7 +72,7 @@ class MySqlConnector {
     return orders;
   }
 
-  Future<Map<String?, Map<String, String?>>> orderitems_initDB() async {
+  Future<Map<String?, Map<String, String?>>> orderitemsInitDB() async {
     // MySQL 접속 설정
     final conn = await MySQLConnection.createConnection(
       host: '127.0.0.1',
@@ -90,15 +92,15 @@ class MySqlConnector {
                                                                    , total_price
                                                                 FROM orderitems;''');
 
-    var orderitems = { for (var row in orderitemsSelectQuery.rows)
-      row.colAt(0): {
-        'prd_idx': row.colAt(1),
-        'ord_idx': row.colAt(2),
-        'quantity': row.colAt(3),
-        'total_price': row.colAt(4),
-      }
+    var orderitems = {
+      for (var row in orderitemsSelectQuery.rows)
+        row.colAt(0): {
+          'prd_idx': row.colAt(1),
+          'ord_idx': row.colAt(2),
+          'quantity': row.colAt(3),
+          'total_price': row.colAt(4),
+        }
     };
-
 
     await conn.close();
 
@@ -107,9 +109,10 @@ class MySqlConnector {
     return orderitems;
   }
 
-  Future<void> insert_initDB() async {
-    List<Map<String, String>> insertOrdersDB = [];
-    List<Map<String, String>> insertOrderitemsDB = [];
+  Future<void> insertOrderData(String orderDt, String orderPrice, Int prdIdx,
+      Int ordIdx, Int quantity, Int totalPrice) async {
+    List<Map<String, String>> insertOrderData = [];
+    List<Map<String, String>> insertOrderitemData = [];
     // MySQL 접속 설정
     final conn = await MySQLConnection.createConnection(
       host: '127.0.0.1',
@@ -129,9 +132,10 @@ class MySqlConnector {
                                                         ( %s
                                                         , %s)''');
 
-    // orderitems - oim_idx(아이템 테이블 primary KEY - AI), prd_idx(제품 번호 - table = products), 
+    // orderitems - oim_idx(아이템 테이블 primary KEY - AI), prd_idx(제품 번호 - table = products),
     // ord_idx(주문 번호 - table = orders), quantity(제품 주문 개수 - 해당 제품), total_price(해당 제품 총액)
-    IResultSet orderitemsInsertQuery = await conn.execute('''INSERT INTO orderitems
+    IResultSet orderitemsInsertQuery =
+        await conn.execute('''INSERT INTO orderitems
                                                              SELECT 0
                                                                   , (SELECT prd_idx
                                                                FROM products
@@ -141,7 +145,7 @@ class MySqlConnector {
                                                               ORDER BY ord_idx DESC LIMIT 1)
                                                                   , %s
                                                                   , %s ''');
-    var insertOrders = { 
+    var insertOrders = {
       for (var row in ordersQuery.rows)
         row.colAt(0): {
           'order_dt': row.colAt(1),
@@ -149,7 +153,7 @@ class MySqlConnector {
         }
     };
 
-    var insertOrderitems = { 
+    var insertOrderitems = {
       for (var row in ordersQuery.rows)
         row.colAt(0): {
           'prd_idx': row.colAt(1),
@@ -159,12 +163,9 @@ class MySqlConnector {
         }
     };
 
-
     await conn.close();
 
     print(insertOrders);
     print('---------------------------------------------');
   }
-
 }
-

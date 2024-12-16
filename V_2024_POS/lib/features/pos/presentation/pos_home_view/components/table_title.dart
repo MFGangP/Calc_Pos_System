@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:possystem/View/Color/colors.dart';
+import 'package:possystem/shared/utils/color_constants.dart';
 
 class HomeViewTableTitle extends StatelessWidget {
   final double containerWidth;
@@ -21,6 +21,7 @@ class HomeViewTableTitle extends StatelessWidget {
       return menuTextColor; // 기본 색상
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,11 +37,11 @@ class HomeViewTableTitle extends StatelessWidget {
         ),
       ),
       alignment: Alignment.center,
-        child: Text(
-          containerTitle,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: _getTextColor(),
+      child: Text(
+        containerTitle,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: _getTextColor(),
         ),
       ),
     );
