@@ -129,3 +129,10 @@
         - 테이블 행 버튼 및 데이터 틀 생성
     
 <img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/2024_07_22.png?raw=true" width="640">
+
+## 15번째 업로드 (2024.12.16)
+    - 플러터 형식 폴더 변경
+    - 메뉴 선택시 DataRow 생성
+    
+<img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/2024_12_16.png?raw=true" width="640">
+
