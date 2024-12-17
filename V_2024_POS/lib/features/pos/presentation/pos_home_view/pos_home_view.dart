@@ -5,6 +5,7 @@ import 'package:possystem/features/pos/presentation/pos_home_view/components/men
 import 'package:possystem/features/pos/presentation/pos_home_view/components/order_button.dart';
 import 'package:possystem/features/pos/presentation/pos_home_view/components/table_title.dart';
 import 'package:possystem/shared/utils/color_constants.dart';
+import 'package:possystem/features/pos/data/menu_manager.dart';
 
 class PosHomeView extends StatefulWidget {
   const PosHomeView({super.key});
@@ -17,6 +18,7 @@ class _PosHomeViewState extends State<PosHomeView> {
   static const double cornerRadius = 13;
   static const double datatableheight = 483;
   static const double datatablewidth = 522;
+  final MenuManager menuManager = MenuManager(); // 인스턴스 생성
 
   List<DataRow> tableContentList = [];
   Future<List<Map<String, String?>>> products =
@@ -59,9 +61,6 @@ class _PosHomeViewState extends State<PosHomeView> {
                                         j < i + 4 && j < productList.length;
                                         j++) ...[
                                       GestureDetector(
-                                        onTap: () {
-                                          print('HomeViewMenuButton tapped');
-                                        },
                                         child: Padding(
                                           // 가로 여백
                                           padding:
@@ -70,13 +69,18 @@ class _PosHomeViewState extends State<PosHomeView> {
                                             menuName: productList[j]
                                                     ['prdName'] ??
                                                 'No Name',
-                                            menuPrice: int.parse(
-                                                productList[j]['prdPrice']!),
-                                            onMenuCountChanged:
-                                                (String menuName, int menuPrice,
-                                                    int menuCount) {
-                                              addOrUpdateMenuRow(menuName,
-                                                  menuPrice, menuCount, true);
+                                            onPressed: () {
+                                              debugPrint(
+                                                  '${productList[j]['prdName']}');
+                                              debugPrint(
+                                                  '${productList[j]['prdPrice']}');
+                                              menuManager.addOrUpdateMenuRow(
+                                                  productList[j]['prdName'] ??
+                                                      'No Name',
+                                                  int.parse(productList[j]
+                                                          ['prdPrice'] ??
+                                                      '0'),
+                                                  true);
                                             },
                                           ),
                                         ),
@@ -209,7 +213,7 @@ class _PosHomeViewState extends State<PosHomeView> {
                         ),
                         const Spacer(),
                         Text(
-                          "${calculateTotalCost()}원",
+                          "${menuManager.calculateTotalCost()}원",
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             color: tableTotalCostColor,
@@ -312,7 +316,8 @@ class _PosHomeViewState extends State<PosHomeView> {
               IconButton(
                 onPressed: () {
                   setState(() {
-                    addOrUpdateMenuRow(menuName, menuPrice, menuCount, false);
+                    menuManager.addOrUpdateMenuRow(
+                        menuName, menuPrice, true); // 인스턴스를 통해 호출
                   });
                 },
                 icon: const Icon(Icons.remove, color: buttonPlusMinus),
@@ -338,7 +343,7 @@ class _PosHomeViewState extends State<PosHomeView> {
                 onPressed: () {
                   // 수량을 1 증가시키고 다시 호출
                   setState(() {
-                    addOrUpdateMenuRow(menuName, menuPrice, menuCount, true);
+                    menuManager.addOrUpdateMenuRow(menuName, menuPrice, true);
                   });
                 },
                 icon: const Icon(Icons.add, color: buttonPlusMinus),
@@ -358,54 +363,54 @@ class _PosHomeViewState extends State<PosHomeView> {
     );
   }
 
-  // 클릭 시 DataRow를 생성하는 로직
-  void addOrUpdateMenuRow(
-      String menuName, int menuPrice, int menuCount, bool countingBool) {
-    setState(() {
-      // 항목이 이미 존재하는지 확인
-      final existingRowIndex = tableContentList.indexWhere((row) {
-        final cells = row.cells;
-        return (cells[1].child as Text).data == menuName;
-      });
+  // // 클릭 시 DataRow를 생성하는 로직
+  // void addOrUpdateMenuRow(
+  //     String menuName, int menuPrice, int menuCount, bool countingBool) {
+  //   setState(() {
+  //     // 항목이 이미 존재하는지 확인
+  //     final existingRowIndex = tableContentList.indexWhere((row) {
+  //       final cells = row.cells;
+  //       return (cells[1].child as Text).data == menuName;
+  //     });
 
-      if (existingRowIndex != -1) {
-        // 항목이 존재하면 menuCount 업데이트
-        final existingRow = tableContentList[existingRowIndex];
-        // Row의 자식 중에서 Text 위젯을 가져옴
-        final rowWidget = existingRow.cells[3].child as Row;
-        // 위젯의 데이터를 문자열에서 정수로 변환
-        final menuCountText = rowWidget.children[3] as Text;
-        // 메뉴 뷰의 메뉴 갯수 보다 1 증가한 (적용되어야 할) 현재 갯수
-        final currentCount = int.parse(menuCountText.data!);
-        if (countingBool == true) {
-          // 수량이 변경된 경우에만 업데이트
-          final updatedRow =
-              buildDataRow(menuName, menuPrice, currentCount + 1);
-          tableContentList[existingRowIndex] = updatedRow;
-        }
-        // 수량이 1보다 크면 1 감소시키고 다시 호출
-        else if (countingBool == false && currentCount > 1) {
-          // 수량이 변경된 경우에만 업데이트
-          final updatedRow =
-              buildDataRow(menuName, menuPrice, currentCount - 1);
-          tableContentList[existingRowIndex] = updatedRow;
-        }
-      } else {
-        // 항목이 없으면 새로 추가
-        tableContentList.add(buildDataRow(menuName, menuPrice, menuCount));
-      }
-    });
-  }
+  //     if (existingRowIndex != -1) {
+  //       // 항목이 존재하면 menuCount 업데이트
+  //       final existingRow = tableContentList[existingRowIndex];
+  //       // Row의 자식 중에서 Text 위젯을 가져옴
+  //       final rowWidget = existingRow.cells[3].child as Row;
+  //       // 위젯의 데이터를 문자열에서 정수로 변환
+  //       final menuCountText = rowWidget.children[3] as Text;
+  //       // 메뉴 뷰의 메뉴 갯수 보다 1 증가한 (적용되어야 할) 현재 갯수
+  //       final currentCount = int.parse(menuCountText.data!);
+  //       if (countingBool == true) {
+  //         // 수량이 변경된 경우에만 업데이트
+  //         final updatedRow =
+  //             buildDataRow(menuName, menuPrice, currentCount + 1);
+  //         tableContentList[existingRowIndex] = updatedRow;
+  //       }
+  //       // 수량이 1보다 크면 1 감소시키고 다시 호출
+  //       else if (countingBool == false && currentCount > 1) {
+  //         // 수량이 변경된 경우에만 업데이트
+  //         final updatedRow =
+  //             buildDataRow(menuName, menuPrice, currentCount - 1);
+  //         tableContentList[existingRowIndex] = updatedRow;
+  //       }
+  //     } else {
+  //       // 항목이 없으면 새로 추가
+  //       tableContentList.add(buildDataRow(menuName, menuPrice, menuCount));
+  //     }
+  //   });
+  // }
 
-  // 총 가격을 계산하는 메서드
-  int calculateTotalCost() {
-    int totalCost = 0;
-    for (var row in tableContentList) {
-      final cells = row.cells;
-      final menuPriceText = (cells[2].child as Text).data!;
-      final menuPrice = int.parse(menuPriceText.replaceAll("원", ""));
-      totalCost += menuPrice;
-    }
-    return totalCost;
-  }
+  // // 총 가격을 계산하는 메서드
+  // int calculateTotalCost() {
+  //   int totalCost = 0;
+  //   for (var row in tableContentList) {
+  //     final cells = row.cells;
+  //     final menuPriceText = (cells[2].child as Text).data!;
+  //     final menuPrice = int.parse(menuPriceText.replaceAll("원", ""));
+  //     totalCost += menuPrice;
+  //   }
+  //   return totalCost;
+  // }
 }
