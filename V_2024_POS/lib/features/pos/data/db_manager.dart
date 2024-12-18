@@ -2,6 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:mysql_client/mysql_client.dart';
 
 class MySqlConnector {
+  List<bool> orderCompleteExistence = [true, false, false];
+
+  // 버튼 상태를 갱신하는 함수
+  void updateOrderState(int index) {
+    for (int i = 0; i < orderCompleteExistence.length; i++) {
+      orderCompleteExistence[i] = (i == index);
+      if (index == 0) {
+        ordersAllData();
+      } else if (index == 1) {
+        ordersStateData(0);
+      } else {
+        ordersStateData(1);
+      }
+    }
+  }
+
   // 공통 MySQL 연결 생성 함수
   Future<MySQLConnection> _createConnection() async {
     final conn = await MySQLConnection.createConnection(
@@ -40,35 +56,165 @@ class MySqlConnector {
     return products;
   }
 
-  // 주문 번호 받기 위한 DB 쿼리문
-  Future<Map<String?, Map<String, String?>>> ordersData() async {
+  // 오늘 주문 기록 전체 다 불러오기 위한 DB쿼리문
+  Future<List<Map<String, dynamic>>> ordersAllData() async {
     final conn = await _createConnection();
+
     /*
       orders (주문번호처리)
-      idx, 주문 날짜, 주문 가격
-      ord_idx, order_dt, order_price
+      idx, 
+      주문 날짜, 
+      주문 가격
+      ord_idx, 
+      order_dt, 
+      order_price
     */
-    IResultSet ordersSelectQuery = await conn.execute(''' SELECT ordIdx
-                                                               , orderDt
-                                                               , orderPrice
-                                                               , orderNum
-                                                            FROM orders;''');
 
-    var orders = {
-      for (var row in ordersSelectQuery.rows)
-        row.colAt(0): {
-          'orderDt': row.colAt(1),
-          'orderPrice': row.colAt(2),
-          'orderNum': row.colAt(3)
-        }
-    };
+    IResultSet ordersSelectQuery = await conn.execute('''SELECT oim.ordIdx
+                                                              , ods.orderNum
+                                                              , prd.prdName
+                                                              , prd.prdPrice
+                                                              , oim.quantity
+                                                              , oim.totalPrice 
+                                                              , ods.orderPrice
+                                                              , ods.orderDt
+                                                              , ods.orderState
+                                                           FROM calckiosk_new.orderitems as oim
+                                                          INNER JOIN calckiosk_new.orders as ods
+                                                             ON oim.ordIdx = ods.ordIdx
+                                                          INNER JOIN calckiosk_new.products as prd
+                                                             ON prd.prdIdx = oim.prdIdx
+                                                          WHERE DATE(ods.orderDt) = CURDATE()''');
+
+    var orders = <Map<String, dynamic>>[];
+
+    for (var row in ordersSelectQuery.rows) {
+      orders.add({
+        'ordIdx': row.colAt(0),
+        'orderNum': row.colAt(1),
+        'prdName': row.colAt(2),
+        'prdPrice': row.colAt(3),
+        'quantity': row.colAt(4),
+        'totalPrice': row.colAt(5),
+        'orderPrice': row.colAt(6),
+        'orderDt': row.colAt(7),
+        'orderState': row.colAt(8),
+      });
+    }
 
     debugPrint('$orders');
+
     await conn.close();
     return orders;
   }
 
-  // 오늘 날짜에 주문된 주문 기록을 받기 위한 DB 쿼리문
+  // 오늘 주문 기록의 특정 주문 번호 기록을 받기 위한 DB 쿼리문
+  Future<List<Map<String, dynamic>>> ordersStateData(int orderState) async {
+    final conn = await _createConnection();
+
+    /*
+      orders (주문번호처리)
+      idx, 
+      주문 날짜, 
+      주문 가격
+      ord_idx, 
+      order_dt, 
+      order_price
+    */
+
+    IResultSet ordersSelectQuery = await conn.execute('''SELECT oim.ordIdx
+                                                              , ods.orderNum
+                                                              , prd.prdName
+                                                              , prd.prdPrice
+                                                              , oim.quantity
+                                                              , oim.totalPrice 
+                                                              , ods.orderPrice
+                                                              , ods.orderDt
+                                                              , ods.orderState
+                                                           FROM calckiosk_new.orderitems as oim
+                                                          INNER JOIN calckiosk_new.orders as ods
+                                                             ON oim.ordIdx = ods.ordIdx
+                                                          INNER JOIN calckiosk_new.products as prd
+                                                             ON prd.prdIdx = oim.prdIdx
+                                                          WHERE DATE(ods.orderDt) = CURDATE() 
+                                                            AND ods.orderState = $orderState;''');
+
+    var orders = <Map<String, dynamic>>[];
+
+    for (var row in ordersSelectQuery.rows) {
+      orders.add({
+        'ordIdx': row.colAt(0),
+        'orderNum': row.colAt(1),
+        'prdName': row.colAt(2),
+        'prdPrice': row.colAt(3),
+        'quantity': row.colAt(4),
+        'totalPrice': row.colAt(5),
+        'orderPrice': row.colAt(6),
+        'orderDt': row.colAt(7),
+        'orderState': row.colAt(8),
+      });
+    }
+
+    debugPrint('$orders');
+
+    await conn.close();
+    return orders;
+  }
+
+  // 오늘 주문 기록의 특정 주문 번호 기록을 받기 위한 DB 쿼리문
+  Future<List<Map<String, dynamic>>> ordersNumData(int orderNum) async {
+    final conn = await _createConnection();
+
+    /*
+      orders (주문번호처리)
+      idx, 
+      주문 날짜, 
+      주문 가격
+      ord_idx, 
+      order_dt, 
+      order_price
+    */
+
+    IResultSet ordersSelectQuery = await conn.execute('''SELECT oim.ordIdx
+                                                              , ods.orderNum
+                                                              , prd.prdName
+                                                              , prd.prdPrice
+                                                              , oim.quantity
+                                                              , oim.totalPrice 
+                                                              , ods.orderPrice
+                                                              , ods.orderDt
+                                                              , ods.orderState
+                                                          FROM calckiosk_new.orderitems as oim
+                                                         INNER JOIN calckiosk_new.orders as ods
+                                                            ON oim.ordIdx = ods.ordIdx
+                                                         INNER JOIN calckiosk_new.products as prd
+                                                            ON prd.prdIdx = oim.prdIdx
+                                                         WHERE DATE(ods.orderDt) = CURDATE() 
+                                                           AND ods.orderNum = $orderNum;''');
+
+    var orders = <Map<String, dynamic>>[];
+
+    for (var row in ordersSelectQuery.rows) {
+      orders.add({
+        'ordIdx': row.colAt(0),
+        'orderNum': row.colAt(1),
+        'prdName': row.colAt(2),
+        'prdPrice': row.colAt(3),
+        'quantity': row.colAt(4),
+        'totalPrice': row.colAt(5),
+        'orderPrice': row.colAt(6),
+        'orderDt': row.colAt(7),
+        'orderState': row.colAt(8),
+      });
+    }
+
+    debugPrint('$orders');
+
+    await conn.close();
+    return orders;
+  }
+
+  // 오늘 날짜에 주문된 주문 기록 중 가장 최근 번호를 받기 위한 DB 쿼리문
   Future<Map<String?, Map<String, String?>>> ordersDataToday() async {
     final conn = await _createConnection();
     /*
@@ -158,7 +304,9 @@ class MySqlConnector {
   Future<void> insertOrderData(String orderDt, int orderPrice,
       List<Map<String, dynamic>> orderList) async {
     final conn = await _createConnection();
+
     int orderNum = 0;
+
     // ordersDataToday 함수 호출 및 결과 받기
     Map<String, String?> orderNumDB = await orderNumToday();
 

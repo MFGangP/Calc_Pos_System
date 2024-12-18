@@ -13,11 +13,14 @@ class DataRowCell {
       cells: [
         // 삭제
         DataCell(
-          IconButton(
-            onPressed: () {
-              debugPrint('Delete!');
-            },
-            icon: const Icon(Icons.delete, color: tableDeleteRowColor),
+          Align(
+            alignment: Alignment.center,
+            child: IconButton(
+              onPressed: () {
+                debugPrint('Delete!');
+              },
+              icon: const Icon(Icons.delete, color: tableDeleteRowColor),
+            ),
           ),
         ),
         // 제품명
@@ -32,9 +35,12 @@ class DataRowCell {
         ),
         // 총 가격
         DataCell(
-          Text(
-            "${menuPrice * menuCount}원",
-            style: TextStyle(color: menuTextColor.withOpacity(0.6)),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "${menuPrice * menuCount}원",
+              style: TextStyle(color: menuTextColor.withOpacity(0.6)),
+            ),
           ),
         ),
         // 주문 수량

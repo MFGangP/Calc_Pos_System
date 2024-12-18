@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:possystem/shared/utils/color_constants.dart';
 import 'package:possystem/features/pos/data/db_manager.dart';
+import 'package:possystem/features/pos/data/menu_manager.dart';
 import 'package:possystem/features/pos/presentation/pos_home_view/components/menu_button.dart';
 import 'package:possystem/features/pos/presentation/pos_home_view/components/order_button.dart';
 import 'package:possystem/features/pos/presentation/pos_home_view/components/table_datarow.dart';
 import 'package:possystem/features/pos/presentation/pos_home_view/components/table_title.dart';
-import 'package:possystem/shared/utils/color_constants.dart';
-import 'package:possystem/features/pos/data/menu_manager.dart';
 
 class PosHomeView extends StatefulWidget {
   const PosHomeView({super.key});
@@ -45,7 +45,7 @@ class _PosHomeViewState extends State<PosHomeView> {
       color: mainBackGroundColor,
       child: Row(
         children: <Widget>[
-          const SizedBox(width: 16),
+          const SizedBox(width: 35),
           Column(
             children: [
               Container(
@@ -156,7 +156,7 @@ class _PosHomeViewState extends State<PosHomeView> {
                     dataRowColor:
                         WidgetStateProperty.all<Color>(tableBackGroundColor),
                     horizontalMargin: 0,
-                    dividerThickness: 0,
+                    dividerThickness: 1,
                     columnSpacing: 0,
                     headingRowHeight: 0,
                     columns: const [
@@ -283,7 +283,6 @@ class _PosHomeViewState extends State<PosHomeView> {
                             _menuManager.getOrderList());
                         _menuManager.clearTableContent();
                       });
-
                       // DBManager에 orderList 전달
                     },
                   )
