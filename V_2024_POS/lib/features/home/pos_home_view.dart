@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:possystem/shared/utils/color_constants.dart';
-import 'package:possystem/features/pos/data/db_manager.dart';
-import 'package:possystem/features/pos/data/menu_manager.dart';
-import 'package:possystem/features/pos/presentation/pos_home_view/components/menu_button.dart';
-import 'package:possystem/features/pos/presentation/pos_home_view/components/order_button.dart';
-import 'package:possystem/features/pos/presentation/pos_home_view/components/table_datarow.dart';
-import 'package:possystem/features/pos/presentation/pos_home_view/components/table_title.dart';
+import 'package:possystem/shared/db_manager.dart';
+import 'package:possystem/shared/menu_manager.dart';
+import 'package:possystem/features/home/presentation/menu_button.dart';
+import 'package:possystem/features/home/presentation/order_button.dart';
+import 'package:possystem/features/home/presentation/table_datarow.dart';
+import 'package:possystem/features/home/presentation/table_title.dart';
 
 class PosHomeView extends StatefulWidget {
   const PosHomeView({super.key});
@@ -208,7 +208,7 @@ class _PosHomeViewState extends State<PosHomeView> {
                     ),
                   ),
                   Container(
-                    height: 60,
+                    height: 69,
                     width: _datatablewidth,
                     decoration: const BoxDecoration(
                       color: tableBackGroundColor,
@@ -251,7 +251,7 @@ class _PosHomeViewState extends State<PosHomeView> {
               ),
               SafeArea(
                   child: Container(
-                height: 20,
+                height: 19,
               )),
               Row(
                 children: [
@@ -290,7 +290,7 @@ class _PosHomeViewState extends State<PosHomeView> {
               ),
             ],
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 15),
         ],
       ),
     );

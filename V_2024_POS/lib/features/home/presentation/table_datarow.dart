@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:possystem/shared/utils/color_constants.dart';
-import 'package:possystem/features/pos/data/menu_manager.dart';
+import 'package:possystem/shared/menu_manager.dart';
 
 class DataRowCell {
   final MenuManager menuManager;
@@ -82,7 +82,7 @@ class DataRowCell {
                   backgroundColor: buttonPlusMinusBackGround,
                 ),
               ),
-              const SizedBox(width: 7),
+              const SizedBox(width: 7)
             ],
           ),
         ),

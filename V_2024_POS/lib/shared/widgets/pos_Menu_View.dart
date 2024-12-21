@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:possystem/shared/utils/color_constants.dart';
-import 'package:possystem/features/pos/presentation/pos_home_view/pos_home_view.dart';
-import 'package:possystem/features/pos/presentation/pos_setting_view/pos_setting_view.dart';
-import 'package:possystem/features/pos/presentation/pos_order_view/pos_order_view.dart';
-import 'package:possystem/features/pos/presentation/pos_chart_view/pos_chart_view.dart';
+import 'package:possystem/features/home/pos_home_view.dart';
+import 'package:possystem/features/setting/pos_setting_view.dart';
+import 'package:possystem/features/order/pos_order_view.dart';
+import 'package:possystem/features/chart/pos_chart_view.dart';
 
 class PosMenuView extends StatefulWidget {
   const PosMenuView({super.key});

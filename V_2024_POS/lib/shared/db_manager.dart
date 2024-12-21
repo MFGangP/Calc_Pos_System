@@ -2,22 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mysql_client/mysql_client.dart';
 
 class MySqlConnector {
-  List<bool> orderCompleteExistence = [true, false, false];
-
-  // 버튼 상태를 갱신하는 함수
-  void updateOrderState(int index) {
-    for (int i = 0; i < orderCompleteExistence.length; i++) {
-      orderCompleteExistence[i] = (i == index);
-      if (index == 0) {
-        ordersAllData();
-      } else if (index == 1) {
-        ordersStateData(0);
-      } else {
-        ordersStateData(1);
-      }
-    }
-  }
-
   // 공통 MySQL 연결 생성 함수
   Future<MySQLConnection> _createConnection() async {
     final conn = await MySQLConnection.createConnection(
