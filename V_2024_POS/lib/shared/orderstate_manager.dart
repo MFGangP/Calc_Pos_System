@@ -1,10 +1,14 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:possystem/shared/db_manager.dart';
 
 class OrderStateManager extends ChangeNotifier {
   final MySqlConnector _mySqlConnector = MySqlConnector();
 
-  List<Map<String, dynamic>> orders = [];
+  late Map<String?, Map<String, dynamic>> orders;
+  List<Map<String, dynamic>> orderDatas = [];
+
   List<bool> orderCompleteExistence = [true, false, false];
 
   Future<void> updateOrderState(int index) async {
@@ -13,13 +17,15 @@ class OrderStateManager extends ChangeNotifier {
       orderCompleteExistence[i] = (i == index);
     }
 
+    orders = await _mySqlConnector.ordersDataToday();
+
     // 데이터 불러오기
     if (index == 0) {
-      orders = await _mySqlConnector.ordersAllData();
+      orderDatas = await _mySqlConnector.ordersAllData();
     } else if (index == 1) {
-      orders = await _mySqlConnector.ordersStateData(0);
+      orderDatas = await _mySqlConnector.ordersStateData(0);
     } else {
-      orders = await _mySqlConnector.ordersStateData(1);
+      orderDatas = await _mySqlConnector.ordersStateData(1);
     }
 
     notifyListeners(); // 상태가 바뀌었음을 알림

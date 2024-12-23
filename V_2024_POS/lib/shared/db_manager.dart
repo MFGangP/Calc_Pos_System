@@ -214,12 +214,7 @@ class MySqlConnector {
                                                            WHERE DATE(orderDt) = CURDATE();''');
 
     var orders = {
-      for (var row in ordersSelectQuery.rows)
-        row.colAt(0): {
-          'orderDt': row.colAt(1),
-          'orderPrice': row.colAt(2),
-          'orderNum': row.colAt(3)
-        }
+      for (var row in ordersSelectQuery.rows) row.colAt(0): {'orderIdx': row.colAt(0), 'orderDt': row.colAt(1), 'orderPrice': row.colAt(2), 'orderNum': row.colAt(3)}
     };
 
     debugPrint('$orders');
@@ -237,14 +232,11 @@ class MySqlConnector {
       ord_idx, order_dt, order_price
     */
 
-    IResultSet ordersSelectQuery =
-        await conn.execute('''SELECT MAX(orderNum) as orderNum
+    IResultSet ordersSelectQuery = await conn.execute('''SELECT MAX(orderNum) as orderNum
                                 FROM calckiosk_new.orders
                                WHERE DATE(orderDt) = CURDATE();''');
 
-    var orderNums = {
-      for (var row in ordersSelectQuery.rows) 'orderNum': row.colAt(0)
-    };
+    var orderNums = {for (var row in ordersSelectQuery.rows) 'orderNum': row.colAt(0)};
 
     debugPrint('$orderNums');
     await conn.close();
@@ -285,8 +277,7 @@ class MySqlConnector {
     return orderitems;
   }
 
-  Future<void> insertOrderData(String orderDt, int orderPrice,
-      List<Map<String, dynamic>> orderList) async {
+  Future<void> insertOrderData(String orderDt, int orderPrice, List<Map<String, dynamic>> orderList) async {
     final conn = await _createConnection();
 
     int orderNum = 0;

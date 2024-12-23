@@ -100,15 +100,14 @@ class MenuIcon extends StatelessWidget {
       height: 52,
       child: IconButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor:
-              menuBackGroundColor, // 이미 menuBackGroundColor는 Color 객체
+          backgroundColor: menuBackGroundColor, // 이미 menuBackGroundColor는 Color 객체
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(0), // 사각형 버튼
           ),
         ), //
         icon: Icon(
           icon,
-          color: isActive ? Colors.orange : Colors.grey,
+          color: isActive ? iconSelectedColor : iconNonSelectedColor,
           size: 40.0,
         ),
         onPressed: onTap,
