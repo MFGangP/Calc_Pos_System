@@ -1,15 +1,5 @@
-// 개별 행의 데이터 클래스
 import 'package:flutter/material.dart';
-
-class MenuRowData {
-  final String menuName;
-  final int menuPrice;
-  int menuCount;
-
-  MenuRowData(this.menuName, this.menuPrice, this.menuCount);
-
-  int get totalCost => menuPrice * menuCount;
-}
+import 'package:possystem/features/home/models/menu_row_data.dart';
 
 class MenuManager {
   final List<MenuRowData> _tableContentList = [];

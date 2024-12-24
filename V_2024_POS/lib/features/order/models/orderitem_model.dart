@@ -1,18 +1,18 @@
 class OrderItem {
-  final int ordIdx;
-  final int orderNum;
+  final String ordIdx;
+  final String orderNum;
   final String prdName;
-  final int prdPrice;
-  final int quantity;
-  final int totalPrice;
-  final int orderPrice;
+  final String prdPrice;
+  final String quantity;
+  final String totalPrice;
+  final String orderPrice;
   final DateTime orderDt;
-  final int orderState;
+  final String orderState;
 
   OrderItem({
+    required this.prdName,
     required this.ordIdx,
     required this.orderNum,
-    required this.prdName,
     required this.prdPrice,
     required this.quantity,
     required this.totalPrice,
@@ -23,11 +23,11 @@ class OrderItem {
 }
 
 class Orders {
-  final int ordIdx;
-  final DateTime orderDt;
-  final int orderPrice;
-  final int orderNum;
-  final int orderState;
+  final String? ordIdx;
+  final String? orderDt;
+  final String? orderPrice;
+  final String? orderNum;
+  final String? orderState;
 
   Orders({
     required this.ordIdx,
@@ -38,11 +38,11 @@ class Orders {
   });
 }
 
-class OrderItemCollection {
-  final Orders orders;
-  final List<OrderItem> orderItem;
+class OrderItemList {
+  late final Orders orders;
+  final List<Map<String, dynamic>> orderItem;
 
-  OrderItemCollection({
+  OrderItemList({
     required this.orders,
     required this.orderItem,
   });

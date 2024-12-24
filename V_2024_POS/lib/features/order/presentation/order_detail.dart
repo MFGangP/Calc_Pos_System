@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:possystem/features/order/models/orderitem_model.dart';
+import 'package:possystem/features/order/presentation/order_detail_button.dart';
 import 'package:possystem/shared/utils/color_constants.dart';
 
 class OrderDetail extends StatelessWidget {
-  final OrderItemCollection orderItemCollection;
+  final OrderItemList orderItemCollection;
 
   const OrderDetail({super.key, required this.orderItemCollection});
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final orderDtString = orderItemCollection.orders.orderDt; // String 값
+    final formattedDate = orderDtString?.split('.').first; // "2024-12-24 16:24:00" 부분만 가져옴
 
     return Container(
       decoration: BoxDecoration(
@@ -23,9 +25,8 @@ class OrderDetail extends StatelessWidget {
           ),
         ],
       ),
-      width: screenWidth * 0.25, // 화면 크기에 비례하여 설정
-      height: 376,
-      padding: const EdgeInsets.all(16),
+      constraints: const BoxConstraints(maxHeight: 376, maxWidth: 348), // 최대 높이 설정
+      padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -33,8 +34,8 @@ class OrderDetail extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('주문 번호: ${orderItemCollection.orders.ordIdx}', style: const TextStyle(fontWeight: FontWeight.bold)),
-              Text('${orderItemCollection.orders.orderDt}', style: const TextStyle(color: tableDeleteRowColor)),
+              Text('주문 번호: ${orderItemCollection.orders.orderNum}', style: const TextStyle(fontWeight: FontWeight.bold)),
+              Text(formattedDate ?? '정보 없음', style: const TextStyle(color: tableDeleteRowColor)),
             ],
           ),
           const Divider(),
@@ -52,17 +53,16 @@ class OrderDetail extends StatelessWidget {
           // 주문 아이템 리스트
           Expanded(
             child: ListView.builder(
-              shrinkWrap: true,
               itemCount: orderItemCollection.orderItem.length,
               itemBuilder: (context, index) {
                 final orderItem = orderItemCollection.orderItem[index];
-                if (index >= 1) {}
+
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('${orderItem.prdName}'),
-                    Text('${orderItem.quantity}개'),
-                    Text('${orderItem.prdPrice}원'),
+                    Flexible(child: Text('${orderItem['prdName'] ?? '제품명 없음'}')),
+                    Flexible(child: Text('${orderItem['quantity'] ?? 0}개')),
+                    Flexible(child: Text('${orderItem['prdPrice'] ?? 0}원')),
                   ],
                 );
               },
@@ -72,18 +72,29 @@ class OrderDetail extends StatelessWidget {
           const Divider(),
 
           // 합계 및 버튼
-          Text('합계: ${orderItemCollection.orders.orderPrice}}원', style: const TextStyle(fontWeight: FontWeight.bold)),
+          Text('합계: ${orderItemCollection.orders.orderPrice}원', style: const TextStyle(fontWeight: FontWeight.bold)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ElevatedButton(
+              const Spacer(),
+              OrderDetailButton(
+                buttonText: "자세히",
+                cornerRadius: 6.0,
+                buttonBackGroundColor: buttonAllDeleteBackGround,
+                buttonTextColor: buttonAllDelete,
                 onPressed: () {},
-                child: const Text('자세히'),
               ),
-              ElevatedButton(
+              const SizedBox(
+                width: 12,
+              ),
+              OrderDetailButton(
+                buttonText: "결제완료",
+                cornerRadius: 6.0,
+                buttonBackGroundColor: buttonOrderBackGround,
+                buttonTextColor: buttonOrder,
                 onPressed: () {},
-                child: const Text('결제 완료'),
               ),
+              const Spacer(),
             ],
           ),
         ],

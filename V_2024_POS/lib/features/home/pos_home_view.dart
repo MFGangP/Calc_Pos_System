@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:possystem/shared/utils/color_constants.dart';
 import 'package:possystem/shared/db_manager.dart';
-import 'package:possystem/shared/menu_manager.dart';
+import 'package:possystem/features/home/data/menu_manager.dart';
 import 'package:possystem/features/home/presentation/menu_button.dart';
 import 'package:possystem/features/home/presentation/order_button.dart';
 import 'package:possystem/features/home/presentation/table_datarow.dart';
@@ -27,7 +27,6 @@ class _PosHomeViewState extends State<PosHomeView> {
   late final DataRowCell _dataRowCell; // DataRowCell 인스턴스 추가
 
   late Future<List<Map<String, String?>>> _productsFuture;
-  bool _isLoading = true;
 
   @override
   void initState() {
@@ -42,14 +41,10 @@ class _PosHomeViewState extends State<PosHomeView> {
     _productsFuture.then((value) {
       _dataRowCell = DataRowCell(
         menuManager: _menuManager,
-        onUpdate: () => setState(() {
-          _isLoading = false;
-        }), // 상태 변경 시 호출
+        onUpdate: () => setState(() {}), // 상태 변경 시 호출
       );
     }).catchError((error) {
-      setState(() {
-        _isLoading = false;
-      });
+      setState(() {});
       debugPrint("Error fetching products: $error");
     });
   }
@@ -255,10 +250,6 @@ class _PosHomeViewState extends State<PosHomeView> {
                   ),
                 ],
               ),
-              SafeArea(
-                  child: Container(
-                height: 18,
-              )),
               Expanded(
                 child: Row(
                   children: [
@@ -282,12 +273,33 @@ class _PosHomeViewState extends State<PosHomeView> {
                       buttonBackGroundColor: buttonOrderBackGround,
                       buttonTextColor: buttonOrder,
                       onPressed: () {
-                        setState(() {
-                          // debugPrint('${_menuManager.getOrderList()}');
-                          _mySqlConnector.insertOrderData(_nowDate, _menuManager.calculateTotalCost(), _menuManager.getOrderList());
-                          _menuManager.clearTableContent();
-                        });
-                        // DBManager에 orderList 전달
+                        if (_menuManager.calculateTotalCost() != 0) {
+                          setState(() {
+                            // debugPrint('${_menuManager.getOrderList()}');
+                            _mySqlConnector.insertOrderData(_nowDate, _menuManager.calculateTotalCost(), _menuManager.getOrderList());
+                            _menuManager.clearTableContent();
+                          });
+                          // DBManager에 orderList 전달
+                        } else {
+                          // 주문이 없을 경우 알림 다이얼로그 띄우기
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: const Text('주문 기록이 없습니다'),
+                                content: const Text('주문을 추가한 후 다시 시도해주세요.'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop(); // 다이얼로그 닫기
+                                    },
+                                    child: const Text('확인'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        }
                       },
                     )
                   ],
@@ -295,7 +307,7 @@ class _PosHomeViewState extends State<PosHomeView> {
               ),
             ],
           ),
-          const SizedBox(width: 15),
+          const Spacer()
         ],
       ),
     );

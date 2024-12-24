@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:possystem/shared/utils/color_constants.dart';
-import 'package:possystem/shared/menu_manager.dart';
+import 'package:possystem/features/home/data/menu_manager.dart';
 
 class DataRowCell {
   final MenuManager menuManager;
