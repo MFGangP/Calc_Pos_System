@@ -199,7 +199,7 @@ class MySqlConnector {
   }
 
   // 오늘 날짜에 주문 된 주문 기록(주문 상태에 따른 기록)을 받기 위한 DB 쿼리문
-  Future<List<Map<String, dynamic>>> ordersStateDataToday(orderState) async {
+  Future<List<Map<String, dynamic>>> ordersStateDataToday(int orderState) async {
     final conn = await _createConnection();
     /*
       orders (주문번호처리)
@@ -370,5 +370,16 @@ class MySqlConnector {
     debugPrint('주문 정보 등록 완료');
   }
 
-  ordersStateData(int i) {}
+  ordersStateDataUpdate(int ordIdx) async {
+    final conn = await _createConnection();
+
+    await conn.execute('''UPDATE calckiosk_new.orders
+                               SET orderState = 1
+                             WHERE DATE(orderDt) = CURDATE()
+                               AND ordIdx = $ordIdx;''');
+
+    await conn.close();
+
+    debugPrint('주문 상태 정보 수정 완료');
+  }
 }

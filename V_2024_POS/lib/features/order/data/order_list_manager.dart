@@ -28,7 +28,8 @@ class OrderItemCollectionManager {
           orderItem: await _mySqlConnector.ordersNumData(int.parse(order['orderNum']?.toString() ?? '1')),
         ),
       );
-      debugPrint('${order}');
+
+      debugPrint('주문 정보 하나씩 받아오는 로그 : $order');
     });
     return _orderItemListContent;
   }

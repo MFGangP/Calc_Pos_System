@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class OrderDetailButton extends StatelessWidget {
+class OrderListButton extends StatelessWidget {
   final String buttonText;
   final double cornerRadius;
   final Color buttonBackGroundColor;
   final Color buttonTextColor;
   final VoidCallback onPressed;
 
-  const OrderDetailButton({
+  const OrderListButton({
     super.key,
     required this.buttonText,
     required this.cornerRadius,
@@ -21,7 +21,7 @@ class OrderDetailButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        minimumSize: const Size(148, 43),
+        fixedSize: const Size(148, 39),
         backgroundColor: buttonBackGroundColor,
         padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(

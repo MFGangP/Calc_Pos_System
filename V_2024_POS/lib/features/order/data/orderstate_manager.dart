@@ -25,11 +25,11 @@ class OrderStateManager extends ChangeNotifier {
 
     // 데이터 불러오기
     if (index == 0) {
-      orderDatas = _orderItemCollectionManager.orderItemListCollector();
-    } else if (index == 1) {
       orderDatas = _orderItemCollectionManager.orderItemStateListCollector(0);
-    } else {
+    } else if (index == 1) {
       orderDatas = _orderItemCollectionManager.orderItemStateListCollector(1);
+    } else {
+      orderDatas = _orderItemCollectionManager.orderItemListCollector();
     }
     // orderDatas가 Future<List<OrderItemList>> 타입이므로 await을 사용해 실제 데이터가 로드될 때까지 기다림
     List<OrderItemList> orderList = await orderDatas;
