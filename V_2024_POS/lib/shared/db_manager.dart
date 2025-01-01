@@ -370,6 +370,32 @@ class MySqlConnector {
     debugPrint('주문 정보 등록 완료');
   }
 
+  Future<bool> updateProductData(int prdIdx, String prdName, int prdPrice) async {
+    try {
+      final conn = await _createConnection();
+
+      // SQL 실행
+      var result = await conn.execute('''UPDATE calckiosk_new.products
+              SET prdPrice = $prdPrice, prdName = $prdName
+            WHERE prdIdx = $prdIdx;''');
+
+      await conn.close();
+
+      // 업데이트된 행의 개수 확인
+      if (result.isNotEmpty) {
+        debugPrint('제품 정보 업데이트 성공 (수정된 행: ${result.affectedRows})');
+        return true;
+      } else {
+        debugPrint('제품 정보 업데이트 실패: 해당 제품 ID($prdIdx)가 없습니다.');
+        return false;
+      }
+    } catch (e) {
+      // 예외 처리
+      debugPrint('제품 정보 업데이트 중 오류 발생: $e');
+      return false;
+    }
+  }
+
   ordersStateDataUpdate(int ordIdx) async {
     final conn = await _createConnection();
 

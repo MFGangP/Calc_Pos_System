@@ -17,37 +17,36 @@ class PosSettingView extends StatefulWidget {
 }
 
 class _PosSettingViewState extends State<PosSettingView> {
-  static const double _cornerRadius = 13;
-  static const double _datatableheight = 483;
-  static const double _datatablewidth = 522;
-
-  final String _nowDate = DateFormat('yyyy-MM-dd').add_Hm().format(DateTime.now());
-
-  final MenuManager _menuManager = MenuManager();
   final MySqlConnector _mySqlConnector = MySqlConnector();
-  late final DataRowCell _dataRowCell; // DataRowCell 인스턴스 추가
 
   late Future<List<Map<String, String?>>> _productsFuture;
+
+  String _NameTextField = '제품명을 입력해주세요';
+  String _PriceTextField = '제품 가격을 입력해주세요';
+
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _priceController = TextEditingController();
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _priceController.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
     super.initState();
-    _loadProductData();
+    _productsFuture = _loadProductData(); // 초기화 추가
   }
 
-  Future<void> _loadProductData() async {
-    _productsFuture = _mySqlConnector.productsData();
-
-    // Future 완료 후 로딩 상태 업데이트
-    _productsFuture.then((value) {
-      _dataRowCell = DataRowCell(
-        menuManager: _menuManager,
-        onUpdate: () => setState(() {}), // 상태 변경 시 호출
-      );
-    }).catchError((error) {
-      setState(() {});
+  Future<List<Map<String, String?>>> _loadProductData() async {
+    try {
+      return await _mySqlConnector.productsData();
+    } catch (error) {
       debugPrint("Error fetching products: $error");
-    });
+      return [];
+    }
   }
 
   @override
@@ -95,6 +94,8 @@ class _PosSettingViewState extends State<PosSettingView> {
                                               menuName: productList[j]['prdName'] ?? 'No Name',
                                               onPressed: () {
                                                 setState(() {
+                                                  _nameController.text = productList[j]['prdName'] ?? '제품명이 없습니다.';
+                                                  _priceController.text = productList[j]['prdPrice'] ?? '제품 가격이 없습니다.';
                                                   // _menuManager.addAndUpdateMenuRow(productList[j]['prdName'] ?? 'No Name', int.parse(productList[j]['prdPrice'] ?? '0'));
                                                 });
                                               },
@@ -127,22 +128,22 @@ class _PosSettingViewState extends State<PosSettingView> {
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SafeArea(
-                child: Container(
-                  height: 30,
-                ),
-              ),
               const Text(
                 '제품명',
                 textAlign: TextAlign.left,
                 style: TextStyle(fontSize: 24, color: menuTextColor),
               ),
-              const TextField(
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              TextField(
+                controller: _nameController, // 연결된 컨트롤러
+                style: const TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
                 textAlign: TextAlign.left,
                 decoration: InputDecoration(
-                  hintText: '제품명을 입력해주세요',
-                  border: OutlineInputBorder(), //외곽선
+                  hintStyle: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                  hintText: _NameTextField,
+                  border: const OutlineInputBorder(),
                 ),
               ),
               const Text(
@@ -150,18 +151,32 @@ class _PosSettingViewState extends State<PosSettingView> {
                 textAlign: TextAlign.left,
                 style: TextStyle(fontSize: 24, color: menuTextColor),
               ),
-              const TextField(
-                style: TextStyle(
+              TextField(
+                controller: _priceController, // 연결된 컨트롤러
+                style: const TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.left,
                 decoration: InputDecoration(
-                  hintText: '제품 가격을 입력해주세요',
-                  border: OutlineInputBorder(), //외곽선
+                  hintStyle: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                  hintText: _PriceTextField,
+                  border: const OutlineInputBorder(),
                 ),
               ),
-              CustomButton(buttonText: '확인', cornerRadius: 10, buttonBackGroundColor: buttonOrderBackGround, buttonTextColor: buttonOrder, onPressed: () => {})
+              CustomButton(
+                buttonText: '확인',
+                cornerRadius: 10,
+                buttonBackGroundColor: buttonOrderBackGround,
+                buttonTextColor: buttonOrder,
+                onPressed: () {
+                  String name = _nameController.text; // 입력된 이름
+                  String price = _priceController.text; // 입력된 가격
+
+                  print('입력된 제품명: $name');
+                  print('입력된 가격: $price');
+                },
+              ),
             ],
           )),
           const SizedBox(width: 35),
