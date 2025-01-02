@@ -375,9 +375,9 @@ class MySqlConnector {
       final conn = await _createConnection();
 
       // SQL 실행
-      var result = await conn.execute('''UPDATE calckiosk_new.products
-              SET prdPrice = $prdPrice, prdName = $prdName
-            WHERE prdIdx = $prdIdx;''');
+      var result = await conn.execute('''UPDATE products
+                                            SET prdPrice = $prdPrice, prdName = '$prdName'
+                                          WHERE prdIdx = $prdIdx;''');
 
       await conn.close();
 
@@ -400,9 +400,9 @@ class MySqlConnector {
     final conn = await _createConnection();
 
     await conn.execute('''UPDATE calckiosk_new.orders
-                               SET orderState = 1
-                             WHERE DATE(orderDt) = CURDATE()
-                               AND ordIdx = $ordIdx;''');
+                             SET orderState = 1
+                           WHERE DATE(orderDt) = CURDATE()
+                             AND ordIdx = $ordIdx;''');
 
     await conn.close();
 

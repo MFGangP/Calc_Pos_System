@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:possystem/shared/utils/color_constants.dart';
 
 class PosChartView extends StatelessWidget {
   const PosChartView({super.key});
@@ -6,9 +7,7 @@ class PosChartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('매출 분석 페이지 제작 중'),
-      ),
+      backgroundColor: mainBackGroundColor,
       body: Center(
         child: ElevatedButton(
           child: const Text('매출 분석 페이지 제작 중'),

@@ -38,6 +38,15 @@ class MenuManager {
     }
   }
 
+  // DataRow 추가/수정 로직
+  void deleteMenuRow(String menuName) {
+    final existingRowIndex = _tableContentList.indexWhere(
+      (row) => row.menuName == menuName,
+    );
+
+    _tableContentList.remove(_tableContentList[existingRowIndex]);
+  }
+
   // 전체 삭제
   void clearTableContent() {
     _tableContentList.clear();

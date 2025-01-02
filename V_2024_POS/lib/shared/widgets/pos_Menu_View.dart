@@ -42,6 +42,7 @@ class _PosMenuViewState extends State<PosMenuView> {
               _buildMenuIcon(Icons.query_stats, 2),
               const Spacer(),
               _buildMenuIcon(Icons.settings, 3),
+              const SizedBox(height: 10)
             ],
           ),
           // Expanded는 child 요소를 렌더링 영역의 최대 사이즈까지 확장시켜 주는 위젯.

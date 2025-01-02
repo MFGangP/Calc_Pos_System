@@ -1,13 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:intl/intl.dart';
-import 'package:possystem/shared/utils/color_constants.dart';
+import 'package:flutter/services.dart';
 import 'package:possystem/shared/db_manager.dart';
-import 'package:possystem/features/home/data/menu_manager.dart';
+import 'package:possystem/features/setting/data/menu_edit_manager.dart';
+import 'package:possystem/shared/utils/color_constants.dart';
 import 'package:possystem/features/home/presentation/menu_button.dart';
 import 'package:possystem/features/home/presentation/order_button.dart';
-import 'package:possystem/features/home/presentation/table_datarow.dart';
-import 'package:possystem/features/home/presentation/table_title.dart';
 
 class PosSettingView extends StatefulWidget {
   const PosSettingView({super.key});
@@ -18,21 +17,22 @@ class PosSettingView extends StatefulWidget {
 
 class _PosSettingViewState extends State<PosSettingView> {
   final MySqlConnector _mySqlConnector = MySqlConnector();
-
+  final MenuEditManager _menuEditManager = MenuEditManager();
   late Future<List<Map<String, String?>>> _productsFuture;
 
-  String _NameTextField = '제품명을 입력해주세요';
-  String _PriceTextField = '제품 가격을 입력해주세요';
+  final String _nameTextField = '제품명을 입력해주세요';
+  final String _priceTextField = '제품 가격을 입력해주세요';
 
+  String _idxController = '';
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _priceController = TextEditingController();
 
-  @override
-  void dispose() {
-    _nameController.dispose();
-    _priceController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _nameController.dispose();
+  //   _priceController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   void initState() {
@@ -94,9 +94,9 @@ class _PosSettingViewState extends State<PosSettingView> {
                                               menuName: productList[j]['prdName'] ?? 'No Name',
                                               onPressed: () {
                                                 setState(() {
+                                                  _idxController = productList[j]['prdIdx'] ?? '';
                                                   _nameController.text = productList[j]['prdName'] ?? '제품명이 없습니다.';
                                                   _priceController.text = productList[j]['prdPrice'] ?? '제품 가격이 없습니다.';
-                                                  // _menuManager.addAndUpdateMenuRow(productList[j]['prdName'] ?? 'No Name', int.parse(productList[j]['prdPrice'] ?? '0'));
                                                 });
                                               },
                                             ),
@@ -123,60 +123,93 @@ class _PosSettingViewState extends State<PosSettingView> {
             ],
           ),
           const SizedBox(width: 16),
-          // DataTable 제목 행
           Expanded(
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SafeArea(
+                child: Container(
+                  height: 24,
+                ),
+              ),
               const Text(
                 '제품명',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 24, color: menuTextColor),
+                style: TextStyle(fontSize: 24, color: menuTextColor, fontWeight: FontWeight.w600),
               ),
               TextField(
-                controller: _nameController, // 연결된 컨트롤러
-                style: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
+                controller: _nameController,
+                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                 textAlign: TextAlign.left,
                 decoration: InputDecoration(
-                  hintStyle: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-                  hintText: _NameTextField,
-                  border: const OutlineInputBorder(),
+                  hintStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                  hintText: _nameTextField,
                 ),
               ),
+              const SizedBox(height: 35),
               const Text(
                 '가격',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 24, color: menuTextColor),
+                style: TextStyle(fontSize: 24, color: menuTextColor, fontWeight: FontWeight.w600),
               ),
               TextField(
-                controller: _priceController, // 연결된 컨트롤러
-                style: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
+                controller: _priceController,
+                keyboardType: TextInputType.number, // 숫자 키보드 사용
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly, // 숫자만 허용
+                ],
+                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                 textAlign: TextAlign.left,
                 decoration: InputDecoration(
-                  hintStyle: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-                  hintText: _PriceTextField,
-                  border: const OutlineInputBorder(),
+                  hintStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                  hintText: _priceTextField,
                 ),
               ),
+              const SizedBox(height: 35),
               CustomButton(
-                buttonText: '확인',
+                buttonText: '수정',
                 cornerRadius: 10,
                 buttonBackGroundColor: buttonOrderBackGround,
                 buttonTextColor: buttonOrder,
                 onPressed: () {
-                  String name = _nameController.text; // 입력된 이름
-                  String price = _priceController.text; // 입력된 가격
-
-                  print('입력된 제품명: $name');
-                  print('입력된 가격: $price');
+                  _menuEditManager.insertMenuProductDB(_idxController, _nameController.text, _priceController.text).then((result) {
+                    if (result) {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: const Text('수정 성공'),
+                            content: const Text('제품이 수정되었습니다.'),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.of(context).pop(),
+                                child: const Text('확인'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: const Text('수정 실패'),
+                            content: const Text('업데이트 중 문제가 발생했습니다. 다시 시도해주세요.'),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.of(context).pop(),
+                                child: const Text('확인'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    }
+                  });
                 },
               ),
+              const Spacer()
             ],
           )),
           const SizedBox(width: 35),

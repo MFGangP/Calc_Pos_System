@@ -17,7 +17,8 @@ class DataRowCell {
             alignment: Alignment.center,
             child: IconButton(
               onPressed: () {
-                debugPrint('Delete!');
+                menuManager.deleteMenuRow(menuName);
+                onUpdate();
               },
               icon: const Icon(Icons.delete, color: tableDeleteRowColor),
             ),
