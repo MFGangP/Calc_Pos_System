@@ -124,93 +124,109 @@ class _PosSettingViewState extends State<PosSettingView> {
           ),
           const SizedBox(width: 16),
           Expanded(
-              child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SafeArea(
-                child: Container(
-                  height: 24,
+              child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              color: menuBackGroundColor,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 16,
                 ),
-              ),
-              const Text(
-                '제품명',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 24, color: menuTextColor, fontWeight: FontWeight.w600),
-              ),
-              TextField(
-                controller: _nameController,
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-                textAlign: TextAlign.left,
-                decoration: InputDecoration(
-                  hintStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-                  hintText: _nameTextField,
+                const Text(
+                  '가격 수정',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 36, color: menuTextColor, fontWeight: FontWeight.bold),
                 ),
-              ),
-              const SizedBox(height: 35),
-              const Text(
-                '가격',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 24, color: menuTextColor, fontWeight: FontWeight.w600),
-              ),
-              TextField(
-                controller: _priceController,
-                keyboardType: TextInputType.number, // 숫자 키보드 사용
-                inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly, // 숫자만 허용
-                ],
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-                textAlign: TextAlign.left,
-                decoration: InputDecoration(
-                  hintStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-                  hintText: _priceTextField,
+                Container(
+                  height: 16,
                 ),
-              ),
-              const SizedBox(height: 35),
-              CustomButton(
-                buttonText: '수정',
-                cornerRadius: 10,
-                buttonBackGroundColor: buttonOrderBackGround,
-                buttonTextColor: buttonOrder,
-                onPressed: () {
-                  _menuEditManager.insertMenuProductDB(_idxController, _nameController.text, _priceController.text).then((result) {
-                    if (result) {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: const Text('수정 성공'),
-                            content: const Text('제품이 수정되었습니다.'),
-                            actions: [
-                              TextButton(
-                                onPressed: () => Navigator.of(context).pop(),
-                                child: const Text('확인'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    } else {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: const Text('수정 실패'),
-                            content: const Text('업데이트 중 문제가 발생했습니다. 다시 시도해주세요.'),
-                            actions: [
-                              TextButton(
-                                onPressed: () => Navigator.of(context).pop(),
-                                child: const Text('확인'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    }
-                  });
-                },
-              ),
-              const Spacer()
-            ],
+                const Text(
+                  '제품명',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 24, color: tableRowTextColor, fontWeight: FontWeight.w600),
+                ),
+                TextField(
+                  controller: _nameController,
+                  enabled: false,
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                  textAlign: TextAlign.left,
+                  decoration: InputDecoration(
+                    hintStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                    hintText: _nameTextField,
+                  ),
+                ),
+                const SizedBox(height: 35),
+                const Text(
+                  '가격',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 24, color: tableRowTextColor, fontWeight: FontWeight.w600),
+                ),
+                TextField(
+                  controller: _priceController,
+                  keyboardType: TextInputType.number, // 숫자 키보드 사용
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly, // 숫자만 허용
+                  ],
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                  textAlign: TextAlign.left,
+                  decoration: InputDecoration(
+                    hintStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                    hintText: _priceTextField,
+                  ),
+                ),
+                const SizedBox(height: 35),
+                CustomButton(
+                  buttonText: '수정',
+                  cornerRadius: 10,
+                  buttonBackGroundColor: buttonOrderBackGround,
+                  buttonTextColor: buttonOrder,
+                  onPressed: () {
+                    _menuEditManager.insertMenuProductDB(_idxController, _nameController.text, _priceController.text).then((result) {
+                      if (result) {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: const Text('수정 성공'),
+                              content: const Text('제품이 수정되었습니다.'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () => Navigator.of(context).pop(),
+                                  child: const Text('확인'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: const Text('수정 실패'),
+                              content: const Text('업데이트 중 문제가 발생했습니다. 다시 시도해주세요.'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () => Navigator.of(context).pop(),
+                                  child: const Text('확인'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      }
+                      setState(() {});
+                    });
+                  },
+                ),
+                const Spacer()
+              ],
+            ),
           )),
           const SizedBox(width: 35),
         ],
