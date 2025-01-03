@@ -136,3 +136,10 @@
     
 <img src="https://github.com/MFGangP/Calc_Kiosk_System/blob/main/makeimage/2024_12_16.png?raw=true" width="640">
 
+## 16번째 업로드 (2024.1.3)
+    - 베타 버전 제작 완료
+    - home 화면 제작
+    - order 화면 제작
+    - setting 화면 제작
+    
+<img src="https://github.com/MFGangP/Calc_Pos_System/blob/main/makeimage/flutter_V_0_1.gif?raw=true" width="640">
