@@ -343,9 +343,9 @@ class MySqlConnector {
 
     // orders 테이블에 데이터 삽입
     await conn.execute('''INSERT INTO orders 
-                          (orderDt, orderPrice, orderNum)
+                          (orderDt, orderPrice, orderNum, orderState)
                         VALUES
-                          ('$orderDt', $orderPrice, $orderNum)''');
+                          ('$orderDt', $orderPrice, $orderNum, 0)''');
 
     /*
     orderitems 테이블에 데이터 삽입
