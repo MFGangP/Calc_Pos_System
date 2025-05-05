@@ -90,7 +90,7 @@ class OrderDetail extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 6.0), // 행 간 여백 추가
                           child: Text(
-                            '${orderItem['prdPrice'] ?? 0}원',
+                            '${orderItem['totalPrice'] ?? 0}원',
                             textAlign: TextAlign.right,
                             style: const TextStyle(color: menuTextColor, fontSize: 16),
                           ),
